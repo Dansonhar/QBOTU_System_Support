@@ -6,7 +6,7 @@ import './styles/index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/pos-help-center-react">
+    <BrowserRouter basename="/QBOTU_System_Support_Web">
       <App />
     </BrowserRouter>
   </React.StrictMode>,

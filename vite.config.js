@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/pos-help-center-react/', // Replace with your repository name if different
+  base: '/QBOTU_System_Support_Web/',
 })
