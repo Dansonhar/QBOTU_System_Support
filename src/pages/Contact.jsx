@@ -48,7 +48,7 @@ const Contact = () => {
                     <div className="contact-card-icon">📧</div>
                     <h3>Email Support</h3>
                     <p>Send us a detailed message. We respond within 24 hours.</p>
-                    <a href="mailto:support@storehub.com" className="contact-card-btn">
+                    <a href="mailto:support@superpos.com" className="contact-card-btn">
                         Email Us
                     </a>
                 </div>

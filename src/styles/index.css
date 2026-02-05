@@ -1,9 +1,9 @@
-/* POS Help Center - StoreHub Style Theme */
-/* Matching care.storehub.com design */
+/* POS Help Center - SUPERPOS Style Theme */
+/* Matching superpos.com design */
 
 /* ===== CSS VARIABLES ===== */
 :root {
-  /* Primary Colors - StoreHub Orange */
+  /* Primary Colors - SUPERPOS Orange */
   --color-primary: #F7941D;
   --color-primary-dark: #E5821A;
   --color-primary-light: #FFAB42;
@@ -106,13 +106,15 @@ a:hover {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  font-weight: 700;
-  font-size: var(--font-size-sm);
-  color: var(--color-text-white);
   text-decoration: none !important;
   margin-bottom: var(--spacing-xl);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+}
+
+.logo-img {
+  /* EDIT SIZE HERE: change height to adjust logo size */
+  height: 32px;
+  width: auto;
+  object-fit: contain;
 }
 
 .hero-title {

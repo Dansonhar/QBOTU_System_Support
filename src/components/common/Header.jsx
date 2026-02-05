@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { articlesByCategory } from '../../data/articles';
+import logo from '../../assets/superpos-logo.png';
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = React.useState('');
@@ -65,7 +66,7 @@ const Header = () => {
     <header className="header">
       <div className="container header-inner">
         <Link to="/" className="logo">
-          STOREHUB
+          <img src={logo} alt="SUPERPOS" className="logo-img" />
         </Link>
 
         <h1 className="hero-title">Solutions at Your Fingertips</h1>
