@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { MessageSquare, Mail, Phone } from 'lucide-react';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -35,7 +36,9 @@ const Contact = () => {
 
                 {/* Live Chat Card */}
                 <div className="contact-card">
-                    <div className="contact-card-icon">💬</div>
+                    <div className="contact-card-icon">
+                        <MessageSquare size={32} />
+                    </div>
                     <h3>Live Chat</h3>
                     <p>Chat with our support team in real-time. Available Mon-Fri, 9AM-6PM.</p>
                     <button className="contact-card-btn" onClick={() => alert('Live chat!')}>
@@ -45,7 +48,9 @@ const Contact = () => {
 
                 {/* Email Card */}
                 <div className="contact-card">
-                    <div className="contact-card-icon">📧</div>
+                    <div className="contact-card-icon">
+                        <Mail size={32} />
+                    </div>
                     <h3>Email Support</h3>
                     <p>Send us a detailed message. We respond within 24 hours.</p>
                     <a href="mailto:support@superpos.com" className="contact-card-btn">
@@ -55,7 +60,9 @@ const Contact = () => {
 
                 {/* Phone Card */}
                 <div className="contact-card">
-                    <div className="contact-card-icon">📞</div>
+                    <div className="contact-card-icon">
+                        <Phone size={32} />
+                    </div>
                     <h3>Phone Support</h3>
                     <p>Call us for urgent issues. Available Mon-Fri, 9AM-6PM.</p>
                     <a href="tel:+60123456789" className="contact-card-btn">
