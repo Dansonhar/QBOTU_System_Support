@@ -41,6 +41,20 @@ app.get('/api/health', (req, res) => {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
+// Serve React App (Production)
+// 1. Serve static files from 'dist' directory
+app.use('/QBOTU_System_Support_Web', express.static(path.join(__dirname, '../dist')));
+
+// 2. Handle SPA routing - return index.html for all non-API routes matching the base path
+app.get('/QBOTU_System_Support_Web/*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
+
+// Redirect root to the app base path (optional, for convenience)
+app.get('/', (req, res) => {
+    res.redirect('/QBOTU_System_Support_Web/');
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
     console.error('Server error:', err);
