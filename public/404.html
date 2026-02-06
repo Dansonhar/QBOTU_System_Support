@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/QBOTU_System_Support_Web/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SUPERPOS - Support Center</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="module" src="/QBOTU_System_Support_Web/assets/index-BNiSEbEZ.js"></script>
+    <!-- Fallback script logic for development/build difference -->
+    <script>
+        // This is a hack for GH Pages to handle SPA routing
+        // When 404 happens, this page loads.
+        // We should probably rely on the main bundle to handle the routing.
+        // However, since the assets are hashed, hardcoding the script src above is risky if we dont auto-detect.
+        // Better approach for standard Vite+GH Pages:
+        // Just copy the index.html content but we need to know the asset paths.
+        // Since we are in development/source, we can't know the hashed filenames yet.
+        // BUT, the 'dist/index.html' produced by 'npm run build' will have the correct paths.
+        // So the strategy is:
+        // 1. We cant easily put a static 404.html in public that matches the built index.html exactly because of hashing.
+        // 2. We can use a script to redirect to index.html with a query param, but that changes the URL.
+        // 3. BEST WAY: The user should duplicate dist/index.html to dist/404.html AFTER build.
+        // I will add a script to package.json to do this automatically.
+    </script>
+</body>
+
+</html>
