@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from './components/layout/MainLayout';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import Category from './pages/Category';
 import Article from './pages/Article';
 import Modules from './pages/Modules';
@@ -35,6 +36,7 @@ function AppRoutes() {
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="privacy" element={<PrivacyPolicy />} />
         <Route path="modules" element={<Modules />} />
         <Route path="category/:categoryId" element={<Category />} />
         <Route path="article/:articleId" element={<Article />} />

@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { articlesByCategory } from '../../data/articles';
 import logo from '../../assets/superpos-logo.png';
 
 const Header = () => {
-  const [searchQuery, setSearchQuery] = React.useState('');
-  const [searchResults, setSearchResults] = React.useState([]);
-  const [showResults, setShowResults] = React.useState(false);
-  const searchRef = React.useRef(null);
+  const { t } = useTranslation();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const [showResults, setShowResults] = useState(false);
+  const searchRef = useRef(null);
 
   // Flatten articles for easy searching
-  const allArticles = React.useMemo(() => {
+  const allArticles = useMemo(() => {
     let articles = [];
     Object.keys(articlesByCategory).forEach(catId => {
       const category = articlesByCategory[catId];
@@ -48,8 +50,8 @@ const Header = () => {
     }
   };
 
-  // Close dropdown when clicking outside
-  React.useEffect(() => {
+  // Close dropdowns when clicking outside
+  useEffect(() => {
     const handleClickOutside = (event) => {
       if (searchRef.current && !searchRef.current.contains(event.target)) {
         setShowResults(false);
@@ -69,7 +71,7 @@ const Header = () => {
           <img src={logo} alt="SUPERPOS" className="logo-img" />
         </Link>
 
-        <h1 className="hero-title">Solutions at Your Fingertips</h1>
+        <h1 className="hero-title">{t('nav.solutions_title')}</h1>
 
         <div className="search-container" ref={searchRef}>
           <div className="search-bar">
@@ -77,7 +79,7 @@ const Header = () => {
             <input
               type="text"
               className="search-input"
-              placeholder="Search for articles..."
+              placeholder={t('nav.search_placeholder')}
               value={searchQuery}
               onChange={handleSearch}
               onFocus={() => {
@@ -106,7 +108,7 @@ const Header = () => {
                 </ul>
               ) : (
                 <div className="search-no-results">
-                  No articles found for "{searchQuery}"
+                  {t('nav.no_results', { query: searchQuery })}
                 </div>
               )}
             </div>

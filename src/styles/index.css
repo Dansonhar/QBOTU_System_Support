@@ -125,6 +125,67 @@ a:hover {
 }
 
 /* Search Dropdown */
+.language-switcher {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.lang-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.lang-option {
+  background: none;
+  border: none;
+  padding: 10px 16px;
+  text-align: left;
+  cursor: pointer;
+  color: #333;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.lang-option:hover {
+  background: #f5f5f5;
+  color: #F7941D;
+}
+
+.lang-option.active {
+  background: #fff3e0;
+  color: #F7941D;
+  font-weight: 600;
+}
+
 .search-container {
   position: relative;
   width: 100%;
@@ -597,6 +658,112 @@ a:hover {
   flex-direction: column;
   gap: var(--spacing-xs);
   color: var(--color-text-light);
+}
+
+/* Article Content Grid */
+.article-container-grid {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  /* Content | Sidebar (Right) */
+  gap: var(--spacing-3xl);
+  /* Increased gap for better spacing */
+  /* align-items: start; REMOVED to allow sidebar to stretch */
+  margin-top: var(--spacing-xl);
+}
+
+.article-content-main {
+  min-width: 0;
+  /* Prevent overflow */
+}
+
+/* Sidebar TOC */
+.article-sidebar {
+  display: block;
+  /* Sidebar stretches to full height of grid row automatically */
+}
+
+.toc-sticky {
+  position: sticky;
+  top: 100px;
+  /* Stick below header */
+  /* padding-right removed, adding padding-left */
+  padding-left: var(--spacing-lg);
+  /* The vertical line is now the list border */
+  border-left: 1px solid var(--color-card-border);
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+.toc-title {
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  display: none;
+  /* User sample didn't have a title, hidden for now or kept minimal */
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.toc-link {
+  display: block;
+  padding: 8px 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  border-left: 3px solid transparent;
+  /* Indicator line */
+  padding-left: 16px;
+  margin-left: -21px;
+  /* Overlap the parent border */
+  line-height: 1.4;
+}
+
+.toc-link:hover {
+  color: var(--color-primary);
+}
+
+.toc-link.active {
+  color: var(--color-text-dark);
+  font-weight: 600;
+  border-left-color: var(--color-text-dark);
+  /* Dark indicator for active state */
+}
+
+/* Scroll Offset for Anchors */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+  /* Offset for sticky header */
+}
+
+/* Responsive Sidebar */
+@media (max-width: 900px) {
+  .article-container-grid {
+    grid-template-columns: 1fr;
+    /* Stack vertically */
+  }
+
+  .article-sidebar {
+    display: none;
+    /* Hide sidebar on small screens or move to top */
+  }
+
+  .toc-sticky {
+    border-left: none;
+    border-bottom: 1px solid var(--color-card-border);
+    padding-left: 0;
+    padding-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
 }
 
 .screenshot-inner small {

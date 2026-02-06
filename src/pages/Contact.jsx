@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { MessageSquare, Mail, Phone } from 'lucide-react';
 
 const Contact = () => {
+    const { t } = useTranslation();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -19,7 +21,7 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert('Message sent! (Simulation)');
+        alert(t('contact.success_alert'));
         setFormData({ name: '', email: '', topic: '', message: '' });
     };
 
@@ -27,8 +29,8 @@ const Contact = () => {
         <div className="container contact-page">
             <section className="header contact-header">
                 <div className="container header-inner" style={{ alignItems: 'center' }}>
-                    <h1 className="hero-title">Get in Touch</h1>
-                    <p>Our support team is here to help you succeed</p>
+                    <h1 className="hero-title">{t('contact.title')}</h1>
+                    <p>{t('contact.subtitle')}</p>
                 </div>
             </section>
 
@@ -39,10 +41,10 @@ const Contact = () => {
                     <div className="contact-card-icon">
                         <MessageSquare size={32} />
                     </div>
-                    <h3>Live Chat</h3>
-                    <p>Chat with our support team in real-time. Available Mon-Fri, 9AM-6PM.</p>
+                    <h3>{t('contact.chat_title')}</h3>
+                    <p>{t('contact.chat_desc')}</p>
                     <button className="contact-card-btn" onClick={() => alert('Live chat!')}>
-                        Start Chat
+                        {t('contact.start_chat')}
                     </button>
                 </div>
 
@@ -51,10 +53,10 @@ const Contact = () => {
                     <div className="contact-card-icon">
                         <Mail size={32} />
                     </div>
-                    <h3>Email Support</h3>
-                    <p>Send us a detailed message. We respond within 24 hours.</p>
+                    <h3>{t('contact.email_title')}</h3>
+                    <p>{t('contact.email_desc')}</p>
                     <a href="mailto:support@superpos.com" className="contact-card-btn">
-                        Email Us
+                        {t('contact.email_btn')}
                     </a>
                 </div>
 
@@ -63,75 +65,78 @@ const Contact = () => {
                     <div className="contact-card-icon">
                         <Phone size={32} />
                     </div>
-                    <h3>Phone Support</h3>
-                    <p>Call us for urgent issues. Available Mon-Fri, 9AM-6PM.</p>
+                    <h3>{t('contact.phone_title')}</h3>
+                    <p>{t('contact.phone_desc')}</p>
                     <a href="tel:+60123456789" className="contact-card-btn">
-                        Call Now
+                        {t('contact.call_now')}
                     </a>
                 </div>
             </div>
 
             {/* Contact Form */}
             <div className="contact-form-container">
-                <h2 className="contact-section-title">Send Us a Message</h2>
+                <h2 className="contact-section-title">{t('contact.form_title')}</h2>
 
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label className="form-label">Your Name</label>
+                        <label className="form-label">{t('contact.name_label')}</label>
                         <input
                             type="text"
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            placeholder="Enter your name"
+                            placeholder={t('contact.name_placeholder')}
                             className="form-control"
                             required
                         />
                     </div>
 
                     <div className="form-group">
-                        <label className="form-label">Email Address</label>
+                        <label className="form-label">{t('contact.email_label')}</label>
                         <input
                             type="email"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            placeholder="you@example.com"
+                            placeholder={t('contact.email_placeholder')}
                             className="form-control"
                             required
                         />
                     </div>
 
                     <div className="form-group">
-                        <label className="form-label">Topic</label>
+                        <label className="form-label">{t('contact.topic_label')}</label>
                         <select
                             name="topic"
                             value={formData.topic}
                             onChange={handleChange}
                             className="form-control"
+                            required
                         >
-                            <option value="">Select a topic...</option>
-                            <option value="technical">Technical Issue</option>
-                            <option value="billing">Billing Question</option>
-                            <option value="feature">Feature Request</option>
-                            <option value="general">General Inquiry</option>
+                            <option value="">{t('contact.topic_placeholder')}</option>
+                            <option value="general">{t('contact.topic_general')}</option>
+                            <option value="tech">{t('contact.topic_tech')}</option>
+                            <option value="billing">{t('contact.topic_billing')}</option>
+                            <option value="feature">{t('contact.topic_feature')}</option>
                         </select>
                     </div>
 
                     <div className="form-group">
-                        <label className="form-label">Message</label>
+                        <label className="form-label">{t('contact.message_label')}</label>
                         <textarea
                             name="message"
                             value={formData.message}
                             onChange={handleChange}
                             rows="5"
-                            placeholder="Describe your issue or question..."
+                            placeholder={t('contact.message_placeholder')}
                             className="form-control"
                             required
                         ></textarea>
                     </div>
 
-                    <button type="submit" className="form-submit-btn">Send Message</button>
+                    <button type="submit" className="submit-btn btn-primary">
+                        {t('contact.send_btn')}
+                    </button>
                 </form>
             </div>
         </div>

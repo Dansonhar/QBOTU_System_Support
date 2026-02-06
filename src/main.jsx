@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import './styles/index.css'
 import './styles/admin.css'
+import './i18n'; // Import i18n config
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

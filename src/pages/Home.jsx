@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Rocket, Monitor, LayoutGrid, ShoppingCart, FileText, Receipt, Printer, Link2, Wrench, HelpCircle, FolderOpen } from 'lucide-react';
 
 const API_BASE = 'http://localhost:3001/api';
@@ -10,6 +11,7 @@ const iconMap = {
 };
 
 const Home = () => {
+    const { t } = useTranslation();
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -29,11 +31,38 @@ const Home = () => {
         }
     };
 
+    // Helper to get localized category name
+    const getCategoryName = (category) => {
+        // Try to match based on slug or name
+        // Use slug if available, otherwise normalize name
+        // Normalize: lowercase, replace non-alphanumeric with underscore, collapse underscores, trim underscores
+        const key = (category.slug || category.name).toLowerCase()
+            .replace(/[^a-z0-9]+/g, '_')
+            .replace(/_+/g, '_')
+            .replace(/^_+|_+$/g, '');
+
+        const translationKey = `categories.${key}`;
+        const translated = t(translationKey, { defaultValue: category.name });
+        return translated;
+    };
+
+    // Helper to get localized category description
+    const getCategoryDescription = (category) => {
+        const key = (category.slug || category.name).toLowerCase()
+            .replace(/[^a-z0-9]+/g, '_')
+            .replace(/_+/g, '_')
+            .replace(/^_+|_+$/g, '');
+
+        const translationKey = `categories.${key}_desc`;
+        const translated = t(translationKey, { defaultValue: category.description });
+        return translated;
+    };
+
     if (loading) {
         return (
             <section className="category-section">
                 <div className="container">
-                    <div className="loading-state">Loading categories...</div>
+                    <div className="loading-state">{t('common.loading')}</div>
                 </div>
             </section>
         );
@@ -45,9 +74,7 @@ const Home = () => {
                 <div className="container">
                     <div className="empty-state">
                         <FolderOpen size={48} />
-                        <h2>No Categories Yet</h2>
-                        <p>Add categories from the admin panel to get started.</p>
-                        <Link to="/admin" className="admin-link-btn">Go to Admin Panel →</Link>
+                        <h2>{t('categories.no_categories')}</h2>
                     </div>
                 </div>
             </section>
@@ -57,20 +84,19 @@ const Home = () => {
     return (
         <section className="category-section">
             <div className="container">
-                <div className="category-grid">
-                    {categories.map((cat) => {
-                        // Try to get icon from name, fallback to default
-                        const iconName = cat.name.replace(/\s+/g, '');
-                        const IconComponent = iconMap[iconName] || FolderOpen;
+                <h2 className="section-title">{t('categories.title')}</h2>
 
+                <div className="category-grid">
+                    {categories.map(category => {
+                        const IconComponent = iconMap[category.icon] || FolderOpen;
                         return (
-                            <Link to={`/category/${cat.id}`} key={cat.id} className="category-card">
+                            <Link to={`/category/${category.id}`} key={category.id} className="category-card">
                                 <div className="category-icon">
-                                    <IconComponent />
+                                    <IconComponent size={32} />
                                 </div>
-                                <div className="category-title">{cat.name}</div>
-                                <div className="category-description">{cat.description || 'Browse articles in this category'}</div>
-                                <div className="category-count">{cat.questionCount} articles</div>
+                                <div className="category-title">{getCategoryName(category)}</div>
+                                <div className="category-description">{getCategoryDescription(category)}</div>
+                                <div className="category-count">{t('categories.view_articles', { count: category.questionCount || 0 })}</div>
                             </Link>
                         );
                     })}

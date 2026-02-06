@@ -46,7 +46,14 @@ app.get('/api/health', (req, res) => {
 app.use('/QBOTU_System_Support_Web', express.static(path.join(__dirname, '../dist')));
 
 // 2. Handle SPA routing - return index.html for all non-API routes matching the base path
-app.get('/QBOTU_System_Support_Web/*', (req, res) => {
+// 2. Handle SPA routing - return index.html for all non-API routes matching the base path
+// Using Regex to avoid Express 5 string path syntax issues
+app.get(/\/QBOTU_System_Support_Web(\/.*)?$/, (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
+
+// Also handle the exact base path
+app.get('/QBOTU_System_Support_Web', (req, res) => {
     res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
