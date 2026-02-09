@@ -4,10 +4,10 @@
 /* ===== CSS VARIABLES ===== */
 :root {
   /* Primary Colors - SUPERPOS Orange */
-  --color-primary: #F7941D;
+  --color-primary: #000000;
   --color-primary-dark: #E5821A;
   --color-primary-light: #FFAB42;
-  --color-header-gradient: linear-gradient(135deg, #F7941D 0%, #F5851E 100%);
+  --color-header-gradient: linear-gradient(135deg, #050505 0%, #040404 100%);
 
   /* Text Colors */
   --color-text-dark: #333333;
@@ -115,6 +115,8 @@ a:hover {
   height: 32px;
   width: auto;
   object-fit: contain;
+  filter: brightness(0) invert(1);
+  /* Make logo white */
 }
 
 .hero-title {
@@ -196,20 +198,24 @@ a:hover {
 .search-bar {
   display: flex;
   align-items: center;
-  background: rgba(0, 0, 0, 0.2);
-  border: none;
+  background: #FFFFFF;
+  /* White background */
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: var(--radius-sm);
   padding: 14px 16px;
   transition: all var(--transition-fast);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .search-bar:focus-within {
-  background: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+  background: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
 }
 
 .search-icon {
-  color: rgba(255, 255, 255, 0.7);
+  color: #666666;
+  /* Darker icon for white background */
   width: 20px;
   height: 20px;
 }
@@ -220,8 +226,16 @@ a:hover {
   font-size: var(--font-size-base);
   width: 100%;
   padding-left: var(--spacing-md);
-  color: var(--color-text-white);
+  color: var(--color-text-dark);
+  /* Dark text for white background */
   background: transparent;
+}
+
+.search-input::placeholder {
+  color: #888888;
+  /* Visible placeholder gray */
+  opacity: 1;
+  /* Firefox fix */
 }
 
 .search-dropdown {

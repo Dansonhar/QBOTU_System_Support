@@ -57,27 +57,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      {/* Admin Login Button - Absolute Top Left */}
-      <Link to="/admin/login" style={{
-        position: 'absolute',
-        top: '20px',
-        left: '20px',
-        padding: '8px 16px',
-        backgroundColor: 'rgba(255, 255, 255, 0.2)', // Semi-transparent white to blend with orange header
-        color: 'white',
-        borderRadius: '6px',
-        fontSize: '14px',
-        fontWeight: '500',
-        textDecoration: 'none',
-        border: '1px solid rgba(255, 255, 255, 0.3)',
-        transition: 'all 0.2s',
-        zIndex: 1000
-      }}
-        onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.3)'}
-        onMouseLeave={(e) => e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.2)'}
-      >
-        Admin Login
-      </Link>
+
 
       <div className="container header-inner">
         <div className="header-left">
