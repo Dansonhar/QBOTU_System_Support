@@ -74,7 +74,7 @@ const Header = () => {
             <input
               type="text"
               className="search-input"
-              placeholder={t('nav.search_placeholder')}
+              placeholder="Search by feature, issue, or module...."
               value={searchQuery}
               onChange={handleSearch}
               onFocus={() => {

@@ -232,10 +232,11 @@ a:hover {
 }
 
 .search-input::placeholder {
-  color: #888888;
-  /* Visible placeholder gray */
-  opacity: 1;
+  color: #000000 !important;
+  /* Force visible placeholder black */
+  opacity: 0.3 !important;
   /* Firefox fix */
+  -webkit-text-fill-color: #000000 !important;
 }
 
 .search-dropdown {
