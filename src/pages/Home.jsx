@@ -31,32 +31,7 @@ const Home = () => {
         }
     };
 
-    // Helper to get localized category name
-    const getCategoryName = (category) => {
-        // Try to match based on slug or name
-        // Use slug if available, otherwise normalize name
-        // Normalize: lowercase, replace non-alphanumeric with underscore, collapse underscores, trim underscores
-        const key = (category.slug || category.name).toLowerCase()
-            .replace(/[^a-z0-9]+/g, '_')
-            .replace(/_+/g, '_')
-            .replace(/^_+|_+$/g, '');
 
-        const translationKey = `categories.${key}`;
-        const translated = t(translationKey, { defaultValue: category.name });
-        return translated;
-    };
-
-    // Helper to get localized category description
-    const getCategoryDescription = (category) => {
-        const key = (category.slug || category.name).toLowerCase()
-            .replace(/[^a-z0-9]+/g, '_')
-            .replace(/_+/g, '_')
-            .replace(/^_+|_+$/g, '');
-
-        const translationKey = `categories.${key}_desc`;
-        const translated = t(translationKey, { defaultValue: category.description });
-        return translated;
-    };
 
     if (loading) {
         return (
@@ -94,8 +69,8 @@ const Home = () => {
                                 <div className="category-icon">
                                     <IconComponent size={32} />
                                 </div>
-                                <div className="category-title">{getCategoryName(category)}</div>
-                                <div className="category-description">{getCategoryDescription(category)}</div>
+                                <div className="category-title">{category.name}</div>
+                                <div className="category-description">{category.description}</div>
                                 <div className="category-count">{t('categories.view_articles', { count: category.questionCount || 0 })}</div>
                             </Link>
                         );

@@ -38,33 +38,7 @@ const Category = () => {
         }
     };
 
-    // Helper to get localized category name
-    const getCategoryName = (cat) => {
-        const key = (cat.slug || cat.name).toLowerCase()
-            .replace(/[^a-z0-9]+/g, '_')
-            .replace(/_+/g, '_')
-            .replace(/^_+|_+$/g, '');
-        return t(`categories.${key}`, { defaultValue: cat.name });
-    };
 
-    // Helper to get localized category description
-    const getCategoryDescription = (cat) => {
-        const key = (cat.slug || cat.name).toLowerCase()
-            .replace(/[^a-z0-9]+/g, '_')
-            .replace(/_+/g, '_')
-            .replace(/^_+|_+$/g, '');
-        return t(`categories.${key}_desc`, { defaultValue: cat.description });
-    };
-
-    // Helper to get localized article title
-    const getArticleTitle = (article) => {
-        // Try article-specific key first, then fall back to original title
-        const key = (article.slug || article.title).toLowerCase()
-            .replace(/[^a-z0-9]+/g, '_')
-            .replace(/_+/g, '_')
-            .replace(/^_+|_+$/g, '');
-        return t(`articles.${key}`, { defaultValue: article.title });
-    };
 
     if (loading) {
         return (
@@ -92,7 +66,7 @@ const Category = () => {
                 <nav className="breadcrumb">
                     <Link to="/" className="breadcrumb-link">{t('category.all_collections', { defaultValue: 'All Collections' })}</Link>
                     <ChevronRight size={14} className="breadcrumb-separator" />
-                    <span className="breadcrumb-current">{getCategoryName(category)}</span>
+                    <span className="breadcrumb-current">{category.name}</span>
                 </nav>
 
                 {/* Category Header */}
@@ -100,8 +74,8 @@ const Category = () => {
                     <div className="category-header-icon">
                         <FolderOpen />
                     </div>
-                    <h1 className="category-page-title">{getCategoryName(category)}</h1>
-                    <p className="category-page-description">{getCategoryDescription(category)}</p>
+                    <h1 className="category-page-title">{category.name}</h1>
+                    <p className="category-page-description">{category.description}</p>
                     <p className="category-article-count">{t('categories.view_articles', { count: questions.length })}</p>
                 </div>
 
@@ -121,7 +95,7 @@ const Category = () => {
                                 {questions.map((question) => (
                                     <li key={question.id}>
                                         <Link to={`/article/${question.id}`} className="article-list-item">
-                                            <span className="article-list-title">{getArticleTitle(question)}</span>
+                                            <span className="article-list-title">{question.title}</span>
                                             <ChevronRight size={16} className="article-list-arrow" />
                                         </Link>
                                     </li>

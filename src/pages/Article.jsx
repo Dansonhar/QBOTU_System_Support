@@ -62,61 +62,7 @@ const Article = () => {
         }
     };
 
-    // Helper to get localized article title
-    const getArticleTitle = (article) => {
-        const key = (article.slug || article.title).toLowerCase()
-            .replace(/[^a-z0-9]+/g, '_')
-            .replace(/_+/g, '_')
-            .replace(/^_+|_+$/g, '');
-        return t(`articles.${key}`, { defaultValue: article.title });
-    };
 
-    // Helper to get localized article description
-    const getArticleDescription = (article) => {
-        const key = (article.slug || article.title).toLowerCase()
-            .replace(/[^a-z0-9]+/g, '_')
-            .replace(/_+/g, '_')
-            .replace(/^_+|_+$/g, '');
-        return t(`articles.${key}_desc`, { defaultValue: article.description });
-    };
-
-    // Helper to get localized category name
-    const getCategoryName = (article) => {
-        const key = (article.category_slug || article.category_name || '').toLowerCase()
-            .replace(/[^a-z0-9]+/g, '_')
-            .replace(/_+/g, '_')
-            .replace(/^_+|_+$/g, '');
-        return t(`categories.${key}`, { defaultValue: article.category_name });
-    };
-
-    // Helper to get localized step title
-    const getStepTitle = (article, step, index) => {
-        const articleKey = (article.slug || article.title).toLowerCase()
-            .replace(/[^a-z0-9]+/g, '_')
-            .replace(/_+/g, '_')
-            .replace(/^_+|_+$/g, '');
-
-        // First try article-specific step title translation
-        const specificTranslation = t(`articles.${articleKey}_step_${index + 1}_title`, { defaultValue: '' });
-        if (specificTranslation) return specificTranslation;
-
-        // Check if step title follows "Step X" pattern and translate it
-        const stepMatch = step.step_title?.match(/^Step\s+(\d+)$/i);
-        if (stepMatch) {
-            return t(`articles.step_${stepMatch[1]}`, { defaultValue: step.step_title });
-        }
-
-        return step.step_title;
-    };
-
-    // Helper to get localized step content
-    const getStepContent = (article, step, index) => {
-        const articleKey = (article.slug || article.title).toLowerCase()
-            .replace(/[^a-z0-9]+/g, '_')
-            .replace(/_+/g, '_')
-            .replace(/^_+|_+$/g, '');
-        return t(`articles.${articleKey}_step_${index + 1}_content`, { defaultValue: step.content });
-    };
 
     // Helper for localized date
     const formatDate = (dateStr) => {
@@ -156,10 +102,10 @@ const Article = () => {
                     <Link to="/" className="breadcrumb-link">{t('nav.home')}</Link>
                     <ChevronRight size={14} className="breadcrumb-separator" />
                     <Link to={`/category/${article.category_id}`} className="breadcrumb-link">
-                        {getCategoryName(article)}
+                        {article.category_name}
                     </Link>
                     <ChevronRight size={14} className="breadcrumb-separator" />
-                    <span className="breadcrumb-current">{getArticleTitle(article)}</span>
+                    <span className="breadcrumb-current">{article.title}</span>
                 </nav>
 
                 <div className="article-container-grid">
@@ -167,7 +113,7 @@ const Article = () => {
                     <article className="article-content-main">
                         {/* Article Header */}
                         <header className="article-header" id="overview">
-                            <h1 className="article-title">{getArticleTitle(article)}</h1>
+                            <h1 className="article-title">{article.title}</h1>
                             <div className="article-meta">
                                 <span className="article-meta-item">
                                     <Clock size={14} />
@@ -183,7 +129,7 @@ const Article = () => {
                         {/* Summary */}
                         {article.description && (
                             <div className="article-summary">
-                                <p>{getArticleDescription(article)}</p>
+                                <p>{article.description}</p>
                             </div>
                         )}
 
@@ -192,12 +138,12 @@ const Article = () => {
                             {article.steps && article.steps.length > 0 ? (
                                 article.steps.map((step, index) => (
                                     <div key={step.id} className="step-block" id={`step-${index}`}>
-                                        <h2 className="step-title">{getStepTitle(article, step, index)}</h2>
+                                        <h2 className="step-title">{step.step_title}</h2>
 
                                         {step.content && (
                                             <div
                                                 className="step-content"
-                                                dangerouslySetInnerHTML={{ __html: getStepContent(article, step, index) }}
+                                                dangerouslySetInnerHTML={{ __html: step.content }}
                                             />
                                         )}
 
@@ -283,7 +229,7 @@ const Article = () => {
                                 {article.steps?.map((step, index) => (
                                     <li key={step.id}>
                                         <a href={`#step-${index}`} className={`toc-link ${activeSection === `step-${index}` ? 'active' : ''}`}>
-                                            {getStepTitle(article, step, index)}
+                                            {step.step_title}
                                         </a>
                                     </li>
                                 ))}
