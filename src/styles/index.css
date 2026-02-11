@@ -887,7 +887,7 @@ html {
   align-items: center;
   gap: var(--spacing-md);
   padding: var(--spacing-lg);
-  background: linear-gradient(135deg, #F7941D 0%, #F5851E 100%);
+  background: #000000;
   border-radius: var(--radius-md);
   color: white;
 }

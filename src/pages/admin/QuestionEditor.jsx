@@ -26,6 +26,7 @@ const QuestionEditor = () => {
     });
 
     const [steps, setSteps] = useState([]);
+    const [deletedStepIds, setDeletedStepIds] = useState([]);
     const [draggedStep, setDraggedStep] = useState(null);
 
     useEffect(() => {
@@ -84,6 +85,12 @@ const QuestionEditor = () => {
 
     const removeStep = (index) => {
         if (!confirm('Remove this step?')) return;
+
+        const stepToRemove = steps[index];
+        if (stepToRemove.id && !String(stepToRemove.id).startsWith('new-')) {
+            setDeletedStepIds([...deletedStepIds, stepToRemove.id]);
+        }
+
         setSteps(steps.filter((_, i) => i !== index));
     };
 
@@ -156,35 +163,59 @@ const QuestionEditor = () => {
 
                 // Update steps separately
                 if (res.ok) {
-                    // First delete all existing steps and recreate
-                    // For simplicity, we'll update existing and add new
-                    for (let i = 0; i < steps.length; i++) {
-                        const step = steps[i];
-                        if (step.id && !String(step.id).startsWith('new-')) {
-                            // Update existing step
-                            await fetch(`${API_BASE_URL}/steps/${step.id}`, {
-                                method: 'PUT',
-                                headers: getAuthHeaders(),
-                                body: JSON.stringify(step)
+                    // 1. Delete steps that were removed
+                    for (const stepId of deletedStepIds) {
+                        try {
+                            await fetch(`${API_BASE_URL}/steps/${stepId}`, {
+                                method: 'DELETE',
+                                headers: getAuthHeaders()
                             });
-                        } else {
-                            // Add new step
-                            await fetch(`${API_BASE_URL}/questions/${id}/steps`, {
-                                method: 'POST',
-                                headers: getAuthHeaders(),
-                                body: JSON.stringify(step)
-                            });
+                        } catch (err) {
+                            console.error(`Failed to delete step ${stepId}:`, err);
                         }
                     }
 
-                    // Reorder steps
-                    const stepIds = steps.filter(s => s.id && !String(s.id).startsWith('new-')).map(s => s.id);
-                    if (stepIds.length > 0) {
-                        await fetch(`${API_BASE_URL}/questions/${id}/steps/reorder`, {
-                            method: 'PUT',
-                            headers: getAuthHeaders(),
-                            body: JSON.stringify({ stepIds })
-                        });
+                    // 2. Update existing and create new steps
+                    const finalStepIds = [];
+                    for (let i = 0; i < steps.length; i++) {
+                        const step = steps[i];
+                        try {
+                            if (step.id && !String(step.id).startsWith('new-')) {
+                                // Update existing step
+                                await fetch(`${API_BASE_URL}/steps/${step.id}`, {
+                                    method: 'PUT',
+                                    headers: getAuthHeaders(),
+                                    body: JSON.stringify(step)
+                                });
+                                finalStepIds.push(step.id);
+                            } else {
+                                // Add new step
+                                const addRes = await fetch(`${API_BASE_URL}/questions/${id}/steps`, {
+                                    method: 'POST',
+                                    headers: getAuthHeaders(),
+                                    body: JSON.stringify(step)
+                                });
+                                if (addRes.ok) {
+                                    const newStep = await addRes.json();
+                                    finalStepIds.push(newStep.id);
+                                }
+                            }
+                        } catch (err) {
+                            console.error('Failed to update/create step:', err);
+                        }
+                    }
+
+                    // 3. Final Reorder to match UI exactly
+                    if (finalStepIds.length > 0) {
+                        try {
+                            await fetch(`${API_BASE_URL}/questions/${id}/steps/reorder`, {
+                                method: 'PUT',
+                                headers: getAuthHeaders(),
+                                body: JSON.stringify({ stepIds: finalStepIds })
+                            });
+                        } catch (err) {
+                            console.error('Failed to reorder steps:', err);
+                        }
                     }
                 }
             } else {
@@ -197,7 +228,7 @@ const QuestionEditor = () => {
             }
 
             if (res.ok) {
-                // Navigate back to questions list, preserving the category filter
+                // Navigate back
                 const categoryToReturn = formData.category_id || returnCategory;
                 navigate(categoryToReturn ? `/admin/questions?category=${categoryToReturn}` : '/admin/questions');
             } else {
