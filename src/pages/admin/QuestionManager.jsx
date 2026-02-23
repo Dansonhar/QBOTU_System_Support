@@ -3,7 +3,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth, API_BASE_URL } from '../../context/AuthContext';
 import {
     LayoutDashboard, FolderOpen, HelpCircle, LogOut, Plus,
-    Edit, Trash2, FileText, Search, Filter, Eye, Users
+    Edit, Trash2, FileText, Search, Filter, Eye, Users, BarChart3, Settings, MessageCircle
 } from 'lucide-react';
 
 const QuestionManager = () => {
@@ -112,9 +112,21 @@ const QuestionManager = () => {
                         <HelpCircle size={20} />
                         <span>Questions</span>
                     </Link>
+                    <Link to="/admin/analytics" className="admin-nav-item">
+                        <BarChart3 size={20} />
+                        <span>Analytics</span>
+                    </Link>
                     <Link to="/admin/users" className="admin-nav-item">
                         <Users size={20} />
                         <span>Users</span>
+                    </Link>
+                    <Link to="/admin/tickets" className="admin-nav-item">
+                        <MessageCircle size={20} />
+                        <span>Tickets</span>
+                    </Link>
+                    <Link to="/admin/support-settings" className="admin-nav-item">
+                        <Settings size={20} />
+                        <span>Support Widget</span>
                     </Link>
                 </nav>
 

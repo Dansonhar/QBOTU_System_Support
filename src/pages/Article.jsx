@@ -70,6 +70,12 @@ const Article = () => {
         return date.toLocaleDateString();
     };
 
+    // Strip &nbsp; from Quill-generated HTML so text wraps normally
+    const sanitizeHtml = (html) => {
+        if (!html) return '';
+        return html.replace(/\u00a0/g, ' ').replace(/&nbsp;/g, ' ');
+    };
+
     if (loading) {
         return (
             <div className="article-page">
@@ -128,45 +134,67 @@ const Article = () => {
 
                         {/* Summary */}
                         {article.description && (
-                            <div className="article-summary">
-                                <p>{article.description}</p>
-                            </div>
+                            <div
+                                className="article-summary rich-content"
+                                dangerouslySetInnerHTML={{ __html: sanitizeHtml(article.description) }}
+                            />
                         )}
 
                         {/* Steps from Database */}
                         <div className="article-steps">
                             {article.steps && article.steps.length > 0 ? (
-                                article.steps.map((step, index) => (
-                                    <div key={step.id} className="step-block" id={`step-${index}`}>
-                                        <h2 className="step-title">{step.step_title}</h2>
+                                article.steps.map((step, index) => {
+                                    if (step.block_type === 'section_title') {
+                                        return (
+                                            <h2 key={step.id} className="article-section-title" id={`step-${index}`}>
+                                                {step.step_title}
+                                            </h2>
+                                        );
+                                    }
 
-                                        {step.content && (
-                                            <div
-                                                className="step-content"
-                                                dangerouslySetInnerHTML={{ __html: step.content }}
-                                            />
-                                        )}
+                                    return (
+                                        <div key={step.id} className="step-block" id={`step-${index}`}>
+                                            <h2 className="step-title">{step.step_title}</h2>
 
-                                        {/* Step Image */}
-                                        {step.image_url && (
-                                            <div className="step-image">
-                                                <img
-                                                    src={`http://localhost:3001${step.image_url}`}
-                                                    alt={step.step_title}
+                                            {step.content && (
+                                                <div
+                                                    className="step-content"
+                                                    dangerouslySetInnerHTML={{ __html: sanitizeHtml(step.content) }}
                                                 />
-                                            </div>
-                                        )}
+                                            )}
 
-                                        {/* Step Video */}
-                                        {step.video_url && (
-                                            <div className="step-video">
-                                                <a href={step.video_url} target="_blank" rel="noopener noreferrer">
-                                                    🎬 {t('article.watch_video')}
-                                                </a>
-                                            </div>
-                                        )}
-                                    </div>
-                                ))
+                                            {/* Step Images */}
+                                            {step.images && step.images.length > 0 ? (
+                                                <div className="step-images-gallery">
+                                                    {step.images.map((imgUrl, imgIdx) => (
+                                                        <div key={imgIdx} className="step-image">
+                                                            <img
+                                                                src={`http://localhost:3001${imgUrl}`}
+                                                                alt={`${step.step_title} - image ${imgIdx + 1}`}
+                                                            />
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            ) : step.image_url && (
+                                                <div className="step-image">
+                                                    <img
+                                                        src={`http://localhost:3001${step.image_url}`}
+                                                        alt={step.step_title}
+                                                    />
+                                                </div>
+                                            )}
+
+                                            {/* Step Video */}
+                                            {step.video_url && (
+                                                <div className="step-video">
+                                                    <a href={step.video_url} target="_blank" rel="noopener noreferrer">
+                                                        🎬 {t('article.watch_video')}
+                                                    </a>
+                                                </div>
+                                            )}
+                                        </div>
+                                    );
+                                })
                             ) : (
                                 <div className="empty-state">
                                     <p>{t('article.no_steps')}</p>
@@ -227,7 +255,7 @@ const Article = () => {
                                     <a href="#overview" className={`toc-link ${activeSection === 'overview' ? 'active' : ''}`}>{t('article.overview')}</a>
                                 </li>
                                 {article.steps?.map((step, index) => (
-                                    <li key={step.id}>
+                                    <li key={step.id} className={step.block_type === 'section_title' ? 'toc-item-section' : 'toc-item-step'}>
                                         <a href={`#step-${index}`} className={`toc-link ${activeSection === `step-${index}` ? 'active' : ''}`}>
                                             {step.step_title}
                                         </a>

@@ -3,8 +3,9 @@ import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { useAuth, API_BASE_URL } from '../../context/AuthContext';
 import {
     LayoutDashboard, FolderOpen, HelpCircle, LogOut, Plus,
-    Save, ArrowLeft, Trash2, FileText, GripVertical, Image, Video, X, Users
+    Save, ArrowLeft, Trash2, FileText, GripVertical, Image, Video, X, Users, BarChart3, Settings, MessageCircle
 } from 'lucide-react';
+import RichTextEditor from '../../components/common/RichTextEditor';
 
 const QuestionEditor = () => {
     const { id } = useParams();
@@ -59,7 +60,14 @@ const QuestionEditor = () => {
                 status: data.status
             });
 
-            setSteps(data.steps || []);
+            // Migrate single image_url into images array if needed
+            const migratedSteps = (data.steps || []).map(s => ({
+                ...s,
+                images: s.images && s.images.length > 0
+                    ? s.images
+                    : s.image_url ? [s.image_url] : []
+            }));
+            setSteps(migratedSteps);
         } catch (error) {
             console.error('Error fetching question:', error);
         } finally {
@@ -73,7 +81,21 @@ const QuestionEditor = () => {
             step_title: `Step ${steps.length + 1}`,
             content: '',
             image_url: '',
-            video_url: ''
+            images: [],
+            video_url: '',
+            block_type: 'step'
+        }]);
+    };
+
+    const addSectionTitle = () => {
+        setSteps([...steps, {
+            id: `new-${Date.now()}`,
+            step_title: 'New Section',
+            content: '',
+            image_url: '',
+            images: [],
+            video_url: '',
+            block_type: 'section_title'
         }]);
     };
 
@@ -115,23 +137,76 @@ const QuestionEditor = () => {
         setDraggedStep(null);
     };
 
-    const handleImageUpload = async (index, file) => {
-        const formDataUpload = new FormData();
-        formDataUpload.append('image', file);
+    const handleMultiImageUpload = async (stepIndex, files) => {
+        const fileArray = Array.from(files);
+        for (const file of fileArray) {
+            const formDataUpload = new FormData();
+            formDataUpload.append('image', file);
 
-        try {
-            const res = await fetch(`${API_BASE_URL}/upload`, {
-                method: 'POST',
-                headers: { 'Authorization': `Bearer ${token}` },
-                body: formDataUpload
-            });
+            try {
+                const res = await fetch(`${API_BASE_URL}/upload`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${token}` },
+                    body: formDataUpload
+                });
 
-            if (res.ok) {
-                const data = await res.json();
-                updateStep(index, 'image_url', data.url);
+                if (res.ok) {
+                    const data = await res.json();
+                    setSteps(prev => {
+                        const newSteps = [...prev];
+                        const currentImages = newSteps[stepIndex].images || [];
+                        newSteps[stepIndex] = {
+                            ...newSteps[stepIndex],
+                            images: [...currentImages, data.url],
+                            image_url: currentImages.length === 0 ? data.url : newSteps[stepIndex].image_url
+                        };
+                        return newSteps;
+                    });
+                }
+            } catch (error) {
+                console.error('Error uploading image:', error);
             }
-        } catch (error) {
-            console.error('Error uploading image:', error);
+        }
+    };
+
+    const removeImage = (stepIndex, imgIndex) => {
+        setSteps(prev => {
+            const newSteps = [...prev];
+            const newImages = [...(newSteps[stepIndex].images || [])];
+            newImages.splice(imgIndex, 1);
+            newSteps[stepIndex] = {
+                ...newSteps[stepIndex],
+                images: newImages,
+                image_url: newImages[0] || ''
+            };
+            return newSteps;
+        });
+    };
+
+    const handleImageDragStart = (e, stepIndex, imgIndex) => {
+        e.dataTransfer.setData('text/plain', JSON.stringify({ stepIndex, imgIndex }));
+    };
+
+    const handleImageDragOver = (e) => {
+        e.preventDefault();
+    };
+
+    const handleImageDrop = (e, stepIndex, dropImgIndex) => {
+        e.preventDefault();
+        try {
+            const { stepIndex: srcStepIdx, imgIndex: srcImgIdx } = JSON.parse(e.dataTransfer.getData('text/plain'));
+            if (srcStepIdx !== stepIndex) return;
+
+            setSteps(prev => {
+                const newSteps = [...prev];
+                const imgs = [...(newSteps[stepIndex].images || [])];
+                const [moved] = imgs.splice(srcImgIdx, 1);
+                imgs.splice(dropImgIndex, 0, moved);
+                newSteps[stepIndex] = { ...newSteps[stepIndex], images: imgs, image_url: imgs[0] || '' };
+                return newSteps;
+            });
+        } catch (err) {
+            // ignore
         }
     };
 
@@ -228,9 +303,16 @@ const QuestionEditor = () => {
             }
 
             if (res.ok) {
-                // Navigate back
-                const categoryToReturn = formData.category_id || returnCategory;
-                navigate(categoryToReturn ? `/admin/questions?category=${categoryToReturn}` : '/admin/questions');
+                const saved = await res.json();
+                if (isEditing) {
+                    // Stay on the same page, just re-fetch fresh data
+                    setDeletedStepIds([]);
+                    fetchQuestion();
+                    alert('Saved successfully!');
+                } else {
+                    // For new questions, navigate to edit the newly created one
+                    navigate(`/admin/questions/${saved.id}/edit`);
+                }
             } else {
                 const error = await res.json();
                 alert(error.error || 'Failed to save');
@@ -268,9 +350,21 @@ const QuestionEditor = () => {
                         <HelpCircle size={20} />
                         <span>Questions</span>
                     </Link>
+                    <Link to="/admin/analytics" className="admin-nav-item">
+                        <BarChart3 size={20} />
+                        <span>Analytics</span>
+                    </Link>
                     <Link to="/admin/users" className="admin-nav-item">
                         <Users size={20} />
                         <span>Users</span>
+                    </Link>
+                    <Link to="/admin/tickets" className="admin-nav-item">
+                        <MessageCircle size={20} />
+                        <span>Tickets</span>
+                    </Link>
+                    <Link to="/admin/support-settings" className="admin-nav-item">
+                        <Settings size={20} />
+                        <span>Support Widget</span>
                     </Link>
                 </nav>
 
@@ -332,11 +426,10 @@ const QuestionEditor = () => {
 
                             <div className="admin-form-group">
                                 <label>Short Description</label>
-                                <textarea
+                                <RichTextEditor
                                     value={formData.description}
-                                    onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                                    onChange={(html) => setFormData({ ...formData, description: html })}
                                     placeholder="Brief description of the question"
-                                    rows="2"
                                 />
                             </div>
                         </div>
@@ -345,22 +438,18 @@ const QuestionEditor = () => {
                         <div className="admin-card">
                             <div className="admin-card-header">
                                 <h3>Answer Steps</h3>
-                                <button onClick={addStep} className="admin-btn admin-btn-secondary">
-                                    <Plus size={18} />
-                                    Add Step
-                                </button>
                             </div>
 
                             <div className="admin-steps-list">
                                 {steps.length === 0 ? (
                                     <div className="admin-empty-steps">
-                                        <p>No steps added yet. Click "Add Step" to begin.</p>
+                                        <p>No blocks added yet. Use the buttons below to add a Section Title or a Step.</p>
                                     </div>
                                 ) : (
                                     steps.map((step, index) => (
                                         <div
                                             key={step.id || index}
-                                            className={`admin-step-item ${draggedStep === index ? 'dragging' : ''}`}
+                                            className={`admin-step-item ${step.block_type === 'section_title' ? 'admin-step-item--title' : ''} ${draggedStep === index ? 'dragging' : ''}`}
                                             draggable
                                             onDragStart={() => handleDragStart(index)}
                                             onDragOver={(e) => handleDragOver(e, index)}
@@ -370,7 +459,9 @@ const QuestionEditor = () => {
                                                 <div className="admin-step-drag">
                                                     <GripVertical size={20} />
                                                 </div>
-                                                <span className="admin-step-number">Step {index + 1}</span>
+                                                <span className="admin-step-number">
+                                                    {step.block_type === 'section_title' ? '📌 Section' : `Step ${index + 1}`}
+                                                </span>
                                                 <button
                                                     onClick={() => removeStep(index)}
                                                     className="admin-step-remove"
@@ -381,63 +472,95 @@ const QuestionEditor = () => {
 
                                             <div className="admin-step-content">
                                                 <div className="admin-form-group">
-                                                    <label>Step Title</label>
+                                                    <label>{step.block_type === 'section_title' ? 'Section Heading' : 'Step Title'}</label>
                                                     <input
                                                         type="text"
                                                         value={step.step_title}
                                                         onChange={(e) => updateStep(index, 'step_title', e.target.value)}
-                                                        placeholder="Enter step title"
+                                                        placeholder={step.block_type === 'section_title' ? 'Enter section heading...' : 'Enter step title'}
+                                                        className={step.block_type === 'section_title' ? 'admin-section-title-input' : ''}
                                                     />
                                                 </div>
 
-                                                <div className="admin-form-group">
-                                                    <label>Content</label>
-                                                    <textarea
-                                                        value={step.content || ''}
-                                                        onChange={(e) => updateStep(index, 'content', e.target.value)}
-                                                        placeholder="Enter step content (HTML supported)"
-                                                        rows="4"
-                                                    />
-                                                </div>
-
-                                                <div className="admin-step-media">
-                                                    <div className="admin-form-group">
-                                                        <label><Image size={16} /> Image</label>
-                                                        <div className="admin-media-input">
-                                                            <input
-                                                                type="file"
-                                                                accept="image/*"
-                                                                onChange={(e) => {
-                                                                    if (e.target.files[0]) {
-                                                                        handleImageUpload(index, e.target.files[0]);
-                                                                    }
-                                                                }}
+                                                {step.block_type !== 'section_title' && (
+                                                    <>
+                                                        <div className="admin-form-group">
+                                                            <label>Content</label>
+                                                            <RichTextEditor
+                                                                value={step.content || ''}
+                                                                onChange={(html) => updateStep(index, 'content', html)}
+                                                                placeholder="Enter step content..."
                                                             />
-                                                            {step.image_url && (
-                                                                <div className="admin-media-preview">
-                                                                    <img src={`http://localhost:3001${step.image_url}`} alt="Preview" />
-                                                                    <button onClick={() => updateStep(index, 'image_url', '')}>
-                                                                        <X size={14} />
-                                                                    </button>
-                                                                </div>
-                                                            )}
                                                         </div>
-                                                    </div>
 
-                                                    <div className="admin-form-group">
-                                                        <label><Video size={16} /> Video URL</label>
-                                                        <input
-                                                            type="text"
-                                                            value={step.video_url || ''}
-                                                            onChange={(e) => updateStep(index, 'video_url', e.target.value)}
-                                                            placeholder="YouTube or Vimeo URL"
-                                                        />
-                                                    </div>
-                                                </div>
+                                                        <div className="admin-step-media">
+                                                            <div className="admin-form-group">
+                                                                <label><Image size={16} /> Images (drag to reorder)</label>
+                                                                <div className="admin-media-input">
+                                                                    <input
+                                                                        type="file"
+                                                                        accept="image/*,.gif"
+                                                                        multiple
+                                                                        onChange={(e) => {
+                                                                            if (e.target.files.length > 0) {
+                                                                                handleMultiImageUpload(index, e.target.files);
+                                                                            }
+                                                                        }}
+                                                                    />
+                                                                    {(step.images && step.images.length > 0) && (
+                                                                        <div className="admin-multi-image-grid">
+                                                                            {step.images.map((imgUrl, imgIdx) => (
+                                                                                <div
+                                                                                    key={imgIdx}
+                                                                                    className="admin-multi-image-item"
+                                                                                    draggable
+                                                                                    onDragStart={(e) => handleImageDragStart(e, index, imgIdx)}
+                                                                                    onDragOver={handleImageDragOver}
+                                                                                    onDrop={(e) => handleImageDrop(e, index, imgIdx)}
+                                                                                >
+                                                                                    <img src={`http://localhost:3001${imgUrl}`} alt={`Step image ${imgIdx + 1}`} />
+                                                                                    <span className="admin-multi-image-order">{imgIdx + 1}</span>
+                                                                                    <button
+                                                                                        className="admin-multi-image-remove"
+                                                                                        onClick={() => removeImage(index, imgIdx)}
+                                                                                        type="button"
+                                                                                    >
+                                                                                        <X size={12} />
+                                                                                    </button>
+                                                                                </div>
+                                                                            ))}
+                                                                        </div>
+                                                                    )}
+                                                                </div>
+                                                            </div>
+
+                                                            <div className="admin-form-group">
+                                                                <label><Video size={16} /> Video URL</label>
+                                                                <input
+                                                                    type="text"
+                                                                    value={step.video_url || ''}
+                                                                    onChange={(e) => updateStep(index, 'video_url', e.target.value)}
+                                                                    placeholder="YouTube or Vimeo URL"
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                    </>
+                                                )}
                                             </div>
                                         </div>
                                     ))
                                 )}
+                            </div>
+
+                            {/* ── Add Block Bar (bottom) ── */}
+                            <div className="admin-add-block-bar">
+                                <span className="admin-add-block-label">Add block:</span>
+                                <button onClick={addSectionTitle} className="admin-btn admin-btn-block-type">
+                                    <span>T</span> Section Title
+                                </button>
+                                <button onClick={addStep} className="admin-btn admin-btn-primary admin-btn-block-type">
+                                    <Plus size={16} /> Step
+                                </button>
                             </div>
                         </div>
                     </div>

@@ -10,6 +10,9 @@ import questionsRoutes from './routes/questions.js';
 import stepsRoutes from './routes/steps.js';
 import uploadRoutes from './routes/upload.js';
 import usersRoutes from './routes/users.js';
+import analyticsRoutes from './routes/analytics.js';
+import supportSettingsRoutes from './routes/supportSettings.js';
+import ticketsRoutes from './routes/tickets.js';
 
 // Initialize database (this runs schema creation)
 import './database.js';
@@ -35,6 +38,9 @@ app.use('/api/questions', questionsRoutes);
 app.use('/api', stepsRoutes); // Steps routes are prefixed differently
 app.use('/api/upload', uploadRoutes);
 app.use('/api/users', usersRoutes);
+app.use('/api/analytics', analyticsRoutes);
+app.use('/api/support-settings', supportSettingsRoutes);
+app.use('/api/tickets', ticketsRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {

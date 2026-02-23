@@ -16,6 +16,11 @@ import CategoryManager from './pages/admin/CategoryManager';
 import QuestionManager from './pages/admin/QuestionManager';
 import QuestionEditor from './pages/admin/QuestionEditor';
 import UserManager from './pages/admin/UserManager';
+import AnalyticsDashboard from './pages/admin/AnalyticsDashboard';
+import SupportSettingsPage from './pages/admin/SupportSettingsPage';
+import TicketManager from './pages/admin/TicketManager';
+import TicketDetail from './pages/admin/TicketDetail';
+import FloatingSupportWidget from './components/common/FloatingSupportWidget';
 // Debug component
 import DebugInfo from './components/common/DebugInfo';
 
@@ -62,6 +67,18 @@ function AppRoutes() {
       <Route path="/admin/users" element={
         <ProtectedRoute><UserManager /></ProtectedRoute>
       } />
+      <Route path="/admin/analytics" element={
+        <ProtectedRoute><AnalyticsDashboard /></ProtectedRoute>
+      } />
+      <Route path="/admin/support-settings" element={
+        <ProtectedRoute><SupportSettingsPage /></ProtectedRoute>
+      } />
+      <Route path="/admin/tickets" element={
+        <ProtectedRoute><TicketManager /></ProtectedRoute>
+      } />
+      <Route path="/admin/tickets/:id" element={
+        <ProtectedRoute><TicketDetail /></ProtectedRoute>
+      } />
       <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
     </Routes>
   );
@@ -71,6 +88,7 @@ function App() {
   return (
     <AuthProvider>
       <AppRoutes />
+      <FloatingSupportWidget />
       <DebugInfo />
     </AuthProvider>
   );

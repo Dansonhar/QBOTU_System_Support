@@ -10,6 +10,15 @@ const Header = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [showResults, setShowResults] = useState(false);
   const searchRef = useRef(null);
+  const searchTrackTimerRef = useRef(null);
+
+  const trackEvent = (event_type, data = {}) => {
+    fetch('http://localhost:3001/api/analytics/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ event_type, ...data })
+    }).catch(() => { });
+  };
 
   // Debounce search to avoid too many API calls
   useEffect(() => {
@@ -38,7 +47,21 @@ const Header = () => {
   }, [searchQuery]);
 
   const handleSearch = (e) => {
-    setSearchQuery(e.target.value);
+    const val = e.target.value;
+    setSearchQuery(val);
+
+    // Track search queries (debounced, fire 1s after user stops typing)
+    clearTimeout(searchTrackTimerRef.current);
+    if (val.trim().length > 1) {
+      searchTrackTimerRef.current = setTimeout(() => {
+        trackEvent('search', { search_query: val.trim() });
+      }, 1000);
+    }
+  };
+
+  const handleResultClick = (article) => {
+    trackEvent('article_click', { question_id: article.id });
+    setShowResults(false);
   };
 
   // Close dropdowns when clicking outside
@@ -93,7 +116,7 @@ const Header = () => {
                       <Link
                         to={`/article/${article.id}`}
                         className="search-result-item"
-                        onClick={() => setShowResults(false)}
+                        onClick={() => handleResultClick(article)}
                       >
                         <span className="search-result-title">
                           {article.title}

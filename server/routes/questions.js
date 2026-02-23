@@ -98,9 +98,17 @@ router.get('/:id', (req, res) => {
             return res.status(404).json({ error: 'Question not found' });
         }
 
-        const steps = db.prepare(
+        const stepsRows = db.prepare(
             'SELECT * FROM question_steps WHERE question_id = ? ORDER BY step_order ASC'
         ).all(req.params.id);
+
+        const steps = stepsRows.map(step => {
+            const images = db.prepare('SELECT image_url FROM step_images WHERE step_id = ? ORDER BY image_order').all(step.id);
+            return {
+                ...step,
+                images: images.map(img => img.image_url)
+            };
+        });
 
         res.json({ ...question, steps });
     } catch (error) {
@@ -123,9 +131,17 @@ router.get('/slug/:slug', (req, res) => {
             return res.status(404).json({ error: 'Question not found' });
         }
 
-        const steps = db.prepare(
+        const stepsRows = db.prepare(
             'SELECT * FROM question_steps WHERE question_id = ? ORDER BY step_order ASC'
         ).all(question.id);
+
+        const steps = stepsRows.map(step => {
+            const images = db.prepare('SELECT image_url FROM step_images WHERE step_id = ? ORDER BY image_order').all(step.id);
+            return {
+                ...step,
+                images: images.map(img => img.image_url)
+            };
+        });
 
         res.json({ ...question, steps });
     } catch (error) {
@@ -160,23 +176,45 @@ router.post('/', authenticateToken, (req, res) => {
         // Insert steps if provided
         if (steps.length > 0) {
             const insertStep = db.prepare(
-                'INSERT INTO question_steps (question_id, step_order, step_title, content, image_url, video_url) VALUES (?, ?, ?, ?, ?, ?)'
+                'INSERT INTO question_steps (question_id, step_order, step_title, content, image_url, video_url, block_type) VALUES (?, ?, ?, ?, ?, ?, ?)'
+            );
+            const insertStepImage = db.prepare(
+                'INSERT INTO step_images (step_id, image_url, image_order) VALUES (?, ?, ?)'
             );
 
             steps.forEach((step, index) => {
-                insertStep.run(
+                const stepResult = insertStep.run(
                     questionId,
                     index + 1,
-                    step.step_title || `Step ${index + 1}`,
+                    step.step_title || (step.block_type === 'section_title' ? 'New Section' : `Step ${index + 1}`),
                     step.content || null,
                     step.image_url || null,
-                    step.video_url || null
+                    step.video_url || null,
+                    step.block_type || 'step'
                 );
+
+                const stepId = stepResult.lastInsertRowid;
+
+                if (step.images && Array.isArray(step.images)) {
+                    step.images.forEach((img, imgIdx) => {
+                        insertStepImage.run(stepId, img, imgIdx);
+                    });
+                } else if (step.image_url) {
+                    insertStepImage.run(stepId, step.image_url, 0);
+                }
             });
         }
 
         const newQuestion = db.prepare('SELECT * FROM questions WHERE id = ?').get(questionId);
-        const newSteps = db.prepare('SELECT * FROM question_steps WHERE question_id = ? ORDER BY step_order').all(questionId);
+        const newStepsRows = db.prepare('SELECT * FROM question_steps WHERE question_id = ? ORDER BY step_order').all(questionId);
+
+        const newSteps = newStepsRows.map(step => {
+            const images = db.prepare('SELECT image_url FROM step_images WHERE step_id = ? ORDER BY image_order').all(step.id);
+            return {
+                ...step,
+                images: images.map(img => img.image_url)
+            };
+        });
 
         res.status(201).json({ ...newQuestion, steps: newSteps });
     } catch (error) {
@@ -209,7 +247,15 @@ router.put('/:id', authenticateToken, (req, res) => {
         );
 
         const updated = db.prepare('SELECT * FROM questions WHERE id = ?').get(id);
-        const steps = db.prepare('SELECT * FROM question_steps WHERE question_id = ? ORDER BY step_order').all(id);
+        const stepsRows = db.prepare('SELECT * FROM question_steps WHERE question_id = ? ORDER BY step_order').all(id);
+
+        const steps = stepsRows.map(step => {
+            const images = db.prepare('SELECT image_url FROM step_images WHERE step_id = ? ORDER BY image_order').all(step.id);
+            return {
+                ...step,
+                images: images.map(img => img.image_url)
+            };
+        });
 
         res.json({ ...updated, steps });
     } catch (error) {

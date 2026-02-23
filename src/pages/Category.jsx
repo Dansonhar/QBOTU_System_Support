@@ -38,6 +38,14 @@ const Category = () => {
         }
     };
 
+    const trackArticleClick = (questionId) => {
+        fetch('http://localhost:3001/api/analytics/track', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ event_type: 'article_click', question_id: questionId })
+        }).catch(() => { });
+    };
+
 
 
     if (loading) {
@@ -94,7 +102,7 @@ const Category = () => {
                             <ul className="article-list">
                                 {questions.map((question) => (
                                     <li key={question.id}>
-                                        <Link to={`/article/${question.id}`} className="article-list-item">
+                                        <Link to={`/article/${question.id}`} className="article-list-item" onClick={() => trackArticleClick(question.id)}>
                                             <span className="article-list-title">{question.title}</span>
                                             <ChevronRight size={16} className="article-list-arrow" />
                                         </Link>
