@@ -40,6 +40,32 @@ const AdminDashboard = () => {
         }
     };
 
+    const [isPublishing, setIsPublishing] = useState(false);
+    const [publishMessage, setPublishMessage] = useState('');
+
+    const handlePublish = async () => {
+        setIsPublishing(true);
+        setPublishMessage('Publishing changes... this may take a minute.');
+        try {
+            const res = await fetch(`${API_BASE_URL}/publish`, {
+                method: 'POST',
+                headers: getAuthHeaders()
+            });
+            const data = await res.json();
+            if (res.ok && data.success) {
+                setPublishMessage('✅ Successfully published to GitHub! Changes will be live in 1-2 minutes.');
+            } else {
+                setPublishMessage('❌ Failed to publish: ' + (data.error || 'Unknown error'));
+            }
+        } catch (error) {
+            console.error('Publish error:', error);
+            setPublishMessage('❌ Failed to publish: Network or server error');
+        } finally {
+            setIsPublishing(false);
+            setTimeout(() => setPublishMessage(''), 8000);
+        }
+    };
+
     return (
         <div className="admin-layout">
             <aside className="admin-sidebar">
@@ -92,14 +118,27 @@ const AdminDashboard = () => {
             </aside>
 
             <main className="admin-main">
-                <div className="admin-header">
+                <div className="admin-header" style={{ flexWrap: 'wrap', gap: '1rem' }}>
                     <h1>Dashboard</h1>
-                    <div className="admin-header-actions">
+                    <div className="admin-header-actions" style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                        <button
+                            onClick={handlePublish}
+                            disabled={isPublishing}
+                            className="admin-btn"
+                            style={{ backgroundColor: '#4caf50', color: 'white', border: 'none', fontWeight: 'bold' }}
+                        >
+                            {isPublishing ? '⏳ Publishing...' : '🚀 Publish to Live Website'}
+                        </button>
                         <Link to="/admin/questions/new" className="admin-btn admin-btn-primary">
                             <Plus size={18} />
                             New Question
                         </Link>
                     </div>
+                    {publishMessage && (
+                        <div style={{ width: '100%', padding: '10px', marginTop: '10px', backgroundColor: '#e3f2fd', color: '#000', borderRadius: '4px', borderLeft: '4px solid #2196f3' }}>
+                            {publishMessage}
+                        </div>
+                    )}
                 </div>
 
                 <div className="admin-stats-grid">
