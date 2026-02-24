@@ -32,6 +32,24 @@ import fs from 'fs';
 
 // Serve uploaded files
 const uploadDir = process.env.RENDER ? '/opt/render/project/src/data/uploads' : path.join(__dirname, '../uploads');
+const initialUploadDir = path.join(__dirname, '../uploads');
+
+if (process.env.RENDER) {
+    if (!fs.existsSync(uploadDir)) {
+        fs.mkdirSync(uploadDir, { recursive: true });
+    }
+    // Copy existing images to persistent disk
+    if (fs.existsSync(initialUploadDir)) {
+        const files = fs.readdirSync(initialUploadDir);
+        files.forEach(file => {
+            const destFile = path.join(uploadDir, file);
+            if (!fs.existsSync(destFile)) {
+                fs.copyFileSync(path.join(initialUploadDir, file), destFile);
+                console.log(`Copied initial image to ${destFile}`);
+            }
+        });
+    }
+}
 app.use('/uploads', express.static(uploadDir));
 
 // API Routes
