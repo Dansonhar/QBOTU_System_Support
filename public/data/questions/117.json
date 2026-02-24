@@ -3,10 +3,10 @@
   "category_id": 7,
   "title": "How to Understand and Customize Your SUPERPOS Reports",
   "slug": "how-to-understand-and-customize-your-superpos-repo",
-  "description": "From section: Operational Reports",
+  "description": "<p>SUPERPOS merchants who want to learn how to navigate, filter, and understand the various reports available in their BackOffice to make informed business decisions.</p>",
   "status": "published",
   "created_at": "2026-02-06 00:25:41",
-  "updated_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-02-24 03:41:00",
   "category_name": "Reports",
   "category_status": "active",
   "steps": [
@@ -14,12 +14,97 @@
       "id": 117,
       "question_id": 117,
       "step_order": 1,
-      "step_title": "Overview",
-      "content": "<p>This article covers: <strong>How to Understand and Customize Your SUPERPOS Reports</strong></p><p>Section: Operational Reports</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "step_title": "Before You Begin",
+      "content": "<ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Access to your StoreHub BackOffice.</span></li></ul><p></p><ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">A stable internet connection.</span></li></ul>",
       "image_url": null,
       "video_url": null,
       "block_type": "step",
       "images": []
+    },
+    {
+      "id": 356,
+      "question_id": 117,
+      "step_order": 2,
+      "step_title": "Step-by-Step Guide",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 357,
+      "question_id": 117,
+      "step_order": 3,
+      "step_title": "Locate Your Reports in BackOffice",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">1. Log in to your SUPERPOS BackOffice.</span></p><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">2. On the left-hand side menu, click on &#39;Reports&#39;.</span></p>",
+      "image_url": "/uploads/1771904249916-168780286.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771904249916-168780286.png"
+      ]
+    },
+    {
+      "id": 358,
+      "question_id": 117,
+      "step_order": 4,
+      "step_title": "You will see a list of available reports. Click on the specific report you wish to view (e.g., 'Sales Over Time', 'Product', 'Tax Report', 'Shifts').",
+      "content": null,
+      "image_url": "/uploads/1771904298487-619122346.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771904298487-619122346.png"
+      ]
+    },
+    {
+      "id": 359,
+      "question_id": 117,
+      "step_order": 5,
+      "step_title": "Understand Report Calculations with Tooltips",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 360,
+      "question_id": 117,
+      "step_order": 6,
+      "step_title": "StoreHub reports provide helpful tooltips to explain how key figures are calculated. This ensures you always understand the numbers you're seeing.",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 361,
+      "question_id": 117,
+      "step_order": 7,
+      "step_title": "1. On the Finance Page , u can see the overview of all the Revenue",
+      "content": null,
+      "image_url": "/uploads/1771904401922-432007058.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771904401922-432007058.png"
+      ]
+    },
+    {
+      "id": 362,
+      "question_id": 117,
+      "step_order": 8,
+      "step_title": "Customize Your Reports with Filters and Grouping",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">You can adjust how your report data is displayed using the &#39;Date Picker&#39; and &#39;Filters&#39; </span></p>",
+      "image_url": "/uploads/1771904458312-805010467.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771904458312-805010467.png"
+      ]
     }
   ]
 }
