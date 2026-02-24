@@ -117,4 +117,53 @@ router.get('/summary', authenticateToken, (req, res) => {
     }
 });
 
+// DELETE /api/analytics/clear - Clear all analytics data (protected)
+router.delete('/clear', authenticateToken, (req, res) => {
+    try {
+        const { type } = req.query; // 'clicks', 'searches', or 'all'
+        if (type === 'clicks') {
+            db.prepare("DELETE FROM analytics_events WHERE event_type = 'article_click'").run();
+        } else if (type === 'searches') {
+            db.prepare("DELETE FROM analytics_events WHERE event_type = 'search'").run();
+        } else {
+            db.prepare("DELETE FROM analytics_events").run();
+        }
+        res.json({ success: true, message: `Analytics data (${type || 'all'}) cleared successfully` });
+    } catch (error) {
+        console.error('Error clearing analytics:', error);
+        res.status(500).json({ error: 'Failed to clear analytics data' });
+    }
+});
+
+// GET /api/analytics/trend - Daily/weekly/monthly click trend (protected)
+router.get('/trend', authenticateToken, (req, res) => {
+    try {
+        const { days = 30, group = 'daily' } = req.query;
+        let dateFormat;
+        if (group === 'weekly') {
+            dateFormat = "%Y-W%W"; // year-week
+        } else if (group === 'monthly') {
+            dateFormat = "%Y-%m";
+        } else {
+            dateFormat = "%Y-%m-%d"; // daily
+        }
+
+        const results = db.prepare(`
+            SELECT 
+                strftime('${dateFormat}', created_at) as period,
+                SUM(CASE WHEN event_type = 'article_click' THEN 1 ELSE 0 END) as clicks,
+                SUM(CASE WHEN event_type = 'search' THEN 1 ELSE 0 END) as searches
+            FROM analytics_events
+            WHERE created_at >= datetime('now', '-' || ? || ' days')
+            GROUP BY period
+            ORDER BY period ASC
+        `).all(parseInt(days));
+
+        res.json(results);
+    } catch (error) {
+        console.error('Error fetching trend data:', error);
+        res.status(500).json({ error: 'Failed to fetch trend data' });
+    }
+});
+
 export default router;
