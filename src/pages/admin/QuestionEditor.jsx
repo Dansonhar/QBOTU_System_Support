@@ -106,10 +106,15 @@ const QuestionEditor = () => {
     };
 
     const removeStep = (index) => {
-        if (!confirm('Remove this step?')) return;
-
         const stepToRemove = steps[index];
-        if (stepToRemove.id && !String(stepToRemove.id).startsWith('new-')) {
+        const isNew = stepToRemove.id && String(stepToRemove.id).startsWith('new-');
+
+        // Only confirm for existing steps that already exist in DB
+        if (!isNew && !confirm('Permanently remove this existing step from the question?')) {
+            return;
+        }
+
+        if (stepToRemove.id && !isNew) {
             setDeletedStepIds([...deletedStepIds, stepToRemove.id]);
         }
 
@@ -311,7 +316,7 @@ const QuestionEditor = () => {
                     alert('Saved successfully!');
                 } else {
                     // For new questions, navigate to edit the newly created one
-                    navigate(`/admin/questions/${saved.id}/edit`);
+                    navigate(`/admin/questions/${saved.id}`);
                 }
             } else {
                 const error = await res.json();
@@ -448,7 +453,7 @@ const QuestionEditor = () => {
                                 ) : (
                                     steps.map((step, index) => (
                                         <div
-                                            key={step.id || index}
+                                            key={step.id || `temp-${index}`}
                                             className={`admin-step-item ${step.block_type === 'section_title' ? 'admin-step-item--title' : ''} ${draggedStep === index ? 'dragging' : ''}`}
                                             draggable
                                             onDragStart={() => handleDragStart(index)}
@@ -585,14 +590,15 @@ const QuestionEditor = () => {
                             </div>
 
                             <div className="admin-form-group">
-                                <label>Status</label>
-                                <select
-                                    value={formData.status}
-                                    onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                                >
-                                    <option value="draft">Draft</option>
-                                    <option value="published">Published</option>
-                                </select>
+                                <label>Current Status</label>
+                                <div style={{ marginTop: '8px' }}>
+                                    <span className={`admin-badge ${formData.status === 'published' ? 'badge-success' : 'badge-warning'}`}>
+                                        {formData.status === 'published' ? 'Published' : 'Draft'}
+                                    </span>
+                                </div>
+                                <p style={{ fontSize: '0.75rem', color: '#666', marginTop: '8px' }}>
+                                    Use the buttons at the top to change status.
+                                </p>
                             </div>
                         </div>
                     </div>

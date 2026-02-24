@@ -55,6 +55,12 @@ router.get('/', (req, res) => {
             countQuery += ' AND status = ?';
             params.push(status);
             countParams.push(status);
+
+            // If fetching published questions (public view), also ensure category is active
+            if (status === 'published') {
+                query += " AND c.status = 'active'";
+                countQuery += " AND category_id IN (SELECT id FROM categories WHERE status = 'active')";
+            }
         }
 
         query += ' ORDER BY q.created_at DESC LIMIT ? OFFSET ?';
@@ -88,7 +94,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     try {
         const question = db.prepare(`
-      SELECT q.*, c.name as category_name 
+      SELECT q.*, c.name as category_name, c.status as category_status
       FROM questions q 
       LEFT JOIN categories c ON q.category_id = c.id 
       WHERE q.id = ?

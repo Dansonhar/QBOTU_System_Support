@@ -1333,20 +1333,58 @@ html {
 .step-images-gallery {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin: 1.5rem 0;
+  gap: 2.5rem;
+  /* Space between individual boxes */
+  margin: 2.5rem 0;
+  background: transparent;
+  /* No shared background */
+  padding: 0;
+  border: none;
+}
+
+/* Individual Image Box */
+.step-images-gallery .step-image {
+  background: rgb(227, 227, 227);
+  padding: 10px;
+  /* White space around the image within the box */
+  border: 1px solid #dee2e6;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  /* Card shadow */
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.step-images-gallery .step-image img {
+  border-radius: 8px;
+  /* Slightly round the image corners inside the box */
+  border: 1px solid #f0f0f0;
+}
+
+/* Hard Physical Separator Line - Removed to avoid clutter between distinct boxes */
+.step-images-gallery .step-image:not(:last-child)::after {
+  display: none;
+}
+
+/* Arrow indicator to show flow */
+.step-images-gallery .step-image:not(:last-child)::before {
+  display: none;
 }
 
 .step-image {
-  margin: var(--spacing-md) 0;
-  border-radius: var(--radius-md);
+  margin: 2rem 0;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  /* Important for the image itself */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
 }
 
 .step-image img {
   width: 100%;
-  max-width: 800px;
+  max-width: 100%;
+  /* Ensure it takes full width of container */
   height: auto;
   display: block;
 }
@@ -2235,4 +2273,42 @@ html {
     bottom: 84px;
     height: calc(100vh - 140px);
   }
+}
+
+/* Admin Toggle Badges */
+.admin-badge-btn {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.admin-badge-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin-badge-btn.badge-success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.admin-badge-btn.badge-secondary {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.admin-badge-btn.badge-warning {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.admin-badge-btn:active {
+  transform: translateY(0);
 }

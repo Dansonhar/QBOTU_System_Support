@@ -53,6 +53,12 @@ const Article = () => {
             const res = await fetch(`${API_BASE}/questions/${articleId}`);
             if (!res.ok) throw new Error('Article not found');
             const data = await res.json();
+
+            // Check for draft or inactive category in public view
+            if (data.status === 'draft' || data.category_status === 'inactive') {
+                throw new Error('This article is not available');
+            }
+
             setArticle(data);
         } catch (error) {
             console.error('Error fetching article:', error);

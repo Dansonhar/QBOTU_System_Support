@@ -24,10 +24,15 @@ const Category = () => {
             const catRes = await fetch(`${API_BASE}/categories/${categoryId}`);
             if (!catRes.ok) throw new Error('Category not found');
             const catData = await catRes.json();
+
+            if (catData.status === 'inactive') {
+                throw new Error('Category is currently inactive');
+            }
+
             setCategory(catData);
 
-            // Fetch questions for this category
-            const qRes = await fetch(`${API_BASE}/questions?category_id=${categoryId}&status=published`);
+            // Fetch questions for this category (increase limit to show all)
+            const qRes = await fetch(`${API_BASE}/questions?category_id=${categoryId}&status=published&limit=100`);
             const qData = await qRes.json();
             setQuestions(qData.questions || []);
         } catch (error) {

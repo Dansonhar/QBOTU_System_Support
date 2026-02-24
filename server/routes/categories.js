@@ -21,9 +21,9 @@ router.get('/', (req, res) => {
 
         const categories = db.prepare(query).all(...params);
 
-        // Get question count for each category
+        // Get question count for each category (only published ones for public transparency)
         const categoriesWithCount = categories.map(cat => {
-            const count = db.prepare('SELECT COUNT(*) as count FROM questions WHERE category_id = ?').get(cat.id);
+            const count = db.prepare("SELECT COUNT(*) as count FROM questions WHERE category_id = ? AND status = 'published'").get(cat.id);
             return { ...cat, questionCount: count.count };
         });
 

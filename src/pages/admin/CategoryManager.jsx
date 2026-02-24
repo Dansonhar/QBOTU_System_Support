@@ -54,6 +54,22 @@ const CategoryManager = () => {
         }
     };
 
+    const toggleStatus = async (category) => {
+        const newStatus = category.status === 'active' ? 'inactive' : 'active';
+        try {
+            const res = await fetch(`${API_BASE_URL}/categories/${category.id}`, {
+                method: 'PUT',
+                headers: getAuthHeaders(),
+                body: JSON.stringify({ ...category, status: newStatus })
+            });
+            if (res.ok) {
+                fetchCategories();
+            }
+        } catch (error) {
+            console.error('Error toggling category status:', error);
+        }
+    };
+
     const confirmDelete = (category) => {
         setCategoryToDelete(category);
         setShowDeleteModal(true);
@@ -187,9 +203,13 @@ const CategoryManager = () => {
                                         <td><strong>{cat.name}</strong></td>
                                         <td>{cat.description || '-'}</td>
                                         <td>
-                                            <span className={`admin-badge ${cat.status === 'active' ? 'badge-success' : 'badge-secondary'}`}>
-                                                {cat.status}
-                                            </span>
+                                            <button
+                                                onClick={() => toggleStatus(cat)}
+                                                className={`admin-badge-btn ${cat.status === 'active' ? 'badge-success' : 'badge-secondary'}`}
+                                                title={`Click to ${cat.status === 'active' ? 'deactivate' : 'activate'}`}
+                                            >
+                                                {cat.status === 'active' ? 'Active' : 'Inactive'}
+                                            </button>
                                         </td>
                                         <td>{cat.questionCount}</td>
                                         <td>

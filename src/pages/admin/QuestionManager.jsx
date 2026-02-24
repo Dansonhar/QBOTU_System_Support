@@ -68,6 +68,22 @@ const QuestionManager = () => {
         }
     };
 
+    const toggleStatus = async (question) => {
+        const newStatus = question.status === 'published' ? 'draft' : 'published';
+        try {
+            const res = await fetch(`${API_BASE_URL}/questions/${question.id}`, {
+                method: 'PUT',
+                headers: getAuthHeaders(),
+                body: JSON.stringify({ ...question, status: newStatus })
+            });
+            if (res.ok) {
+                fetchQuestions();
+            }
+        } catch (error) {
+            console.error('Error toggling question status:', error);
+        }
+    };
+
     const handleDelete = async (id) => {
         if (!confirm('Are you sure you want to delete this question?')) return;
 
@@ -213,9 +229,13 @@ const QuestionManager = () => {
                                         <td>{q.category_name}</td>
                                         <td>{q.stepCount} steps</td>
                                         <td>
-                                            <span className={`admin-badge ${q.status === 'published' ? 'badge-success' : 'badge-warning'}`}>
-                                                {q.status}
-                                            </span>
+                                            <button
+                                                onClick={() => toggleStatus(q)}
+                                                className={`admin-badge-btn ${q.status === 'published' ? 'badge-success' : 'badge-warning'}`}
+                                                title={`Click to ${q.status === 'published' ? 'revert to draft' : 'publish'}`}
+                                            >
+                                                {q.status === 'published' ? 'Published' : 'Draft'}
+                                            </button>
                                         </td>
                                         <td>{new Date(q.created_at).toLocaleDateString()}</td>
                                         <td>
