@@ -42,22 +42,9 @@ app.use('/api/analytics', analyticsRoutes);
 app.use('/api/support-settings', supportSettingsRoutes);
 app.use('/api/tickets', ticketsRoutes);
 
-import { exec } from 'child_process';
-
 // Health check
 app.get('/api/health', (req, res) => {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
-});
-
-// Publish changes to Github
-app.post('/api/publish', (req, res) => {
-    exec('npm run deploy-github && cd dist && git add . && git commit -m "Auto publish from Admin Panel" && git push && cd .. && git add . && git commit -m "Auto publish from Admin Panel" && git push', (error, stdout, stderr) => {
-        if (error) {
-            console.error(`Publish error: ${error.message}`);
-            return res.status(500).json({ success: false, error: String(error) });
-        }
-        res.json({ success: true, message: 'Successfully published to GitHub!' });
-    });
 });
 
 // Serve React App (Production)
