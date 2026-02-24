@@ -51,6 +51,7 @@ const Category = () => {
     };
 
     const trackArticleClick = (questionId) => {
+        if (DATA_MODE === 'static') return;
         fetch(`${API_BASE_URL}/analytics/track`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

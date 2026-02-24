@@ -9,6 +9,6 @@ export const API_BASE_URL = isLocal
 
 export const IMAGE_BASE_URL = isLocal
     ? 'http://localhost:3001'
-    : '';
+    : (isGitHubPages ? '/QBOTU_System_Support_Web' : '');
 
 export const BASE_PATH = '/QBOTU_System_Support_Web';

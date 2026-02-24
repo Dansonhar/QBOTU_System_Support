@@ -1,0 +1,10 @@
+{
+  "id": 1,
+  "greeting_text": "How can we help?",
+  "button_color": "#000000",
+  "whatsapp_number": "",
+  "email": "",
+  "messenger_url": "",
+  "is_enabled": 1,
+  "updated_at": "2026-02-23 07:30:11"
+}

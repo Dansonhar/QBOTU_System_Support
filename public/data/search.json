@@ -1,0 +1,1215 @@
+{
+  "questions": [
+    {
+      "id": 2,
+      "title": "How to Setup Your First StoreHow to Setup Your First Store",
+      "category_id": 2,
+      "category_name": "Getting Started",
+      "description": ""
+    },
+    {
+      "id": 3,
+      "title": "How to Manage Your Stores",
+      "category_id": 3,
+      "category_name": "Setting Up",
+      "description": "<p>Manage your business outlets and physical store locations.</p>"
+    },
+    {
+      "id": 4,
+      "title": "How to Manage Your POS Registers",
+      "category_id": 3,
+      "category_name": "Setting Up",
+      "description": "<p>Register and manage your POS devices and registers.</p>"
+    },
+    {
+      "id": 5,
+      "title": "How to Manage Your Products",
+      "category_id": 3,
+      "category_name": "Setting Up",
+      "description": "<p>Create and manage your product catalog, categories, and stock.</p>"
+    },
+    {
+      "id": 6,
+      "title": "How to Manage Your Tax Codes",
+      "category_id": 3,
+      "category_name": "Setting Up",
+      "description": "<p>Configure corporate tax names and percentages.</p>"
+    },
+    {
+      "id": 7,
+      "title": "How to Manage Your POS Layouts",
+      "category_id": 3,
+      "category_name": "Setting Up",
+      "description": "<p>Arrange how products are displayed on your POS terminal.</p>"
+    },
+    {
+      "id": 8,
+      "title": "How to Manage Your Payment Options",
+      "category_id": 3,
+      "category_name": "Setting Up",
+      "description": "<p>Enable or disable payment methods across different ordering channels.</p>"
+    },
+    {
+      "id": 9,
+      "title": "How to Manage Receipt Settings",
+      "category_id": 3,
+      "category_name": "Setting Up",
+      "description": "<p>Customize your printed receipts with branding and store info.</p>"
+    },
+    {
+      "id": 10,
+      "title": "How to Set Up Your SUPERPOS POS Register (Download, Activate, Deactivate)",
+      "category_id": 3,
+      "category_name": "Setting Up",
+      "description": "<p>Steps to download, activate, and deactivate your SUPERPOS POS Register.</p>"
+    },
+    {
+      "id": 11,
+      "title": "How to Arrange Your Product Layouts on the SUPERPOS POS App",
+      "category_id": 3,
+      "category_name": "Setting Up",
+      "description": "<p>How to visually arrange products for faster checkout.</p>"
+    },
+    {
+      "id": 12,
+      "title": "SUPERPOS Manager App: How to Use",
+      "category_id": 3,
+      "category_name": "Setting Up",
+      "description": "<p>Monitor sales and manage staff from your mobile device.</p>"
+    },
+    {
+      "id": 13,
+      "title": "SUPERPOS Manager App: How to Manage Beep Delivery Orders",
+      "category_id": 3,
+      "category_name": "Setting Up",
+      "description": "From section: SUPERPOS Manager App"
+    },
+    {
+      "id": 14,
+      "title": "SUPERPOS Manager App: How to Mark Beep Menu Items as In Stock or Out of Stock",
+      "category_id": 3,
+      "category_name": "Setting Up",
+      "description": "From section: SUPERPOS Manager App"
+    },
+    {
+      "id": 15,
+      "title": "SUPERPOS Manager App: How to Perform Stock Take using Scanner",
+      "category_id": 3,
+      "category_name": "Setting Up",
+      "description": "From section: SUPERPOS Manager App"
+    },
+    {
+      "id": 16,
+      "title": "Hardware: How to Perform Basic Set Up",
+      "category_id": 3,
+      "category_name": "Setting Up",
+      "description": "From section: POS Hardware"
+    },
+    {
+      "id": 17,
+      "title": "Hardware: How to Set Up Sunmi & Android T2C",
+      "category_id": 3,
+      "category_name": "Setting Up",
+      "description": "From section: POS Hardware"
+    },
+    {
+      "id": 18,
+      "title": "Hardware: [iPad] How to Set Up Register",
+      "category_id": 3,
+      "category_name": "Setting Up",
+      "description": "From section: POS Hardware"
+    },
+    {
+      "id": 19,
+      "title": "Hardware: [Mini] Set Up Guide and User Manuals",
+      "category_id": 3,
+      "category_name": "Setting Up",
+      "description": "From section: POS Hardware"
+    },
+    {
+      "id": 20,
+      "title": "POS: How to Merge Tables and Orders",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Basic Set Up"
+    },
+    {
+      "id": 21,
+      "title": "POS: How to Split Bill/Orders / Items",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Basic Set Up"
+    },
+    {
+      "id": 22,
+      "title": "POS: How to Change Table for POS with Layout",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Basic Set Up"
+    },
+    {
+      "id": 23,
+      "title": "POS: How to Provide Other Tablet Layout on POS",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Basic Set Up"
+    },
+    {
+      "id": 24,
+      "title": "POS: How to View Menu Types on your POS layout 5.0 (with Video)",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Basic Set Up"
+    },
+    {
+      "id": 25,
+      "title": "POS: How to Enable Deposit on S1 & S2 Devices",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Basic Set Up"
+    },
+    {
+      "id": 26,
+      "title": "POS: How to Move Orders Between Customers",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Basic Set Up"
+    },
+    {
+      "id": 27,
+      "title": "POS: [Android] How to retry unsynced Offline Transactions & Order Summary",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Basic Set Up"
+    },
+    {
+      "id": 28,
+      "title": "POS: How to Cash In-Out for Shift Changes",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Basic Set Up"
+    },
+    {
+      "id": 29,
+      "title": "POS: How to Open Shift, Close Shift, Reprint Pre-Settlement",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Basic Set Up"
+    },
+    {
+      "id": 30,
+      "title": "POS: [Android] How to track custom payment methods differences tracking",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Basic Set Up"
+    },
+    {
+      "id": 31,
+      "title": "POS: [Android] How to Hold & Retrieve Orders / POS & Kitchen Sync Turning",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Basic Set Up"
+    },
+    {
+      "id": 32,
+      "title": "[MY] SUPERPOS QR Payment: Maybank QRPay",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: QR Payment"
+    },
+    {
+      "id": 33,
+      "title": "[TH] SUPERPOS QR Payment: GHL Payment",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: QR Payment"
+    },
+    {
+      "id": 34,
+      "title": "KDS: How to set up Kitchen Display System",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Kitchen Display System (KDS)"
+    },
+    {
+      "id": 35,
+      "title": "KDS: How to Find and Install KDS (Kitchen Display System)",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Kitchen Display System (KDS)"
+    },
+    {
+      "id": 36,
+      "title": "KDS: How to Enable KDS Service in the App",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Kitchen Display System (KDS)"
+    },
+    {
+      "id": 37,
+      "title": "KDS: How to Set Up KDS Number via BackOffice",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Kitchen Display System (KDS)"
+    },
+    {
+      "id": 38,
+      "title": "KDS: Firing Course via Android",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Kitchen Display System (KDS)"
+    },
+    {
+      "id": 39,
+      "title": "KDS: How to Update Kitchen Status via app and force clearing Screens as inactive",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Kitchen Display System (KDS)"
+    },
+    {
+      "id": 40,
+      "title": "MRS: How to Enable The MRS System",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Multiple Register Sync (MRS)"
+    },
+    {
+      "id": 41,
+      "title": "MRS: How to Enable Multiple Register Sync",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Multiple Register Sync (MRS)"
+    },
+    {
+      "id": 42,
+      "title": "MRS: [Android] How to Main Register Sync",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Multiple Register Sync (MRS)"
+    },
+    {
+      "id": 43,
+      "title": "MRS: [Android] Troubleshoot Multiple Register Issues",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: Multiple Register Sync (MRS)"
+    },
+    {
+      "id": 44,
+      "title": "Hardware: [Android] POS Sim Card / SD Card",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Android - Hardware & Product"
+    },
+    {
+      "id": 45,
+      "title": "Hardware: [Android] How to Set Up Cloud Printing for Orders",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Android - Hardware & Product"
+    },
+    {
+      "id": 46,
+      "title": "Customer Facing Display (CFD): How to Set Up",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Customer Facing Display (CFD)"
+    },
+    {
+      "id": 47,
+      "title": "Customer Facing Display (CFD): Android Setup",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Customer Facing Display (CFD)"
+    },
+    {
+      "id": 48,
+      "title": "Promotion: How to Set Up Basic Percentage Off",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Promotion"
+    },
+    {
+      "id": 49,
+      "title": "Promotion: How to Set Up Take Set as Off",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Promotion"
+    },
+    {
+      "id": 50,
+      "title": "Promotion: How to Set Up Buy X Free X Item",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Promotion"
+    },
+    {
+      "id": 51,
+      "title": "Promotion: How to Set Up Combo (A+B+C) Away Price",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Promotion"
+    },
+    {
+      "id": 52,
+      "title": "Promotion: How to Set Up Overwrite Combo Price",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Promotion"
+    },
+    {
+      "id": 53,
+      "title": "Promotion: How to Set Up Order on My_eBe",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Promotion"
+    },
+    {
+      "id": 54,
+      "title": "Promotion: How to Set Free Items",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Promotion"
+    },
+    {
+      "id": 55,
+      "title": "Promotion: How to Set Limited Shipping",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Promotion"
+    },
+    {
+      "id": 56,
+      "title": "Promotion: How to Handle Keyed Plan discount with Multi Tier Promotion",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Promotion"
+    },
+    {
+      "id": 57,
+      "title": "Promotion: How to Set Up Specific Product Purchase",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Promotion"
+    },
+    {
+      "id": 58,
+      "title": "Tax Guides: [PH] How to Apply Tax (VAT) in the SUPERPOS BackOffice",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Tax Guides"
+    },
+    {
+      "id": 59,
+      "title": "POS Troubleshooting: I cannot perform POS App troubleshooting",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Troubleshooting"
+    },
+    {
+      "id": 60,
+      "title": "POS Troubleshooting: I cannot see POS login ID / email address",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Troubleshooting"
+    },
+    {
+      "id": 61,
+      "title": "POS Troubleshooting: Issues for Scanning and POS Features",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Troubleshooting"
+    },
+    {
+      "id": 62,
+      "title": "POS Troubleshooting: Saving Changes on your Price Center",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Troubleshooting"
+    },
+    {
+      "id": 63,
+      "title": "POS Troubleshooting: Inventory not reflecting Manually on Items",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: Troubleshooting"
+    },
+    {
+      "id": 64,
+      "title": "New iOS: Intro",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: New iOS"
+    },
+    {
+      "id": 65,
+      "title": "New iOS: Features",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: New iOS"
+    },
+    {
+      "id": 66,
+      "title": "New iOS: Cancellation & Refund",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: New iOS"
+    },
+    {
+      "id": 67,
+      "title": "New iOS: Cashier",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: New iOS"
+    },
+    {
+      "id": 68,
+      "title": "New iOS: Products",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: New iOS"
+    },
+    {
+      "id": 69,
+      "title": "New iOS: Payment",
+      "category_id": 4,
+      "category_name": "Point of Sale (POS) System",
+      "description": "From section: POS: New iOS"
+    },
+    {
+      "id": 70,
+      "title": "BackOffice: How to Sign Up & Log In",
+      "category_id": 5,
+      "category_name": "BackOffice",
+      "description": "From section: BackOffice: General Settings"
+    },
+    {
+      "id": 71,
+      "title": "BackOffice: Disclosure for BackOffice Access",
+      "category_id": 5,
+      "category_name": "BackOffice",
+      "description": "From section: BackOffice: General Settings"
+    },
+    {
+      "id": 72,
+      "title": "BackOffice: How to Export Accounting Systems Sales Data",
+      "category_id": 5,
+      "category_name": "BackOffice",
+      "description": "From section: BackOffice: General Settings"
+    },
+    {
+      "id": 78,
+      "title": "BackOffice: Dashboard Sales Comparisons",
+      "category_id": 5,
+      "category_name": "BackOffice",
+      "description": "From section: BackOffice: General Settings"
+    },
+    {
+      "id": 79,
+      "title": "Product: Setting Up",
+      "category_id": 5,
+      "category_name": "BackOffice",
+      "description": "From section: BackOffice: Product"
+    },
+    {
+      "id": 80,
+      "title": "Product: Stock Management",
+      "category_id": 5,
+      "category_name": "BackOffice",
+      "description": "From section: BackOffice: Product"
+    },
+    {
+      "id": 81,
+      "title": "Product: Inventory Management",
+      "category_id": 5,
+      "category_name": "BackOffice",
+      "description": "From section: BackOffice: Product"
+    },
+    {
+      "id": 82,
+      "title": "Customer: Data & Communication",
+      "category_id": 5,
+      "category_name": "BackOffice",
+      "description": "From section: BackOffice: Customer"
+    },
+    {
+      "id": 83,
+      "title": "Customer: Handling Transactions",
+      "category_id": 5,
+      "category_name": "BackOffice",
+      "description": "From section: BackOffice: Customer"
+    },
+    {
+      "id": 90,
+      "title": "Membership: How to Enroll Customers to Membership",
+      "category_id": 5,
+      "category_name": "BackOffice",
+      "description": "From section: BackOffice: Membership"
+    },
+    {
+      "id": 91,
+      "title": "Membership: How to Review Customer Points and Details",
+      "category_id": 5,
+      "category_name": "BackOffice",
+      "description": "From section: BackOffice: Membership"
+    },
+    {
+      "id": 92,
+      "title": "Membership: Navigation on the Membership Pages and POS Register",
+      "category_id": 5,
+      "category_name": "BackOffice",
+      "description": "From section: BackOffice: Membership"
+    },
+    {
+      "id": 93,
+      "title": "Membership: How to Monitor Performance and Insights",
+      "category_id": 5,
+      "category_name": "BackOffice",
+      "description": "From section: BackOffice: Membership"
+    },
+    {
+      "id": 94,
+      "title": "Membership: How to set up Membership Tier & Rewards",
+      "category_id": 5,
+      "category_name": "BackOffice",
+      "description": "From section: BackOffice: Membership"
+    },
+    {
+      "id": 95,
+      "title": "Membership: How to Import Your Existing Loyalty Data",
+      "category_id": 5,
+      "category_name": "BackOffice",
+      "description": "From section: BackOffice: Membership"
+    },
+    {
+      "id": 100,
+      "title": "QR Order & Pay: POS App",
+      "category_id": 6,
+      "category_name": "Online Orders",
+      "description": "From section: Online Orders: QR Order & Pay"
+    },
+    {
+      "id": 101,
+      "title": "QR Order & Pay: Functions in the BackOffice",
+      "category_id": 6,
+      "category_name": "Online Orders",
+      "description": "From section: Online Orders: QR Order & Pay"
+    },
+    {
+      "id": 102,
+      "title": "Beep Delivery: General",
+      "category_id": 6,
+      "category_name": "Online Orders",
+      "description": "From section: Online Orders: Beep Delivery"
+    },
+    {
+      "id": 103,
+      "title": "Beep Delivery: Functions in the BackOffice",
+      "category_id": 6,
+      "category_name": "Online Orders",
+      "description": "From section: Online Orders: Beep Delivery"
+    },
+    {
+      "id": 104,
+      "title": "Beep Delivery: Pre-Orders",
+      "category_id": 6,
+      "category_name": "Online Orders",
+      "description": "From section: Online Orders: Beep Delivery"
+    },
+    {
+      "id": 105,
+      "title": "Beep Delivery: Logistics",
+      "category_id": 6,
+      "category_name": "Online Orders",
+      "description": "From section: Online Orders: Beep Delivery"
+    },
+    {
+      "id": 106,
+      "title": "Beep Delivery: Troubleshooting",
+      "category_id": 6,
+      "category_name": "Online Orders",
+      "description": "From section: Online Orders: Beep Delivery"
+    },
+    {
+      "id": 107,
+      "title": "Cashback: How Does It Work",
+      "category_id": 6,
+      "category_name": "Online Orders",
+      "description": "From section: Online Orders: Beep Cashback"
+    },
+    {
+      "id": 108,
+      "title": "Cashback: How to Manage Settings",
+      "category_id": 6,
+      "category_name": "Online Orders",
+      "description": "From section: Online Orders: Beep Cashback"
+    },
+    {
+      "id": 109,
+      "title": "Cashback: Monitoring Performance with Cashback Report",
+      "category_id": 6,
+      "category_name": "Online Orders",
+      "description": "From section: Online Orders: Beep Cashback"
+    },
+    {
+      "id": 110,
+      "title": "Cashback: [PH] Beep Cashback for BIR Enabled Account",
+      "category_id": 6,
+      "category_name": "Online Orders",
+      "description": "From section: Online Orders: Beep Cashback"
+    },
+    {
+      "id": 111,
+      "title": "Cashback: FAQ",
+      "category_id": 6,
+      "category_name": "Online Orders",
+      "description": "From section: Online Orders: Beep Cashback"
+    },
+    {
+      "id": 112,
+      "title": "Webstore: Setting Up",
+      "category_id": 6,
+      "category_name": "Online Orders",
+      "description": "From section: Online Orders: Webstore"
+    },
+    {
+      "id": 113,
+      "title": "Webstore: Payment Methods",
+      "category_id": 6,
+      "category_name": "Online Orders",
+      "description": "From section: Online Orders: Webstore"
+    },
+    {
+      "id": 114,
+      "title": "Webstore: Selling on Facebook",
+      "category_id": 6,
+      "category_name": "Online Orders",
+      "description": "From section: Online Orders: Webstore"
+    },
+    {
+      "id": 115,
+      "title": "Webstore: Tax Settings",
+      "category_id": 6,
+      "category_name": "Online Orders",
+      "description": "From section: Online Orders: Webstore"
+    },
+    {
+      "id": 116,
+      "title": "Payouts: How to Receive",
+      "category_id": 6,
+      "category_name": "Online Orders",
+      "description": "From section: Online Orders: Payouts"
+    },
+    {
+      "id": 117,
+      "title": "How to Understand and Customize Your SUPERPOS Reports",
+      "category_id": 7,
+      "category_name": "Reports",
+      "description": "From section: Operational Reports"
+    },
+    {
+      "id": 118,
+      "title": "How to Understand Your Tax Report",
+      "category_id": 7,
+      "category_name": "Reports",
+      "description": "From section: Operational Reports"
+    },
+    {
+      "id": 119,
+      "title": "How to Understand Your Shift Report",
+      "category_id": 7,
+      "category_name": "Reports",
+      "description": "From section: Operational Reports"
+    },
+    {
+      "id": 120,
+      "title": "How to Understand Your SUPERPOS Sales Reports",
+      "category_id": 7,
+      "category_name": "Reports",
+      "description": "From section: Sales Reports"
+    },
+    {
+      "id": 121,
+      "title": "How to View and Customize Your SUPERPOS Sales Reports",
+      "category_id": 7,
+      "category_name": "Reports",
+      "description": "From section: Sales Reports"
+    },
+    {
+      "id": 122,
+      "title": "How to Understand Differences in Sales Reports",
+      "category_id": 7,
+      "category_name": "Reports",
+      "description": "From section: Sales Reports"
+    },
+    {
+      "id": 123,
+      "title": "[PH] BIR: How to Perform Account Settings",
+      "category_id": 8,
+      "category_name": "Tax Guides",
+      "description": "From section: [PH] Bureau Of Internal Revenue (BIR) Guides"
+    },
+    {
+      "id": 124,
+      "title": "[PH] BIR: How to Perform Tax and Product Settings",
+      "category_id": 8,
+      "category_name": "Tax Guides",
+      "description": "From section: [PH] Bureau Of Internal Revenue (BIR) Guides"
+    },
+    {
+      "id": 125,
+      "title": "[PH] BIR: How to Control Special Discounts with Manager Approval",
+      "category_id": 8,
+      "category_name": "Tax Guides",
+      "description": "From section: [PH] Bureau Of Internal Revenue (BIR) Guides"
+    },
+    {
+      "id": 126,
+      "title": "[PH] BIR: How to Set Up and Apply MEMC Discounts for Senior Citizens and PWDs",
+      "category_id": 8,
+      "category_name": "Tax Guides",
+      "description": "From section: [PH] Bureau Of Internal Revenue (BIR) Guides"
+    },
+    {
+      "id": 127,
+      "title": "[PH] BIR: How to Apply Discount",
+      "category_id": 8,
+      "category_name": "Tax Guides",
+      "description": "From section: [PH] Bureau Of Internal Revenue (BIR) Guides"
+    },
+    {
+      "id": 128,
+      "title": "[PH] BIR: Accessing POS, Z-Reading, and E-Journal Reports in BackOffice",
+      "category_id": 8,
+      "category_name": "Tax Guides",
+      "description": "From section: [PH] Bureau Of Internal Revenue (BIR) Guides"
+    },
+    {
+      "id": 129,
+      "title": "[PH] BIR: How to View F&B and Retail POS Reports",
+      "category_id": 8,
+      "category_name": "Tax Guides",
+      "description": "From section: [PH] Bureau Of Internal Revenue (BIR) Guides"
+    },
+    {
+      "id": 130,
+      "title": "[PH] BIR: How Does Food Delivery Integration Work",
+      "category_id": 8,
+      "category_name": "Tax Guides",
+      "description": "From section: [PH] Bureau Of Internal Revenue (BIR) Guides"
+    },
+    {
+      "id": 131,
+      "title": "[PH] How to Set Up and Manage Amusement Tax",
+      "category_id": 8,
+      "category_name": "Tax Guides",
+      "description": "From section: [PH] Amusement Tax"
+    },
+    {
+      "id": 132,
+      "title": "SUPERPOS e-Invoice: Your Quick Start Guide to Compliance",
+      "category_id": 8,
+      "category_name": "Tax Guides",
+      "description": "From section: [MY] E-Invoice"
+    },
+    {
+      "id": 133,
+      "title": "How to Set Up & Manage e-Invoice Settings",
+      "category_id": 8,
+      "category_name": "Tax Guides",
+      "description": "From section: [MY] E-Invoice"
+    },
+    {
+      "id": 134,
+      "title": "How to Manage e-Invoice Transactions",
+      "category_id": 8,
+      "category_name": "Tax Guides",
+      "description": "From section: [MY] E-Invoice"
+    },
+    {
+      "id": 135,
+      "title": "How to Get SUPERPOS e-Invoices for Expenses",
+      "category_id": 8,
+      "category_name": "Tax Guides",
+      "description": "From section: [MY] E-Invoice"
+    },
+    {
+      "id": 136,
+      "title": "Understand e-Invoice Status & Consolidation",
+      "category_id": 8,
+      "category_name": "Tax Guides",
+      "description": "From section: [MY] E-Invoice"
+    },
+    {
+      "id": 137,
+      "title": "[MY] SUPERPOS Transaction Fees & Taxation",
+      "category_id": 8,
+      "category_name": "Tax Guides",
+      "description": "From section: [MY] SUPERPOS Transaction Fees and Taxation"
+    },
+    {
+      "id": 138,
+      "title": "How to Set Up Your SUPERPOS Printer",
+      "category_id": 9,
+      "category_name": "Hardware",
+      "description": "From section: Printer Set Up"
+    },
+    {
+      "id": 139,
+      "title": "How to Manage Network Settings for Your SUPERPOS POS and Printer",
+      "category_id": 9,
+      "category_name": "Hardware",
+      "description": "From section: Printer Set Up"
+    },
+    {
+      "id": 140,
+      "title": "How to Troubleshoot Common SUPERPOS Printer Issues",
+      "category_id": 9,
+      "category_name": "Hardware",
+      "description": "From section: Printer Set Up"
+    },
+    {
+      "id": 141,
+      "title": "How to Set Up Your Bixolon Label Printer and Print Barcodes (Desktop)",
+      "category_id": 9,
+      "category_name": "Hardware",
+      "description": "From section: Label & Barcode Printer"
+    },
+    {
+      "id": 142,
+      "title": "How to Use the Bixolon Label Artist Mobile App to Print Barcodes",
+      "category_id": 9,
+      "category_name": "Hardware",
+      "description": "From section: Label & Barcode Printer"
+    },
+    {
+      "id": 143,
+      "title": "Cash Drawer: How to Troubleshoot",
+      "category_id": 9,
+      "category_name": "Hardware",
+      "description": "From section: Hardware: Cash Drawer Troubleshooting"
+    },
+    {
+      "id": 144,
+      "title": "Cash Drawer: How to Open",
+      "category_id": 9,
+      "category_name": "Hardware",
+      "description": "From section: Hardware: Cash Drawer Troubleshooting"
+    },
+    {
+      "id": 145,
+      "title": "Router Troubleshooting: How to Configure TP-Link Archer C6",
+      "category_id": 9,
+      "category_name": "Hardware",
+      "description": "From section: Hardware: Router Troubleshooting"
+    },
+    {
+      "id": 146,
+      "title": "Router Troubleshooting: How to Reset & Configure ASUS RT-AX56U Router",
+      "category_id": 9,
+      "category_name": "Hardware",
+      "description": "From section: Hardware: Router Troubleshooting"
+    },
+    {
+      "id": 147,
+      "title": "Router Troubleshooting: How to Identify Mikrotik Routers",
+      "category_id": 9,
+      "category_name": "Hardware",
+      "description": "From section: Hardware: Router Troubleshooting"
+    },
+    {
+      "id": 148,
+      "title": "FAQ: POS Hardware & Supplementary Device Support",
+      "category_id": 9,
+      "category_name": "Hardware",
+      "description": "From section: FAQs: Hardware"
+    },
+    {
+      "id": 149,
+      "title": "FAQ: Hardware Delivery Issues",
+      "category_id": 9,
+      "category_name": "Hardware",
+      "description": "From section: FAQs: Hardware"
+    },
+    {
+      "id": 150,
+      "title": "Tablet Stand: How to Install Heckler Windfall iPad Stand",
+      "category_id": 9,
+      "category_name": "Hardware",
+      "description": "From section: Tablet Stand"
+    },
+    {
+      "id": 151,
+      "title": "Tablet Stand: How to Install PR-TS201",
+      "category_id": 9,
+      "category_name": "Hardware",
+      "description": "From section: Tablet Stand"
+    },
+    {
+      "id": 152,
+      "title": "External Integration: Logging into BackOffice with Single Sign-On (SSO)",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integration: SSO"
+    },
+    {
+      "id": 153,
+      "title": "Food Delivery Integration: Getting Started",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integrations: Food Delivery Integration"
+    },
+    {
+      "id": 154,
+      "title": "Food Delivery Integration: How to Setup Store Menu & Collections",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integrations: Food Delivery Integration"
+    },
+    {
+      "id": 155,
+      "title": "Food Delivery Integration: Product Setup",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integrations: Food Delivery Integration"
+    },
+    {
+      "id": 156,
+      "title": "Food Delivery Integration: Enable Add-Ons",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integrations: Food Delivery Integration"
+    },
+    {
+      "id": 157,
+      "title": "Food Delivery Integration: How to Mark Out of Stock",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integrations: Food Delivery Integration"
+    },
+    {
+      "id": 158,
+      "title": "Food Delivery Integration: Go Live!",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integrations: Food Delivery Integration"
+    },
+    {
+      "id": 159,
+      "title": "Food Delivery Integration: Handling Orders via POS",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integrations: Food Delivery Integration"
+    },
+    {
+      "id": 160,
+      "title": "Food Delivery Integration: [PH] How to Connect Your Store to GrabFood",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integrations: Food Delivery Integration"
+    },
+    {
+      "id": 161,
+      "title": "Mall Integration: General",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integrations: Mall Integration"
+    },
+    {
+      "id": 162,
+      "title": "Mall Integration: List of Supported Malls",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integrations: Mall Integration"
+    },
+    {
+      "id": 163,
+      "title": "Marketplace Integration: How to Set Up",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integrations: Marketplace Integration"
+    },
+    {
+      "id": 164,
+      "title": "Marketplace Integration: Getting Your Products Ready in Sellercraft",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integrations: Marketplace Integration"
+    },
+    {
+      "id": 165,
+      "title": "[PH] Enable QR Ph Payments",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integrations: QR Ph Integration"
+    },
+    {
+      "id": 166,
+      "title": "Accounting: QuickBooks Online Integration",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integrations: Data Extractions & Accounting"
+    },
+    {
+      "id": 167,
+      "title": "Accounting: QuickBooks Online Troubleshooting",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integrations: Data Extractions & Accounting"
+    },
+    {
+      "id": 168,
+      "title": "Accounting: Xero Integration",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integrations: Data Extractions & Accounting"
+    },
+    {
+      "id": 169,
+      "title": "Accounting: Financio Integration",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integrations: Data Extractions & Accounting"
+    },
+    {
+      "id": 170,
+      "title": "Data Extractions: AutoCount",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integrations: Data Extractions & Accounting"
+    },
+    {
+      "id": 171,
+      "title": "Data Extractions: SQL",
+      "category_id": 10,
+      "category_name": "External Integrations",
+      "description": "From section: External Integrations: Data Extractions & Accounting"
+    },
+    {
+      "id": 172,
+      "title": "F&B: Video Guide",
+      "category_id": 2,
+      "category_name": "Getting Started",
+      "description": "From section: Getting Started: F&B"
+    },
+    {
+      "id": 173,
+      "title": "F&B: Store Settings",
+      "category_id": 2,
+      "category_name": "Getting Started",
+      "description": "From section: Getting Started: F&B"
+    },
+    {
+      "id": 174,
+      "title": "F&B: Product Settings",
+      "category_id": 2,
+      "category_name": "Getting Started",
+      "description": "From section: Getting Started: F&B"
+    },
+    {
+      "id": 175,
+      "title": "F&B: QR Order & Pay Basic Set Up",
+      "category_id": 2,
+      "category_name": "Getting Started",
+      "description": "From section: Getting Started: F&B"
+    },
+    {
+      "id": 176,
+      "title": "F&B: QR Order & Pay Advance Set Up",
+      "category_id": 2,
+      "category_name": "Getting Started",
+      "description": "From section: Getting Started: F&B"
+    },
+    {
+      "id": 177,
+      "title": "F&B: Beep Delivery",
+      "category_id": 2,
+      "category_name": "Getting Started",
+      "description": "From section: Getting Started: F&B"
+    },
+    {
+      "id": 178,
+      "title": "Retail & Service: Video Guide",
+      "category_id": 2,
+      "category_name": "Getting Started",
+      "description": "From section: Getting Started: Retail & Service"
+    },
+    {
+      "id": 179,
+      "title": "Retail & Service: Product Set Up",
+      "category_id": 2,
+      "category_name": "Getting Started",
+      "description": "From section: Getting Started: Retail & Service"
+    },
+    {
+      "id": 180,
+      "title": "Retail & Service: Hardware Set Up",
+      "category_id": 2,
+      "category_name": "Getting Started",
+      "description": "From section: Getting Started: Retail & Service"
+    },
+    {
+      "id": 181,
+      "title": "Retail & Service: Webstore Basic Set Up",
+      "category_id": 2,
+      "category_name": "Getting Started",
+      "description": "From section: Getting Started: Retail & Service"
+    },
+    {
+      "id": 182,
+      "title": "Retail & Service: Webstore Advance Set Up",
+      "category_id": 2,
+      "category_name": "Getting Started",
+      "description": "From section: Getting Started: Retail & Service"
+    },
+    {
+      "id": 183,
+      "title": "POS Apps: Android Troubleshooting",
+      "category_id": 12,
+      "category_name": "Troubleshooting",
+      "description": "From section: Troubleshooting: POS Apps"
+    },
+    {
+      "id": 184,
+      "title": "POS Apps: Others Troubleshooting",
+      "category_id": 12,
+      "category_name": "Troubleshooting",
+      "description": "From section: Troubleshooting: POS Apps"
+    },
+    {
+      "id": 185,
+      "title": "Contact Us: SUPERPOS Contact Details",
+      "category_id": 13,
+      "category_name": "Quick Help",
+      "description": "From section: Quick Help: Contact Us"
+    },
+    {
+      "id": 186,
+      "title": "Contact Us: How to Contact Us via Live Chat",
+      "category_id": 13,
+      "category_name": "Quick Help",
+      "description": "From section: Quick Help: Contact Us"
+    },
+    {
+      "id": 187,
+      "title": "Emergency Guide: What to Do If Your Account Is Compromised",
+      "category_id": 13,
+      "category_name": "Quick Help",
+      "description": "From section: Quick Help: Contact Us"
+    },
+    {
+      "id": 188,
+      "title": "FAQs: Online Orders",
+      "category_id": 13,
+      "category_name": "Quick Help",
+      "description": "From section: Quick Help: FAQs"
+    },
+    {
+      "id": 189,
+      "title": "FAQs: Others",
+      "category_id": 13,
+      "category_name": "Quick Help",
+      "description": "From section: Quick Help: FAQs"
+    }
+  ]
+}

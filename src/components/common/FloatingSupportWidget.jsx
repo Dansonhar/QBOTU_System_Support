@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { X, Send, CheckCircle, ArrowLeft, User, Bot, Headphones } from 'lucide-react';
-import { API_BASE_URL } from '../../context/AuthContext';
+import { API_BASE_URL, DATA_MODE } from '../../config';
 
 export const StorehubIcon = ({ size = 28, color = 'white', bgColor = '#F7941D' }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,12 +32,14 @@ export default function FloatingSupportWidget() {
 
     // Load settings & categories
     useEffect(() => {
-        fetch(`${API_BASE_URL}/support-settings`)
+        const settingsUrl = DATA_MODE === 'static' ? `${API_BASE_URL}/support-settings.json` : `${API_BASE_URL}/support-settings`;
+        fetch(settingsUrl)
             .then(r => { if (!r.ok) throw new Error(); return r.json(); })
             .then(d => { if (!d || d.error) throw new Error(); setSettings(d); setLoaded(true); })
             .catch(() => { setSettings(null); setLoaded(true); });
 
-        fetch(`${API_BASE_URL}/categories?status=active`)
+        const catUrl = DATA_MODE === 'static' ? `${API_BASE_URL}/categories.json` : `${API_BASE_URL}/categories?status=active`;
+        fetch(catUrl)
             .then(r => r.json()).then(d => setCategories(d || [])).catch(() => { });
 
         // Restore chat session from localStorage

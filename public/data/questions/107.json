@@ -7,5 +7,7 @@
   "status": "published",
   "created_at": "2026-02-06 00:25:41",
   "updated_at": "2026-02-24 00:38:44",
+  "category_name": "Online Orders",
+  "category_status": "active",
   "steps": []
 }
