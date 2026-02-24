@@ -1,0 +1,23 @@
+{
+  "id": 95,
+  "category_id": 5,
+  "title": "Membership: How to Import Your Existing Loyalty Data",
+  "slug": "membership-how-to-import-your-existing-loyalty-dat",
+  "description": "From section: BackOffice: Membership",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-06 00:25:40",
+  "steps": [
+    {
+      "id": 95,
+      "question_id": 95,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>Membership: How to Import Your Existing Loyalty Data</strong></p><p>Section: BackOffice: Membership</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "id": 79,
+  "category_id": 5,
+  "title": "Product: Setting Up",
+  "slug": "product-setting-up",
+  "description": "From section: BackOffice: Product",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-24 01:35:10",
+  "steps": [
+    {
+      "id": 79,
+      "question_id": 79,
+      "step_order": 1,
+      "step_title": "What You Will Learn in This Guide",
+      "content": "<ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Adding your suppliers&#39; information from the BackOffice.</span></li></ul><p></p><ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Setting specific suppliers for your products.</span></li></ul>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 349,
+      "question_id": 79,
+      "step_order": 2,
+      "step_title": "How to Add a Supplier",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">1. In the BackOffice, click on Catalog, then select Suppliers.</span></p><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">2. On the Suppliers page, click on + Add Supplier.</span></p>",
+      "image_url": "/uploads/1771896638110-939608280.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771896638110-939608280.png",
+        "/uploads/1771896656184-577566121.png"
+      ]
+    },
+    {
+      "id": 350,
+      "question_id": 79,
+      "step_order": 3,
+      "step_title": "Fill Up the Information for Supplier",
+      "content": null,
+      "image_url": "/uploads/1771896682039-467930207.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771896682039-467930207.png"
+      ]
+    },
+    {
+      "id": 351,
+      "question_id": 79,
+      "step_order": 4,
+      "step_title": "How to Set a Supplier for Your Products",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 352,
+      "question_id": 79,
+      "step_order": 5,
+      "step_title": "1. In the BackOffice, select Products ",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">1. In the BackOffice, click on Catalog, then select Product.</span></p><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">2. On the Product page, click on + Add Product.</span></p>",
+      "image_url": "/uploads/1771896767238-172634576.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771896767238-172634576.png"
+      ]
+    },
+    {
+      "id": 353,
+      "question_id": 79,
+      "step_order": 6,
+      "step_title": "Complete the informations below",
+      "content": null,
+      "image_url": "/uploads/1771896777142-492041129.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771896777142-492041129.png"
+      ]
+    },
+    {
+      "id": 354,
+      "question_id": 79,
+      "step_order": 7,
+      "step_title": "3.Adding Supplier to Product",
+      "content": null,
+      "image_url": "/uploads/1771896804474-288401257.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771896804474-288401257.png",
+        "/uploads/1771896881604-771732085.png"
+      ]
+    },
+    {
+      "id": 355,
+      "question_id": 79,
+      "step_order": 8,
+      "step_title": "Once's done , just click on \"Save Product\"",
+      "content": null,
+      "image_url": "/uploads/1771896907321-615649112.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771896907321-615649112.png"
+      ]
+    }
+  ]
+}

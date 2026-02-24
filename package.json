@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "server": "node server/index.js",
+    "export": "node export_for_github.cjs",
     "build": "vite build",
+    "deploy-github": "npm run export && npm run build",
     "postbuild": "cp dist/index.html dist/404.html",
     "lint": "eslint .",
     "preview": "vite preview"

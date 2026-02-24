@@ -1,0 +1,94 @@
+{
+  "questions": [
+    {
+      "id": 70,
+      "title": "BackOffice: How to Sign Up & Log In",
+      "category_id": 5,
+      "status": "published"
+    },
+    {
+      "id": 71,
+      "title": "BackOffice: Disclosure for BackOffice Access",
+      "category_id": 5,
+      "status": "published"
+    },
+    {
+      "id": 72,
+      "title": "BackOffice: How to Export Accounting Systems Sales Data",
+      "category_id": 5,
+      "status": "published"
+    },
+    {
+      "id": 78,
+      "title": "BackOffice: Dashboard Sales Comparisons",
+      "category_id": 5,
+      "status": "published"
+    },
+    {
+      "id": 79,
+      "title": "Product: Setting Up",
+      "category_id": 5,
+      "status": "published"
+    },
+    {
+      "id": 80,
+      "title": "Product: Stock Management",
+      "category_id": 5,
+      "status": "published"
+    },
+    {
+      "id": 81,
+      "title": "Product: Inventory Management",
+      "category_id": 5,
+      "status": "published"
+    },
+    {
+      "id": 82,
+      "title": "Customer: Data & Communication",
+      "category_id": 5,
+      "status": "published"
+    },
+    {
+      "id": 83,
+      "title": "Customer: Handling Transactions",
+      "category_id": 5,
+      "status": "published"
+    },
+    {
+      "id": 90,
+      "title": "Membership: How to Enroll Customers to Membership",
+      "category_id": 5,
+      "status": "published"
+    },
+    {
+      "id": 91,
+      "title": "Membership: How to Review Customer Points and Details",
+      "category_id": 5,
+      "status": "published"
+    },
+    {
+      "id": 92,
+      "title": "Membership: Navigation on the Membership Pages and POS Register",
+      "category_id": 5,
+      "status": "published"
+    },
+    {
+      "id": 93,
+      "title": "Membership: How to Monitor Performance and Insights",
+      "category_id": 5,
+      "status": "published"
+    },
+    {
+      "id": 94,
+      "title": "Membership: How to set up Membership Tier & Rewards",
+      "category_id": 5,
+      "status": "published"
+    },
+    {
+      "id": 95,
+      "title": "Membership: How to Import Your Existing Loyalty Data",
+      "category_id": 5,
+      "status": "published"
+    }
+  ]
+}

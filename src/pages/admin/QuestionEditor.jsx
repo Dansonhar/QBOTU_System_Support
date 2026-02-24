@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { IMAGE_BASE_URL } from '../../config';
 import { useAuth, API_BASE_URL } from '../../context/AuthContext';
 import {
     LayoutDashboard, FolderOpen, HelpCircle, LogOut, Plus,
@@ -523,7 +524,7 @@ const QuestionEditor = () => {
                                                                                     onDragOver={handleImageDragOver}
                                                                                     onDrop={(e) => handleImageDrop(e, index, imgIdx)}
                                                                                 >
-                                                                                    <img src={`http://localhost:3001${imgUrl}`} alt={`Step image ${imgIdx + 1}`} />
+                                                                                    <img src={`${IMAGE_BASE_URL}${imgUrl}`} alt={`Step image ${imgIdx + 1}`} />
                                                                                     <span className="admin-multi-image-order">{imgIdx + 1}</span>
                                                                                     <button
                                                                                         className="admin-multi-image-remove"

@@ -1,0 +1,23 @@
+{
+  "id": 165,
+  "category_id": 10,
+  "title": "[PH] Enable QR Ph Payments",
+  "slug": "ph-enable-qr-ph-payments",
+  "description": "From section: External Integrations: QR Ph Integration",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-02-06 00:25:41",
+  "steps": [
+    {
+      "id": 165,
+      "question_id": 165,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>[PH] Enable QR Ph Payments</strong></p><p>Section: External Integrations: QR Ph Integration</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

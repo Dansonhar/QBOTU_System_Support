@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { API_BASE_URL } from '../../config';
 import logo from '../../assets/superpos-logo.png';
 
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
   const searchTrackTimerRef = useRef(null);
 
   const trackEvent = (event_type, data = {}) => {
-    fetch('http://localhost:3001/api/analytics/track', {
+    fetch(`${API_BASE_URL}/analytics/track`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ event_type, ...data })
@@ -29,7 +30,7 @@ const Header = () => {
       }
 
       try {
-        const res = await fetch(`http://localhost:3001/api/questions?search=${encodeURIComponent(searchQuery)}&status=published&limit=8`);
+        const res = await fetch(`${API_BASE_URL}/questions?search=${encodeURIComponent(searchQuery)}&status=published&limit=8`);
         const data = await res.json();
         setSearchResults(data.questions || []);
         setShowResults(true);

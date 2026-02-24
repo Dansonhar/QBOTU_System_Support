@@ -1,0 +1,86 @@
+{
+  "id": 70,
+  "category_id": 5,
+  "title": "BackOffice: How to Sign Up & Log In",
+  "slug": "backoffice-how-to-sign-up-log-in",
+  "description": "From section: BackOffice: General Settings",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-24 01:12:54",
+  "steps": [
+    {
+      "id": 70,
+      "question_id": 70,
+      "step_order": 1,
+      "step_title": "What You Will Learn in This Guide",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">How to sign up (create an account) and log in to your StoreHub BackOffice.</span></p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 333,
+      "question_id": 70,
+      "step_order": 2,
+      "step_title": "1. Create new BackOffice Account following steps below:",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">If you&#39;ve sign up with SUPERPOS and made payment. Our Business Consultant should send you a unique link to create a BackOffice account. </span></p><p></p><p><em style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Example of unique link: https://spos5.bolt.host/</em></p><p></p>",
+      "image_url": "/uploads/1771895394030-420405876.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771895394030-420405876.png"
+      ]
+    },
+    {
+      "id": 334,
+      "question_id": 70,
+      "step_order": 3,
+      "step_title": "2. Create your account by filling in the required information.",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Enter and Complete the following details to access into your company profile</span></p>",
+      "image_url": "/uploads/1771895454437-422430334.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771895454437-422430334.png"
+      ]
+    },
+    {
+      "id": 335,
+      "question_id": 70,
+      "step_order": 4,
+      "step_title": "Step 4",
+      "content": "<p>Once&#39;s done , you are able to login and see the main page of SUPERPOS Integrated POS System</p>",
+      "image_url": "/uploads/1771895476760-218668960.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771895476760-218668960.png"
+      ]
+    },
+    {
+      "id": 336,
+      "question_id": 70,
+      "step_order": 5,
+      "step_title": "Log In to BackOffice",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">1. After you have filled out the information to register for a BackOffice account, you will be directed to a login page.</span></p><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">2. Enter your e-mail and password to access your BackOffice.</span></p><p></p>",
+      "image_url": "/uploads/1771895543643-579339839.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771895543643-579339839.png"
+      ]
+    },
+    {
+      "id": 337,
+      "question_id": 70,
+      "step_order": 6,
+      "step_title": "The BackOffice allows you to:",
+      "content": "<ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Add and edit products</span></li><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Manage your stores</span></li><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">View reports</span></li><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Configure POS Layouts and more</span></li></ul>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

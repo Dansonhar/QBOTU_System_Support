@@ -1,0 +1,58 @@
+{
+  "id": 10,
+  "category_id": 3,
+  "title": "How to Set Up Your SUPERPOS POS Register (Download, Activate, Deactivate)",
+  "slug": "how-to-set-up-your-superpos-pos-register-download-",
+  "description": "<p>Steps to download, activate, and deactivate your SUPERPOS POS Register.</p>",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-24 00:25:18",
+  "steps": [
+    {
+      "id": 292,
+      "question_id": 10,
+      "step_order": 1,
+      "step_title": "Setting Up Your POS Register",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 293,
+      "question_id": 10,
+      "step_order": 2,
+      "step_title": "Download the App",
+      "content": "Access the <strong>Splash Page</strong> via your device browser to download the SuperPOS or mPOS application.",
+      "image_url": "/uploads/splash-page.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/splash-page.png"
+      ]
+    },
+    {
+      "id": 294,
+      "question_id": 10,
+      "step_order": 3,
+      "step_title": "Activation",
+      "content": "Open the app on your terminal. You will be prompted for an <strong>Activation Code</strong>. You can find or generate this code in the Backoffice under <strong>SETTINGS > Devices</strong>.",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 295,
+      "question_id": 10,
+      "step_order": 4,
+      "step_title": "Deactivation",
+      "content": "To move a license to a new device, you must first deactivate the old one in the Backoffice by clicking <strong>Edit</strong> on the device and toggling it to <strong>Inactive</strong> or removing it.",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

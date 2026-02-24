@@ -1,0 +1,60 @@
+{
+  "id": 6,
+  "category_id": 3,
+  "title": "How to Manage Your Tax Codes",
+  "slug": "how-to-manage-your-tax-codes",
+  "description": "<p>Configure corporate tax names and percentages.</p>",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-24 00:11:29",
+  "steps": [
+    {
+      "id": 280,
+      "question_id": 6,
+      "step_order": 1,
+      "step_title": "Step-by-Step Guide",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 312,
+      "question_id": 6,
+      "step_order": 2,
+      "step_title": "Add a New Tax Code",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 281,
+      "question_id": 6,
+      "step_order": 3,
+      "step_title": "1. In your SUPERPOS BackOffice, go to 'Reports', then tap 'Taxes'.",
+      "content": "",
+      "image_url": "/uploads/1771891799252-259938719.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771891799252-259938719.png"
+      ]
+    },
+    {
+      "id": 282,
+      "question_id": 6,
+      "step_order": 4,
+      "step_title": "2. On the 'Tax Report' page, tap 'Edit Settings'.",
+      "content": "Under <strong>Tax Configuration</strong>, click <strong>Edit Settings</strong>. Here you can toggle <strong>Tax Enabled</strong>, and set your business <strong>Tax Name</strong> and <strong>Tax Percentage (%)</strong>.",
+      "image_url": "/uploads/1771891857288-49620811.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771891857288-49620811.png"
+      ]
+    }
+  ]
+}

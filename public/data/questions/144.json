@@ -1,0 +1,23 @@
+{
+  "id": 144,
+  "category_id": 9,
+  "title": "Cash Drawer: How to Open",
+  "slug": "cash-drawer-how-to-open",
+  "description": "From section: Hardware: Cash Drawer Troubleshooting",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-02-06 00:25:41",
+  "steps": [
+    {
+      "id": 144,
+      "question_id": 144,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>Cash Drawer: How to Open</strong></p><p>Section: Hardware: Cash Drawer Troubleshooting</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

@@ -5,8 +5,9 @@ import {
     LayoutDashboard, FolderOpen, HelpCircle, Users, LogOut, Settings, ChevronDown, MessageCircle
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import { API_BASE_URL } from '../../config';
 
-const API_BASE_URL = 'http://localhost:3001/api';
+
 
 export default function AnalyticsDashboard() {
     const { token, logout } = useAuth();

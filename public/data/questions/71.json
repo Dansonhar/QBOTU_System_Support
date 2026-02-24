@@ -1,0 +1,45 @@
+{
+  "id": 71,
+  "category_id": 5,
+  "title": "BackOffice: Disclosure for BackOffice Access",
+  "slug": "backoffice-disclosure-for-backoffice-access",
+  "description": "From section: BackOffice: General Settings",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-24 01:14:34",
+  "steps": [
+    {
+      "id": 71,
+      "question_id": 71,
+      "step_order": 1,
+      "step_title": "What You Will Learn in This Guide",
+      "content": "<ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">StoreHub requires access to your BackOffice for the purpose of providing assistance when needed.</span></li></ul><p></p><ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">This is a disclaimer regarding the matter above that we require you - our merchants - to acknowledge.</span></li></ul><p></p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 338,
+      "question_id": 71,
+      "step_order": 2,
+      "step_title": "Disclaimer: ",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 339,
+      "question_id": 71,
+      "step_order": 3,
+      "step_title": "Disclosure statement upon reaching out to our Customer Care Team as below: ",
+      "content": "<p><span style=\"color: rgb(26, 26, 26);\">&quot;We would like to inform you that when you reach out to us for help, we may need to access your BackOffice to view the necessary details and conduct a detailed investigation.</span></p><p></p><p><span style=\"color: rgb(26, 26, 26);\">We do that by creating a new, temporary &quot;Employee&quot; in your BackOffice which allows us access to proceed with our investigation.</span></p><p></p><p><span style=\"color: rgb(26, 26, 26);\">Your BackOffice information is secure and protected. Performing this activity will not result in data leakage, nor cause any changes to your current BackOffice settings.</span></p><p></p><p><span style=\"color: rgb(26, 26, 26);\">You are always free to remove our Merchant Care Representative as your BackOffice &quot;Employee&quot; at any time. Please note that it is not advisable to remove access until this issue is solved.&quot;</span></p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

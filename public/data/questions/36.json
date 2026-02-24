@@ -1,0 +1,23 @@
+{
+  "id": 36,
+  "category_id": 4,
+  "title": "KDS: How to Enable KDS Service in the App",
+  "slug": "kds-how-to-enable-kds-service-in-the-app",
+  "description": "From section: Kitchen Display System (KDS)",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-06 00:25:40",
+  "steps": [
+    {
+      "id": 36,
+      "question_id": 36,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>KDS: How to Enable KDS Service in the App</strong></p><p>Section: Kitchen Display System (KDS)</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

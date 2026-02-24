@@ -1,0 +1,23 @@
+{
+  "id": 142,
+  "category_id": 9,
+  "title": "How to Use the Bixolon Label Artist Mobile App to Print Barcodes",
+  "slug": "how-to-use-the-bixolon-label-artist-mobile-app-to-",
+  "description": "From section: Label & Barcode Printer",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-02-06 00:25:41",
+  "steps": [
+    {
+      "id": 142,
+      "question_id": 142,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>How to Use the Bixolon Label Artist Mobile App to Print Barcodes</strong></p><p>Section: Label & Barcode Printer</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

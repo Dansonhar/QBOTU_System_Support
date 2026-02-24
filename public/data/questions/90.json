@@ -1,0 +1,23 @@
+{
+  "id": 90,
+  "category_id": 5,
+  "title": "Membership: How to Enroll Customers to Membership",
+  "slug": "membership-how-to-enroll-customers-to-membership",
+  "description": "From section: BackOffice: Membership",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-06 00:25:40",
+  "steps": [
+    {
+      "id": 90,
+      "question_id": 90,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>Membership: How to Enroll Customers to Membership</strong></p><p>Section: BackOffice: Membership</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

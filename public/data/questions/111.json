@@ -1,0 +1,23 @@
+{
+  "id": 111,
+  "category_id": 6,
+  "title": "Cashback: FAQ",
+  "slug": "cashback-faq",
+  "description": "From section: Online Orders: Beep Cashback",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-02-06 00:25:41",
+  "steps": [
+    {
+      "id": 111,
+      "question_id": 111,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>Cashback: FAQ</strong></p><p>Section: Online Orders: Beep Cashback</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

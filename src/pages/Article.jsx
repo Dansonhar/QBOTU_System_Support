@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams, Link } from 'react-router-dom';
 import { ChevronRight, ThumbsUp, ThumbsDown, MessageCircle, Clock, BookOpen } from 'lucide-react';
+import { API_BASE_URL, IMAGE_BASE_URL, DATA_MODE } from '../config';
 
-const API_BASE = 'http://localhost:3001/api';
+
 
 const Article = () => {
     const { t } = useTranslation();
@@ -50,7 +51,8 @@ const Article = () => {
     const fetchArticle = async () => {
         try {
             setLoading(true);
-            const res = await fetch(`${API_BASE}/questions/${articleId}`);
+            const endpoint = DATA_MODE === 'static' ? `${API_BASE_URL}/questions/${articleId}.json` : `${API_BASE_URL}/questions/${articleId}`;
+            const res = await fetch(endpoint);
             if (!res.ok) throw new Error('Article not found');
             const data = await res.json();
 
@@ -175,7 +177,7 @@ const Article = () => {
                                                     {step.images.map((imgUrl, imgIdx) => (
                                                         <div key={imgIdx} className="step-image">
                                                             <img
-                                                                src={`http://localhost:3001${imgUrl}`}
+                                                                src={`${IMAGE_BASE_URL}${imgUrl}`}
                                                                 alt={`${step.step_title} - image ${imgIdx + 1}`}
                                                             />
                                                         </div>
@@ -184,7 +186,7 @@ const Article = () => {
                                             ) : step.image_url && (
                                                 <div className="step-image">
                                                     <img
-                                                        src={`http://localhost:3001${step.image_url}`}
+                                                        src={`${IMAGE_BASE_URL}${step.image_url}`}
                                                         alt={step.step_title}
                                                     />
                                                 </div>

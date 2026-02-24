@@ -1,0 +1,50 @@
+{
+  "id": 22,
+  "category_id": 4,
+  "title": "POS: How to Change Table for POS with Layout",
+  "slug": "pos-how-to-change-table-for-pos-with-layout",
+  "description": "From section: Basic Set Up",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-24 01:04:58",
+  "steps": [
+    {
+      "id": 330,
+      "question_id": 22,
+      "step_order": 1,
+      "step_title": "Important Notes",
+      "content": "<ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">This feature applies for POS orders &amp; QR Order and Pay orders only, not Beep Delivery orders.</span></li></ul><p></p><ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Changing table numbers can only be done for Open orders or before payment is made.</span></li></ul>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 331,
+      "question_id": 22,
+      "step_order": 2,
+      "step_title": "Change table via Table Layout",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">1. Go to your table layout page to view all tables occupied</span></p><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">2. Tap on the 3 dot menu in the top right corner to choose Move Order.</span></p><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">3. Select a table that you want to change; after choosing the tables, they turn Red</span></p><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">4. Choose a table that your customer wishes to move to; you can select one of the tables selected or an empty table.</span></p>",
+      "image_url": "/uploads/1771895019830-591699860.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771895019830-591699860.png",
+        "/uploads/1771895028043-59005106.png"
+      ]
+    },
+    {
+      "id": 332,
+      "question_id": 22,
+      "step_order": 3,
+      "step_title": "Table has successfully been changed. ",
+      "content": null,
+      "image_url": "/uploads/1771895057276-486958968.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771895057276-486958968.png"
+      ]
+    }
+  ]
+}

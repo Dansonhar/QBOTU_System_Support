@@ -1,0 +1,23 @@
+{
+  "id": 152,
+  "category_id": 10,
+  "title": "External Integration: Logging into BackOffice with Single Sign-On (SSO)",
+  "slug": "external-integration-logging-into-backoffice-with-",
+  "description": "From section: External Integration: SSO",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-02-06 00:25:41",
+  "steps": [
+    {
+      "id": 152,
+      "question_id": 152,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>External Integration: Logging into BackOffice with Single Sign-On (SSO)</strong></p><p>Section: External Integration: SSO</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

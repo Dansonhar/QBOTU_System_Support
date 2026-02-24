@@ -1,0 +1,76 @@
+{
+  "id": 21,
+  "category_id": 4,
+  "title": "POS: How to Split Bill/Orders / Items",
+  "slug": "pos-how-to-split-bill-orders-items",
+  "description": "From section: Basic Set Up",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-24 00:47:04",
+  "steps": [
+    {
+      "id": 21,
+      "question_id": 21,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>POS: How to Split Bill/Orders / Items</strong></p><p>Section: Basic Set Up</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 326,
+      "question_id": 21,
+      "step_order": 2,
+      "step_title": "Splitting Orders with Table Layouts Enabled",
+      "content": null,
+      "image_url": "/uploads/1771893792982-310652185.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771893792982-310652185.png"
+      ]
+    },
+    {
+      "id": 327,
+      "question_id": 21,
+      "step_order": 3,
+      "step_title": "Tap on the Table Layout thats available , press on \"Checkout\"",
+      "content": null,
+      "image_url": "/uploads/1771893951464-984424050.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771893951464-984424050.png"
+      ]
+    },
+    {
+      "id": 328,
+      "question_id": 21,
+      "step_order": 4,
+      "step_title": "Before checkout , there are also options like Transfer , Merge and View Bill ",
+      "content": null,
+      "image_url": "/uploads/1771893984631-588930220.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771893984631-588930220.png",
+        "/uploads/1771894017100-175256141.png"
+      ]
+    },
+    {
+      "id": 329,
+      "question_id": 21,
+      "step_order": 5,
+      "step_title": "Split will be shown at the order summary",
+      "content": null,
+      "image_url": "/uploads/1771893962193-665918958.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771893962193-665918958.png"
+      ]
+    }
+  ]
+}

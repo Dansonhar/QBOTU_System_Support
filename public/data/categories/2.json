@@ -1,0 +1,76 @@
+{
+  "questions": [
+    {
+      "id": 2,
+      "title": "How to Setup Your First StoreHow to Setup Your First Store",
+      "category_id": 2,
+      "status": "published"
+    },
+    {
+      "id": 172,
+      "title": "F&B: Video Guide",
+      "category_id": 2,
+      "status": "published"
+    },
+    {
+      "id": 173,
+      "title": "F&B: Store Settings",
+      "category_id": 2,
+      "status": "published"
+    },
+    {
+      "id": 174,
+      "title": "F&B: Product Settings",
+      "category_id": 2,
+      "status": "published"
+    },
+    {
+      "id": 175,
+      "title": "F&B: QR Order & Pay Basic Set Up",
+      "category_id": 2,
+      "status": "published"
+    },
+    {
+      "id": 176,
+      "title": "F&B: QR Order & Pay Advance Set Up",
+      "category_id": 2,
+      "status": "published"
+    },
+    {
+      "id": 177,
+      "title": "F&B: Beep Delivery",
+      "category_id": 2,
+      "status": "published"
+    },
+    {
+      "id": 178,
+      "title": "Retail & Service: Video Guide",
+      "category_id": 2,
+      "status": "published"
+    },
+    {
+      "id": 179,
+      "title": "Retail & Service: Product Set Up",
+      "category_id": 2,
+      "status": "published"
+    },
+    {
+      "id": 180,
+      "title": "Retail & Service: Hardware Set Up",
+      "category_id": 2,
+      "status": "published"
+    },
+    {
+      "id": 181,
+      "title": "Retail & Service: Webstore Basic Set Up",
+      "category_id": 2,
+      "status": "published"
+    },
+    {
+      "id": 182,
+      "title": "Retail & Service: Webstore Advance Set Up",
+      "category_id": 2,
+      "status": "published"
+    }
+  ]
+}

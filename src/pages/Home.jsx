@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Rocket, Monitor, LayoutGrid, ShoppingCart, FileText, Receipt, Printer, Link2, Wrench, HelpCircle, FolderOpen } from 'lucide-react';
+import { API_BASE_URL, DATA_MODE } from '../config';
 
-const API_BASE = 'http://localhost:3001/api';
+
 
 // Icon mapping for visual display
 const iconMap = {
@@ -21,7 +22,8 @@ const Home = () => {
 
     const fetchCategories = async () => {
         try {
-            const res = await fetch(`${API_BASE}/categories?status=active`);
+            const endpoint = DATA_MODE === 'static' ? `${API_BASE_URL}/categories.json` : `${API_BASE_URL}/categories?status=active`;
+            const res = await fetch(endpoint);
             const data = await res.json();
             setCategories(data);
         } catch (error) {

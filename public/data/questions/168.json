@@ -1,0 +1,23 @@
+{
+  "id": 168,
+  "category_id": 10,
+  "title": "Accounting: Xero Integration",
+  "slug": "accounting-xero-integration",
+  "description": "From section: External Integrations: Data Extractions & Accounting",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-02-06 00:25:41",
+  "steps": [
+    {
+      "id": 168,
+      "question_id": 168,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>Accounting: Xero Integration</strong></p><p>Section: External Integrations: Data Extractions & Accounting</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

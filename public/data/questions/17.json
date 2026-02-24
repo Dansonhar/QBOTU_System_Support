@@ -1,0 +1,23 @@
+{
+  "id": 17,
+  "category_id": 3,
+  "title": "Hardware: How to Set Up Sunmi & Android T2C",
+  "slug": "hardware-how-to-set-up-sunmi-android-t2c",
+  "description": "From section: POS Hardware",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-06 00:25:40",
+  "steps": [
+    {
+      "id": 17,
+      "question_id": 17,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>Hardware: How to Set Up Sunmi & Android T2C</strong></p><p>Section: POS Hardware</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

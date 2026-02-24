@@ -1,0 +1,94 @@
+{
+  "questions": [
+    {
+      "id": 123,
+      "title": "[PH] BIR: How to Perform Account Settings",
+      "category_id": 8,
+      "status": "published"
+    },
+    {
+      "id": 124,
+      "title": "[PH] BIR: How to Perform Tax and Product Settings",
+      "category_id": 8,
+      "status": "published"
+    },
+    {
+      "id": 125,
+      "title": "[PH] BIR: How to Control Special Discounts with Manager Approval",
+      "category_id": 8,
+      "status": "published"
+    },
+    {
+      "id": 126,
+      "title": "[PH] BIR: How to Set Up and Apply MEMC Discounts for Senior Citizens and PWDs",
+      "category_id": 8,
+      "status": "published"
+    },
+    {
+      "id": 127,
+      "title": "[PH] BIR: How to Apply Discount",
+      "category_id": 8,
+      "status": "published"
+    },
+    {
+      "id": 128,
+      "title": "[PH] BIR: Accessing POS, Z-Reading, and E-Journal Reports in BackOffice",
+      "category_id": 8,
+      "status": "published"
+    },
+    {
+      "id": 129,
+      "title": "[PH] BIR: How to View F&B and Retail POS Reports",
+      "category_id": 8,
+      "status": "published"
+    },
+    {
+      "id": 130,
+      "title": "[PH] BIR: How Does Food Delivery Integration Work",
+      "category_id": 8,
+      "status": "published"
+    },
+    {
+      "id": 131,
+      "title": "[PH] How to Set Up and Manage Amusement Tax",
+      "category_id": 8,
+      "status": "published"
+    },
+    {
+      "id": 132,
+      "title": "SUPERPOS e-Invoice: Your Quick Start Guide to Compliance",
+      "category_id": 8,
+      "status": "published"
+    },
+    {
+      "id": 133,
+      "title": "How to Set Up & Manage e-Invoice Settings",
+      "category_id": 8,
+      "status": "published"
+    },
+    {
+      "id": 134,
+      "title": "How to Manage e-Invoice Transactions",
+      "category_id": 8,
+      "status": "published"
+    },
+    {
+      "id": 135,
+      "title": "How to Get SUPERPOS e-Invoices for Expenses",
+      "category_id": 8,
+      "status": "published"
+    },
+    {
+      "id": 136,
+      "title": "Understand e-Invoice Status & Consolidation",
+      "category_id": 8,
+      "status": "published"
+    },
+    {
+      "id": 137,
+      "title": "[MY] SUPERPOS Transaction Fees & Taxation",
+      "category_id": 8,
+      "status": "published"
+    }
+  ]
+}

@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ChevronRight, FolderOpen } from 'lucide-react';
-
-const API_BASE = 'http://localhost:3001/api';
+import { API_BASE_URL, DATA_MODE } from '../config';
 
 const Category = () => {
     const { t } = useTranslation();
@@ -21,18 +20,26 @@ const Category = () => {
             setLoading(true);
 
             // Fetch category info
-            const catRes = await fetch(`${API_BASE}/categories/${categoryId}`);
+            const catEndpoint = DATA_MODE === 'static' ? `${API_BASE_URL}/categories.json` : `${API_BASE_URL}/categories/${categoryId}`;
+            const catRes = await fetch(catEndpoint);
             if (!catRes.ok) throw new Error('Category not found');
-            const catData = await catRes.json();
+            const catDataList = await catRes.json();
 
+            // In static mode, categories.json is an array, we need to find the specific one
+            const catData = DATA_MODE === 'static'
+                ? catDataList.find(c => String(c.id) === String(categoryId))
+                : catDataList;
+
+            if (!catData) throw new Error('Category not found');
             if (catData.status === 'inactive') {
                 throw new Error('Category is currently inactive');
             }
 
             setCategory(catData);
 
-            // Fetch questions for this category (increase limit to show all)
-            const qRes = await fetch(`${API_BASE}/questions?category_id=${categoryId}&status=published&limit=100`);
+            // Fetch questions for this category
+            const qEndpoint = DATA_MODE === 'static' ? `${API_BASE_URL}/categories/${categoryId}.json` : `${API_BASE_URL}/questions?category_id=${categoryId}&status=published&limit=100`;
+            const qRes = await fetch(qEndpoint);
             const qData = await qRes.json();
             setQuestions(qData.questions || []);
         } catch (error) {
@@ -44,7 +51,7 @@ const Category = () => {
     };
 
     const trackArticleClick = (questionId) => {
-        fetch('http://localhost:3001/api/analytics/track', {
+        fetch(`${API_BASE_URL}/analytics/track`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ event_type: 'article_click', question_id: questionId })

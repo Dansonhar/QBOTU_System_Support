@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { API_BASE_URL as CONFIG_API_BASE } from '../config';
 
 const AuthContext = createContext(null);
 
-const API_BASE = 'http://localhost:3001/api';
+export const API_BASE_URL = CONFIG_API_BASE;
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -20,7 +21,7 @@ export const AuthProvider = ({ children }) => {
     }, [token]);
 
     const login = async (username, password) => {
-        const response = await fetch(`${API_BASE}/auth/login`, {
+        const response = await fetch(`${API_BASE_URL}/auth/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, password })
@@ -63,5 +64,3 @@ export const useAuth = () => {
     }
     return context;
 };
-
-export const API_BASE_URL = API_BASE;

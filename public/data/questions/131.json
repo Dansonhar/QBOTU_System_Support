@@ -1,0 +1,23 @@
+{
+  "id": 131,
+  "category_id": 8,
+  "title": "[PH] How to Set Up and Manage Amusement Tax",
+  "slug": "ph-how-to-set-up-and-manage-amusement-tax",
+  "description": "From section: [PH] Amusement Tax",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-02-06 00:25:41",
+  "steps": [
+    {
+      "id": 131,
+      "question_id": 131,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>[PH] How to Set Up and Manage Amusement Tax</strong></p><p>Section: [PH] Amusement Tax</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

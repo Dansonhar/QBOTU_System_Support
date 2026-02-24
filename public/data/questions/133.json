@@ -1,0 +1,23 @@
+{
+  "id": 133,
+  "category_id": 8,
+  "title": "How to Set Up & Manage e-Invoice Settings",
+  "slug": "how-to-set-up-manage-e-invoice-settings",
+  "description": "From section: [MY] E-Invoice",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-02-06 00:25:41",
+  "steps": [
+    {
+      "id": 133,
+      "question_id": 133,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>How to Set Up & Manage e-Invoice Settings</strong></p><p>Section: [MY] E-Invoice</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "id": 117,
+      "title": "How to Understand and Customize Your SUPERPOS Reports",
+      "category_id": 7,
+      "status": "published"
+    },
+    {
+      "id": 118,
+      "title": "How to Understand Your Tax Report",
+      "category_id": 7,
+      "status": "published"
+    },
+    {
+      "id": 119,
+      "title": "How to Understand Your Shift Report",
+      "category_id": 7,
+      "status": "published"
+    },
+    {
+      "id": 120,
+      "title": "How to Understand Your SUPERPOS Sales Reports",
+      "category_id": 7,
+      "status": "published"
+    },
+    {
+      "id": 121,
+      "title": "How to View and Customize Your SUPERPOS Sales Reports",
+      "category_id": 7,
+      "status": "published"
+    },
+    {
+      "id": 122,
+      "title": "How to Understand Differences in Sales Reports",
+      "category_id": 7,
+      "status": "published"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": 78,
+  "category_id": 5,
+  "title": "BackOffice: Dashboard Sales Comparisons",
+  "slug": "backoffice-dashboard-sales-comparisons",
+  "description": "From section: BackOffice: General Settings",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-24 01:27:21",
+  "steps": [
+    {
+      "id": 78,
+      "question_id": 78,
+      "step_order": 1,
+      "step_title": "Important Note",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">The main change is that sales periods are now compared like-for-like. This gives you a fairer and more accurate view of your performance.</span></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">​</span></p><ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">For example, sales from &quot;Today&quot; up to the current time are compared against sales from &quot;Yesterday&quot; up to the </span><em style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">exact same time</em><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">.</span></li></ul>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 343,
+      "question_id": 78,
+      "step_order": 2,
+      "step_title": "How Your Dashboard Sales Comparisons Work Now",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 344,
+      "question_id": 78,
+      "step_order": 3,
+      "step_title": "When you look at your sales on the dashboard, here’s how the comparisons for different periods are calculated:",
+      "content": null,
+      "image_url": "/uploads/1771896355056-643212650.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771896355056-643212650.png"
+      ]
+    },
+    {
+      "id": 345,
+      "question_id": 78,
+      "step_order": 4,
+      "step_title": "Today",
+      "content": "<ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Current Period: Sales from today (midnight 00:00 to the current time).</span></li></ul><p></p><ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Compared Against: Sales from yesterday (midnight 00:00 to the </span><em style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">exact same current time</em><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\"> as today).</span></li></ul><p></p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 346,
+      "question_id": 78,
+      "step_order": 5,
+      "step_title": "This Week",
+      "content": "<ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Current Period: Sales from the start of this week (Sunday at midnight 00:00) up to the current day and time.</span></li></ul><p></p><ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Compared Against: Sales from last week (Sunday at midnight 00:00 up to the </span><em style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">same day and time as the current moment this week</em><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">).</span></li></ul>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 347,
+      "question_id": 78,
+      "step_order": 6,
+      "step_title": "This Month",
+      "content": "<ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Current Period: Sales from the 1st of this month (at midnight 00:00) up to the current date and time.</span></li></ul><p></p><ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Compared Against: Sales from the 1st of last month (at midnight 00:00) up to the </span><em style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">same date and time in that previous month</em><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">.</span></li></ul>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 348,
+      "question_id": 78,
+      "step_order": 7,
+      "step_title": "Benefits of This Updated Comparison Method",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">This new way of comparing your sales figures helps you because:</span></p><p></p><ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">It&#39;s More Accurate: You get a true side-by-side comparison.</span></li></ul><p></p><ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">You See Real-Time Trends Better: Understand how your business is performing right now compared to the same point in the previous period.</span></li></ul><p></p><ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Make Smarter Decisions: Use this clearer information to guide your business choices.</span></li></ul>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

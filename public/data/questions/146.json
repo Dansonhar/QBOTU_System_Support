@@ -1,0 +1,23 @@
+{
+  "id": 146,
+  "category_id": 9,
+  "title": "Router Troubleshooting: How to Reset & Configure ASUS RT-AX56U Router",
+  "slug": "router-troubleshooting-how-to-reset-configure-asus",
+  "description": "From section: Hardware: Router Troubleshooting",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-02-06 00:25:41",
+  "steps": [
+    {
+      "id": 146,
+      "question_id": 146,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>Router Troubleshooting: How to Reset & Configure ASUS RT-AX56U Router</strong></p><p>Section: Hardware: Router Troubleshooting</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

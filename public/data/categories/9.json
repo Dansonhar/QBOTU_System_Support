@@ -1,0 +1,88 @@
+{
+  "questions": [
+    {
+      "id": 138,
+      "title": "How to Set Up Your SUPERPOS Printer",
+      "category_id": 9,
+      "status": "published"
+    },
+    {
+      "id": 139,
+      "title": "How to Manage Network Settings for Your SUPERPOS POS and Printer",
+      "category_id": 9,
+      "status": "published"
+    },
+    {
+      "id": 140,
+      "title": "How to Troubleshoot Common SUPERPOS Printer Issues",
+      "category_id": 9,
+      "status": "published"
+    },
+    {
+      "id": 141,
+      "title": "How to Set Up Your Bixolon Label Printer and Print Barcodes (Desktop)",
+      "category_id": 9,
+      "status": "published"
+    },
+    {
+      "id": 142,
+      "title": "How to Use the Bixolon Label Artist Mobile App to Print Barcodes",
+      "category_id": 9,
+      "status": "published"
+    },
+    {
+      "id": 143,
+      "title": "Cash Drawer: How to Troubleshoot",
+      "category_id": 9,
+      "status": "published"
+    },
+    {
+      "id": 144,
+      "title": "Cash Drawer: How to Open",
+      "category_id": 9,
+      "status": "published"
+    },
+    {
+      "id": 145,
+      "title": "Router Troubleshooting: How to Configure TP-Link Archer C6",
+      "category_id": 9,
+      "status": "published"
+    },
+    {
+      "id": 146,
+      "title": "Router Troubleshooting: How to Reset & Configure ASUS RT-AX56U Router",
+      "category_id": 9,
+      "status": "published"
+    },
+    {
+      "id": 147,
+      "title": "Router Troubleshooting: How to Identify Mikrotik Routers",
+      "category_id": 9,
+      "status": "published"
+    },
+    {
+      "id": 148,
+      "title": "FAQ: POS Hardware & Supplementary Device Support",
+      "category_id": 9,
+      "status": "published"
+    },
+    {
+      "id": 149,
+      "title": "FAQ: Hardware Delivery Issues",
+      "category_id": 9,
+      "status": "published"
+    },
+    {
+      "id": 150,
+      "title": "Tablet Stand: How to Install Heckler Windfall iPad Stand",
+      "category_id": 9,
+      "status": "published"
+    },
+    {
+      "id": 151,
+      "title": "Tablet Stand: How to Install PR-TS201",
+      "category_id": 9,
+      "status": "published"
+    }
+  ]
+}

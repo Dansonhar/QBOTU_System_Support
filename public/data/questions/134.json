@@ -1,0 +1,23 @@
+{
+  "id": 134,
+  "category_id": 8,
+  "title": "How to Manage e-Invoice Transactions",
+  "slug": "how-to-manage-e-invoice-transactions",
+  "description": "From section: [MY] E-Invoice",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-02-06 00:25:41",
+  "steps": [
+    {
+      "id": 134,
+      "question_id": 134,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>How to Manage e-Invoice Transactions</strong></p><p>Section: [MY] E-Invoice</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

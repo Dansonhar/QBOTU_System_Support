@@ -1,0 +1,73 @@
+{
+  "id": 11,
+  "category_id": 3,
+  "title": "How to Arrange Your Product Layouts on the SUPERPOS POS App",
+  "slug": "how-to-arrange-your-product-layouts-on-the-superpo",
+  "description": "<p>How to visually arrange products for faster checkout.</p>",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-24 00:31:02",
+  "steps": [
+    {
+      "id": 296,
+      "question_id": 11,
+      "step_order": 1,
+      "step_title": "Step-by-Step Guide",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 297,
+      "question_id": 11,
+      "step_order": 2,
+      "step_title": "Arrange Existing Products on Your POS Layout",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">You can easily move products around on your POS sales screen to group similar items or place frequently sold products in easy-to-reach spots.</span></p>",
+      "image_url": "",
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 298,
+      "question_id": 11,
+      "step_order": 3,
+      "step_title": "1. On your register QPOS, tap the 'Menu' icon (the three horizontal lines) located at the top left of your screen.",
+      "content": "",
+      "image_url": "/uploads/1771892974729-769202739.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771892974729-769202739.png"
+      ]
+    },
+    {
+      "id": 323,
+      "question_id": 11,
+      "step_order": 4,
+      "step_title": "2. From the menu, tap 'Settings'.",
+      "content": null,
+      "image_url": "/uploads/1771892993198-935212452.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771892993198-935212452.png"
+      ]
+    },
+    {
+      "id": 324,
+      "question_id": 11,
+      "step_order": 5,
+      "step_title": "3. In the 'Settings' menu, tap 'Layouts', then tap 'Select Layout' that have been created from Backoffice.",
+      "content": null,
+      "image_url": "/uploads/1771893017779-773603908.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771893017779-773603908.png"
+      ]
+    }
+  ]
+}

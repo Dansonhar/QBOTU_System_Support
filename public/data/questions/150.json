@@ -1,0 +1,23 @@
+{
+  "id": 150,
+  "category_id": 9,
+  "title": "Tablet Stand: How to Install Heckler Windfall iPad Stand",
+  "slug": "tablet-stand-how-to-install-heckler-windfall-ipad-",
+  "description": "From section: Tablet Stand",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-02-06 00:25:41",
+  "steps": [
+    {
+      "id": 150,
+      "question_id": 150,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>Tablet Stand: How to Install Heckler Windfall iPad Stand</strong></p><p>Section: Tablet Stand</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

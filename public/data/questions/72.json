@@ -1,0 +1,60 @@
+{
+  "id": 72,
+  "category_id": 5,
+  "title": "BackOffice: How to Export Accounting Systems Sales Data",
+  "slug": "backoffice-how-to-export-accounting-systems-sales-",
+  "description": "From section: BackOffice: General Settings",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-24 01:21:56",
+  "steps": [
+    {
+      "id": 72,
+      "question_id": 72,
+      "step_order": 1,
+      "step_title": "What You Will Learn In This Guide",
+      "content": "<ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">How to export reports in a format that your accounting system will accept.</span></li></ul>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 340,
+      "question_id": 72,
+      "step_order": 2,
+      "step_title": "Important Notes",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">You can use SQL, Autocount, Financio, or QuickBooks to manage your sales data.</span></p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 341,
+      "question_id": 72,
+      "step_order": 3,
+      "step_title": "Exporting Sales Data",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">1. In your BackOffice, under the Reports drop down menu, click Sales Summary</span></p><p></p>",
+      "image_url": "/uploads/1771895821138-743904366.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771895821138-743904366.png"
+      ]
+    },
+    {
+      "id": 342,
+      "question_id": 72,
+      "step_order": 4,
+      "step_title": "You can press on the Export CSV to view all the Sales Details",
+      "content": null,
+      "image_url": "/uploads/1771895849289-867018100.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771895849289-867018100.png"
+      ]
+    }
+  ]
+}

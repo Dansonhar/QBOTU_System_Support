@@ -1,0 +1,23 @@
+{
+  "id": 16,
+  "category_id": 3,
+  "title": "Hardware: How to Perform Basic Set Up",
+  "slug": "hardware-how-to-perform-basic-set-up",
+  "description": "From section: POS Hardware",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-06 00:25:40",
+  "steps": [
+    {
+      "id": 16,
+      "question_id": 16,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>Hardware: How to Perform Basic Set Up</strong></p><p>Section: POS Hardware</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

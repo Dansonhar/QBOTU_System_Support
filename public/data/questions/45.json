@@ -1,0 +1,23 @@
+{
+  "id": 45,
+  "category_id": 4,
+  "title": "Hardware: [Android] How to Set Up Cloud Printing for Orders",
+  "slug": "hardware-android-how-to-set-up-cloud-printing-for-",
+  "description": "From section: POS: Android - Hardware & Product",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-06 00:25:40",
+  "steps": [
+    {
+      "id": 45,
+      "question_id": 45,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>Hardware: [Android] How to Set Up Cloud Printing for Orders</strong></p><p>Section: POS: Android - Hardware & Product</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

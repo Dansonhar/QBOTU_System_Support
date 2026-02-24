@@ -1,0 +1,106 @@
+{
+  "questions": [
+    {
+      "id": 3,
+      "title": "How to Manage Your Stores",
+      "category_id": 3,
+      "status": "published"
+    },
+    {
+      "id": 4,
+      "title": "How to Manage Your POS Registers",
+      "category_id": 3,
+      "status": "published"
+    },
+    {
+      "id": 5,
+      "title": "How to Manage Your Products",
+      "category_id": 3,
+      "status": "published"
+    },
+    {
+      "id": 6,
+      "title": "How to Manage Your Tax Codes",
+      "category_id": 3,
+      "status": "published"
+    },
+    {
+      "id": 7,
+      "title": "How to Manage Your POS Layouts",
+      "category_id": 3,
+      "status": "published"
+    },
+    {
+      "id": 8,
+      "title": "How to Manage Your Payment Options",
+      "category_id": 3,
+      "status": "published"
+    },
+    {
+      "id": 9,
+      "title": "How to Manage Receipt Settings",
+      "category_id": 3,
+      "status": "published"
+    },
+    {
+      "id": 10,
+      "title": "How to Set Up Your SUPERPOS POS Register (Download, Activate, Deactivate)",
+      "category_id": 3,
+      "status": "published"
+    },
+    {
+      "id": 11,
+      "title": "How to Arrange Your Product Layouts on the SUPERPOS POS App",
+      "category_id": 3,
+      "status": "published"
+    },
+    {
+      "id": 12,
+      "title": "SUPERPOS Manager App: How to Use",
+      "category_id": 3,
+      "status": "published"
+    },
+    {
+      "id": 13,
+      "title": "SUPERPOS Manager App: How to Manage Beep Delivery Orders",
+      "category_id": 3,
+      "status": "published"
+    },
+    {
+      "id": 14,
+      "title": "SUPERPOS Manager App: How to Mark Beep Menu Items as In Stock or Out of Stock",
+      "category_id": 3,
+      "status": "published"
+    },
+    {
+      "id": 15,
+      "title": "SUPERPOS Manager App: How to Perform Stock Take using Scanner",
+      "category_id": 3,
+      "status": "published"
+    },
+    {
+      "id": 16,
+      "title": "Hardware: How to Perform Basic Set Up",
+      "category_id": 3,
+      "status": "published"
+    },
+    {
+      "id": 17,
+      "title": "Hardware: How to Set Up Sunmi & Android T2C",
+      "category_id": 3,
+      "status": "published"
+    },
+    {
+      "id": 18,
+      "title": "Hardware: [iPad] How to Set Up Register",
+      "category_id": 3,
+      "status": "published"
+    },
+    {
+      "id": 19,
+      "title": "Hardware: [Mini] Set Up Guide and User Manuals",
+      "category_id": 3,
+      "status": "published"
+    }
+  ]
+}

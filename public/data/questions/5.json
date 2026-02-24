@@ -1,0 +1,60 @@
+{
+  "id": 5,
+  "category_id": 3,
+  "title": "How to Manage Your Products",
+  "slug": "how-to-manage-your-products",
+  "description": "<p>Create and manage your product catalog, categories, and stock.</p>",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-24 00:08:01",
+  "steps": [
+    {
+      "id": 276,
+      "question_id": 5,
+      "step_order": 1,
+      "step_title": "Step-by-Step Guide",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 311,
+      "question_id": 5,
+      "step_order": 2,
+      "step_title": "Add a Single Product Manually",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 277,
+      "question_id": 5,
+      "step_order": 3,
+      "step_title": "1. In your SUPERPOS BackOffice, go to 'Products', then tap '+ Add Product'.",
+      "content": "",
+      "image_url": "/uploads/1771891558982-311401454.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771891558982-311401454.png"
+      ]
+    },
+    {
+      "id": 278,
+      "question_id": 5,
+      "step_order": 4,
+      "step_title": "2. Fill in the essential product details:",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">a. &#39;Product Name&#39;: The name of your product (e.g., &#39;Espresso&#39;, &#39;T-Shirt&#39;).</span></p><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">b. &#39;SKU&#39;: A unique code for your product (optional, but recommended for inventory tracking).</span></p><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">c. &#39;Category&#39;: Assign the product to a category (e.g., &#39;Coffee&#39;, &#39;Apparel&#39;).</span></p><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">d. &#39;Product Tags&#39;:</span><strong style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\"> </strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Add multiple keywords to group the product (e.g., &#39;Western&#39;, &#39;Food&#39;, &#39;Promo Item&#39;).</span></p>",
+      "image_url": "/uploads/1771891605541-34025959.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771891605541-34025959.png"
+      ]
+    }
+  ]
+}

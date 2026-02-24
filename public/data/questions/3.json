@@ -1,0 +1,99 @@
+{
+  "id": 3,
+  "category_id": 3,
+  "title": "How to Manage Your Stores",
+  "slug": "how-to-manage-your-stores",
+  "description": "<p>Manage your business outlets and physical store locations.</p>",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-23 23:59:51",
+  "steps": [
+    {
+      "id": 270,
+      "question_id": 3,
+      "step_order": 1,
+      "step_title": "Step-by-Step Guide",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 302,
+      "question_id": 3,
+      "step_order": 2,
+      "step_title": "Add a New Store",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 271,
+      "question_id": 3,
+      "step_order": 3,
+      "step_title": "Navigate to Outlets",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">1. In your StoreHub BackOffice, go to &#39;Settings&#39;, then tap &#39;Outlets&#39;</span></p>",
+      "image_url": "/uploads/outlets-management.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/outlets-management.png"
+      ]
+    },
+    {
+      "id": 272,
+      "question_id": 3,
+      "step_order": 4,
+      "step_title": "2. On the 'Outlet' page, tap the 'Add Outlet' button.",
+      "content": "You will see a list of all your outlets. You can click <strong>Edit</strong> to update store details like address and trading hours, or click <strong>+ Add Outlet</strong> in the top right corner to create a new location.",
+      "image_url": "/uploads/1771891086939-385869396.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771891086939-385869396.png"
+      ]
+    },
+    {
+      "id": 303,
+      "question_id": 3,
+      "step_order": 5,
+      "step_title": "3. Fill in your new store's details in the fields provided.",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">a. &#39;Store Name&#39;: Enter the name of your new store.</span></p><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">b. &#39;Address&#39;: Provide the full address.</span></p><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">c. &#39;Contact Number&#39;: Add the store&#39;s contact number.</span></p><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">d. &#39;Email&#39;: Enter the store&#39;s email address.</span></p>",
+      "image_url": "/uploads/1771891128802-172104272.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771891128802-172104272.png"
+      ]
+    },
+    {
+      "id": 304,
+      "question_id": 3,
+      "step_order": 6,
+      "step_title": "e. 'Receipt Template': Choose a receipt template for this store. (You can set up custom templates in 'Receipt Settings').",
+      "content": null,
+      "image_url": "/uploads/1771891144438-719608660.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771891144438-719608660.png"
+      ]
+    },
+    {
+      "id": 305,
+      "question_id": 3,
+      "step_order": 7,
+      "step_title": "4. Tap 'Save' to add your new outlet. It will now appear in your list of outlet.",
+      "content": null,
+      "image_url": "/uploads/1771891189356-139852013.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771891189356-139852013.png"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": 100,
+  "category_id": 6,
+  "title": "QR Order & Pay: POS App",
+  "slug": "qr-order-pay-pos-app",
+  "description": "From section: Online Orders: QR Order & Pay",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-06 00:25:40",
+  "steps": [
+    {
+      "id": 100,
+      "question_id": 100,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>QR Order & Pay: POS App</strong></p><p>Section: Online Orders: QR Order & Pay</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": 66,
+  "category_id": 4,
+  "title": "New iOS: Cancellation & Refund",
+  "slug": "new-ios-cancellation-refund",
+  "description": "From section: POS: New iOS",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-06 00:25:40",
+  "steps": [
+    {
+      "id": 66,
+      "question_id": 66,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>New iOS: Cancellation & Refund</strong></p><p>Section: POS: New iOS</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

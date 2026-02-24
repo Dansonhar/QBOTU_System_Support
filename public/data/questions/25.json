@@ -1,0 +1,23 @@
+{
+  "id": 25,
+  "category_id": 4,
+  "title": "POS: How to Enable Deposit on S1 & S2 Devices",
+  "slug": "pos-how-to-enable-deposit-on-s1-s2-devices",
+  "description": "From section: Basic Set Up",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-06 00:25:40",
+  "steps": [
+    {
+      "id": 25,
+      "question_id": 25,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>POS: How to Enable Deposit on S1 & S2 Devices</strong></p><p>Section: Basic Set Up</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "questions": [
+    {
+      "id": 185,
+      "title": "Contact Us: SUPERPOS Contact Details",
+      "category_id": 13,
+      "status": "published"
+    },
+    {
+      "id": 186,
+      "title": "Contact Us: How to Contact Us via Live Chat",
+      "category_id": 13,
+      "status": "published"
+    },
+    {
+      "id": 187,
+      "title": "Emergency Guide: What to Do If Your Account Is Compromised",
+      "category_id": 13,
+      "status": "published"
+    },
+    {
+      "id": 188,
+      "title": "FAQs: Online Orders",
+      "category_id": 13,
+      "status": "published"
+    },
+    {
+      "id": 189,
+      "title": "FAQs: Others",
+      "category_id": 13,
+      "status": "published"
+    }
+  ]
+}

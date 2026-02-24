@@ -4,10 +4,11 @@ import {
     Settings, MessageCircle, Save, Eye, EyeOff,
     LayoutDashboard, FolderOpen, HelpCircle, Users, LogOut, BarChart3
 } from 'lucide-react';
+import { API_BASE_URL } from '../../config';
 import { useAuth } from '../../context/AuthContext';
 import { StorehubIcon } from '../../components/common/FloatingSupportWidget';
 
-const API_BASE_URL = 'http://localhost:3001/api';
+
 
 export default function SupportSettingsPage() {
     const { token, logout } = useAuth();

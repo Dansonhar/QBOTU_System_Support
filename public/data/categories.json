@@ -1,0 +1,98 @@
+[
+  {
+    "id": 2,
+    "name": "Getting Started",
+    "description": "Learn the basics of SUPERPOS",
+    "status": "active",
+    "created_at": "2026-02-06 00:19:28",
+    "questionCount": 12
+  },
+  {
+    "id": 3,
+    "name": "Setting Up",
+    "description": "Your step-by-step guide to setting up and using StoreHub effectively.",
+    "status": "active",
+    "created_at": "2026-02-06 00:25:40",
+    "questionCount": 17
+  },
+  {
+    "id": 4,
+    "name": "Point of Sale (POS) System",
+    "description": "Transform your checkout process with our POS system. Learn how to configure and integrate all necessary components.",
+    "status": "active",
+    "created_at": "2026-02-06 00:25:40",
+    "questionCount": 50
+  },
+  {
+    "id": 5,
+    "name": "BackOffice",
+    "description": "Your central hub for business management. Monitor performance, update settings, and access key insights.",
+    "status": "active",
+    "created_at": "2026-02-06 00:25:40",
+    "questionCount": 15
+  },
+  {
+    "id": 6,
+    "name": "Online Orders",
+    "description": "Effortlessly manage and process online orders. Track sales, handle deliveries, and manage customer orders.",
+    "status": "active",
+    "created_at": "2026-02-06 00:25:40",
+    "questionCount": 17
+  },
+  {
+    "id": 7,
+    "name": "Reports",
+    "description": "Access and generate detailed reports in the BackOffice.",
+    "status": "active",
+    "created_at": "2026-02-06 00:25:40",
+    "questionCount": 6
+  },
+  {
+    "id": 8,
+    "name": "Tax Guides",
+    "description": "Access essential tax guides in the BackOffice to help you stay compliant.",
+    "status": "active",
+    "created_at": "2026-02-06 00:25:40",
+    "questionCount": 15
+  },
+  {
+    "id": 9,
+    "name": "Hardware",
+    "description": "Ensure your hardware is set up correctly for efficient business operations.",
+    "status": "active",
+    "created_at": "2026-02-06 00:25:40",
+    "questionCount": 14
+  },
+  {
+    "id": 10,
+    "name": "External Integrations",
+    "description": "Find out more about how our ecosystem can integrate with supported malls & other applications!",
+    "status": "active",
+    "created_at": "2026-02-06 00:25:40",
+    "questionCount": 20
+  },
+  {
+    "id": 11,
+    "name": "Getting Started",
+    "description": "Set up your store, products, and POS system to start managing sales, inventory, and performance!",
+    "status": "active",
+    "created_at": "2026-02-06 00:25:40",
+    "questionCount": 0
+  },
+  {
+    "id": 12,
+    "name": "Troubleshooting",
+    "description": "Having issues? Our troubleshooting guide provides solutions for common problems.",
+    "status": "active",
+    "created_at": "2026-02-06 00:25:40",
+    "questionCount": 2
+  },
+  {
+    "id": 13,
+    "name": "Quick Help",
+    "description": "Looking for quick answers? Our Quick Help guide provides fast solutions to get you up and running.",
+    "status": "active",
+    "created_at": "2026-02-06 00:25:40",
+    "questionCount": 5
+  }
+]

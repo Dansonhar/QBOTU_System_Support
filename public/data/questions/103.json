@@ -1,0 +1,23 @@
+{
+  "id": 103,
+  "category_id": 6,
+  "title": "Beep Delivery: Functions in the BackOffice",
+  "slug": "beep-delivery-functions-in-the-backoffice",
+  "description": "From section: Online Orders: Beep Delivery",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-06 00:25:40",
+  "steps": [
+    {
+      "id": 103,
+      "question_id": 103,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>Beep Delivery: Functions in the BackOffice</strong></p><p>Section: Online Orders: Beep Delivery</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

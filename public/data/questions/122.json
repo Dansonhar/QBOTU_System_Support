@@ -1,0 +1,23 @@
+{
+  "id": 122,
+  "category_id": 7,
+  "title": "How to Understand Differences in Sales Reports",
+  "slug": "how-to-understand-differences-in-sales-reports",
+  "description": "From section: Sales Reports",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-02-06 00:25:41",
+  "steps": [
+    {
+      "id": 122,
+      "question_id": 122,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>How to Understand Differences in Sales Reports</strong></p><p>Section: Sales Reports</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

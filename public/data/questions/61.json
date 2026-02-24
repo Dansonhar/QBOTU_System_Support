@@ -1,0 +1,23 @@
+{
+  "id": 61,
+  "category_id": 4,
+  "title": "POS Troubleshooting: Issues for Scanning and POS Features",
+  "slug": "pos-troubleshooting-issues-for-scanning-and-pos-fe",
+  "description": "From section: POS: Troubleshooting",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-06 00:25:40",
+  "steps": [
+    {
+      "id": 61,
+      "question_id": 61,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>POS Troubleshooting: Issues for Scanning and POS Features</strong></p><p>Section: POS: Troubleshooting</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

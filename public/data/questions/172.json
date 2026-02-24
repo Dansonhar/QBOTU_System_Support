@@ -1,0 +1,23 @@
+{
+  "id": 172,
+  "category_id": 2,
+  "title": "F&B: Video Guide",
+  "slug": "f-b-video-guide",
+  "description": "From section: Getting Started: F&B",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-02-06 00:25:41",
+  "steps": [
+    {
+      "id": 172,
+      "question_id": 172,
+      "step_order": 1,
+      "step_title": "Overview",
+      "content": "<p>This article covers: <strong>F&B: Video Guide</strong></p><p>Section: Getting Started: F&B</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    }
+  ]
+}

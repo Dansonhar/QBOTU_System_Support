@@ -1,0 +1,86 @@
+{
+  "id": 4,
+  "category_id": 3,
+  "title": "How to Manage Your POS Registers",
+  "slug": "how-to-manage-your-pos-registers",
+  "description": "<p>Register and manage your POS devices and registers.</p>",
+  "status": "published",
+  "created_at": "2026-02-06 00:25:40",
+  "updated_at": "2026-02-24 00:04:31",
+  "steps": [
+    {
+      "id": 273,
+      "question_id": 4,
+      "step_order": 1,
+      "step_title": "Step-by-Step Guide",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 306,
+      "question_id": 4,
+      "step_order": 2,
+      "step_title": "Add a New POS Register",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 275,
+      "question_id": 4,
+      "step_order": 3,
+      "step_title": "1. In your SUPERPOS BackOffice, go to 'Settings', then tap 'Devices'.",
+      "content": "",
+      "image_url": "/uploads/1771891318095-359535549.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771891318095-359535549.png"
+      ]
+    },
+    {
+      "id": 307,
+      "question_id": 4,
+      "step_order": 4,
+      "step_title": "2. On the 'Devices' page, tap the 'Add POS Register' button.",
+      "content": null,
+      "image_url": "/uploads/1771891347717-316097043.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771891347717-316097043.png"
+      ]
+    },
+    {
+      "id": 308,
+      "question_id": 4,
+      "step_order": 5,
+      "step_title": "4. Fill in the details for your new register:     a. 'POS Register Name': Give your register a clear name (e.g., 'Counter 1', 'Mobile POS').     b. 'Store': Select the store this register will belong to from the dropdown list.     c. 'POS Layout': Choose the POS layout you want this register to use. (You can set up custom layouts in 'POS Layouts').",
+      "content": null,
+      "image_url": "/uploads/1771891367660-411238598.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771891367660-411238598.png"
+      ]
+    },
+    {
+      "id": 309,
+      "question_id": 4,
+      "step_order": 6,
+      "step_title": "5. Tap 'Create'. Your new register will now appear on the 'Devices' page.   ",
+      "content": null,
+      "image_url": "/uploads/1771891441767-873756754.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771891441767-873756754.png"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": 20,
+      "title": "POS: How to Merge Tables and Orders",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 21,
+      "title": "POS: How to Split Bill/Orders / Items",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 22,
+      "title": "POS: How to Change Table for POS with Layout",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 23,
+      "title": "POS: How to Provide Other Tablet Layout on POS",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 24,
+      "title": "POS: How to View Menu Types on your POS layout 5.0 (with Video)",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 25,
+      "title": "POS: How to Enable Deposit on S1 & S2 Devices",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 26,
+      "title": "POS: How to Move Orders Between Customers",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 27,
+      "title": "POS: [Android] How to retry unsynced Offline Transactions & Order Summary",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 28,
+      "title": "POS: How to Cash In-Out for Shift Changes",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 29,
+      "title": "POS: How to Open Shift, Close Shift, Reprint Pre-Settlement",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 30,
+      "title": "POS: [Android] How to track custom payment methods differences tracking",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 31,
+      "title": "POS: [Android] How to Hold & Retrieve Orders / POS & Kitchen Sync Turning",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 32,
+      "title": "[MY] SUPERPOS QR Payment: Maybank QRPay",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 33,
+      "title": "[TH] SUPERPOS QR Payment: GHL Payment",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 34,
+      "title": "KDS: How to set up Kitchen Display System",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 35,
+      "title": "KDS: How to Find and Install KDS (Kitchen Display System)",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 36,
+      "title": "KDS: How to Enable KDS Service in the App",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 37,
+      "title": "KDS: How to Set Up KDS Number via BackOffice",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 38,
+      "title": "KDS: Firing Course via Android",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 39,
+      "title": "KDS: How to Update Kitchen Status via app and force clearing Screens as inactive",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 40,
+      "title": "MRS: How to Enable The MRS System",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 41,
+      "title": "MRS: How to Enable Multiple Register Sync",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 42,
+      "title": "MRS: [Android] How to Main Register Sync",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 43,
+      "title": "MRS: [Android] Troubleshoot Multiple Register Issues",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 44,
+      "title": "Hardware: [Android] POS Sim Card / SD Card",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 45,
+      "title": "Hardware: [Android] How to Set Up Cloud Printing for Orders",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 46,
+      "title": "Customer Facing Display (CFD): How to Set Up",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 47,
+      "title": "Customer Facing Display (CFD): Android Setup",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 48,
+      "title": "Promotion: How to Set Up Basic Percentage Off",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 49,
+      "title": "Promotion: How to Set Up Take Set as Off",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 50,
+      "title": "Promotion: How to Set Up Buy X Free X Item",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 51,
+      "title": "Promotion: How to Set Up Combo (A+B+C) Away Price",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 52,
+      "title": "Promotion: How to Set Up Overwrite Combo Price",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 53,
+      "title": "Promotion: How to Set Up Order on My_eBe",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 54,
+      "title": "Promotion: How to Set Free Items",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 55,
+      "title": "Promotion: How to Set Limited Shipping",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 56,
+      "title": "Promotion: How to Handle Keyed Plan discount with Multi Tier Promotion",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 57,
+      "title": "Promotion: How to Set Up Specific Product Purchase",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 58,
+      "title": "Tax Guides: [PH] How to Apply Tax (VAT) in the SUPERPOS BackOffice",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 59,
+      "title": "POS Troubleshooting: I cannot perform POS App troubleshooting",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 60,
+      "title": "POS Troubleshooting: I cannot see POS login ID / email address",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 61,
+      "title": "POS Troubleshooting: Issues for Scanning and POS Features",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 62,
+      "title": "POS Troubleshooting: Saving Changes on your Price Center",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 63,
+      "title": "POS Troubleshooting: Inventory not reflecting Manually on Items",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 64,
+      "title": "New iOS: Intro",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 65,
+      "title": "New iOS: Features",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 66,
+      "title": "New iOS: Cancellation & Refund",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 67,
+      "title": "New iOS: Cashier",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 68,
+      "title": "New iOS: Products",
+      "category_id": 4,
+      "status": "published"
+    },
+    {
+      "id": 69,
+      "title": "New iOS: Payment",
+      "category_id": 4,
+      "status": "published"
+    }
+  ]
+}
