@@ -260,17 +260,17 @@ const Article = () => {
                             <h3 className="toc-title">{t('article.on_this_page')}</h3>
                             <ul className="toc-list">
                                 <li>
-                                    <a href="#overview" className={`toc-link ${activeSection === 'overview' ? 'active' : ''}`}>{t('article.overview')}</a>
+                                    <a href="javascript:void(0)" onClick={(e) => { e.preventDefault(); document.getElementById('overview')?.scrollIntoView({ behavior: 'smooth' }); }} className={`toc-link ${activeSection === 'overview' ? 'active' : ''}`}>{t('article.overview')}</a>
                                 </li>
                                 {article.steps?.map((step, index) => (
                                     <li key={step.id} className={step.block_type === 'section_title' ? 'toc-item-section' : 'toc-item-step'}>
-                                        <a href={`#step-${index}`} className={`toc-link ${activeSection === `step-${index}` ? 'active' : ''}`}>
+                                        <a href="javascript:void(0)" onClick={(e) => { e.preventDefault(); document.getElementById(`step-${index}`)?.scrollIntoView({ behavior: 'smooth' }); }} className={`toc-link ${activeSection === `step-${index}` ? 'active' : ''}`}>
                                             {step.step_title}
                                         </a>
                                     </li>
                                 ))}
                                 <li>
-                                    <a href="#help" className={`toc-link ${activeSection === 'help' ? 'active' : ''}`}>{t('article.need_help')}</a>
+                                    <a href="javascript:void(0)" onClick={(e) => { e.preventDefault(); document.getElementById('help')?.scrollIntoView({ behavior: 'smooth' }); }} className={`toc-link ${activeSection === 'help' ? 'active' : ''}`}>{t('article.need_help')}</a>
                                 </li>
                             </ul>
                         </div>
