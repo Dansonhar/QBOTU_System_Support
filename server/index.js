@@ -28,8 +28,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+import fs from 'fs';
+
 // Serve uploaded files
-app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+const uploadDir = process.env.RENDER ? '/opt/render/project/src/data/uploads' : path.join(__dirname, '../uploads');
+app.use('/uploads', express.static(uploadDir));
 
 // API Routes
 app.use('/api/auth', authRoutes);
@@ -51,7 +54,11 @@ app.get('/api/health', (req, res) => {
 // 1. Serve static files from 'dist' directory
 app.use('/QBOTU_System_Support_Web', express.static(path.join(__dirname, '../dist')));
 
-// 2. Handle SPA routing - return index.html for all non-API routes matching the base path
+// Redirect root to the Vite base path
+app.get('/', (req, res) => {
+    res.redirect('/QBOTU_System_Support_Web/');
+});
+
 // 2. Handle SPA routing - return index.html for all non-API routes matching the base path
 // Using Regex to avoid Express 5 string path syntax issues
 app.get(/\/QBOTU_System_Support_Web(\/.*)?$/, (req, res) => {

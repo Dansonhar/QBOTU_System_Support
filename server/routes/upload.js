@@ -9,10 +9,16 @@ const __dirname = path.dirname(__filename);
 
 const router = express.Router();
 
+import fs from 'fs';
+const uploadDir = process.env.RENDER ? '/opt/render/project/src/data/uploads' : path.join(__dirname, '../../uploads');
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+}
+
 // Configure multer for file uploads
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, '../../uploads'));
+        cb(null, uploadDir);
     },
     filename: (req, file, cb) => {
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);

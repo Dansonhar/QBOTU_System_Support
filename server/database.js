@@ -2,11 +2,28 @@ import Database from 'better-sqlite3';
 import bcrypt from 'bcryptjs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import fs from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const db = new Database(path.join(__dirname, 'faq.db'));
+// On Render, we want to store the DB in a persistent disk mounted at /opt/render/project/src/data
+const dataDir = process.env.RENDER ? '/opt/render/project/src/data' : __dirname;
+const dbPath = path.join(dataDir, 'faq.db');
+const initialDbPath = path.join(__dirname, 'faq.db');
+
+// Ensure the directory exists
+if (process.env.RENDER && !fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir, { recursive: true });
+}
+
+// If persistent DB doesn't exist but local/initial one does, copy it over
+if (process.env.RENDER && !fs.existsSync(dbPath) && fs.existsSync(initialDbPath)) {
+  fs.copyFileSync(initialDbPath, dbPath);
+  console.log(`Copied initial database to ${dbPath}`);
+}
+
+const db = new Database(dbPath);
 
 // Enable foreign keys
 db.pragma('foreign_keys = ON');
