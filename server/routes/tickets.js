@@ -333,4 +333,21 @@ router.post('/:id/replies', authenticateToken, authorizeRole(['admin', 'staff'])
     }
 });
 
+// DELETE /api/tickets/:id — Delete a ticket
+router.delete('/:id', authenticateToken, authorizeRole(['admin']), (req, res) => {
+    try {
+        const ticketId = req.params.id;
+        const ticket = db.prepare('SELECT * FROM tickets WHERE id = ?').get(ticketId);
+        if (!ticket) return res.status(404).json({ error: 'Ticket not found' });
+
+        db.prepare('DELETE FROM ticket_replies WHERE ticket_id = ?').run(ticketId);
+        db.prepare('DELETE FROM tickets WHERE id = ?').run(ticketId);
+
+        res.json({ success: true, message: 'Ticket deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting ticket:', error);
+        res.status(500).json({ error: 'Failed to delete ticket' });
+    }
+});
+
 export default router;

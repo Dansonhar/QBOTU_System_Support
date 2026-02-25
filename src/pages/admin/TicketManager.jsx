@@ -1,10 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import {
     LayoutDashboard, FolderOpen, HelpCircle, Users, LogOut,
-    BarChart3, MessageCircle, MoreHorizontal, Search, Settings
+    BarChart3, MessageCircle, Search, Settings, Trash2,
+    Clock, CheckCircle, AlertCircle, Loader, Eye, ChevronDown
 } from 'lucide-react';
 import { useAuth, API_BASE_URL } from '../../context/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
+
+const STATUSES = ['Pending', 'Open', 'In Progress', 'Waiting for Customer', 'Solved', 'Closed'];
+
+const STATUS_CONFIG = {
+    'Pending': { bg: '#f5f5f5', color: '#666', border: '#ddd', icon: Clock },
+    'Open': { bg: '#e0f2fe', color: '#0369a1', border: '#bae6fd', icon: AlertCircle },
+    'In Progress': { bg: '#fef3c7', color: '#b45309', border: '#fde68a', icon: Loader },
+    'Waiting for Customer': { bg: '#f3e8ff', color: '#7e22ce', border: '#e9d5ff', icon: Clock },
+    'Solved': { bg: '#dcfce7', color: '#15803d', border: '#bbf7d0', icon: CheckCircle },
+    'Closed': { bg: '#f1f5f9', color: '#475569', border: '#cbd5e1', icon: CheckCircle },
+};
+
+const PRIORITY_CONFIG = {
+    'Low': { bg: '#f1f5f9', color: '#475569' },
+    'Normal': { bg: '#f1f5f9', color: '#475569' },
+    'High': { bg: '#ffedd5', color: '#9a3412' },
+    'Urgent': { bg: '#fee2e2', color: '#991b1b' },
+};
 
 export default function TicketManager() {
     const [tickets, setTickets] = useState([]);
@@ -12,6 +31,7 @@ export default function TicketManager() {
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState('');
     const [statusFilter, setStatusFilter] = useState('');
+    const [openDropdown, setOpenDropdown] = useState(null); // ticket ID of open status dropdown
     const { logout, token, getAuthHeaders } = useAuth();
     const navigate = useNavigate();
 
@@ -22,10 +42,7 @@ export default function TicketManager() {
             if (search) url += `&search=${encodeURIComponent(search)}`;
             if (statusFilter) url += `&status=${encodeURIComponent(statusFilter)}`;
 
-            const response = await fetch(url, {
-                headers: getAuthHeaders()
-            });
-
+            const response = await fetch(url, { headers: getAuthHeaders() });
             if (!response.ok) throw new Error('Failed to fetch tickets');
 
             const data = await response.json();
@@ -42,10 +59,12 @@ export default function TicketManager() {
         fetchTickets(1);
     }, [search, statusFilter]);
 
-    const handleSearch = (e) => {
-        e.preventDefault();
-        fetchTickets(1);
-    };
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        const handleClick = () => setOpenDropdown(null);
+        document.addEventListener('click', handleClick);
+        return () => document.removeEventListener('click', handleClick);
+    }, []);
 
     const handlePageChange = (newPage) => {
         if (newPage >= 1 && newPage <= pagination.totalPages) {
@@ -53,16 +72,56 @@ export default function TicketManager() {
         }
     };
 
-    const getStatusStyle = (status) => {
-        switch (status) {
-            case 'Pending': return { background: '#f5f5f5', color: '#666', border: '1px solid #ddd' };
-            case 'Open': return { background: '#e0f2fe', color: '#0369a1', border: '1px solid #bae6fd' };
-            case 'In Progress': return { background: '#fef3c7', color: '#b45309', border: '1px solid #fde68a' };
-            case 'Waiting for Customer': return { background: '#f3e8ff', color: '#7e22ce', border: '1px solid #e9d5ff' };
-            case 'Solved': return { background: '#dcfce7', color: '#15803d', border: '1px solid #bbf7d0' };
-            case 'Closed': return { background: '#f1f5f9', color: '#475569', border: '1px solid #cbd5e1' };
-            default: return { background: '#fff', color: '#333' };
+    const handleStatusChange = async (ticketId, newStatus) => {
+        try {
+            const res = await fetch(`${API_BASE_URL}/tickets/${ticketId}`, {
+                method: 'PUT',
+                headers: getAuthHeaders(),
+                body: JSON.stringify({ status: newStatus })
+            });
+            if (res.ok) {
+                setTickets(prev => prev.map(t => t.id === ticketId ? { ...t, status: newStatus } : t));
+            }
+        } catch (err) {
+            console.error('Error updating status:', err);
         }
+        setOpenDropdown(null);
+    };
+
+    const handleDelete = async (ticketId, ticketNumber) => {
+        if (!window.confirm(`Are you sure you want to permanently delete ticket ${ticketNumber}? This cannot be undone.`)) return;
+        try {
+            const res = await fetch(`${API_BASE_URL}/tickets/${ticketId}`, {
+                method: 'DELETE',
+                headers: getAuthHeaders()
+            });
+            if (res.ok) {
+                setTickets(prev => prev.filter(t => t.id !== ticketId));
+                setPagination(prev => ({ ...prev, total: prev.total - 1 }));
+            }
+        } catch (err) {
+            console.error('Error deleting ticket:', err);
+        }
+    };
+
+    // Count tickets by status
+    const statusCounts = {};
+    STATUSES.forEach(s => { statusCounts[s] = 0; });
+    tickets.forEach(t => { if (statusCounts[t.status] !== undefined) statusCounts[t.status]++; });
+
+    const formatDate = (dateStr) => {
+        const d = new Date(dateStr);
+        const now = new Date();
+        const diffMs = now - d;
+        const diffMins = Math.floor(diffMs / 60000);
+        const diffHours = Math.floor(diffMs / 3600000);
+        const diffDays = Math.floor(diffMs / 86400000);
+
+        if (diffMins < 1) return 'Just now';
+        if (diffMins < 60) return `${diffMins}m ago`;
+        if (diffHours < 24) return `${diffHours}h ago`;
+        if (diffDays < 7) return `${diffDays}d ago`;
+        return d.toLocaleDateString();
     };
 
     return (
@@ -104,109 +163,215 @@ export default function TicketManager() {
                     <h1>Manage Tickets</h1>
                 </div>
 
+                {/* ===== Status Summary Tabs ===== */}
+                <div style={{
+                    display: 'flex', gap: '8px', marginBottom: '20px', flexWrap: 'wrap'
+                }}>
+                    <button
+                        onClick={() => setStatusFilter('')}
+                        style={{
+                            padding: '8px 18px', borderRadius: '20px', cursor: 'pointer',
+                            border: statusFilter === '' ? '2px solid #F7941D' : '1px solid #ddd',
+                            background: statusFilter === '' ? '#FFF3E0' : '#fff',
+                            color: statusFilter === '' ? '#F7941D' : '#666',
+                            fontWeight: statusFilter === '' ? '700' : '400',
+                            fontSize: '13px', transition: 'all .2s'
+                        }}
+                    >
+                        All ({pagination.total})
+                    </button>
+                    {STATUSES.map(s => {
+                        const cfg = STATUS_CONFIG[s];
+                        const isActive = statusFilter === s;
+                        return (
+                            <button
+                                key={s}
+                                onClick={() => setStatusFilter(isActive ? '' : s)}
+                                style={{
+                                    padding: '8px 16px', borderRadius: '20px', cursor: 'pointer',
+                                    border: isActive ? `2px solid ${cfg.color}` : `1px solid ${cfg.border}`,
+                                    background: isActive ? cfg.bg : '#fff',
+                                    color: isActive ? cfg.color : '#888',
+                                    fontWeight: isActive ? '700' : '400',
+                                    fontSize: '13px', transition: 'all .2s'
+                                }}
+                            >
+                                {s}
+                            </button>
+                        );
+                    })}
+                </div>
+
                 <div className="admin-card">
-                    <div className="admin-filters" style={{ display: 'flex', gap: 16, marginBottom: 20 }}>
-                        <div style={{ flex: 1 }}>
-                            <input
-                                type="text"
-                                placeholder="Search by ID, Name or Email"
-                                value={search}
-                                onChange={(e) => setSearch(e.target.value)}
-                                style={{ width: '100%', padding: '10px 14px', borderRadius: 6, border: '1px solid #ddd' }}
-                            />
-                        </div>
-                        <select
-                            value={statusFilter}
-                            onChange={(e) => setStatusFilter(e.target.value)}
-                            style={{ padding: '10px 14px', borderRadius: 6, border: '1px solid #ddd' }}
-                        >
-                            <option value="">All Statuses</option>
-                            <option value="Pending">Pending</option>
-                            <option value="Open">Open</option>
-                            <option value="In Progress">In Progress</option>
-                            <option value="Waiting for Customer">Waiting for Customer</option>
-                            <option value="Solved">Solved</option>
-                            <option value="Closed">Closed</option>
-                        </select>
+                    {/* Search */}
+                    <div style={{ marginBottom: 20 }}>
+                        <input
+                            type="text"
+                            placeholder="🔍 Search by Ticket ID, Name, or Email..."
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                            style={{
+                                width: '100%', padding: '12px 16px', borderRadius: '8px',
+                                border: '1px solid #ddd', fontSize: '14px'
+                            }}
+                        />
                     </div>
 
-                    <div className="admin-table-container">
-                        <table className="admin-table">
-                            <thead>
-                                <tr>
-                                    <th>Ticket ID</th>
-                                    <th>Name</th>
-                                    <th>Topic</th>
-                                    <th>Status</th>
-                                    <th>Priority</th>
-                                    <th>Created</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {loading ? (
-                                    <tr>
-                                        <td colSpan="7" style={{ textAlign: 'center', padding: '2rem' }}>Loading tickets...</td>
-                                    </tr>
-                                ) : tickets.length === 0 ? (
-                                    <tr>
-                                        <td colSpan="7" style={{ textAlign: 'center', padding: '2rem' }}>No tickets found</td>
-                                    </tr>
-                                ) : (
-                                    tickets.map((ticket) => (
-                                        <tr key={ticket.id}>
-                                            <td style={{ fontWeight: 600 }}>{ticket.ticket_number}</td>
-                                            <td>
-                                                <div style={{ fontWeight: 500 }}>{ticket.name}</div>
-                                                <div style={{ fontSize: '0.8rem', color: '#666' }}>{ticket.email}</div>
-                                            </td>
-                                            <td>{ticket.topic}</td>
-                                            <td>
+                    {/* Ticket Cards */}
+                    {loading ? (
+                        <div style={{ textAlign: 'center', padding: '3rem', color: '#999' }}>Loading tickets...</div>
+                    ) : tickets.length === 0 ? (
+                        <div style={{ textAlign: 'center', padding: '3rem', color: '#999' }}>
+                            <MessageCircle size={48} style={{ opacity: 0.3, marginBottom: 12 }} />
+                            <p>No tickets found</p>
+                        </div>
+                    ) : (
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                            {tickets.map((ticket) => {
+                                const statusCfg = STATUS_CONFIG[ticket.status] || STATUS_CONFIG['Pending'];
+                                const priorityCfg = PRIORITY_CONFIG[ticket.priority] || PRIORITY_CONFIG['Normal'];
+                                const StatusIcon = statusCfg.icon;
+
+                                return (
+                                    <div
+                                        key={ticket.id}
+                                        style={{
+                                            background: '#fff', border: '1px solid #eee', borderRadius: '10px',
+                                            padding: '16px 20px', display: 'flex', alignItems: 'center', gap: '16px',
+                                            transition: 'box-shadow .2s, border-color .2s',
+                                            borderLeft: `4px solid ${statusCfg.color}`,
+                                            cursor: 'default'
+                                        }}
+                                        onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 2px 12px rgba(0,0,0,0.08)'; }}
+                                        onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; }}
+                                    >
+                                        {/* Ticket info */}
+                                        <div style={{ flex: 1, minWidth: 0 }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px', flexWrap: 'wrap' }}>
+                                                <span style={{ fontWeight: 700, fontSize: '14px', color: '#333' }}>{ticket.ticket_number}</span>
                                                 <span style={{
-                                                    padding: '4px 8px',
-                                                    borderRadius: 12,
-                                                    fontSize: '0.75rem',
-                                                    fontWeight: 600,
-                                                    ...getStatusStyle(ticket.status)
-                                                }}>
-                                                    {ticket.status}
-                                                </span>
-                                            </td>
-                                            <td>
-                                                <span style={{
-                                                    padding: '4px 8px',
-                                                    borderRadius: 12,
-                                                    fontSize: '0.75rem',
-                                                    fontWeight: 600,
-                                                    background: ticket.priority === 'Urgent' ? '#fee2e2' : ticket.priority === 'High' ? '#ffedd5' : '#f1f5f9',
-                                                    color: ticket.priority === 'Urgent' ? '#991b1b' : ticket.priority === 'High' ? '#9a3412' : '#475569'
+                                                    padding: '2px 10px', borderRadius: '12px', fontSize: '11px', fontWeight: 600,
+                                                    background: priorityCfg.bg, color: priorityCfg.color
                                                 }}>
                                                     {ticket.priority}
                                                 </span>
-                                            </td>
-                                            <td>
-                                                {new Date(ticket.created_at).toLocaleDateString()}
-                                                <br />
-                                                <span style={{ fontSize: '0.8rem', color: '#999' }}>{new Date(ticket.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
-                                            </td>
-                                            <td>
-                                                <button
-                                                    onClick={() => navigate(`/admin/tickets/${ticket.id}`)}
-                                                    className="admin-btn-secondary"
-                                                    style={{ padding: '6px 12px', fontSize: '0.85rem' }}
-                                                >
-                                                    View
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    ))
-                                )}
-                            </tbody>
-                        </table>
-                    </div>
+                                                <span style={{ fontSize: '12px', color: '#999' }}>{formatDate(ticket.created_at)}</span>
+                                            </div>
+                                            <div style={{ fontSize: '14px', fontWeight: 500, color: '#333', marginBottom: 4 }}>
+                                                {ticket.topic}
+                                            </div>
+                                            <div style={{ fontSize: '13px', color: '#888' }}>
+                                                {ticket.name} · <span style={{ color: '#aaa' }}>{ticket.email}</span>
+                                            </div>
+                                        </div>
 
+                                        {/* Status dropdown button */}
+                                        <div style={{ position: 'relative' }}>
+                                            <button
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    setOpenDropdown(openDropdown === ticket.id ? null : ticket.id);
+                                                }}
+                                                style={{
+                                                    display: 'flex', alignItems: 'center', gap: '6px',
+                                                    padding: '6px 14px', borderRadius: '20px', cursor: 'pointer',
+                                                    background: statusCfg.bg, color: statusCfg.color,
+                                                    border: `1px solid ${statusCfg.border}`,
+                                                    fontSize: '12px', fontWeight: 600, whiteSpace: 'nowrap',
+                                                    transition: 'all .15s'
+                                                }}
+                                            >
+                                                <StatusIcon size={13} />
+                                                {ticket.status}
+                                                <ChevronDown size={12} />
+                                            </button>
+
+                                            {/* Dropdown */}
+                                            {openDropdown === ticket.id && (
+                                                <div
+                                                    onClick={(e) => e.stopPropagation()}
+                                                    style={{
+                                                        position: 'absolute', right: 0, top: '110%', zIndex: 100,
+                                                        background: '#fff', borderRadius: '10px',
+                                                        boxShadow: '0 8px 30px rgba(0,0,0,0.15)',
+                                                        border: '1px solid #eee', minWidth: '200px',
+                                                        overflow: 'hidden'
+                                                    }}
+                                                >
+                                                    <div style={{ padding: '10px 14px', borderBottom: '1px solid #f0f0f0', fontSize: '11px', color: '#999', fontWeight: 600, textTransform: 'uppercase' }}>
+                                                        Change Status
+                                                    </div>
+                                                    {STATUSES.map(s => {
+                                                        const cfg = STATUS_CONFIG[s];
+                                                        const Icon = cfg.icon;
+                                                        const isCurrentStatus = ticket.status === s;
+                                                        return (
+                                                            <button
+                                                                key={s}
+                                                                onClick={() => handleStatusChange(ticket.id, s)}
+                                                                style={{
+                                                                    display: 'flex', alignItems: 'center', gap: '10px',
+                                                                    width: '100%', padding: '10px 14px', border: 'none',
+                                                                    background: isCurrentStatus ? cfg.bg : 'transparent',
+                                                                    color: isCurrentStatus ? cfg.color : '#333',
+                                                                    fontWeight: isCurrentStatus ? 700 : 400,
+                                                                    cursor: 'pointer', fontSize: '13px', textAlign: 'left',
+                                                                    transition: 'background .15s'
+                                                                }}
+                                                                onMouseEnter={(e) => { if (!isCurrentStatus) e.target.style.background = '#f8f8f8'; }}
+                                                                onMouseLeave={(e) => { if (!isCurrentStatus) e.target.style.background = 'transparent'; }}
+                                                            >
+                                                                <Icon size={14} color={cfg.color} />
+                                                                {s}
+                                                                {isCurrentStatus && <span style={{ marginLeft: 'auto', fontSize: '11px' }}>✓</span>}
+                                                            </button>
+                                                        );
+                                                    })}
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        {/* View button */}
+                                        <button
+                                            onClick={() => navigate(`/admin/tickets/${ticket.id}`)}
+                                            style={{
+                                                display: 'flex', alignItems: 'center', gap: '5px',
+                                                padding: '8px 14px', borderRadius: '8px',
+                                                border: '1px solid #ddd', background: '#fff',
+                                                color: '#555', fontSize: '13px', fontWeight: 500,
+                                                cursor: 'pointer', transition: 'all .15s'
+                                            }}
+                                            onMouseEnter={e => { e.currentTarget.style.background = '#F7941D'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = '#F7941D'; }}
+                                            onMouseLeave={e => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.color = '#555'; e.currentTarget.style.borderColor = '#ddd'; }}
+                                        >
+                                            <Eye size={14} /> View
+                                        </button>
+
+                                        {/* Delete button */}
+                                        <button
+                                            onClick={() => handleDelete(ticket.id, ticket.ticket_number)}
+                                            title="Delete ticket"
+                                            style={{
+                                                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                width: '34px', height: '34px', borderRadius: '8px',
+                                                border: '1px solid #fecaca', background: '#fff',
+                                                color: '#ef5350', cursor: 'pointer',
+                                                transition: 'all .15s'
+                                            }}
+                                            onMouseEnter={e => { e.currentTarget.style.background = '#ef5350'; e.currentTarget.style.color = '#fff'; }}
+                                            onMouseLeave={e => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.color = '#ef5350'; }}
+                                        >
+                                            <Trash2 size={14} />
+                                        </button>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    )}
+
+                    {/* Pagination */}
                     {!loading && pagination.totalPages > 1 && (
-                        <div className="admin-pagination">
+                        <div className="admin-pagination" style={{ marginTop: '20px' }}>
                             <button
                                 onClick={() => handlePageChange(pagination.page - 1)}
                                 disabled={pagination.page === 1}
