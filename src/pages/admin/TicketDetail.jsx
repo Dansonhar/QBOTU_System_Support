@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import {
-    LayoutDashboard, FolderOpen, HelpCircle, Users, LogOut,
-    BarChart3, MessageCircle, ArrowLeft, Send, Settings, AlertCircle
+    ArrowLeft, Send, AlertCircle
 } from 'lucide-react';
 import { useAuth, API_BASE_URL } from '../../context/AuthContext';
 import { useNavigate, useParams, Link } from 'react-router-dom';
+import AdminSidebar from '../../components/admin/AdminSidebar';
 
 export default function TicketDetail() {
     const { id } = useParams();
@@ -115,37 +115,7 @@ export default function TicketDetail() {
 
     return (
         <div className="admin-layout">
-            <aside className="admin-sidebar">
-                <div className="admin-sidebar-header">
-                    <h2>Admin Panel</h2>
-                </div>
-                <nav className="admin-nav">
-                    <Link to="/admin" className="admin-nav-item">
-                        <LayoutDashboard size={20} /> Dashboard
-                    </Link>
-                    <Link to="/admin/categories" className="admin-nav-item">
-                        <FolderOpen size={20} /> Categories
-                    </Link>
-                    <Link to="/admin/questions" className="admin-nav-item">
-                        <HelpCircle size={20} /> Questions
-                    </Link>
-                    <Link to="/admin/analytics" className="admin-nav-item">
-                        <BarChart3 size={20} /> Analytics
-                    </Link>
-                    <Link to="/admin/users" className="admin-nav-item">
-                        <Users size={20} /> Users
-                    </Link>
-                    <Link to="/admin/tickets" className="admin-nav-item active">
-                        <MessageCircle size={20} /> Tickets
-                    </Link>
-                    <Link to="/admin/support-settings" className="admin-nav-item">
-                        <Settings size={20} /> Support Widget
-                    </Link>
-                    <button onClick={logout} className="admin-nav-item admin-nav-logout">
-                        <LogOut size={20} /> Logout
-                    </button>
-                </nav>
-            </aside>
+            <AdminSidebar />
 
             <main className="admin-main">
                 <div className="admin-main-header">

@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import {
     BarChart3, Search, MousePointerClick, TrendingUp, Trash2,
-    LayoutDashboard, FolderOpen, HelpCircle, Users, LogOut, Settings, MessageCircle
+    HelpCircle
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { API_BASE_URL } from '../../config';
+import AdminSidebar from '../../components/admin/AdminSidebar';
 
 export default function AnalyticsDashboard() {
     const { token, logout } = useAuth();
@@ -101,40 +102,7 @@ export default function AnalyticsDashboard() {
 
     return (
         <div className="admin-layout">
-            <aside className="admin-sidebar">
-                <div className="admin-sidebar-header">
-                    <h2>SUPERPOS</h2>
-                    <span>Admin Panel</span>
-                </div>
-                <nav className="admin-nav">
-                    <Link to="/admin/dashboard" className={`admin-nav-item ${location.pathname === '/admin/dashboard' ? 'active' : ''}`}>
-                        <LayoutDashboard size={20} /> Dashboard
-                    </Link>
-                    <Link to="/admin/categories" className={`admin-nav-item ${location.pathname === '/admin/categories' ? 'active' : ''}`}>
-                        <FolderOpen size={20} /> Categories
-                    </Link>
-                    <Link to="/admin/questions" className={`admin-nav-item ${location.pathname.startsWith('/admin/questions') ? 'active' : ''}`}>
-                        <HelpCircle size={20} /> Questions
-                    </Link>
-                    <Link to="/admin/analytics" className={`admin-nav-item ${location.pathname === '/admin/analytics' ? 'active' : ''}`}>
-                        <BarChart3 size={20} /> Analytics
-                    </Link>
-                    <Link to="/admin/users" className={`admin-nav-item ${location.pathname === '/admin/users' ? 'active' : ''}`}>
-                        <Users size={20} /> Users
-                    </Link>
-                    <Link to="/admin/tickets" className={`admin-nav-item ${location.pathname === '/admin/tickets' ? 'active' : ''}`}>
-                        <MessageCircle size={20} /> Tickets
-                    </Link>
-                    <Link to="/admin/support-settings" className={`admin-nav-item ${location.pathname === '/admin/support-settings' ? 'active' : ''}`}>
-                        <Settings size={20} /> Support Widget
-                    </Link>
-                </nav>
-                <div className="admin-sidebar-footer">
-                    <button onClick={handleLogout} className="admin-nav-item admin-logout-btn">
-                        <LogOut size={20} /> Logout
-                    </button>
-                </div>
-            </aside>
+            <AdminSidebar />
 
             <main className="admin-main">
                 <div className="admin-header">

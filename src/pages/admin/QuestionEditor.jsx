@@ -3,10 +3,10 @@ import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { IMAGE_BASE_URL } from '../../config';
 import { useAuth, API_BASE_URL } from '../../context/AuthContext';
 import {
-    LayoutDashboard, FolderOpen, HelpCircle, LogOut, Plus,
-    Save, ArrowLeft, Trash2, FileText, GripVertical, Image, Video, X, Users, BarChart3, Settings, MessageCircle
+    Plus, Save, ArrowLeft, Trash2, GripVertical, Image, Video, X
 } from 'lucide-react';
 import RichTextEditor from '../../components/common/RichTextEditor';
+import AdminSidebar from '../../components/admin/AdminSidebar';
 
 const QuestionEditor = () => {
     const { id } = useParams();
@@ -337,54 +337,7 @@ const QuestionEditor = () => {
 
     return (
         <div className="admin-layout">
-            <aside className="admin-sidebar">
-                <div className="admin-sidebar-header">
-                    <h2>SUPERPOS</h2>
-                    <span>Admin Panel</span>
-                </div>
-
-                <nav className="admin-nav">
-                    <Link to="/admin/dashboard" className="admin-nav-item">
-                        <LayoutDashboard size={20} />
-                        <span>Dashboard</span>
-                    </Link>
-                    <Link to="/admin/categories" className="admin-nav-item">
-                        <FolderOpen size={20} />
-                        <span>Categories</span>
-                    </Link>
-                    <Link to="/admin/questions" className="admin-nav-item active">
-                        <HelpCircle size={20} />
-                        <span>Questions</span>
-                    </Link>
-                    <Link to="/admin/analytics" className="admin-nav-item">
-                        <BarChart3 size={20} />
-                        <span>Analytics</span>
-                    </Link>
-                    <Link to="/admin/users" className="admin-nav-item">
-                        <Users size={20} />
-                        <span>Users</span>
-                    </Link>
-                    <Link to="/admin/tickets" className="admin-nav-item">
-                        <MessageCircle size={20} />
-                        <span>Tickets</span>
-                    </Link>
-                    <Link to="/admin/support-settings" className="admin-nav-item">
-                        <Settings size={20} />
-                        <span>Support Widget</span>
-                    </Link>
-                </nav>
-
-                <div className="admin-sidebar-footer">
-                    <Link to="/" className="admin-nav-item">
-                        <FileText size={20} />
-                        <span>View Site</span>
-                    </Link>
-                    <button onClick={logout} className="admin-nav-item admin-logout-btn">
-                        <LogOut size={20} />
-                        <span>Logout</span>
-                    </button>
-                </div>
-            </aside>
+            <AdminSidebar />
 
             <main className="admin-main">
                 <div className="admin-header">
