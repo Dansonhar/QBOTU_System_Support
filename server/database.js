@@ -119,6 +119,7 @@ db.exec(`
     priority TEXT DEFAULT 'Normal' CHECK(priority IN ('Low', 'Normal', 'High', 'Urgent')),
     assigned_to INTEGER,
     source TEXT DEFAULT 'Web Support Form',
+    is_unread INTEGER DEFAULT 1,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (assigned_to) REFERENCES admin_users(id) ON DELETE SET NULL
@@ -138,6 +139,13 @@ db.exec(`
     FOREIGN KEY (ticket_id) REFERENCES tickets(id) ON DELETE CASCADE
   );
 `);
+
+// Auto-migrate to add is_unread column for existing databases
+try {
+  db.prepare('ALTER TABLE tickets ADD COLUMN is_unread INTEGER DEFAULT 1').run();
+} catch (e) {
+  // Ignore error if column already exists
+}
 
 // Add role column if it doesn't exist (migration for existing databases)
 try {

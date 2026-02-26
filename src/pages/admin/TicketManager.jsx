@@ -219,6 +219,14 @@ export default function TicketManager() {
                                         <div style={{ flex: 1, minWidth: 0 }}>
                                             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px', flexWrap: 'wrap' }}>
                                                 <span style={{ fontWeight: 700, fontSize: '14px', color: '#333' }}>{ticket.ticket_number}</span>
+                                                {ticket.is_unread === 1 && (
+                                                    <span style={{
+                                                        padding: '2px 8px', borderRadius: '12px', fontSize: '10px', fontWeight: 800,
+                                                        background: '#ef5350', color: '#fff', letterSpacing: '0.5px'
+                                                    }}>
+                                                        NEW
+                                                    </span>
+                                                )}
                                                 <span style={{
                                                     padding: '2px 10px', borderRadius: '12px', fontSize: '11px', fontWeight: 600,
                                                     background: priorityCfg.bg, color: priorityCfg.color
@@ -227,10 +235,10 @@ export default function TicketManager() {
                                                 </span>
                                                 <span style={{ fontSize: '12px', color: '#999' }}>{formatDate(ticket.created_at)}</span>
                                             </div>
-                                            <div style={{ fontSize: '14px', fontWeight: 500, color: '#333', marginBottom: 4 }}>
+                                            <div style={{ fontSize: '14px', fontWeight: ticket.is_unread === 1 ? 700 : 500, color: '#333', marginBottom: 4 }}>
                                                 {ticket.topic}
                                             </div>
-                                            <div style={{ fontSize: '13px', color: '#888' }}>
+                                            <div style={{ fontSize: '13px', color: ticket.is_unread === 1 ? '#555' : '#888' }}>
                                                 {ticket.name} · <span style={{ color: '#aaa' }}>{ticket.email}</span>
                                             </div>
                                         </div>

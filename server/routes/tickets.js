@@ -257,7 +257,7 @@ router.get('/', authenticateToken, authorizeRole(['admin', 'staff']), (req, res)
 // GET /api/tickets/stats
 router.get('/stats', authenticateToken, authorizeRole(['admin', 'staff']), (req, res) => {
     try {
-        const pendingCount = db.prepare("SELECT COUNT(*) as count FROM tickets WHERE status IN ('Pending', 'Open')").get().count;
+        const pendingCount = db.prepare("SELECT COUNT(*) as count FROM tickets WHERE is_unread = 1").get().count;
         res.json({ pendingCount });
     } catch (error) {
         res.status(500).json({ error: 'Failed' });
@@ -272,6 +272,12 @@ router.get('/:id', authenticateToken, authorizeRole(['admin', 'staff']), (req, r
             FROM tickets t LEFT JOIN admin_users u ON t.assigned_to = u.id WHERE t.id = ?
         `).get(req.params.id);
         if (!ticket) return res.status(404).json({ error: 'Ticket not found' });
+
+        // Mark as read when opened
+        if (ticket.is_unread === 1) {
+            db.prepare('UPDATE tickets SET is_unread = 0 WHERE id = ?').run(ticket.id);
+            ticket.is_unread = 0;
+        }
 
         const replies = db.prepare('SELECT * FROM ticket_replies WHERE ticket_id = ? ORDER BY created_at ASC').all(ticket.id);
         res.json({ ...ticket, replies });

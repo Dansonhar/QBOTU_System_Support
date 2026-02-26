@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { API_BASE_URL } from '../config';
 
+let globalLastKnownCount = null;
+let globalHasPlayedInitial = false;
+
 // Generate notification sound using Web Audio API (no external file needed)
 const playNotificationSound = () => {
     try {
@@ -47,10 +50,8 @@ const playNotificationSound = () => {
 };
 
 export function useTicketNotifications(token) {
-    const [pendingCount, setPendingCount] = useState(0);
-    const [newTicketAlert, setNewTicketAlert] = useState(null); // { ticketNumber, name, topic }
-    const lastKnownCountRef = useRef(null);
-    const hasPlayedInitialRef = useRef(false);
+    const [pendingCount, setPendingCount] = useState(globalLastKnownCount || 0);
+    const [newTicketAlert, setNewTicketAlert] = useState(null);
 
     const fetchPendingCount = async () => {
         if (!token) return;
@@ -65,11 +66,14 @@ export function useTicketNotifications(token) {
                 const data = await res.json();
                 const newCount = data.pendingCount || 0;
 
-                // If count increased AND we've already loaded once (not the first load)
-                if (lastKnownCountRef.current !== null && newCount > lastKnownCountRef.current) {
+                // Ensure it plays sound ONLY when new count actually goes UP compared to global memory
+                if (globalLastKnownCount !== null && newCount > globalLastKnownCount) {
                     playNotificationSound();
+
+                    // Show how many NEW unseen tickets arrived
+                    const differences = newCount - globalLastKnownCount;
                     setNewTicketAlert({
-                        message: `New ticket received! (${newCount} pending)`,
+                        message: `${differences} new ticket(s) received!`,
                         timestamp: Date.now()
                     });
 
@@ -77,13 +81,13 @@ export function useTicketNotifications(token) {
                     setTimeout(() => setNewTicketAlert(null), 5000);
                 }
 
-                // On first load, play sound if there are pending tickets
-                if (lastKnownCountRef.current === null && newCount > 0 && !hasPlayedInitialRef.current) {
-                    hasPlayedInitialRef.current = true;
-                    playNotificationSound();
+                // If loading the app for the absolute first time in this session, don't spam the sound
+                // Just log the count.
+                if (globalLastKnownCount === null) {
+                    globalHasPlayedInitial = true;
                 }
 
-                lastKnownCountRef.current = newCount;
+                globalLastKnownCount = newCount;
                 setPendingCount(newCount);
             }
         } catch (e) {
