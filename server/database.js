@@ -143,6 +143,8 @@ db.exec(`
 // Auto-migrate to add is_unread column for existing databases
 try {
   db.prepare('ALTER TABLE tickets ADD COLUMN is_unread INTEGER DEFAULT 1').run();
+  // Mark ALL pre-existing tickets as read — only NEW tickets after this should be unread
+  db.prepare('UPDATE tickets SET is_unread = 0').run();
 } catch (e) {
   // Ignore error if column already exists
 }
