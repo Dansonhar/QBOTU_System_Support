@@ -344,7 +344,7 @@ router.post('/:id/replies', authenticateToken, authorizeRole(['admin', 'staff'])
 });
 
 // DELETE /api/tickets/:id — Delete a ticket
-router.delete('/:id', authenticateToken, authorizeRole(['admin']), (req, res) => {
+router.delete('/:id', authenticateToken, authorizeRole(['admin', 'staff']), (req, res) => {
     try {
         const ticketId = req.params.id;
         const ticket = db.prepare('SELECT * FROM tickets WHERE id = ?').get(ticketId);
