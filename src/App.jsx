@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import MainLayout from './components/layout/MainLayout';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
@@ -85,10 +85,13 @@ function AppRoutes() {
 }
 
 function App() {
+  const location = useLocation();
+  const isAdmin = location.pathname.startsWith('/admin');
+
   return (
     <AuthProvider>
       <AppRoutes />
-      <FloatingSupportWidget />
+      {!isAdmin && <FloatingSupportWidget />}
       <DebugInfo />
     </AuthProvider>
   );
