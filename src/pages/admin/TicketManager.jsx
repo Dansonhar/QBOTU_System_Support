@@ -40,7 +40,11 @@ export default function TicketManager() {
             setLoading(true);
             let url = `${API_BASE_URL}/tickets?page=${page}&limit=10`;
             if (search) url += `&search=${encodeURIComponent(search)}`;
-            if (statusFilter) url += `&status=${encodeURIComponent(statusFilter)}`;
+            if (statusFilter === 'Unread') {
+                url += `&unread=1`;
+            } else if (statusFilter) {
+                url += `&status=${encodeURIComponent(statusFilter)}`;
+            }
 
             const response = await fetch(url, { headers: getAuthHeaders() });
             if (!response.ok) throw new Error('Failed to fetch tickets');
@@ -149,6 +153,19 @@ export default function TicketManager() {
                         }}
                     >
                         All ({pagination.total})
+                    </button>
+                    <button
+                        onClick={() => setStatusFilter('Unread')}
+                        style={{
+                            padding: '8px 16px', borderRadius: '20px', cursor: 'pointer',
+                            border: statusFilter === 'Unread' ? `2px solid #ef5350` : `1px solid #ffcdd2`,
+                            background: statusFilter === 'Unread' ? '#ffebee' : '#fff',
+                            color: statusFilter === 'Unread' ? '#ef5350' : '#d32f2f',
+                            fontWeight: statusFilter === 'Unread' ? '700' : '500',
+                            fontSize: '13px', transition: 'all .2s'
+                        }}
+                    >
+                        Unread NEW
                     </button>
                     {STATUSES.map(s => {
                         const cfg = STATUS_CONFIG[s];

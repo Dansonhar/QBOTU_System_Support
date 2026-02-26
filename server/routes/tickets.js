@@ -221,7 +221,7 @@ router.get('/track', (req, res) => {
 // GET /api/tickets — List tickets
 router.get('/', authenticateToken, authorizeRole(['admin', 'staff']), (req, res) => {
     try {
-        const { page = 1, limit = 20, status, priority, assigned_to, search } = req.query;
+        const { page = 1, limit = 20, status, priority, assigned_to, search, unread } = req.query;
         const offset = (parseInt(page) - 1) * parseInt(limit);
 
         let query = `SELECT t.*, u.username as assigned_username FROM tickets t LEFT JOIN admin_users u ON t.assigned_to = u.id WHERE 1=1`;
@@ -237,8 +237,12 @@ router.get('/', authenticateToken, authorizeRole(['admin', 'staff']), (req, res)
             countQuery += ' AND (ticket_number LIKE ? OR email LIKE ? OR name LIKE ?)';
             const s = `%${search}%`; params.push(s, s, s); countParams.push(s, s, s);
         }
+        if (unread === '1') {
+            query += ' AND t.is_unread = 1';
+            countQuery += ' AND is_unread = 1';
+        }
 
-        query += ' ORDER BY t.created_at DESC LIMIT ? OFFSET ?';
+        query += ' ORDER BY t.is_unread DESC, t.created_at DESC LIMIT ? OFFSET ?';
         params.push(parseInt(limit), offset);
 
         const tickets = db.prepare(query).all(...params);
