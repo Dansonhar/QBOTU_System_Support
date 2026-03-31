@@ -262,7 +262,12 @@ router.get('/', authenticateToken, authorizeRole(['admin', 'staff']), (req, res)
 router.get('/stats', authenticateToken, authorizeRole(['admin', 'staff']), (req, res) => {
     try {
         const pendingCount = db.prepare("SELECT COUNT(*) as count FROM tickets WHERE is_unread = 1").get().count;
-        res.json({ pendingCount });
+        const total = db.prepare("SELECT COUNT(*) as count FROM tickets").get().count;
+        const unread = pendingCount;
+        const rows = db.prepare("SELECT status, COUNT(*) as count FROM tickets GROUP BY status").all();
+        const byStatus = {};
+        rows.forEach(r => { byStatus[r.status] = r.count; });
+        res.json({ pendingCount, total, unread, byStatus });
     } catch (error) {
         res.status(500).json({ error: 'Failed' });
     }

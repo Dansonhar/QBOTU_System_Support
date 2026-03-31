@@ -32,8 +32,19 @@ export default function TicketManager() {
     const [search, setSearch] = useState('');
     const [statusFilter, setStatusFilter] = useState('');
     const [openDropdown, setOpenDropdown] = useState(null); // ticket ID of open status dropdown
+    const [tabCounts, setTabCounts] = useState({ total: 0, unread: 0, byStatus: {} });
     const { logout, token, getAuthHeaders } = useAuth();
     const navigate = useNavigate();
+
+    const fetchCounts = async () => {
+        try {
+            const res = await fetch(`${API_BASE_URL}/tickets/stats`, { headers: getAuthHeaders() });
+            if (res.ok) {
+                const data = await res.json();
+                setTabCounts({ total: data.total || 0, unread: data.unread || 0, byStatus: data.byStatus || {} });
+            }
+        } catch (err) { /* silent */ }
+    };
 
     const fetchTickets = async (page = 1) => {
         try {
@@ -63,6 +74,10 @@ export default function TicketManager() {
         fetchTickets(1);
     }, [search, statusFilter]);
 
+    useEffect(() => {
+        fetchCounts();
+    }, []);
+
     // Close dropdown when clicking outside
     useEffect(() => {
         const handleClick = () => setOpenDropdown(null);
@@ -85,6 +100,7 @@ export default function TicketManager() {
             });
             if (res.ok) {
                 setTickets(prev => prev.map(t => t.id === ticketId ? { ...t, status: newStatus } : t));
+                fetchCounts();
             }
         } catch (err) {
             console.error('Error updating status:', err);
@@ -102,6 +118,7 @@ export default function TicketManager() {
             if (res.ok) {
                 setTickets(prev => prev.filter(t => t.id !== ticketId));
                 setPagination(prev => ({ ...prev, total: prev.total - 1 }));
+                fetchCounts();
             }
         } catch (err) {
             console.error('Error deleting ticket:', err);
@@ -149,10 +166,16 @@ export default function TicketManager() {
                             background: statusFilter === '' ? '#FFF3E0' : '#fff',
                             color: statusFilter === '' ? '#F7941D' : '#666',
                             fontWeight: statusFilter === '' ? '700' : '400',
-                            fontSize: '13px', transition: 'all .2s'
+                            fontSize: '13px', transition: 'all .2s',
+                            display: 'flex', alignItems: 'center', gap: '6px'
                         }}
                     >
-                        All ({pagination.total})
+                        All
+                        <span style={{
+                            background: statusFilter === '' ? '#F7941D' : '#ddd',
+                            color: statusFilter === '' ? '#fff' : '#555',
+                            borderRadius: '10px', padding: '1px 7px', fontSize: '11px', fontWeight: 700
+                        }}>{tabCounts.total}</span>
                     </button>
                     <button
                         onClick={() => setStatusFilter('Unread')}
@@ -162,14 +185,22 @@ export default function TicketManager() {
                             background: statusFilter === 'Unread' ? '#ffebee' : '#fff',
                             color: statusFilter === 'Unread' ? '#ef5350' : '#d32f2f',
                             fontWeight: statusFilter === 'Unread' ? '700' : '500',
-                            fontSize: '13px', transition: 'all .2s'
+                            fontSize: '13px', transition: 'all .2s',
+                            display: 'flex', alignItems: 'center', gap: '6px'
                         }}
                     >
                         Unread NEW
+                        {tabCounts.unread > 0 && (
+                            <span style={{
+                                background: '#ef5350', color: '#fff',
+                                borderRadius: '10px', padding: '1px 7px', fontSize: '11px', fontWeight: 700
+                            }}>{tabCounts.unread}</span>
+                        )}
                     </button>
                     {STATUSES.map(s => {
                         const cfg = STATUS_CONFIG[s];
                         const isActive = statusFilter === s;
+                        const count = tabCounts.byStatus[s] || 0;
                         return (
                             <button
                                 key={s}
@@ -180,10 +211,16 @@ export default function TicketManager() {
                                     background: isActive ? cfg.bg : '#fff',
                                     color: isActive ? cfg.color : '#888',
                                     fontWeight: isActive ? '700' : '400',
-                                    fontSize: '13px', transition: 'all .2s'
+                                    fontSize: '13px', transition: 'all .2s',
+                                    display: 'flex', alignItems: 'center', gap: '6px'
                                 }}
                             >
                                 {s}
+                                <span style={{
+                                    background: isActive ? cfg.color : '#e5e7eb',
+                                    color: isActive ? '#fff' : '#555',
+                                    borderRadius: '10px', padding: '1px 7px', fontSize: '11px', fontWeight: 700
+                                }}>{count}</span>
                             </button>
                         );
                     })}
