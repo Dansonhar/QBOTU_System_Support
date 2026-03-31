@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useParams, Link } from 'react-router-dom';
 import { ChevronRight, ThumbsUp, ThumbsDown, MessageCircle, Clock, BookOpen } from 'lucide-react';
 import { API_BASE_URL, IMAGE_BASE_URL, DATA_MODE } from '../config';
+import ImageLightbox from '../components/common/ImageLightbox';
 
 
 
@@ -14,6 +15,10 @@ const Article = () => {
     const [helpful, setHelpful] = useState(null);
 
     const [activeSection, setActiveSection] = useState('overview');
+    const [lightbox, setLightbox] = useState(null); // { images: [], index: 0 }
+
+    const openLightbox = (images, index) => setLightbox({ images, index });
+    const closeLightbox = () => setLightbox(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -109,6 +114,7 @@ const Article = () => {
     }
 
     return (
+        <>
         <div className="article-page">
             <div className="container">
                 {/* Breadcrumb */}
@@ -174,20 +180,25 @@ const Article = () => {
                                             {/* Step Images */}
                                             {step.images && step.images.length > 0 ? (
                                                 <div className="step-images-gallery">
-                                                    {step.images.map((imgUrl, imgIdx) => (
-                                                        <div key={imgIdx} className="step-image">
-                                                            <img
-                                                                src={`${IMAGE_BASE_URL}${imgUrl}`}
-                                                                alt={`${step.step_title} - image ${imgIdx + 1}`}
-                                                            />
-                                                        </div>
-                                                    ))}
+                                                    {step.images.map((imgUrl, imgIdx) => {
+                                                        const allUrls = step.images.map(u => `${IMAGE_BASE_URL}${u}`);
+                                                        return (
+                                                            <div key={imgIdx} className="step-image">
+                                                                <img
+                                                                    src={`${IMAGE_BASE_URL}${imgUrl}`}
+                                                                    alt={`${step.step_title} - image ${imgIdx + 1}`}
+                                                                    onClick={() => openLightbox(allUrls, imgIdx)}
+                                                                />
+                                                            </div>
+                                                        );
+                                                    })}
                                                 </div>
                                             ) : step.image_url && (
                                                 <div className="step-image">
                                                     <img
                                                         src={`${IMAGE_BASE_URL}${step.image_url}`}
                                                         alt={step.step_title}
+                                                        onClick={() => openLightbox([`${IMAGE_BASE_URL}${step.image_url}`], 0)}
                                                     />
                                                 </div>
                                             )}
@@ -278,6 +289,17 @@ const Article = () => {
                 </div>
             </div>
         </div>
+
+        {lightbox && (
+            <ImageLightbox
+                images={lightbox.images}
+                currentIndex={lightbox.index}
+                onClose={closeLightbox}
+                onPrev={() => setLightbox(lb => ({ ...lb, index: lb.index - 1 }))}
+                onNext={() => setLightbox(lb => ({ ...lb, index: lb.index + 1 }))}
+            />
+        )}
+        </>
     );
 };
 

@@ -3,10 +3,11 @@ import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { IMAGE_BASE_URL } from '../../config';
 import { useAuth, API_BASE_URL } from '../../context/AuthContext';
 import {
-    Plus, Save, ArrowLeft, Trash2, GripVertical, Image, Video, X
+    Plus, Save, ArrowLeft, Trash2, GripVertical, Image, Video, X, Maximize2
 } from 'lucide-react';
 import RichTextEditor from '../../components/common/RichTextEditor';
 import AdminSidebar from '../../components/admin/AdminSidebar';
+import ImageLightbox from '../../components/common/ImageLightbox';
 
 const QuestionEditor = () => {
     const { id } = useParams();
@@ -30,6 +31,7 @@ const QuestionEditor = () => {
     const [steps, setSteps] = useState([]);
     const [deletedStepIds, setDeletedStepIds] = useState([]);
     const [draggedStep, setDraggedStep] = useState(null);
+    const [lightbox, setLightbox] = useState(null);
 
     useEffect(() => {
         fetchCategories();
@@ -336,6 +338,7 @@ const QuestionEditor = () => {
     }
 
     return (
+        <>
         <div className="admin-layout">
             <AdminSidebar />
 
@@ -480,6 +483,20 @@ const QuestionEditor = () => {
                                                                                     <img src={`${IMAGE_BASE_URL}${imgUrl}`} alt={`Step image ${imgIdx + 1}`} />
                                                                                     <span className="admin-multi-image-order">{imgIdx + 1}</span>
                                                                                     <button
+                                                                                        className="admin-img-expand"
+                                                                                        type="button"
+                                                                                        title="View full size"
+                                                                                        onClick={(e) => {
+                                                                                            e.stopPropagation();
+                                                                                            setLightbox({
+                                                                                                images: step.images.map(u => `${IMAGE_BASE_URL}${u}`),
+                                                                                                index: imgIdx
+                                                                                            });
+                                                                                        }}
+                                                                                    >
+                                                                                        <Maximize2 size={13} />
+                                                                                    </button>
+                                                                                    <button
                                                                                         className="admin-multi-image-remove"
                                                                                         onClick={() => removeImage(index, imgIdx)}
                                                                                         type="button"
@@ -559,6 +576,17 @@ const QuestionEditor = () => {
                 </div>
             </main>
         </div>
+
+        {lightbox && (
+            <ImageLightbox
+                images={lightbox.images}
+                currentIndex={lightbox.index}
+                onClose={() => setLightbox(null)}
+                onPrev={() => setLightbox(lb => ({ ...lb, index: lb.index - 1 }))}
+                onNext={() => setLightbox(lb => ({ ...lb, index: lb.index + 1 }))}
+            />
+        )}
+        </>
     );
 };
 
