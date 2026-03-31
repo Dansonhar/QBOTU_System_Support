@@ -36,9 +36,9 @@ export default function TicketManager() {
     const { logout, token, getAuthHeaders } = useAuth();
     const navigate = useNavigate();
 
-    const fetchCounts = async () => {
+    const fetchCounts = async (headers) => {
         try {
-            const res = await fetch(`${API_BASE_URL}/tickets/stats`, { headers: getAuthHeaders() });
+            const res = await fetch(`${API_BASE_URL}/tickets/stats`, { headers });
             if (res.ok) {
                 const data = await res.json();
                 setTabCounts({ total: data.total || 0, unread: data.unread || 0, byStatus: data.byStatus || {} });
@@ -49,6 +49,7 @@ export default function TicketManager() {
     const fetchTickets = async (page = 1) => {
         try {
             setLoading(true);
+            const headers = getAuthHeaders();
             let url = `${API_BASE_URL}/tickets?page=${page}&limit=10`;
             if (search) url += `&search=${encodeURIComponent(search)}`;
             if (statusFilter === 'Unread') {
@@ -57,12 +58,14 @@ export default function TicketManager() {
                 url += `&status=${encodeURIComponent(statusFilter)}`;
             }
 
-            const response = await fetch(url, { headers: getAuthHeaders() });
+            const response = await fetch(url, { headers });
             if (!response.ok) throw new Error('Failed to fetch tickets');
 
             const data = await response.json();
             setTickets(data.tickets);
             setPagination(data.pagination);
+            // Always refresh counts alongside tickets using the same auth headers
+            fetchCounts(headers);
         } catch (error) {
             console.error('Error:', error);
         } finally {
@@ -73,10 +76,6 @@ export default function TicketManager() {
     useEffect(() => {
         fetchTickets(1);
     }, [search, statusFilter]);
-
-    useEffect(() => {
-        fetchCounts();
-    }, []);
 
     // Close dropdown when clicking outside
     useEffect(() => {
@@ -93,14 +92,15 @@ export default function TicketManager() {
 
     const handleStatusChange = async (ticketId, newStatus) => {
         try {
+            const headers = getAuthHeaders();
             const res = await fetch(`${API_BASE_URL}/tickets/${ticketId}`, {
                 method: 'PUT',
-                headers: getAuthHeaders(),
+                headers,
                 body: JSON.stringify({ status: newStatus })
             });
             if (res.ok) {
                 setTickets(prev => prev.map(t => t.id === ticketId ? { ...t, status: newStatus } : t));
-                fetchCounts();
+                fetchCounts(headers);
             }
         } catch (err) {
             console.error('Error updating status:', err);
@@ -118,7 +118,7 @@ export default function TicketManager() {
             if (res.ok) {
                 setTickets(prev => prev.filter(t => t.id !== ticketId));
                 setPagination(prev => ({ ...prev, total: prev.total - 1 }));
-                fetchCounts();
+                fetchCounts(getAuthHeaders());
             }
         } catch (err) {
             console.error('Error deleting ticket:', err);
