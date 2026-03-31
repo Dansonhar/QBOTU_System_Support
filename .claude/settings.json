@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /Users/CraveAsia/QBOTU_System_Support/src -name config*)",
+      "Bash(curl -s http://localhost:3001/api/tickets/stats -H \"Authorization: Bearer test\")",
+      "Bash(sqlite3 /Users/CraveAsia/QBOTU_System_Support/server/faq.db \"SELECT id, status, is_unread FROM tickets;\")"
+    ]
+  }
+}

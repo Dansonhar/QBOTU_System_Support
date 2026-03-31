@@ -1344,22 +1344,22 @@ html {
 
 /* Individual Image Box */
 .step-images-gallery .step-image {
-  background: rgb(227, 227, 227);
-  padding: 10px;
-  /* White space around the image within the box */
+  background: #f5f5f5;
+  padding: 6px;
   border: 1px solid #dee2e6;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  /* Card shadow */
-  margin: 0;
-  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin: 0 auto;
   overflow: hidden;
+  max-width: 600px;
 }
 
 .step-images-gallery .step-image img {
   border-radius: 8px;
-  /* Slightly round the image corners inside the box */
   border: 1px solid #f0f0f0;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Hard Physical Separator Line - Removed to avoid clutter between distinct boxes */
@@ -1373,18 +1373,16 @@ html {
 }
 
 .step-image {
-  margin: 2rem 0;
+  margin: 2rem auto;
   border-radius: 12px;
   overflow: hidden;
-  /* Important for the image itself */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   border: 1px solid #e9ecef;
+  max-width: 600px;
 }
 
 .step-image img {
   width: 100%;
-  max-width: 100%;
-  /* Ensure it takes full width of container */
   height: auto;
   display: block;
 }
