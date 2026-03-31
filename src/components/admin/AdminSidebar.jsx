@@ -26,7 +26,7 @@ export default function AdminSidebar() {
         <>
             <aside className="admin-sidebar">
                 <div className="admin-sidebar-header">
-                    <h2>SUPERPOS</h2>
+                    <h2>QPOS</h2>
                     <span>Admin Panel</span>
                 </div>
                 <nav className="admin-nav">

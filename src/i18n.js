@@ -15,7 +15,7 @@ const resources = {
             "common": {
                 "loading": "Loading...",
                 "view_site": "View Site",
-                "copyright": "© 2026 SUPERPOS. All rights reserved."
+                "copyright": "© 2026 QPOS. All rights reserved."
             },
             "categories": {
                 "title": "Browse by Category",
@@ -103,17 +103,17 @@ const resources = {
                 "how_to_manage_your_pos_layouts": "How to Manage Your POS Layouts",
                 "how_to_manage_your_payment_options": "How to Manage Your Payment Options",
                 "how_to_manage_receipt_settings": "How to Manage Receipt Settings",
-                // Setting Up articles - SUPERPOS POS App
-                "how_to_set_up_your_superpos_pos_register_download": "How to Set Up Your SUPERPOS POS Register (Download, Activate, Deactivate)",
-                "how_to_set_up_your_superpos_pos_register_download_activate_deactivate": "How to Set Up Your SUPERPOS POS Register (Download, Activate, Deactivate)",
-                "how_to_arrange_your_product_layouts_on_the_superpo": "How to Arrange Your Product Layouts on the SUPERPOS POS App",
-                "how_to_arrange_your_product_layouts_on_the_superpos_pos_app": "How to Arrange Your Product Layouts on the SUPERPOS POS App",
-                // Setting Up articles - SUPERPOS Manager App
-                "superpos_manager_app_how_to_use": "SUPERPOS Manager App: How to Use",
-                "superpos_manager_app_how_to_manage_beep_delivery_o": "SUPERPOS Manager App: How to Manage Beep Delivery Orders",
-                "superpos_manager_app_how_to_manage_beep_delivery_orders": "SUPERPOS Manager App: How to Manage Beep Delivery Orders",
-                "superpos_manager_app_how_to_mark_beep_menu_items_a": "SUPERPOS Manager App: How to Mark Beep Menu Items as In Stock or Out of Stock",
-                "superpos_manager_app_how_to_perform_stock_take_usi": "SUPERPOS Manager App: How to Perform Stock Take using Scanner",
+                // Setting Up articles - QPOS POS App
+                "how_to_set_up_your_superpos_pos_register_download": "How to Set Up Your QPOS POS Register (Download, Activate, Deactivate)",
+                "how_to_set_up_your_superpos_pos_register_download_activate_deactivate": "How to Set Up Your QPOS POS Register (Download, Activate, Deactivate)",
+                "how_to_arrange_your_product_layouts_on_the_superpo": "How to Arrange Your Product Layouts on the QPOS POS App",
+                "how_to_arrange_your_product_layouts_on_the_superpos_pos_app": "How to Arrange Your Product Layouts on the QPOS POS App",
+                // Setting Up articles - QPOS Manager App
+                "superpos_manager_app_how_to_use": "QPOS Manager App: How to Use",
+                "superpos_manager_app_how_to_manage_beep_delivery_o": "QPOS Manager App: How to Manage Beep Delivery Orders",
+                "superpos_manager_app_how_to_manage_beep_delivery_orders": "QPOS Manager App: How to Manage Beep Delivery Orders",
+                "superpos_manager_app_how_to_mark_beep_menu_items_a": "QPOS Manager App: How to Mark Beep Menu Items as In Stock or Out of Stock",
+                "superpos_manager_app_how_to_perform_stock_take_usi": "QPOS Manager App: How to Perform Stock Take using Scanner",
                 // Setting Up articles - POS Hardware
                 "hardware_how_to_perform_basic_set_up": "Hardware: How to Perform Basic Set Up",
                 "hardware_how_to_set_up_sunmi_android_t2c": "Hardware: How to Set Up Sunmi & Android T2C",
@@ -164,7 +164,7 @@ const resources = {
             "privacy": {
                 "title": "Privacy Policy",
                 "last_updated": "Last updated: {{date}}",
-                "intro": "At SUPERPOS, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our point-of-sale services.",
+                "intro": "At QPOS, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our point-of-sale services.",
                 "s1_title": "1. Information We Collect",
                 "s1_intro": "We collect information that you strictly provide to us. This includes:",
                 "s1_l1": "Personal Data: Name, email address, phone number, and business details when you register or contact support.",
@@ -180,7 +180,7 @@ const resources = {
                 "s3_title": "3. Data Security",
                 "s3_desc": "We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.",
                 "s4_title": "4. Third-Party Privacy Policies",
-                "s4_desc": "SUPERPOS's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options.",
+                "s4_desc": "QPOS's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options.",
                 "s5_title": "5. Contact Us",
                 "s5_desc": "If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us."
             }
@@ -197,7 +197,7 @@ const resources = {
             "common": {
                 "loading": "Memuatkan...",
                 "view_site": "Lihat Laman",
-                "copyright": "© 2026 SUPERPOS. Hak cipta terpelihara."
+                "copyright": "© 2026 QPOS. Hak cipta terpelihara."
             },
             "categories": {
                 "title": "Semak Mengikut Kategori",
@@ -307,7 +307,7 @@ const resources = {
                 "promotion_how_to_set_up_specific_product-purchase": "Promosi: Cara Menetapkan Pembelian Produk Tertentu",
 
                 // Tax Guides
-                "tax_guides_ph_how_to_apply_tax_vat_in_the_superpos": "Panduan Cukai: [PH] Cara Menggunakan Cukai (VAT) di BackOffice SUPERPOS",
+                "tax_guides_ph_how_to_apply_tax_vat_in_the_superpos": "Panduan Cukai: [PH] Cara Menggunakan Cukai (VAT) di BackOffice QPOS",
 
                 // POS Troubleshooting
                 "pos_troubleshooting_i_cannot_perform_pos_app_troub": "Penyelesaian Masalah POS: Saya tidak dapat melakukan penyelesaian masalah Aplikasi POS",
@@ -339,22 +339,22 @@ const resources = {
                 "backoffice_disclosure_for_backoffice_access": "BackOffice: Pendedahan untuk Akses BackOffice",
                 "backoffice_how_to_export_accounting_systems_sales_": "BackOffice: Cara Mengeksport Data Jualan Sistem Perakaunan",
                 "backoffice_how_to_change_language": "BackOffice: Cara Menukar Bahasa",
-                "backoffice_how_to_transfer_superpos_account_owners": "BackOffice: Cara Memindahkan Pemilikan Akaun SUPERPOS",
+                "backoffice_how_to_transfer_superpos_account_owners": "BackOffice: Cara Memindahkan Pemilikan Akaun QPOS",
                 "backoffice_how_to_print_multiple_kitchen_dockets": "BackOffice: Cara Mencetak Pelbagai Dapur Docket",
                 "backoffice_how_to_reset_account_data": "BackOffice: Cara Menetapkan Semula Data Akaun",
                 "backoffice_supported_browser_versions": "BackOffice: Versi Pelayar yang Disokong",
                 "backoffice_dashboard_sales_comparisons": "BackOffice: Perbandingan Jualan Papan Pemuka",
 
                 // Setting Up - App & Hardware
-                "how_to_set_up_your_superpos_pos_register_download": "Cara Menyediakan Daftar POS SUPERPOS Anda (Muat Turun, Aktifkan, Nyahaktifkan)",
-                "how_to_set_up_your_superpos_pos_register_download_activate_deactivate": "Cara Menyediakan Daftar POS SUPERPOS Anda (Muat Turun, Aktifkan, Nyahaktifkan)",
-                "how_to_arrange_your_product_layouts_on_the_superpo": "Cara Menyusun Susun Atur Produk Anda pada Aplikasi POS SUPERPOS",
-                "how_to_arrange_your_product_layouts_on_the_superpos_pos_app": "Cara Menyusun Susun Atur Produk Anda pada Aplikasi POS SUPERPOS",
-                "superpos_manager_app_how_to_use": "Aplikasi Pengurus SUPERPOS: Cara Menggunakan",
-                "superpos_manager_app_how_to_manage_beep_delivery_o": "Aplikasi Pengurus SUPERPOS: Cara Menguruskan Pesanan Penghantaran Beep",
-                "superpos_manager_app_how_to_manage_beep_delivery_orders": "Aplikasi Pengurus SUPERPOS: Cara Menguruskan Pesanan Penghantaran Beep",
-                "superpos_manager_app_how_to_mark_beep_menu_items_a": "Aplikasi Pengurus SUPERPOS: Cara Menandakan Item Menu Beep sebagai Ada Stok atau Habis Stok",
-                "superpos_manager_app_how_to_perform_stock_take_usi": "Aplikasi Pengurus SUPERPOS: Cara Melakukan Pengambilan Stok menggunakan Pengimbas",
+                "how_to_set_up_your_superpos_pos_register_download": "Cara Menyediakan Daftar POS QPOS Anda (Muat Turun, Aktifkan, Nyahaktifkan)",
+                "how_to_set_up_your_superpos_pos_register_download_activate_deactivate": "Cara Menyediakan Daftar POS QPOS Anda (Muat Turun, Aktifkan, Nyahaktifkan)",
+                "how_to_arrange_your_product_layouts_on_the_superpo": "Cara Menyusun Susun Atur Produk Anda pada Aplikasi POS QPOS",
+                "how_to_arrange_your_product_layouts_on_the_superpos_pos_app": "Cara Menyusun Susun Atur Produk Anda pada Aplikasi POS QPOS",
+                "superpos_manager_app_how_to_use": "Aplikasi Pengurus QPOS: Cara Menggunakan",
+                "superpos_manager_app_how_to_manage_beep_delivery_o": "Aplikasi Pengurus QPOS: Cara Menguruskan Pesanan Penghantaran Beep",
+                "superpos_manager_app_how_to_manage_beep_delivery_orders": "Aplikasi Pengurus QPOS: Cara Menguruskan Pesanan Penghantaran Beep",
+                "superpos_manager_app_how_to_mark_beep_menu_items_a": "Aplikasi Pengurus QPOS: Cara Menandakan Item Menu Beep sebagai Ada Stok atau Habis Stok",
+                "superpos_manager_app_how_to_perform_stock_take_usi": "Aplikasi Pengurus QPOS: Cara Melakukan Pengambilan Stok menggunakan Pengimbas",
                 "hardware_how_to_perform_basic_set_up": "Perkakasan: Cara Melakukan Persediaan Asas",
                 "hardware_how_to_set_up_sunmi_android_t2c": "Perkakasan: Cara Menyediakan Sunmi & Android T2C",
                 "hardware_ipad_how_to_set_up_register": "Perkakasan: [iPad] Cara Menyediakan Daftar",
@@ -388,10 +388,10 @@ const resources = {
                 "beep_delivery_troubleshooting": "Penghantaran Beep: Penyelesaian Masalah",
 
                 // Misc
-                "superpos_engage": "Penglibatan SUPERPOS",
-                "superpos_engage_malaysia": "Penglibatan SUPERPOS: Malaysia",
-                "superpos_engage_philippines": "Penglibatan SUPERPOS: Filipina",
-                "superpos_engage_thailand": "Penglibatan SUPERPOS: Thailand",
+                "superpos_engage": "Penglibatan QPOS",
+                "superpos_engage_malaysia": "Penglibatan QPOS: Malaysia",
+                "superpos_engage_philippines": "Penglibatan QPOS: Filipina",
+                "superpos_engage_thailand": "Penglibatan QPOS: Thailand",
                 "boost_google_review_malaysia": "Tingkatkan Ulasan Google: Malaysia",
                 "boost_google_review_philippines": "Tingkatkan Ulasan Google: Filipina",
                 "boost_google_review_thailand": "Tingkatkan Ulasan Google: Thailand",
@@ -405,8 +405,8 @@ const resources = {
 
                 // Additional Articles from data/articles.js
                 // QR Payment
-                "my_superpos_qr_payment_maybank_qrpay": "[MY] Pembayaran QR SUPERPOS: Maybank QRPay",
-                "th_superpos_qr_payment_ghl_payment": "[TH] Pembayaran QR SUPERPOS: GHL Payment",
+                "my_superpos_qr_payment_maybank_qrpay": "[MY] Pembayaran QR QPOS: Maybank QRPay",
+                "th_superpos_qr_payment_ghl_payment": "[TH] Pembayaran QR QPOS: GHL Payment",
 
                 // Cashback
                 "cashback_how_does_it_work": "Pulangan Tunai: Bagaimana Ia Berfungsi",
@@ -425,9 +425,9 @@ const resources = {
                 "payouts_how_to_receive": "Pembayaran: Cara Menerima",
 
                 // Hardware Printers & Routers
-                "how_to_set_up_your_superpos_printer": "Cara Menyediakan Pencetak SUPERPOS Anda",
-                "how_to_manage_network_settings_for_your_superpos_pos_and_printer": "Cara Mengurus Tetapan Rangkaian untuk POS dan Pencetak SUPERPOS Anda",
-                "how_to_troubleshoot_common_superpos_printer_issues": "Cara Menyelesaikan Masalah Pencetak SUPERPOS Biasa",
+                "how_to_set_up_your_superpos_printer": "Cara Menyediakan Pencetak QPOS Anda",
+                "how_to_manage_network_settings_for_your_superpos_pos_and_printer": "Cara Mengurus Tetapan Rangkaian untuk POS dan Pencetak QPOS Anda",
+                "how_to_troubleshoot_common_superpos_printer_issues": "Cara Menyelesaikan Masalah Pencetak QPOS Biasa",
                 "how_to_set_up_your_bixolon_label_printer_and_print_barcodes_desktop": "Cara Menyediakan Pencetak Label Bixolon Anda dan Mencetak Kod Bar (Desktop)",
                 "how_to_use_the_bixolon_label_artist_mobile_app_to_print_barcodes": "Cara Menggunakan Aplikasi Mudah Alih Bixolon Label Artist untuk Mencetak Kod Bar",
                 "cash_drawer_how_to_troubleshoot": "Laci Tunai: Cara Penyelesaian Masalah",
@@ -487,7 +487,7 @@ const resources = {
             "privacy": {
                 "title": "Dasar Privasi",
                 "last_updated": "Terakhir dikemaskini: {{date}}",
-                "intro": "Di SUPERPOS, kami mengambil serius privasi anda. Dasar Privasi ini menjelaskan bagaimana kami mengumpul, menggunakan, mendedahkan, dan melindungi maklumat anda apabila anda melawat laman web kami atau menggunakan perkhidmatan tempat jualan kami.",
+                "intro": "Di QPOS, kami mengambil serius privasi anda. Dasar Privasi ini menjelaskan bagaimana kami mengumpul, menggunakan, mendedahkan, dan melindungi maklumat anda apabila anda melawat laman web kami atau menggunakan perkhidmatan tempat jualan kami.",
                 "s1_title": "1. Maklumat yang Kami Kumpul",
                 "s1_intro": "Kami mengumpul maklumat yang anda berikan secara langsung kepada kami. Ini termasuk:",
                 "s1_l1": "Data Peribadi: Nama, alamat e-mel, nombor telefon, dan butiran perniagaan apabila anda mendaftar atau menghubungi sokongan.",
@@ -503,7 +503,7 @@ const resources = {
                 "s3_title": "3. Keselamatan Data",
                 "s3_desc": "Kami menggunakan langkah keselamatan pentadbiran, teknikal, dan fizikal untuk membantu melindungi maklumat peribadi anda. Walaupun kami telah mengambil langkah yang munasabah untuk melindungi maklumat peribadi yang anda berikan, sila sedar bahawa tiada langkah keselamatan yang sempurna, dan tiada kaedah penghantaran data boleh dijamin.",
                 "s4_title": "4. Dasar Privasi Pihak Ketiga",
-                "s4_desc": "Dasar Privasi SUPERPOS tidak terpakai kepada pengiklan atau laman web lain. Oleh itu, kami menasihatkan anda untuk merujuk Dasar Privasi pelayan iklan pihak ketiga ini untuk maklumat lebih terperinci.",
+                "s4_desc": "Dasar Privasi QPOS tidak terpakai kepada pengiklan atau laman web lain. Oleh itu, kami menasihatkan anda untuk merujuk Dasar Privasi pelayan iklan pihak ketiga ini untuk maklumat lebih terperinci.",
                 "s5_title": "5. Hubungi Kami",
                 "s5_desc": "Jika anda mempunyai sebarang soalan tentang Dasar Privasi kami, jangan ragu untuk menghubungi kami."
             }
@@ -520,7 +520,7 @@ const resources = {
             "common": {
                 "loading": "加载中...",
                 "view_site": "查看网站",
-                "copyright": "© 2026 SUPERPOS. 版权所有。"
+                "copyright": "© 2026 QPOS. 版权所有。"
             },
             "categories": {
                 "title": "按类别浏览",
@@ -626,7 +626,7 @@ const resources = {
                 "promotion_how_to_set_up_specific_product-purchase": "促销：如何设置特定商品购买",
 
                 // Tax Guides
-                "tax_guides_ph_how_to_apply_tax_vat_in_the_superpos": "税务指南：[PH] 如何在 SUPERPOS 后台应用税费 (VAT)",
+                "tax_guides_ph_how_to_apply_tax_vat_in_the_superpos": "税务指南：[PH] 如何在 QPOS 后台应用税费 (VAT)",
 
                 // POS Troubleshooting
                 "pos_troubleshooting_i_cannot_perform_pos_app_troub": "POS 故障排除：无法执行 POS 应用故障排除",
@@ -658,22 +658,22 @@ const resources = {
                 "backoffice_disclosure_for_backoffice_access": "后台：后台访问披露",
                 "backoffice_how_to_export_accounting_systems_sales_": "后台：如何导出会计系统销售数据",
                 "backoffice_how_to_change_language": "后台：如何更改语言",
-                "backoffice_how_to_transfer_superpos_account_owners": "后台：如何转让 SUPERPOS 账户所有权",
+                "backoffice_how_to_transfer_superpos_account_owners": "后台：如何转让 QPOS 账户所有权",
                 "backoffice_how_to_print_multiple_kitchen_dockets": "后台：如何打印多张厨房单据",
                 "backoffice_how_to_reset_account_data": "后台：如何重置账户数据",
                 "backoffice_supported_browser_versions": "后台：支持的浏览器版本",
                 "backoffice_dashboard_sales_comparisons": "后台：仪表板销售对比",
 
                 // Setting Up - App & Hardware
-                "how_to_set_up_your_superpos_pos_register_download": "如何设置您的 SUPERPOS POS 收银机（下载、激活、停用）",
-                "how_to_set_up_your_superpos_pos_register_download_activate_deactivate": "如何设置您的 SUPERPOS POS 收银机（下载、激活、停用）",
-                "how_to_arrange_your_product_layouts_on_the_superpo": "如何在 SUPERPOS POS 应用上排列商品布局",
-                "how_to_arrange_your_product_layouts_on_the_superpos_pos_app": "如何在 SUPERPOS POS 应用上排列商品布局",
-                "superpos_manager_app_how_to_use": "SUPERPOS 管理应用：如何使用",
-                "superpos_manager_app_how_to_manage_beep_delivery_o": "SUPERPOS 管理应用：如何管理 Beep 外卖订单",
-                "superpos_manager_app_how_to_manage_beep_delivery_orders": "SUPERPOS 管理应用：如何管理 Beep 外卖订单",
-                "superpos_manager_app_how_to_mark_beep_menu_items_a": "SUPERPOS 管理应用：如何标记 Beep 菜单商品为有货或缺货",
-                "superpos_manager_app_how_to_perform_stock_take_usi": "SUPERPOS 管理应用：如何使用扫描仪进行盘点",
+                "how_to_set_up_your_superpos_pos_register_download": "如何设置您的 QPOS POS 收银机（下载、激活、停用）",
+                "how_to_set_up_your_superpos_pos_register_download_activate_deactivate": "如何设置您的 QPOS POS 收银机（下载、激活、停用）",
+                "how_to_arrange_your_product_layouts_on_the_superpo": "如何在 QPOS POS 应用上排列商品布局",
+                "how_to_arrange_your_product_layouts_on_the_superpos_pos_app": "如何在 QPOS POS 应用上排列商品布局",
+                "superpos_manager_app_how_to_use": "QPOS 管理应用：如何使用",
+                "superpos_manager_app_how_to_manage_beep_delivery_o": "QPOS 管理应用：如何管理 Beep 外卖订单",
+                "superpos_manager_app_how_to_manage_beep_delivery_orders": "QPOS 管理应用：如何管理 Beep 外卖订单",
+                "superpos_manager_app_how_to_mark_beep_menu_items_a": "QPOS 管理应用：如何标记 Beep 菜单商品为有货或缺货",
+                "superpos_manager_app_how_to_perform_stock_take_usi": "QPOS 管理应用：如何使用扫描仪进行盘点",
                 "hardware_how_to_perform_basic_set_up": "硬件：如何进行基本设置",
                 "hardware_how_to_set_up_sunmi_android_t2c": "硬件：如何设置 Sunmi & Android T2C",
                 "hardware_ipad_how_to_set_up_register": "硬件：[iPad] 如何设置收银台",
@@ -707,10 +707,10 @@ const resources = {
                 "beep_delivery_troubleshooting": "Beep 外卖：故障排除",
 
                 // Misc
-                "superpos_engage": "SUPERPOS 互动",
-                "superpos_engage_malaysia": "SUPERPOS 互动：马来西亚",
-                "superpos_engage_philippines": "SUPERPOS 互动：菲律宾",
-                "superpos_engage_thailand": "SUPERPOS 互动：泰国",
+                "superpos_engage": "QPOS 互动",
+                "superpos_engage_malaysia": "QPOS 互动：马来西亚",
+                "superpos_engage_philippines": "QPOS 互动：菲律宾",
+                "superpos_engage_thailand": "QPOS 互动：泰国",
                 "boost_google_review_malaysia": "提升谷歌评价：马来西亚",
                 "boost_google_review_philippines": "提升谷歌评价：菲律宾",
                 "boost_google_review_thailand": "提升谷歌评价：泰国",
@@ -724,8 +724,8 @@ const resources = {
 
                 // Additional Articles from data/articles.js
                 // QR Payment
-                "my_superpos_qr_payment_maybank_qrpay": "[MY] SUPERPOS 扫码支付：Maybank QRPay",
-                "th_superpos_qr_payment_ghl_payment": "[TH] SUPERPOS 扫码支付：GHL Payment",
+                "my_superpos_qr_payment_maybank_qrpay": "[MY] QPOS 扫码支付：Maybank QRPay",
+                "th_superpos_qr_payment_ghl_payment": "[TH] QPOS 扫码支付：GHL Payment",
 
                 // Cashback
                 "cashback_how_does_it_work": "返现：如何运作",
@@ -744,9 +744,9 @@ const resources = {
                 "payouts_how_to_receive": "提现：如何接收",
 
                 // Hardware Printers & Routers
-                "how_to_set_up_your_superpos_printer": "如何设置您的 SUPERPOS 打印机",
-                "how_to_manage_network_settings_for_your_superpos_pos_and_printer": "如何管理 SUPERPOS POS 和打印机的网络设置",
-                "how_to_troubleshoot_common_superpos_printer_issues": "如何排除常见的 SUPERPOS 打印机问题",
+                "how_to_set_up_your_superpos_printer": "如何设置您的 QPOS 打印机",
+                "how_to_manage_network_settings_for_your_superpos_pos_and_printer": "如何管理 QPOS POS 和打印机的网络设置",
+                "how_to_troubleshoot_common_superpos_printer_issues": "如何排除常见的 QPOS 打印机问题",
                 "how_to_set_up_your_bixolon_label_printer_and_print_barcodes_desktop": "如何设置 Bixolon 标签打印机并打印条形码（桌面版）",
                 "how_to_use_the_bixolon_label_artist_mobile_app_to_print_barcodes": "如何使用 Bixolon Label Artist 移动应用打印条形码",
                 "cash_drawer_how_to_troubleshoot": "钱箱：如何故障排除",
@@ -805,7 +805,7 @@ const resources = {
             "privacy": {
                 "title": "隐私政策",
                 "last_updated": "最后更新：{{date}}",
-                "intro": "在SUPERPOS，我们非常重视您的隐私。本隐私政策说明了当您访问我们的网站或使用我们的POS服务时，我们要如何收集、使用、披露和保护您的信息。",
+                "intro": "在QPOS，我们非常重视您的隐私。本隐私政策说明了当您访问我们的网站或使用我们的POS服务时，我们要如何收集、使用、披露和保护您的信息。",
                 "s1_title": "1. 我们收集的信息",
                 "s1_intro": "我们仅收集您直接提供给我们的信息。这包括：",
                 "s1_l1": "个人数据：注册或联系支持时的姓名、电子邮箱、电话号码和业务详情。",
@@ -821,7 +821,7 @@ const resources = {
                 "s3_title": "3. 数据安全",
                 "s3_desc": "我们采用行政、技术和物理安全措施来保护您的个人信息。尽管我们已采取合理措施，但请注意没有任何安全措施是完美的，也没有数据传输方法可以保证绝对安全。",
                 "s4_title": "4. 第三方隐私政策",
-                "s4_desc": "SUPERPOS的隐私政策不适用于其他广告商或网站。因此，我们建议您咨询这些第三方广告服务器的隐私政策以获取更详细的信息。",
+                "s4_desc": "QPOS的隐私政策不适用于其他广告商或网站。因此，我们建议您咨询这些第三方广告服务器的隐私政策以获取更详细的信息。",
                 "s5_title": "5. 联系我们",
                 "s5_desc": "如果您对我们的隐私政策有任何疑问，请随时联系我们。"
             }

@@ -58,45 +58,45 @@
     },
     {
       "id": 10,
-      "title": "How to Set Up Your SUPERPOS POS Register (Download, Activate, Deactivate)",
+      "title": "How to Set Up Your QPOS POS Register (Download, Activate, Deactivate)",
       "category_id": 3,
       "category_name": "Setting Up",
-      "description": "<p>Steps to download, activate, and deactivate your SUPERPOS POS Register.</p>"
+      "description": "<p>Steps to download, activate, and deactivate your QPOS POS Register.</p>"
     },
     {
       "id": 11,
-      "title": "How to Arrange Your Product Layouts on the SUPERPOS POS App",
+      "title": "How to Arrange Your Product Layouts on the QPOS POS App",
       "category_id": 3,
       "category_name": "Setting Up",
       "description": "<p>How to visually arrange products for faster checkout.</p>"
     },
     {
       "id": 12,
-      "title": "SUPERPOS Manager App: How to Use",
+      "title": "QPOS Manager App: How to Use",
       "category_id": 3,
       "category_name": "Setting Up",
       "description": "<p>Monitor sales and manage staff from your mobile device.</p>"
     },
     {
       "id": 13,
-      "title": "SUPERPOS Manager App: How to Manage Beep Delivery Orders",
+      "title": "QPOS Manager App: How to Manage Beep Delivery Orders",
       "category_id": 3,
       "category_name": "Setting Up",
-      "description": "From section: SUPERPOS Manager App"
+      "description": "From section: QPOS Manager App"
     },
     {
       "id": 14,
-      "title": "SUPERPOS Manager App: How to Mark Beep Menu Items as In Stock or Out of Stock",
+      "title": "QPOS Manager App: How to Mark Beep Menu Items as In Stock or Out of Stock",
       "category_id": 3,
       "category_name": "Setting Up",
-      "description": "From section: SUPERPOS Manager App"
+      "description": "From section: QPOS Manager App"
     },
     {
       "id": 15,
-      "title": "SUPERPOS Manager App: How to Perform Stock Take using Scanner",
+      "title": "QPOS Manager App: How to Perform Stock Take using Scanner",
       "category_id": 3,
       "category_name": "Setting Up",
-      "description": "From section: SUPERPOS Manager App"
+      "description": "From section: QPOS Manager App"
     },
     {
       "id": 16,
@@ -492,10 +492,10 @@
     },
     {
       "id": 117,
-      "title": "How to Understand and Customize Your SUPERPOS Reports",
+      "title": "How to Understand and Customize Your QPOS Reports",
       "category_id": 7,
       "category_name": "Reports",
-      "description": "<p>SUPERPOS merchants who want to learn how to navigate, filter, and understand the various reports available in their BackOffice to make informed business decisions.</p>"
+      "description": "<p>QPOS merchants who want to learn how to navigate, filter, and understand the various reports available in their BackOffice to make informed business decisions.</p>"
     },
     {
       "id": 118,
@@ -513,14 +513,14 @@
     },
     {
       "id": 120,
-      "title": "How to Understand Your SUPERPOS Sales Reports",
+      "title": "How to Understand Your QPOS Sales Reports",
       "category_id": 7,
       "category_name": "Reports",
       "description": "From section: Sales Reports"
     },
     {
       "id": 121,
-      "title": "How to View and Customize Your SUPERPOS Sales Reports",
+      "title": "How to View and Customize Your QPOS Sales Reports",
       "category_id": 7,
       "category_name": "Reports",
       "description": "From section: Sales Reports"
@@ -597,7 +597,7 @@
     },
     {
       "id": 132,
-      "title": "SUPERPOS e-Invoice: Your Quick Start Guide to Compliance",
+      "title": "QPOS e-Invoice: Your Quick Start Guide to Compliance",
       "category_id": 8,
       "category_name": "Tax Guides",
       "description": "From section: [MY] E-Invoice"
@@ -618,7 +618,7 @@
     },
     {
       "id": 135,
-      "title": "How to Get SUPERPOS e-Invoices for Expenses",
+      "title": "How to Get QPOS e-Invoices for Expenses",
       "category_id": 8,
       "category_name": "Tax Guides",
       "description": "From section: [MY] E-Invoice"
@@ -632,28 +632,28 @@
     },
     {
       "id": 137,
-      "title": "[MY] SUPERPOS Transaction Fees & Taxation",
+      "title": "[MY] QPOS Transaction Fees & Taxation",
       "category_id": 8,
       "category_name": "Tax Guides",
-      "description": "From section: [MY] SUPERPOS Transaction Fees and Taxation"
+      "description": "From section: [MY] QPOS Transaction Fees and Taxation"
     },
     {
       "id": 138,
-      "title": "How to Set Up Your SUPERPOS Printer",
+      "title": "How to Set Up Your QPOS Printer",
       "category_id": 9,
       "category_name": "Hardware",
       "description": "From section: Printer Set Up"
     },
     {
       "id": 139,
-      "title": "How to Manage Network Settings for Your SUPERPOS POS and Printer",
+      "title": "How to Manage Network Settings for Your QPOS POS and Printer",
       "category_id": 9,
       "category_name": "Hardware",
       "description": "From section: Printer Set Up"
     },
     {
       "id": 140,
-      "title": "How to Troubleshoot Common SUPERPOS Printer Issues",
+      "title": "How to Troubleshoot Common QPOS Printer Issues",
       "category_id": 9,
       "category_name": "Hardware",
       "description": "From section: Printer Set Up"
@@ -968,7 +968,7 @@
     },
     {
       "id": 185,
-      "title": "Contact Us: SUPERPOS Contact Details",
+      "title": "Contact Us: QPOS Contact Details",
       "category_id": 13,
       "category_name": "Quick Help",
       "description": "From section: Quick Help: Contact Us"

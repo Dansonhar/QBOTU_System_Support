@@ -1,7 +1,7 @@
 {
   "id": 132,
   "category_id": 8,
-  "title": "SUPERPOS e-Invoice: Your Quick Start Guide to Compliance",
+  "title": "QPOS e-Invoice: Your Quick Start Guide to Compliance",
   "slug": "superpos-e-invoice-your-quick-start-guide-to-compl",
   "description": "From section: [MY] E-Invoice",
   "status": "published",
@@ -15,7 +15,7 @@
       "question_id": 132,
       "step_order": 1,
       "step_title": "Overview",
-      "content": "<p>This article covers: <strong>SUPERPOS e-Invoice: Your Quick Start Guide to Compliance</strong></p><p>Section: [MY] E-Invoice</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "content": "<p>This article covers: <strong>QPOS e-Invoice: Your Quick Start Guide to Compliance</strong></p><p>Section: [MY] E-Invoice</p><p>Add detailed content and images here via the Admin Panel.</p>",
       "image_url": null,
       "video_url": null,
       "block_type": "step",

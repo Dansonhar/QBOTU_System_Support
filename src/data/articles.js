@@ -19,19 +19,19 @@ export const articlesByCategory = {
                 ]
             },
             {
-                title: 'SUPERPOS POS App',
+                title: 'QPOS POS App',
                 articles: [
-                    { id: 'setup-pos-register', title: 'How to Set Up Your SUPERPOS POS Register (Download, Activate, Deactivate)' },
-                    { id: 'arrange-layouts', title: 'How to Arrange Your Product Layouts on the SUPERPOS POS App' }
+                    { id: 'setup-pos-register', title: 'How to Set Up Your QPOS POS Register (Download, Activate, Deactivate)' },
+                    { id: 'arrange-layouts', title: 'How to Arrange Your Product Layouts on the QPOS POS App' }
                 ]
             },
             {
-                title: 'SUPERPOS Manager App',
+                title: 'QPOS Manager App',
                 articles: [
-                    { id: 'manager-app-use', title: 'SUPERPOS Manager App: How to Use' },
-                    { id: 'manager-beep-orders', title: 'SUPERPOS Manager App: How to Manage Beep Delivery Orders' },
-                    { id: 'manager-stock-status', title: 'SUPERPOS Manager App: How to Mark Beep Menu Items as In Stock or Out of Stock' },
-                    { id: 'manager-stock-take', title: 'SUPERPOS Manager App: How to Perform Stock Take using Scanner' }
+                    { id: 'manager-app-use', title: 'QPOS Manager App: How to Use' },
+                    { id: 'manager-beep-orders', title: 'QPOS Manager App: How to Manage Beep Delivery Orders' },
+                    { id: 'manager-stock-status', title: 'QPOS Manager App: How to Mark Beep Menu Items as In Stock or Out of Stock' },
+                    { id: 'manager-stock-take', title: 'QPOS Manager App: How to Perform Stock Take using Scanner' }
                 ]
             },
             {
@@ -70,8 +70,8 @@ export const articlesByCategory = {
             {
                 title: 'QR Payment',
                 articles: [
-                    { id: 'qr-maybank', title: '[MY] SUPERPOS QR Payment: Maybank QRPay' },
-                    { id: 'qr-global', title: '[TH] SUPERPOS QR Payment: GHL Payment' }
+                    { id: 'qr-maybank', title: '[MY] QPOS QR Payment: Maybank QRPay' },
+                    { id: 'qr-global', title: '[TH] QPOS QR Payment: GHL Payment' }
                 ]
             },
             {
@@ -127,7 +127,7 @@ export const articlesByCategory = {
             {
                 title: 'POS: Tax Guides',
                 articles: [
-                    { id: 'tax-guide-ph', title: 'Tax Guides: [PH] How to Apply Tax (VAT) in the SUPERPOS BackOffice' }
+                    { id: 'tax-guide-ph', title: 'Tax Guides: [PH] How to Apply Tax (VAT) in the QPOS BackOffice' }
                 ]
             },
             {
@@ -165,7 +165,7 @@ export const articlesByCategory = {
                     { id: 'bo-disclosure', title: 'BackOffice: Disclosure for BackOffice Access' },
                     { id: 'bo-export-sales', title: 'BackOffice: How to Export Accounting Systems Sales Data' },
                     { id: 'bo-change-lang', title: 'BackOffice: How to Change Language' },
-                    { id: 'bo-transfer-ownership', title: 'BackOffice: How to Transfer SUPERPOS Account Ownership' },
+                    { id: 'bo-transfer-ownership', title: 'BackOffice: How to Transfer QPOS Account Ownership' },
                     { id: 'bo-kitchen-dockets', title: 'BackOffice: How to Print Multiple Kitchen Dockets' },
                     { id: 'bo-reset-data', title: 'BackOffice: How to Reset Account Data' },
                     { id: 'bo-browsers', title: 'BackOffice: Supported Browser Versions' },
@@ -188,12 +188,12 @@ export const articlesByCategory = {
                 ]
             },
             {
-                title: 'BackOffice: SUPERPOS Engage',
+                title: 'BackOffice: QPOS Engage',
                 articles: [
-                    { id: 'engage-intro', title: 'SUPERPOS Engage' },
-                    { id: 'engage-my', title: 'SUPERPOS Engage: Malaysia' },
-                    { id: 'engage-ph', title: 'SUPERPOS Engage: Philippines' },
-                    { id: 'engage-th', title: 'SUPERPOS Engage: Thailand' }
+                    { id: 'engage-intro', title: 'QPOS Engage' },
+                    { id: 'engage-my', title: 'QPOS Engage: Malaysia' },
+                    { id: 'engage-ph', title: 'QPOS Engage: Philippines' },
+                    { id: 'engage-th', title: 'QPOS Engage: Thailand' }
                 ]
             },
             {
@@ -277,7 +277,7 @@ export const articlesByCategory = {
             {
                 title: 'Operational Reports',
                 articles: [
-                    { id: 'report-understand', title: 'How to Understand and Customize Your SUPERPOS Reports' },
+                    { id: 'report-understand', title: 'How to Understand and Customize Your QPOS Reports' },
                     { id: 'report-tax', title: 'How to Understand Your Tax Report' },
                     { id: 'report-shift', title: 'How to Understand Your Shift Report' }
                 ]
@@ -285,8 +285,8 @@ export const articlesByCategory = {
             {
                 title: 'Sales Reports',
                 articles: [
-                    { id: 'sales-understand', title: 'How to Understand Your SUPERPOS Sales Reports' },
-                    { id: 'sales-view', title: 'How to View and Customize Your SUPERPOS Sales Reports' },
+                    { id: 'sales-understand', title: 'How to Understand Your QPOS Sales Reports' },
+                    { id: 'sales-view', title: 'How to View and Customize Your QPOS Sales Reports' },
                     { id: 'sales-diff', title: 'How to Understand Differences in Sales Reports' }
                 ]
             }
@@ -319,17 +319,17 @@ export const articlesByCategory = {
             {
                 title: '[MY] E-Invoice',
                 articles: [
-                    { id: 'einv-intro', title: 'SUPERPOS e-Invoice: Your Quick Start Guide to Compliance' },
+                    { id: 'einv-intro', title: 'QPOS e-Invoice: Your Quick Start Guide to Compliance' },
                     { id: 'einv-setup', title: 'How to Set Up & Manage e-Invoice Settings' },
                     { id: 'einv-txn', title: 'How to Manage e-Invoice Transactions' },
-                    { id: 'einv-expense', title: 'How to Get SUPERPOS e-Invoices for Expenses' },
+                    { id: 'einv-expense', title: 'How to Get QPOS e-Invoices for Expenses' },
                     { id: 'einv-status', title: 'Understand e-Invoice Status & Consolidation' }
                 ]
             },
             {
-                title: '[MY] SUPERPOS Transaction Fees and Taxation',
+                title: '[MY] QPOS Transaction Fees and Taxation',
                 articles: [
-                    { id: 'tax-fees', title: '[MY] SUPERPOS Transaction Fees & Taxation' }
+                    { id: 'tax-fees', title: '[MY] QPOS Transaction Fees & Taxation' }
                 ]
             }
         ]
@@ -342,9 +342,9 @@ export const articlesByCategory = {
             {
                 title: 'Printer Set Up',
                 articles: [
-                    { id: 'printer-setup', title: 'How to Set Up Your SUPERPOS Printer' },
-                    { id: 'printer-network', title: 'How to Manage Network Settings for Your SUPERPOS POS and Printer' },
-                    { id: 'printer-troubleshoot', title: 'How to Troubleshoot Common SUPERPOS Printer Issues' }
+                    { id: 'printer-setup', title: 'How to Set Up Your QPOS Printer' },
+                    { id: 'printer-network', title: 'How to Manage Network Settings for Your QPOS POS and Printer' },
+                    { id: 'printer-troubleshoot', title: 'How to Troubleshoot Common QPOS Printer Issues' }
                 ]
             },
             {
@@ -492,7 +492,7 @@ export const articlesByCategory = {
             {
                 title: 'Quick Help: Contact Us',
                 articles: [
-                    { id: 'contact-details', title: 'Contact Us: SUPERPOS Contact Details' },
+                    { id: 'contact-details', title: 'Contact Us: QPOS Contact Details' },
                     { id: 'contact-livechat', title: 'Contact Us: How to Contact Us via Live Chat' },
                     { id: 'contact-compromised', title: 'Emergency Guide: What to Do If Your Account Is Compromised' }
                 ]

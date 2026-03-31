@@ -196,7 +196,7 @@ export default function FloatingSupportWidget() {
                 )}
             </div>
             <div className="chat-welcome-footer">
-                <span>Powered by <strong>SUPERPOS</strong> AI Support</span>
+                <span>Powered by <strong>QPOS</strong> AI Support</span>
             </div>
         </div>
     );
@@ -239,7 +239,7 @@ export default function FloatingSupportWidget() {
                         <Headphones size={16} color="white" />
                     </div>
                     <div>
-                        <strong>SUPERPOS Support</strong>
+                        <strong>QPOS Support</strong>
                         <span className="chat-live-status">
                             <span className="chat-live-status-dot"></span> Online
                         </span>

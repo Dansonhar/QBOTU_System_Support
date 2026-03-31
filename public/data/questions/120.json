@@ -1,7 +1,7 @@
 {
   "id": 120,
   "category_id": 7,
-  "title": "How to Understand Your SUPERPOS Sales Reports",
+  "title": "How to Understand Your QPOS Sales Reports",
   "slug": "how-to-understand-your-superpos-sales-reports",
   "description": "From section: Sales Reports",
   "status": "published",
@@ -15,7 +15,7 @@
       "question_id": 120,
       "step_order": 1,
       "step_title": "Overview",
-      "content": "<p>This article covers: <strong>How to Understand Your SUPERPOS Sales Reports</strong></p><p>Section: Sales Reports</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "content": "<p>This article covers: <strong>How to Understand Your QPOS Sales Reports</strong></p><p>Section: Sales Reports</p><p>Add detailed content and images here via the Admin Panel.</p>",
       "image_url": null,
       "video_url": null,
       "block_type": "step",

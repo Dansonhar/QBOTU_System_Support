@@ -57,7 +57,7 @@ const generateAIReply = (userMessage, topic) => {
 
         if (topicResponses[topic]) return topicResponses[topic];
 
-        return `Thanks for your message! 🤖\n\nI'm the SUPERPOS AI Assistant. I've received your inquiry and I'm looking into it.\n\nIn the meantime, you can:\n• Browse our Help Center for quick answers\n• Type **"connect to agent"** to chat with a real person\n\nA support agent will be notified of your message!`;
+        return `Thanks for your message! 🤖\n\nI'm the QPOS AI Assistant. I've received your inquiry and I'm looking into it.\n\nIn the meantime, you can:\n• Browse our Help Center for quick answers\n• Type **"connect to agent"** to chat with a real person\n\nA support agent will be notified of your message!`;
     } catch (err) {
         console.error('AI reply generation error:', err);
         return `Thanks for reaching out! 🤖\n\nYour message has been received. A support agent will reply shortly.\n\nType **"connect to agent"** if you need immediate assistance!`;

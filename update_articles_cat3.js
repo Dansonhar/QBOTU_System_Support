@@ -69,10 +69,10 @@ const articles = [
     },
     {
         id: 10,
-        description: '<p>Steps to download, activate, and deactivate your SUPERPOS POS Register.</p>',
+        description: '<p>Steps to download, activate, and deactivate your QPOS POS Register.</p>',
         steps: [
             { type: 'section_title', title: 'Setting Up Your POS Register' },
-            { type: 'step', title: 'Download the App', content: 'Access the <strong>Splash Page</strong> via your device browser to download the SuperPOS or mPOS application.', image_url: '/uploads/splash-page.png' },
+            { type: 'step', title: 'Download the App', content: 'Access the <strong>Splash Page</strong> via your device browser to download the QPOS or mPOS application.', image_url: '/uploads/splash-page.png' },
             { type: 'step', title: 'Activation', content: 'Open the app on your terminal. You will be prompted for an <strong>Activation Code</strong>. You can find or generate this code in the Backoffice under <strong>SETTINGS > Devices</strong>.' },
             { type: 'step', title: 'Deactivation', content: 'To move a license to a new device, you must first deactivate the old one in the Backoffice by clicking <strong>Edit</strong> on the device and toggling it to <strong>Inactive</strong> or removing it.' }
         ]
@@ -90,7 +90,7 @@ const articles = [
         id: 12,
         description: '<p>Monitor sales and manage staff from your mobile device.</p>',
         steps: [
-            { type: 'section_title', title: 'SUPERPOS Manager App' },
+            { type: 'section_title', title: 'QPOS Manager App' },
             { type: 'step', title: 'Access for Managers', content: 'The Manager App functionality is built into the mobile-responsive Backoffice. Ensure your staff account has <strong>Manager</strong> or <strong>Admin</strong> permissions in <strong>EMPLOYEES > Staff</strong>.', image_url: '/uploads/outlets-management.png' },
             { type: 'step', title: 'Monitoring Sales', content: 'Use the <strong>AI Dashboard</strong> on your mobile browser to see real-time revenue, order counts, and average order value across all outlets.' }
         ]

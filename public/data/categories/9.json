@@ -2,19 +2,19 @@
   "questions": [
     {
       "id": 138,
-      "title": "How to Set Up Your SUPERPOS Printer",
+      "title": "How to Set Up Your QPOS Printer",
       "category_id": 9,
       "status": "published"
     },
     {
       "id": 139,
-      "title": "How to Manage Network Settings for Your SUPERPOS POS and Printer",
+      "title": "How to Manage Network Settings for Your QPOS POS and Printer",
       "category_id": 9,
       "status": "published"
     },
     {
       "id": 140,
-      "title": "How to Troubleshoot Common SUPERPOS Printer Issues",
+      "title": "How to Troubleshoot Common QPOS Printer Issues",
       "category_id": 9,
       "status": "published"
     },

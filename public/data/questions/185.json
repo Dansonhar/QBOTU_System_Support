@@ -1,7 +1,7 @@
 {
   "id": 185,
   "category_id": 13,
-  "title": "Contact Us: SUPERPOS Contact Details",
+  "title": "Contact Us: QPOS Contact Details",
   "slug": "contact-us-superpos-contact-details",
   "description": "From section: Quick Help: Contact Us",
   "status": "published",
@@ -15,7 +15,7 @@
       "question_id": 185,
       "step_order": 1,
       "step_title": "Overview",
-      "content": "<p>This article covers: <strong>Contact Us: SUPERPOS Contact Details</strong></p><p>Section: Quick Help: Contact Us</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "content": "<p>This article covers: <strong>Contact Us: QPOS Contact Details</strong></p><p>Section: Quick Help: Contact Us</p><p>Add detailed content and images here via the Admin Panel.</p>",
       "image_url": null,
       "video_url": null,
       "block_type": "step",

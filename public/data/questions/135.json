@@ -1,7 +1,7 @@
 {
   "id": 135,
   "category_id": 8,
-  "title": "How to Get SUPERPOS e-Invoices for Expenses",
+  "title": "How to Get QPOS e-Invoices for Expenses",
   "slug": "how-to-get-superpos-e-invoices-for-expenses",
   "description": "From section: [MY] E-Invoice",
   "status": "published",
@@ -15,7 +15,7 @@
       "question_id": 135,
       "step_order": 1,
       "step_title": "Overview",
-      "content": "<p>This article covers: <strong>How to Get SUPERPOS e-Invoices for Expenses</strong></p><p>Section: [MY] E-Invoice</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "content": "<p>This article covers: <strong>How to Get QPOS e-Invoices for Expenses</strong></p><p>Section: [MY] E-Invoice</p><p>Add detailed content and images here via the Admin Panel.</p>",
       "image_url": null,
       "video_url": null,
       "block_type": "step",

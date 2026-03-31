@@ -2,7 +2,7 @@
   "questions": [
     {
       "id": 117,
-      "title": "How to Understand and Customize Your SUPERPOS Reports",
+      "title": "How to Understand and Customize Your QPOS Reports",
       "category_id": 7,
       "status": "published"
     },
@@ -20,13 +20,13 @@
     },
     {
       "id": 120,
-      "title": "How to Understand Your SUPERPOS Sales Reports",
+      "title": "How to Understand Your QPOS Sales Reports",
       "category_id": 7,
       "status": "published"
     },
     {
       "id": 121,
-      "title": "How to View and Customize Your SUPERPOS Sales Reports",
+      "title": "How to View and Customize Your QPOS Sales Reports",
       "category_id": 7,
       "status": "published"
     },

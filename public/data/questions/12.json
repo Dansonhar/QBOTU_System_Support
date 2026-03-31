@@ -1,7 +1,7 @@
 {
   "id": 12,
   "category_id": 3,
-  "title": "SUPERPOS Manager App: How to Use",
+  "title": "QPOS Manager App: How to Use",
   "slug": "superpos-manager-app-how-to-use",
   "description": "<p>Monitor sales and manage staff from your mobile device.</p>",
   "status": "published",
@@ -14,7 +14,7 @@
       "id": 299,
       "question_id": 12,
       "step_order": 1,
-      "step_title": "SUPERPOS Manager App",
+      "step_title": "QPOS Manager App",
       "content": null,
       "image_url": null,
       "video_url": null,
