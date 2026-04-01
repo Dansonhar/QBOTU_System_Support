@@ -33,6 +33,7 @@ const QuestionEditor = () => {
     const [draggedStep, setDraggedStep] = useState(null);
     const [lightbox, setLightbox] = useState(null);
     const [videoProgress, setVideoProgress] = useState({}); // { [stepIndex]: 0-100 }
+    const [videoErrors, setVideoErrors] = useState({}); // { [stepIndex]: errorMessage }
     const [uploadingCount, setUploadingCount] = useState(0); // total active uploads
     const videoInputRefs = useRef({});
 
@@ -189,6 +190,7 @@ const QuestionEditor = () => {
         formDataUpload.append('video', file);
 
         setVideoProgress(prev => ({ ...prev, [stepIndex]: 0 }));
+        setVideoErrors(prev => { const n = { ...prev }; delete n[stepIndex]; return n; });
         setUploadingCount(n => n + 1);
 
         const xhr = new XMLHttpRequest();
@@ -210,12 +212,17 @@ const QuestionEditor = () => {
                 const data = JSON.parse(xhr.responseText);
                 updateStep(stepIndex, 'video_url', data.url);
             } else {
-                console.error('Video upload failed', xhr.status);
+                let msg = 'Upload failed';
+                try { msg = JSON.parse(xhr.responseText).error || msg; } catch (_) {}
+                setVideoErrors(prev => ({ ...prev, [stepIndex]: msg }));
             }
             finish();
         };
 
-        xhr.onerror = () => { console.error('Video upload error'); finish(); };
+        xhr.onerror = () => {
+            setVideoErrors(prev => ({ ...prev, [stepIndex]: 'Network error — upload failed' }));
+            finish();
+        };
 
         xhr.open('POST', `${API_BASE_URL}/upload/video`);
         xhr.setRequestHeader('Authorization', `Bearer ${token}`);
@@ -577,18 +584,29 @@ const QuestionEditor = () => {
                                                                 ) : (
                                                                     <div
                                                                         className="admin-video-dropzone"
-                                                                        onDragOver={(e) => e.preventDefault()}
-                                                                        onDragEnter={(e) => e.preventDefault()}
+                                                                        draggable={false}
+                                                                        onDragOver={(e) => { e.preventDefault(); e.stopPropagation(); }}
+                                                                        onDragEnter={(e) => { e.preventDefault(); e.stopPropagation(); }}
+                                                                        onDragLeave={(e) => e.stopPropagation()}
                                                                         onDrop={(e) => {
                                                                             e.preventDefault();
+                                                                            e.stopPropagation();
                                                                             const file = e.dataTransfer.files[0];
-                                                                            if (file && file.type.startsWith('video/')) handleVideoUpload(index, file);
+                                                                            if (file) handleVideoUpload(index, file);
                                                                         }}
-                                                                        onClick={() => videoInputRefs.current[index]?.click()}
+                                                                        onClick={(e) => {
+                                                                            e.stopPropagation();
+                                                                            videoInputRefs.current[index]?.click();
+                                                                        }}
                                                                     >
                                                                         <Video size={20} />
                                                                         <span>Drop video here or <u>browse</u></span>
                                                                         <small>MP4, WebM, MOV — up to 500MB</small>
+                                                                    </div>
+                                                                )}
+                                                                {videoErrors[index] && (
+                                                                    <div style={{ marginTop: '6px', fontSize: '12px', color: '#dc2626' }}>
+                                                                        {videoErrors[index]}
                                                                     </div>
                                                                 )}
                                                                 <input
@@ -596,6 +614,7 @@ const QuestionEditor = () => {
                                                                     type="file"
                                                                     accept="video/*"
                                                                     style={{ display: 'none' }}
+                                                                    onClick={(e) => e.stopPropagation()}
                                                                     onChange={(e) => {
                                                                         const file = e.target.files[0];
                                                                         if (file) handleVideoUpload(index, file);

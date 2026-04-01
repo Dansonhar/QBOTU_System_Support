@@ -46,11 +46,10 @@ const upload = multer({
 });
 
 const videoFilter = (req, file, cb) => {
-    const allowedTypes = ['video/mp4', 'video/webm', 'video/ogg', 'video/quicktime', 'video/x-msvideo', 'video/x-matroska'];
-    if (allowedTypes.includes(file.mimetype)) {
+    if (file.mimetype.startsWith('video/')) {
         cb(null, true);
     } else {
-        cb(new Error('Invalid file type. Only MP4, WebM, OGG, MOV, AVI, MKV are allowed.'), false);
+        cb(new Error('Invalid file type. Only video files are allowed.'), false);
     }
 };
 
