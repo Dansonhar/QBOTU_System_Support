@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { IMAGE_BASE_URL } from '../../config';
 import { useAuth, API_BASE_URL } from '../../context/AuthContext';
@@ -32,6 +32,9 @@ const QuestionEditor = () => {
     const [deletedStepIds, setDeletedStepIds] = useState([]);
     const [draggedStep, setDraggedStep] = useState(null);
     const [lightbox, setLightbox] = useState(null);
+    const [videoProgress, setVideoProgress] = useState({}); // { [stepIndex]: 0-100 }
+    const [uploadingCount, setUploadingCount] = useState(0); // total active uploads
+    const videoInputRefs = useRef({});
 
     useEffect(() => {
         fetchCategories();
@@ -147,6 +150,7 @@ const QuestionEditor = () => {
 
     const handleMultiImageUpload = async (stepIndex, files) => {
         const fileArray = Array.from(files);
+        setUploadingCount(n => n + fileArray.length);
         for (const file of fileArray) {
             const formDataUpload = new FormData();
             formDataUpload.append('image', file);
@@ -173,8 +177,49 @@ const QuestionEditor = () => {
                 }
             } catch (error) {
                 console.error('Error uploading image:', error);
+            } finally {
+                setUploadingCount(n => n - 1);
             }
         }
+    };
+
+    const handleVideoUpload = (stepIndex, file) => {
+        if (!file) return;
+        const formDataUpload = new FormData();
+        formDataUpload.append('video', file);
+
+        setVideoProgress(prev => ({ ...prev, [stepIndex]: 0 }));
+        setUploadingCount(n => n + 1);
+
+        const xhr = new XMLHttpRequest();
+
+        xhr.upload.onprogress = (e) => {
+            if (e.lengthComputable) {
+                const pct = Math.round((e.loaded / e.total) * 100);
+                setVideoProgress(prev => ({ ...prev, [stepIndex]: pct }));
+            }
+        };
+
+        const finish = () => {
+            setVideoProgress(prev => { const n = { ...prev }; delete n[stepIndex]; return n; });
+            setUploadingCount(n => n - 1);
+        };
+
+        xhr.onload = () => {
+            if (xhr.status === 200) {
+                const data = JSON.parse(xhr.responseText);
+                updateStep(stepIndex, 'video_url', data.url);
+            } else {
+                console.error('Video upload failed', xhr.status);
+            }
+            finish();
+        };
+
+        xhr.onerror = () => { console.error('Video upload error'); finish(); };
+
+        xhr.open('POST', `${API_BASE_URL}/upload/video`);
+        xhr.setRequestHeader('Authorization', `Bearer ${token}`);
+        xhr.send(formDataUpload);
     };
 
     const removeImage = (stepIndex, imgIndex) => {
@@ -351,17 +396,22 @@ const QuestionEditor = () => {
                         <h1>{isEditing ? 'Edit Question' : 'New Question'}</h1>
                     </div>
                     <div className="admin-header-actions">
+                        {uploadingCount > 0 && (
+                            <span style={{ fontSize: '13px', color: '#f59e0b', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                Uploading… please wait
+                            </span>
+                        )}
                         <button
                             onClick={() => handleSubmit('draft')}
                             className="admin-btn admin-btn-secondary"
-                            disabled={saving}
+                            disabled={saving || uploadingCount > 0}
                         >
                             Save Draft
                         </button>
                         <button
                             onClick={() => handleSubmit('published')}
                             className="admin-btn admin-btn-primary"
-                            disabled={saving}
+                            disabled={saving || uploadingCount > 0}
                         >
                             <Save size={18} />
                             {saving ? 'Saving...' : 'Publish'}
@@ -511,12 +561,46 @@ const QuestionEditor = () => {
                                                             </div>
 
                                                             <div className="admin-form-group">
-                                                                <label><Video size={16} /> Video URL</label>
+                                                                <label><Video size={16} /> Video</label>
                                                                 <input
                                                                     type="text"
                                                                     value={step.video_url || ''}
                                                                     onChange={(e) => updateStep(index, 'video_url', e.target.value)}
-                                                                    placeholder="YouTube or Vimeo URL"
+                                                                    placeholder="Paste YouTube or Vimeo URL"
+                                                                />
+                                                                <div className="admin-video-divider">or upload a file</div>
+                                                                {videoProgress[index] !== undefined ? (
+                                                                    <div className="admin-video-upload-progress">
+                                                                        <div className="admin-video-upload-bar" style={{ width: `${videoProgress[index]}%` }} />
+                                                                        <span className="admin-video-upload-label">Uploading… {videoProgress[index]}%</span>
+                                                                    </div>
+                                                                ) : (
+                                                                    <div
+                                                                        className="admin-video-dropzone"
+                                                                        onDragOver={(e) => e.preventDefault()}
+                                                                        onDragEnter={(e) => e.preventDefault()}
+                                                                        onDrop={(e) => {
+                                                                            e.preventDefault();
+                                                                            const file = e.dataTransfer.files[0];
+                                                                            if (file && file.type.startsWith('video/')) handleVideoUpload(index, file);
+                                                                        }}
+                                                                        onClick={() => videoInputRefs.current[index]?.click()}
+                                                                    >
+                                                                        <Video size={20} />
+                                                                        <span>Drop video here or <u>browse</u></span>
+                                                                        <small>MP4, WebM, MOV — up to 500MB</small>
+                                                                    </div>
+                                                                )}
+                                                                <input
+                                                                    ref={(el) => { videoInputRefs.current[index] = el; }}
+                                                                    type="file"
+                                                                    accept="video/*"
+                                                                    style={{ display: 'none' }}
+                                                                    onChange={(e) => {
+                                                                        const file = e.target.files[0];
+                                                                        if (file) handleVideoUpload(index, file);
+                                                                        e.target.value = '';
+                                                                    }}
                                                                 />
                                                             </div>
                                                         </div>

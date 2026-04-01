@@ -45,6 +45,23 @@ const upload = multer({
     }
 });
 
+const videoFilter = (req, file, cb) => {
+    const allowedTypes = ['video/mp4', 'video/webm', 'video/ogg', 'video/quicktime', 'video/x-msvideo', 'video/x-matroska'];
+    if (allowedTypes.includes(file.mimetype)) {
+        cb(null, true);
+    } else {
+        cb(new Error('Invalid file type. Only MP4, WebM, OGG, MOV, AVI, MKV are allowed.'), false);
+    }
+};
+
+const videoUpload = multer({
+    storage,
+    fileFilter: videoFilter,
+    limits: {
+        fileSize: 500 * 1024 * 1024 // 500MB limit
+    }
+});
+
 // POST /api/upload - Upload image file
 router.post('/', authenticateToken, upload.single('image'), (req, res) => {
     try {
@@ -63,6 +80,27 @@ router.post('/', authenticateToken, upload.single('image'), (req, res) => {
     } catch (error) {
         console.error('Error uploading file:', error);
         res.status(500).json({ error: 'Failed to upload file' });
+    }
+});
+
+// POST /api/upload/video - Upload video file
+router.post('/video', authenticateToken, videoUpload.single('video'), (req, res) => {
+    try {
+        if (!req.file) {
+            return res.status(400).json({ error: 'No file uploaded' });
+        }
+
+        const fileUrl = `/uploads/${req.file.filename}`;
+
+        res.json({
+            url: fileUrl,
+            filename: req.file.filename,
+            originalName: req.file.originalname,
+            size: req.file.size
+        });
+    } catch (error) {
+        console.error('Error uploading video:', error);
+        res.status(500).json({ error: 'Failed to upload video' });
     }
 });
 

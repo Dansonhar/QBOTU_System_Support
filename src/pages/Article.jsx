@@ -83,6 +83,24 @@ const Article = () => {
         return date.toLocaleDateString();
     };
 
+    // Convert video URL to embeddable URL (YouTube / Vimeo)
+    const getEmbedUrl = (url) => {
+        if (!url) return null;
+        const ytMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/);
+        if (ytMatch) return `https://www.youtube.com/embed/${ytMatch[1]}`;
+        const vimeoMatch = url.match(/vimeo\.com\/(\d+)/);
+        if (vimeoMatch) return `https://player.vimeo.com/video/${vimeoMatch[1]}`;
+        return null;
+    };
+
+    // Returns a playable src for direct/uploaded video files, or null for external embed URLs
+    const getDirectVideoSrc = (url) => {
+        if (!url) return null;
+        if (url.startsWith('/uploads/')) return `${IMAGE_BASE_URL}${url}`;
+        if (/\.(mp4|webm|ogg|mov|avi|mkv)(\?|$)/i.test(url)) return url;
+        return null;
+    };
+
     // Strip &nbsp; from Quill-generated HTML so text wraps normally
     const sanitizeHtml = (html) => {
         if (!html) return '';
@@ -206,9 +224,35 @@ const Article = () => {
                                             {/* Step Video */}
                                             {step.video_url && (
                                                 <div className="step-video">
-                                                    <a href={step.video_url} target="_blank" rel="noopener noreferrer">
-                                                        🎬 {t('article.watch_video')}
-                                                    </a>
+                                                    {(() => {
+                                                        const embedUrl = getEmbedUrl(step.video_url);
+                                                        if (embedUrl) {
+                                                            return (
+                                                                <div className="video-embed-wrapper">
+                                                                    <iframe
+                                                                        src={embedUrl}
+                                                                        style={{ border: 'none' }}
+                                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                                        allowFullScreen
+                                                                        title="Video Guide"
+                                                                    />
+                                                                </div>
+                                                            );
+                                                        }
+                                                        const directSrc = getDirectVideoSrc(step.video_url);
+                                                        if (directSrc) {
+                                                            return (
+                                                                <video controls className="video-embed-direct">
+                                                                    <source src={directSrc} />
+                                                                </video>
+                                                            );
+                                                        }
+                                                        return (
+                                                            <a href={step.video_url} target="_blank" rel="noopener noreferrer">
+                                                                🎬 {t('article.watch_video')}
+                                                            </a>
+                                                        );
+                                                    })()}
                                                 </div>
                                             )}
                                         </div>

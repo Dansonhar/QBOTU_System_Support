@@ -1083,3 +1083,74 @@
 .admin-multi-image-item:hover .admin-img-expand {
     opacity: 1;
 }
+
+/* ===== VIDEO UPLOAD ===== */
+.admin-video-divider {
+    text-align: center;
+    font-size: 12px;
+    color: #94a3b8;
+    margin: 8px 0;
+    position: relative;
+}
+.admin-video-divider::before,
+.admin-video-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 42%;
+    height: 1px;
+    background: #e2e8f0;
+}
+.admin-video-divider::before { left: 0; }
+.admin-video-divider::after { right: 0; }
+
+.admin-video-dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 20px 16px;
+    cursor: pointer;
+    color: #64748b;
+    font-size: 13px;
+    transition: border-color 0.2s, background 0.2s;
+}
+.admin-video-dropzone:hover {
+    border-color: #F7941D;
+    background: #fff9f5;
+    color: #F7941D;
+}
+.admin-video-dropzone small {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.admin-video-upload-progress {
+    position: relative;
+    height: 36px;
+    background: #f1f5f9;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.admin-video-upload-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #F7941D;
+    transition: width 0.2s;
+    opacity: 0.25;
+}
+.admin-video-upload-label {
+    position: relative;
+    z-index: 1;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1e293b;
+    padding: 0 12px;
+}
