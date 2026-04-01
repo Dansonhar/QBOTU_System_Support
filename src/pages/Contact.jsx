@@ -116,7 +116,7 @@ const Contact = () => {
                     </div>
                     <h3>{t('contact.phone_title')}</h3>
                     <p>{t('contact.phone_desc')}</p>
-                    <a href="tel:+60123456789" className="contact-card-btn">
+                    <a href="tel:+60126909189" className="contact-card-btn">
                         {t('contact.call_now')}
                     </a>
                 </div>
