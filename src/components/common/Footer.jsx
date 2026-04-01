@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Key } from 'lucide-react';
-import logo from '../../assets/superpos-logo.png';
+import logo from '../../assets/qpos-logo.png';
 
 const Footer = () => {
     const { t } = useTranslation();

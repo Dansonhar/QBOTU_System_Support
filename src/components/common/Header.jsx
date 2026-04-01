@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { API_BASE_URL, DATA_MODE } from '../../config';
-import logo from '../../assets/superpos-logo.png';
+import logo from '../../assets/qpos-logo.png';
 
 const Header = () => {
   const { t } = useTranslation();
