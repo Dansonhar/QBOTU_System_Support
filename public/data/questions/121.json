@@ -1,12 +1,12 @@
 {
   "id": 121,
   "category_id": 7,
-  "title": "How to View and Customize Your QPOS Sales Reports",
+  "title": "How to Understand Differences in Sales Reports",
   "slug": "how-to-view-and-customize-your-superpos-sales-repo",
-  "description": "From section: Sales Reports",
+  "description": "<p>QPOS merchants who are confused by different numbers in their reports, need to combine online and offline sales data, or want to fix tallying errors.</p>",
   "status": "published",
   "created_at": "2026-02-06 00:25:41",
-  "updated_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-02-24 07:50:27",
   "category_name": "Reports",
   "category_status": "active",
   "steps": [
@@ -15,7 +15,195 @@
       "question_id": 121,
       "step_order": 1,
       "step_title": "Overview",
-      "content": "<p>This article covers: <strong>How to View and Customize Your QPOS Sales Reports</strong></p><p>Section: Sales Reports</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">This guide explains why your daily sales report doesn&#39;t match your transaction logs (usually due to refunds or cancellations) and shows you exactly how to find and fix them using your QPOS BackOffice and a simple spreadsheet.</span></p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 409,
+      "question_id": 121,
+      "step_order": 2,
+      "step_title": "Before You Begin",
+      "content": "<ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Access to your QPOS BackOffice.</span></li><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">A computer with spreadsheet software (e.g., Microsoft Excel, Google Sheets, Apple Numbers) for analyzing exported CSV files.</span></li><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Understanding of your store&#39;s transaction types (offline, online, refunds, cancellations).</span></li></ul>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 410,
+      "question_id": 121,
+      "step_order": 3,
+      "step_title": "Understanding Offline vs. Online Sales",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">It&#39;s important to know the difference between offline and online transactions when reviewing your reports.</span></p><ul><li><strong style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Offline Transactions:</strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\"> These are orders made directly at your Point of Sale (POS) device, regardless of internet connection. Examples include dine-in or take-away orders paid at the counter.</span></li><li><strong style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Online Transactions:</strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\"> These orders are placed through integrated platforms like Beep Delivery, QR Order &amp; Pay, your Webstore, or third-party platforms (e.g., Foodpanda).</span></li></ul>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 411,
+      "question_id": 121,
+      "step_order": 4,
+      "step_title": "How to Locate and Export Offline Transaction Reports",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 412,
+      "question_id": 121,
+      "step_order": 5,
+      "step_title": "To get a detailed breakdown of your in-store sales, you can export the 'Offline Transactions' report.",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 413,
+      "question_id": 121,
+      "step_order": 6,
+      "step_title": "1. In your BackOffice, go to 'Offline Transactions'.",
+      "content": null,
+      "image_url": "/uploads/1771919091062-385935358.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771919091062-385935358.png"
+      ]
+    },
+    {
+      "id": 414,
+      "question_id": 121,
+      "step_order": 7,
+      "step_title": "2. Filter the 'date range' for the report to match the period you want to analyze.",
+      "content": null,
+      "image_url": "/uploads/1771919110775-624255117.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771919110775-624255117.png"
+      ]
+    },
+    {
+      "id": 415,
+      "question_id": 121,
+      "step_order": 8,
+      "step_title": "3. Click 'Export Summary'.",
+      "content": null,
+      "image_url": "/uploads/1771919156576-892529976.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771919156576-892529976.png"
+      ]
+    },
+    {
+      "id": 416,
+      "question_id": 121,
+      "step_order": 9,
+      "step_title": "How to Locate and Export Online Order Reports",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 417,
+      "question_id": 121,
+      "step_order": 10,
+      "step_title": "To get a detailed breakdown of your online sales, you can export the 'Online Orders' report.",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 418,
+      "question_id": 121,
+      "step_order": 11,
+      "step_title": "1. In your BackOffice, go to 'Online Orders'.",
+      "content": null,
+      "image_url": "/uploads/1771919217244-707841969.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771919217244-707841969.png"
+      ]
+    },
+    {
+      "id": 419,
+      "question_id": 121,
+      "step_order": 12,
+      "step_title": "2. Filter the 'date range' for the report to match the period you want to analyze.",
+      "content": null,
+      "image_url": "/uploads/1771919234482-71113022.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771919234482-71113022.png"
+      ]
+    },
+    {
+      "id": 420,
+      "question_id": 121,
+      "step_order": 13,
+      "step_title": "3. Click 'Export Summary'.",
+      "content": null,
+      "image_url": "/uploads/1771919272686-999918025.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771919272686-999918025.png"
+      ]
+    },
+    {
+      "id": 421,
+      "question_id": 121,
+      "step_order": 14,
+      "step_title": "Reading Payment Methods in the Online Orders Report",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 422,
+      "question_id": 121,
+      "step_order": 15,
+      "step_title": "After exporting, you can see how customers paid for online orders.",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 423,
+      "question_id": 121,
+      "step_order": 16,
+      "step_title": "2. Under the Payment Method column",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Offline payment methods - Payments made at the cashier, completed on the POS register:</span></p><p></p><ul><li><strong style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Cash</strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\"> = Payments made at the counter with cash</span></li><li><strong style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Custom payment method added from the BackOffice </strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">= In this example, Online Transfer is a custom payment method. You may have added other payment methods too that show up in your POS register at the checkout page.</span></li></ul><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Online payment methods - Payments made on customer’s phone via the Beep app:</span></p><p></p><ul><li><strong style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Online Banking </strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">= Online payments made from customer’s bank</span></li><li><strong style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Apple Pay, Touch n Go, Grab Pay </strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">= Online payments made using customer’s digital cards or e-wallets.</span></li></ul>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 424,
+      "question_id": 121,
+      "step_order": 17,
+      "step_title": "3. Under the Payment Type column:",
+      "content": "<ul><li><strong style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Paid at Counter </strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">= The customer walked to the cashier to pay either using cash, card or QR. The payment is processed on your POS register.</span></li><li><strong style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Paid Online</strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\"> = The customer paid via the Beep app using Online Banking, Touch n Go, Grab Pay, or Card. The payment is processed on the Beep app.</span></li></ul>",
       "image_url": null,
       "video_url": null,
       "block_type": "step",

@@ -43,7 +43,7 @@ export default function FloatingSupportWidget() {
             .then(r => r.json()).then(d => setCategories(d || [])).catch(() => { });
 
         // Restore chat session from localStorage
-        const saved = localStorage.getItem('superpos_chat_session');
+        const saved = localStorage.getItem('qpos_chat_session');
         if (saved) {
             try {
                 const session = JSON.parse(saved);
@@ -51,7 +51,7 @@ export default function FloatingSupportWidget() {
                 setChatView('chat');
                 // Load existing messages
                 loadMessages(session.ticket_number, session.email);
-            } catch (e) { localStorage.removeItem('superpos_chat_session'); }
+            } catch (e) { localStorage.removeItem('qpos_chat_session'); }
         }
     }, []);
 
@@ -107,7 +107,7 @@ export default function FloatingSupportWidget() {
 
             const session = { ticket_number: data.ticket_number, email: startForm.email, name: startForm.name };
             setChatSession(session);
-            localStorage.setItem('superpos_chat_session', JSON.stringify(session));
+            localStorage.setItem('qpos_chat_session', JSON.stringify(session));
             setMessages(data.replies || []);
             lastMsgCountRef.current = (data.replies || []).length;
             setChatView('chat');
@@ -157,7 +157,7 @@ export default function FloatingSupportWidget() {
         setMessages([]);
         setChatView('welcome');
         lastMsgCountRef.current = 0;
-        localStorage.removeItem('superpos_chat_session');
+        localStorage.removeItem('qpos_chat_session');
     };
 
     if (!loaded) return null;

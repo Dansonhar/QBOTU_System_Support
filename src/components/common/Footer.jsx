@@ -12,7 +12,7 @@ const Footer = () => {
         <footer className="footer">
             <div className="container">
                 <div className="footer-logo">
-                    <img src={logo} alt="SUPERPOS" className="logo-img" />
+                    <img src={logo} alt="QPOS" className="logo-img" />
                 </div>
                 <div className="footer-links" style={{ marginTop: '1rem', display: 'flex', gap: '1.5rem', justifyContent: 'center', fontSize: '0.9rem', color: '#64748b' }}>
                     <Link to="/contact" className="footer-link">{t('footer.contact_us')}</Link>

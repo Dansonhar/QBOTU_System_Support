@@ -6,20 +6,104 @@
   "description": "From section: Quick Help: Contact Us",
   "status": "published",
   "created_at": "2026-02-06 00:25:41",
-  "updated_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-03-31 03:37:13",
   "category_name": "Quick Help",
   "category_status": "active",
   "steps": [
     {
-      "id": 186,
+      "id": 366,
       "question_id": 186,
       "step_order": 1,
-      "step_title": "Overview",
-      "content": "<p>This article covers: <strong>Contact Us: How to Contact Us via Live Chat</strong></p><p>Section: Quick Help: Contact Us</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "step_title": "What You Will Learn in This Guide",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Steps to reach out to the QPOS team through:</span></p><ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">BackOffice</span></li><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">QPOS Manager App</span></li><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">iOS or Android Point of Sale (POS) System</span></li></ul>",
       "image_url": null,
       "video_url": null,
       "block_type": "step",
       "images": []
+    },
+    {
+      "id": 367,
+      "question_id": 186,
+      "step_order": 2,
+      "step_title": "Contact Us via the BackOffice",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 368,
+      "question_id": 186,
+      "step_order": 3,
+      "step_title": "1. Key in your BackOffice URL [accountname.qpos.com] using your browser (e.g Google Chrome, Safari).",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 369,
+      "question_id": 186,
+      "step_order": 4,
+      "step_title": "2. Log in to your BackOffice with your email and password.",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 370,
+      "question_id": 186,
+      "step_order": 5,
+      "step_title": "3. Click on the Chat bubble on the bottom right of your screen.",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 371,
+      "question_id": 186,
+      "step_order": 6,
+      "step_title": "4. If you want to start a live chat, tap on Send us a message. You can also look for answers yourself by searching for an article. ",
+      "content": null,
+      "image_url": "/uploads/1771916526082-831139857.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771916526082-831139857.png",
+        "/uploads/1771916536666-388553795.png"
+      ]
+    },
+    {
+      "id": 372,
+      "question_id": 186,
+      "step_order": 7,
+      "step_title": "5. If you choose to start a live chat, select either Point of Sale (POS) Hardware & Software or Beep Delivery based on what issue you are facing.",
+      "content": null,
+      "image_url": "/uploads/1771916581542-981200135.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771916581542-981200135.png"
+      ]
+    },
+    {
+      "id": 373,
+      "question_id": 186,
+      "step_order": 8,
+      "step_title": "6. Start chatting! ",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">You can use the paper clip icon in the reply box to attach any files, pictures, or videos to help our team provide you with better assistance.</span></p>",
+      "image_url": "/uploads/1771916605257-79455908.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771916605257-79455908.png"
+      ]
     }
   ]
 }

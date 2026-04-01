@@ -6,7 +6,7 @@
   "description": "<p>Steps to download, activate, and deactivate your QPOS POS Register.</p>",
   "status": "published",
   "created_at": "2026-02-06 00:25:40",
-  "updated_at": "2026-02-24 00:25:18",
+  "updated_at": "2026-04-01 02:52:29",
   "category_name": "Setting Up",
   "category_status": "active",
   "steps": [
@@ -26,12 +26,12 @@
       "question_id": 10,
       "step_order": 2,
       "step_title": "Download the App",
-      "content": "Access the <strong>Splash Page</strong> via your device browser to download the QPOS or mPOS application.",
-      "image_url": "/uploads/splash-page.png",
+      "content": "<p>Access the <strong>Splash Page</strong> via your device browser to download the QPOS or mPOS application.</p>",
+      "image_url": "/uploads/1775011947574-798184755.png",
       "video_url": null,
       "block_type": "step",
       "images": [
-        "/uploads/splash-page.png"
+        "/uploads/1775011947574-798184755.png"
       ]
     },
     {

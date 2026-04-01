@@ -6,7 +6,7 @@
   "description": "<p>Customize your printed receipts with branding and store info.</p>",
   "status": "published",
   "created_at": "2026-02-06 00:25:40",
-  "updated_at": "2026-02-24 00:23:05",
+  "updated_at": "2026-03-31 02:12:17",
   "category_name": "Setting Up",
   "category_status": "active",
   "steps": [
@@ -38,51 +38,38 @@
       "step_order": 3,
       "step_title": "1. In your QPOS BackOffice, go to 'Settings', then tap 'Receipt Templates'.",
       "content": "",
-      "image_url": "/uploads/1771892483453-136937866.png",
+      "image_url": "/uploads/1774922784603-6393853.png",
       "video_url": null,
       "block_type": "step",
       "images": [
-        "/uploads/1771892483453-136937866.png"
-      ]
-    },
-    {
-      "id": 291,
-      "question_id": 9,
-      "step_order": 4,
-      "step_title": "2. On the 'Print Templates' page, tap 'Quick Setup'.",
-      "content": "",
-      "image_url": "/uploads/1771892524006-509620672.png",
-      "video_url": null,
-      "block_type": "step",
-      "images": [
-        "/uploads/1771892524006-509620672.png"
+        "/uploads/1774922784603-6393853.png"
       ]
     },
     {
       "id": 321,
       "question_id": 9,
-      "step_order": 5,
-      "step_title": "3. Fill in the relevant details for your template:",
+      "step_order": 4,
+      "step_title": "2. Fill in and choose the relevant details for your template:",
       "content": null,
-      "image_url": "/uploads/1771892547165-108532277.png",
+      "image_url": "/uploads/1774922911754-347612953.png",
       "video_url": null,
       "block_type": "step",
       "images": [
-        "/uploads/1771892547165-108532277.png",
-        "/uploads/1771892564686-33659168.png"
+        "/uploads/1774922911754-347612953.png",
+        "/uploads/1774922931346-503301126.png"
       ]
     },
     {
       "id": 322,
       "question_id": 9,
-      "step_order": 6,
-      "step_title": "4. Tap 'Save Settings' to create the template.",
+      "step_order": 5,
+      "step_title": "3. Tap 'Save Settings' to create the template.",
       "content": null,
-      "image_url": "/uploads/1771892582672-546997979.png",
+      "image_url": "/uploads/1774922954817-234623658.png",
       "video_url": null,
       "block_type": "step",
       "images": [
-        "/uploads/1771892582672-546997979.png"
+        "/uploads/1774922954817-234623658.png"
       ]
     }
   ]

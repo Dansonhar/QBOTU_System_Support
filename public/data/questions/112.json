@@ -6,7 +6,7 @@
   "description": "From section: Online Orders: Webstore",
   "status": "published",
   "created_at": "2026-02-06 00:25:41",
-  "updated_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-02-24 08:25:42",
   "category_name": "Online Orders",
   "category_status": "active",
   "steps": [
@@ -15,7 +15,114 @@
       "question_id": 112,
       "step_order": 1,
       "step_title": "Overview",
-      "content": "<p>This article covers: <strong>Webstore: Setting Up</strong></p><p>Section: Online Orders: Webstore</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "content": "<p>The <strong>Webstore Catalog</strong> allows you to manage the products displayed on your online store. You can organize items into categories and control which products appear as featured items.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 429,
+      "question_id": 112,
+      "step_order": 2,
+      "step_title": "How to Manage Products",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 430,
+      "question_id": 112,
+      "step_order": 3,
+      "step_title": "1. Go to Webstore Catalog",
+      "content": null,
+      "image_url": "/uploads/1771921441828-417491273.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771921441828-417491273.png"
+      ]
+    },
+    {
+      "id": 431,
+      "question_id": 112,
+      "step_order": 4,
+      "step_title": "2. Select Products",
+      "content": null,
+      "image_url": "/uploads/1771921466972-120545768.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771921466972-120545768.png"
+      ]
+    },
+    {
+      "id": 432,
+      "question_id": 112,
+      "step_order": 5,
+      "step_title": "Choose a category from the left panel",
+      "content": null,
+      "image_url": "/uploads/1771921486302-93633450.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771921486302-93633450.png"
+      ]
+    },
+    {
+      "id": 433,
+      "question_id": 112,
+      "step_order": 6,
+      "step_title": "Add or manage products in the selected category",
+      "content": null,
+      "image_url": "/uploads/1771921498327-628941376.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771921498327-628941376.png"
+      ]
+    },
+    {
+      "id": 434,
+      "question_id": 112,
+      "step_order": 7,
+      "step_title": "Categories",
+      "content": "<p>Categories help organize products on your webstore</p><p>You can create multiple categories (e.g. <em>Featured Products</em>, <em>Best Seller</em>)</p><p>One category can be set as <strong>Default</strong></p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 435,
+      "question_id": 112,
+      "step_order": 8,
+      "step_title": "Actions available:",
+      "content": "<ul><li>Add new category</li><li>Rename category</li><li>Assign products to categories</li></ul>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 436,
+      "question_id": 112,
+      "step_order": 9,
+      "step_title": "Featured Products",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 437,
+      "question_id": 112,
+      "step_order": 10,
+      "step_title": "Featured Products appear prominently on your webstore homepage.",
+      "content": "<p><strong>You can:</strong></p><ul><li>Add products to Featured Products</li><li>Reorder products using drag &amp; drop</li><li>Display prices clearly for customers</li></ul><p>💡 Tip: Use Featured Products to highlight best sellers or promotions.</p>",
       "image_url": null,
       "video_url": null,
       "block_type": "step",

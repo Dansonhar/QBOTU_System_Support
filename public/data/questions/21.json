@@ -6,7 +6,7 @@
   "description": "From section: Basic Set Up",
   "status": "published",
   "created_at": "2026-02-06 00:25:40",
-  "updated_at": "2026-02-24 00:47:04",
+  "updated_at": "2026-04-01 07:30:45",
   "category_name": "Point of Sale (POS) System",
   "category_status": "active",
   "steps": [
@@ -27,11 +27,11 @@
       "step_order": 2,
       "step_title": "Splitting Orders with Table Layouts Enabled",
       "content": null,
-      "image_url": "/uploads/1771893792982-310652185.png",
+      "image_url": "/uploads/1774922085962-442216475.png",
       "video_url": null,
       "block_type": "step",
       "images": [
-        "/uploads/1771893792982-310652185.png"
+        "/uploads/1774922085962-442216475.png"
       ]
     },
     {
@@ -40,25 +40,25 @@
       "step_order": 3,
       "step_title": "Tap on the Table Layout thats available , press on \"Checkout\"",
       "content": null,
-      "image_url": "/uploads/1771893951464-984424050.png",
+      "image_url": "/uploads/1774922047831-633256947.jpg",
       "video_url": null,
       "block_type": "step",
       "images": [
-        "/uploads/1771893951464-984424050.png"
+        "/uploads/1774922047831-633256947.jpg"
       ]
     },
     {
       "id": 328,
       "question_id": 21,
       "step_order": 4,
-      "step_title": "Before checkout , there are also options like Transfer , Merge and View Bill ",
+      "step_title": "Before checkout , there are also options like QR , add member and table merging.",
       "content": null,
-      "image_url": "/uploads/1771893984631-588930220.png",
+      "image_url": "/uploads/1774922103430-607371126.jpg",
       "video_url": null,
       "block_type": "step",
       "images": [
-        "/uploads/1771893984631-588930220.png",
-        "/uploads/1771894017100-175256141.png"
+        "/uploads/1774922103430-607371126.jpg",
+        "/uploads/1774922111241-70066212.jpg"
       ]
     },
     {
@@ -67,11 +67,11 @@
       "step_order": 5,
       "step_title": "Split will be shown at the order summary",
       "content": null,
-      "image_url": "/uploads/1771893962193-665918958.png",
+      "image_url": "/uploads/1774922240295-584657922.jpg",
       "video_url": null,
       "block_type": "step",
       "images": [
-        "/uploads/1771893962193-665918958.png"
+        "/uploads/1774922240295-584657922.jpg"
       ]
     }
   ]

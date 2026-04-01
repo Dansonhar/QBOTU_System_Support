@@ -1,12 +1,6 @@
 {
   "questions": [
     {
-      "id": 20,
-      "title": "POS: How to Merge Tables and Orders",
-      "category_id": 4,
-      "status": "published"
-    },
-    {
       "id": 21,
       "title": "POS: How to Split Bill/Orders / Items",
       "category_id": 4,
@@ -15,108 +9,6 @@
     {
       "id": 22,
       "title": "POS: How to Change Table for POS with Layout",
-      "category_id": 4,
-      "status": "published"
-    },
-    {
-      "id": 23,
-      "title": "POS: How to Provide Other Tablet Layout on POS",
-      "category_id": 4,
-      "status": "published"
-    },
-    {
-      "id": 24,
-      "title": "POS: How to View Menu Types on your POS layout 5.0 (with Video)",
-      "category_id": 4,
-      "status": "published"
-    },
-    {
-      "id": 25,
-      "title": "POS: How to Enable Deposit on S1 & S2 Devices",
-      "category_id": 4,
-      "status": "published"
-    },
-    {
-      "id": 26,
-      "title": "POS: How to Move Orders Between Customers",
-      "category_id": 4,
-      "status": "published"
-    },
-    {
-      "id": 27,
-      "title": "POS: [Android] How to retry unsynced Offline Transactions & Order Summary",
-      "category_id": 4,
-      "status": "published"
-    },
-    {
-      "id": 28,
-      "title": "POS: How to Cash In-Out for Shift Changes",
-      "category_id": 4,
-      "status": "published"
-    },
-    {
-      "id": 29,
-      "title": "POS: How to Open Shift, Close Shift, Reprint Pre-Settlement",
-      "category_id": 4,
-      "status": "published"
-    },
-    {
-      "id": 30,
-      "title": "POS: [Android] How to track custom payment methods differences tracking",
-      "category_id": 4,
-      "status": "published"
-    },
-    {
-      "id": 31,
-      "title": "POS: [Android] How to Hold & Retrieve Orders / POS & Kitchen Sync Turning",
-      "category_id": 4,
-      "status": "published"
-    },
-    {
-      "id": 34,
-      "title": "KDS: How to set up Kitchen Display System",
-      "category_id": 4,
-      "status": "published"
-    },
-    {
-      "id": 35,
-      "title": "KDS: How to Find and Install KDS (Kitchen Display System)",
-      "category_id": 4,
-      "status": "published"
-    },
-    {
-      "id": 36,
-      "title": "KDS: How to Enable KDS Service in the App",
-      "category_id": 4,
-      "status": "published"
-    },
-    {
-      "id": 37,
-      "title": "KDS: How to Set Up KDS Number via BackOffice",
-      "category_id": 4,
-      "status": "published"
-    },
-    {
-      "id": 38,
-      "title": "KDS: Firing Course via Android",
-      "category_id": 4,
-      "status": "published"
-    },
-    {
-      "id": 39,
-      "title": "KDS: How to Update Kitchen Status via app and force clearing Screens as inactive",
-      "category_id": 4,
-      "status": "published"
-    },
-    {
-      "id": 40,
-      "title": "MRS: How to Enable The MRS System",
-      "category_id": 4,
-      "status": "published"
-    },
-    {
-      "id": 41,
-      "title": "MRS: How to Enable Multiple Register Sync",
       "category_id": 4,
       "status": "published"
     }

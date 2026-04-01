@@ -1,12 +1,12 @@
 {
   "id": 114,
   "category_id": 6,
-  "title": "Webstore: Selling on Facebook",
+  "title": "Webstore: Customizing Webstore Appearance",
   "slug": "webstore-selling-on-facebook",
-  "description": "From section: Online Orders: Webstore",
+  "description": "<p>The <strong>Webstore Appearance</strong> section allows you to customize your online store’s visual design to match your brand identity.</p>",
   "status": "published",
   "created_at": "2026-02-06 00:25:41",
-  "updated_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-02-24 08:31:45",
   "category_name": "Online Orders",
   "category_status": "active",
   "steps": [
@@ -20,6 +20,71 @@
       "video_url": null,
       "block_type": "step",
       "images": []
+    },
+    {
+      "id": 441,
+      "question_id": 114,
+      "step_order": 2,
+      "step_title": "Brand Colors",
+      "content": "<p>You can customize:</p><ul><li><strong>Primary Color</strong></li><li> Used for links and highlights</li><li><strong>Secondary Color</strong></li><li> Used for success states and badges</li><li><strong>Accent Color</strong></li><li> Used for promotions and callouts</li></ul>",
+      "image_url": "/uploads/1771921696030-256473410.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771921696030-256473410.png"
+      ]
+    },
+    {
+      "id": 442,
+      "question_id": 114,
+      "step_order": 3,
+      "step_title": "Header & Buttons",
+      "content": "<p>You can configure:</p><ul><li>Header background color</li><li>Header text color</li><li>Button background color</li><li>Button text color</li></ul><p>Changes are applied <strong>live</strong> to your webstore.</p><p>💡 Tip: Use high-contrast colors to improve readability.</p>",
+      "image_url": "/uploads/1771921701637-239815681.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771921701637-239815681.png"
+      ]
+    },
+    {
+      "id": 443,
+      "question_id": 114,
+      "step_order": 4,
+      "step_title": "Border Radius",
+      "content": "<p>You can customize:</p><ul><li><strong>Border Radius</strong></li><li>Controls the roundness of buttons, cards and input</li></ul>",
+      "image_url": "/uploads/1771921717998-541950341.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771921717998-541950341.png"
+      ]
+    },
+    {
+      "id": 444,
+      "question_id": 114,
+      "step_order": 5,
+      "step_title": "Font Style",
+      "content": "<p>You can customize:</p><ul><li><strong>Font Style</strong></li><li>Default , Modern and Classic</li></ul>",
+      "image_url": "/uploads/1771921723120-761741216.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771921723120-761741216.png"
+      ]
+    },
+    {
+      "id": 445,
+      "question_id": 114,
+      "step_order": 6,
+      "step_title": "Live Preview",
+      "content": "<p>You can now <strong>Live Preview</strong> the changes made from above .</p>",
+      "image_url": "/uploads/1771921736158-2981697.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771921736158-2981697.png"
+      ]
     }
   ]
 }

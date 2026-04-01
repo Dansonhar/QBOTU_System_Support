@@ -53,54 +53,6 @@
       "title": "How to Arrange Your Product Layouts on the QPOS POS App",
       "category_id": 3,
       "status": "published"
-    },
-    {
-      "id": 12,
-      "title": "QPOS Manager App: How to Use",
-      "category_id": 3,
-      "status": "published"
-    },
-    {
-      "id": 13,
-      "title": "QPOS Manager App: How to Manage Beep Delivery Orders",
-      "category_id": 3,
-      "status": "published"
-    },
-    {
-      "id": 14,
-      "title": "QPOS Manager App: How to Mark Beep Menu Items as In Stock or Out of Stock",
-      "category_id": 3,
-      "status": "published"
-    },
-    {
-      "id": 15,
-      "title": "QPOS Manager App: How to Perform Stock Take using Scanner",
-      "category_id": 3,
-      "status": "published"
-    },
-    {
-      "id": 16,
-      "title": "Hardware: How to Perform Basic Set Up",
-      "category_id": 3,
-      "status": "published"
-    },
-    {
-      "id": 17,
-      "title": "Hardware: How to Set Up Sunmi & Android T2C",
-      "category_id": 3,
-      "status": "published"
-    },
-    {
-      "id": 18,
-      "title": "Hardware: [iPad] How to Set Up Register",
-      "category_id": 3,
-      "status": "published"
-    },
-    {
-      "id": 19,
-      "title": "Hardware: [Mini] Set Up Guide and User Manuals",
-      "category_id": 3,
-      "status": "published"
     }
   ]
 }

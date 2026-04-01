@@ -1,9 +1,8 @@
-/* POS Help Center - SUPERPOS Style Theme */
-/* Matching superpos.com design */
+/* POS Help Center - QPOS Style Theme */
 
 /* ===== CSS VARIABLES ===== */
 :root {
-  /* Primary Colors - SUPERPOS Orange */
+  /* Primary Colors - QPOS */
   --color-primary: #000000;
   --color-primary-dark: #E5821A;
   --color-primary-light: #FFAB42;
@@ -90,7 +89,7 @@ a:hover {
   padding: 0 var(--spacing-lg);
 }
 
-/* ===== HEADER (StoreHub Orange) ===== */
+/* ===== HEADER ===== */
 .header {
   background: var(--color-header-gradient);
   padding: var(--spacing-2xl) 0;
@@ -324,7 +323,7 @@ a:hover {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* ===== CATEGORY GRID (StoreHub Cards) ===== */
+/* ===== CATEGORY GRID ===== */
 .category-section {
   padding: var(--spacing-3xl) 0;
 }
@@ -1557,7 +1556,7 @@ html {
 }
 
 /* ============================
-   Floating Support Widget (StoreHub Style)
+   Floating Support Widget (QPOS Style)
    ============================ */
 .floating-support-btn {
   width: 56px;

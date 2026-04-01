@@ -6,7 +6,7 @@
   "description": "From section: Basic Set Up",
   "status": "published",
   "created_at": "2026-02-06 00:25:40",
-  "updated_at": "2026-02-24 01:04:58",
+  "updated_at": "2026-03-31 01:52:33",
   "category_name": "Point of Sale (POS) System",
   "category_status": "active",
   "steps": [
@@ -27,12 +27,12 @@
       "step_order": 2,
       "step_title": "Change table via Table Layout",
       "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">1. Go to your table layout page to view all tables occupied</span></p><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">2. Tap on the 3 dot menu in the top right corner to choose Move Order.</span></p><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">3. Select a table that you want to change; after choosing the tables, they turn Red</span></p><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">4. Choose a table that your customer wishes to move to; you can select one of the tables selected or an empty table.</span></p>",
-      "image_url": "/uploads/1771895019830-591699860.png",
+      "image_url": "/uploads/1774921421986-609919268.jpg",
       "video_url": null,
       "block_type": "step",
       "images": [
-        "/uploads/1771895019830-591699860.png",
-        "/uploads/1771895028043-59005106.png"
+        "/uploads/1774921421986-609919268.jpg",
+        "/uploads/1774921507784-127906771.jpg"
       ]
     },
     {
@@ -41,11 +41,12 @@
       "step_order": 3,
       "step_title": "Table has successfully been changed. ",
       "content": null,
-      "image_url": "/uploads/1771895057276-486958968.png",
+      "image_url": "/uploads/1774921871685-240266502.jpg",
       "video_url": null,
       "block_type": "step",
       "images": [
-        "/uploads/1771895057276-486958968.png"
+        "/uploads/1774921871685-240266502.jpg",
+        "/uploads/1774921950453-574097462.jpg"
       ]
     }
   ]

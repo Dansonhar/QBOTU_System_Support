@@ -1,25 +1,62 @@
 {
   "id": 122,
   "category_id": 7,
-  "title": "How to Understand Differences in Sales Reports",
+  "title": "How to View and Customize Your QPOS Sales Reports",
   "slug": "how-to-understand-differences-in-sales-reports",
-  "description": "From section: Sales Reports",
+  "description": "<p>This comprehensive guide shows you how to view and customize all the different sales reports available in your QPOS BackOffice. You&#39;ll learn how to find specific data like sales by product, payment method, employee, and more, helping you make informed decisions for your business.</p>",
   "status": "published",
   "created_at": "2026-02-06 00:25:41",
-  "updated_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-04-01 00:02:36",
   "category_name": "Reports",
   "category_status": "active",
   "steps": [
     {
-      "id": 122,
+      "id": 425,
       "question_id": 122,
       "step_order": 1,
-      "step_title": "Overview",
-      "content": "<p>This article covers: <strong>How to Understand Differences in Sales Reports</strong></p><p>Section: Sales Reports</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "step_title": "Before You Begin",
+      "content": "<ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Access to your QPOS BackOffice.</span></li><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">A computer or tablet with internet access.</span></li><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Sales data recorded in your QPOS POS system.</span></li></ul>",
       "image_url": null,
       "video_url": null,
       "block_type": "step",
       "images": []
+    },
+    {
+      "id": 426,
+      "question_id": 122,
+      "step_order": 2,
+      "step_title": "Step-by-Step Guide",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">The Sales Over Time report shows you the number of sales made over a period of time.</span></p><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">This report can show you your sales information over specific periods of time, by using the following filters: Daily, Weekly, Monthly, Hour of Day, and Day of Week.</span></p><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Alternatively, you can select custom time frames in the top right section of the report.</span></p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 427,
+      "question_id": 122,
+      "step_order": 3,
+      "step_title": "1. View Sales Over Time Report",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">The &#39;Analytics&#39; report helps you see your sales trends over different periods, like daily, weekly, or monthly. This is great for identifying peak hours or busy seasons.</span></p>",
+      "image_url": "/uploads/1771919620323-632969655.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771919620323-632969655.png"
+      ]
+    },
+    {
+      "id": 428,
+      "question_id": 122,
+      "step_order": 4,
+      "step_title": "2. You can adjust the time frame using filters like 'Weekly' and 'Monthly'.",
+      "content": null,
+      "image_url": "/uploads/1771919675710-93684946.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771919675710-93684946.png"
+      ]
     }
   ]
 }

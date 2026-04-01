@@ -6,7 +6,7 @@
   "description": "From section: Operational Reports",
   "status": "published",
   "created_at": "2026-02-06 00:25:41",
-  "updated_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-04-01 07:44:27",
   "category_name": "Reports",
   "category_status": "active",
   "steps": [
@@ -15,11 +15,198 @@
       "question_id": 118,
       "step_order": 1,
       "step_title": "Overview",
-      "content": "<p>This article covers: <strong>How to Understand Your Tax Report</strong></p><p>Section: Operational Reports</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">This guide shows you how to access and understand your &#39;Tax Report&#39; in the QPOS BackOffice. You&#39;ll learn how to interpret the data, use filters to narrow down information, and export the report for your records. This report is essential for accurately tracking the tax collected from your sales.</span></p>",
       "image_url": null,
       "video_url": null,
       "block_type": "step",
       "images": []
+    },
+    {
+      "id": 374,
+      "question_id": 118,
+      "step_order": 2,
+      "step_title": "Before You Begin",
+      "content": "<ul><li><span style=\"color: rgb(26, 26, 26); background-color: rgb(255, 255, 255);\">Access to your QPOS BackOffice.</span></li><li><span style=\"color: rgb(26, 26, 26); background-color: rgb(255, 255, 255);\">A stable internet connection.</span></li><li><span style=\"color: rgb(26, 26, 26); background-color: rgb(255, 255, 255);\">Tax codes must be set up in your BackOffice (Go to &#39;Settings&#39;, then &#39;Tax Codes&#39;).</span></li></ul>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 375,
+      "question_id": 118,
+      "step_order": 3,
+      "step_title": "Step-by-Step Guide",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 376,
+      "question_id": 118,
+      "step_order": 4,
+      "step_title": "Locate Your Tax Report",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 377,
+      "question_id": 118,
+      "step_order": 5,
+      "step_title": "1. Log in to your QPOS BackOffice.",
+      "content": null,
+      "image_url": "/uploads/1775028769346-792251159.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1775028769346-792251159.png"
+      ]
+    },
+    {
+      "id": 378,
+      "question_id": 118,
+      "step_order": 6,
+      "step_title": "2. On the left-hand side menu, click on 'Reports'.",
+      "content": null,
+      "image_url": "/uploads/1771917656121-820056125.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771917656121-820056125.png"
+      ]
+    },
+    {
+      "id": 379,
+      "question_id": 118,
+      "step_order": 7,
+      "step_title": "3. From the list of reports, click on 'Taxes'.",
+      "content": null,
+      "image_url": "/uploads/1771917692069-843247065.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771917692069-843247065.png"
+      ]
+    },
+    {
+      "id": 380,
+      "question_id": 118,
+      "step_order": 8,
+      "step_title": "Understand the Tax Report Table",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">The main section of the &#39;Taxes&#39; page displays a table that summarizes the tax collected based on your selected filters. Here&#39;s a breakdown of the columns you&#39;ll see:</span></p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 381,
+      "question_id": 118,
+      "step_order": 9,
+      "step_title": "1. Tax Name",
+      "content": "<p>This refers to the <strong>tax configuration name</strong> currently set in QPOS (for example: <em>Tax</em>, <em>SST</em>, <em>GST</em>).</p><ul><li>The Tax Name is defined under <strong>Tax Configuration</strong>.</li><li>All transactions within the selected date range follow this configured tax setup.</li></ul><p><strong>Notes:</strong></p><ul><li>If tax is disabled, all tax values will be <strong>0</strong>.</li><li>QPOS currently aggregates tax under one configured tax name per account.</li></ul>",
+      "image_url": "/uploads/1771917952578-275818378.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771917952578-275818378.png"
+      ]
+    },
+    {
+      "id": 382,
+      "question_id": 118,
+      "step_order": 10,
+      "step_title": "2. Tax Percentage (%)",
+      "content": "<p>This shows the <strong>tax rate applied</strong> to taxable sales during the selected period.</p><ul><li>The value is set in <strong>Tax Configuration → Tax Percentage (%)</strong>.</li><li>Example: <code>6%</code>, <code>8%</code>, or <code>0%</code>.</li></ul><p><strong>Notes:</strong></p><ul><li>If Tax is disabled, the tax percentage will be treated as <strong>0%</strong>.</li><li>Any change to the tax percentage only affects <strong>future transactions</strong>, not historical data.</li></ul>",
+      "image_url": "/uploads/1771917958545-454725253.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771917958545-454725253.png"
+      ]
+    },
+    {
+      "id": 383,
+      "question_id": 118,
+      "step_order": 11,
+      "step_title": "3. Total Tax Collected",
+      "content": "<p>This displays the <strong>total amount of tax collected</strong> from all transactions within the selected date range.</p><ul><li>Calculated based on:<ul><li>Tax Percentage</li><li>Taxable Sales Amount</li></ul></li><li>Displayed in your <strong>local currency (RM)</strong>.</li></ul><p>📊 Example from the report:</p><blockquote><strong>Total Tax Collected: RM 9,152.88</strong></blockquote>",
+      "image_url": "/uploads/1771917965672-125579366.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771917965672-125579366.png"
+      ]
+    },
+    {
+      "id": 384,
+      "question_id": 118,
+      "step_order": 12,
+      "step_title": "4. Total Taxable Sales",
+      "content": "<p>This represents the <strong>total value of sales before tax</strong> for all taxable items.</p><ul><li>Excludes tax</li><li>Includes only transactions where tax is applied</li><li>Used as the base amount for tax calculation</li></ul><p>📊 Example:</p><blockquote><strong>Total Taxable Sales: RM 160,827.99</strong></blockquote>",
+      "image_url": "/uploads/1771917975594-949106294.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771917975594-949106294.png"
+      ]
+    },
+    {
+      "id": 385,
+      "question_id": 118,
+      "step_order": 13,
+      "step_title": "5. Total Transactions",
+      "content": "<p>This shows the <strong>number of completed transactions</strong> that contributed to the tax report within the selected period.</p><p>📊 Example:</p><blockquote><strong>Total Transactions: 708</strong></blockquote>",
+      "image_url": "/uploads/1771917980664-767531405.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771917980664-767531405.png"
+      ]
+    },
+    {
+      "id": 386,
+      "question_id": 118,
+      "step_order": 14,
+      "step_title": "6. Daily Tax Collection Table",
+      "content": "<p>This table provides a <strong>day-by-day breakdown</strong> of tax performance.</p><h3>Columns Explained:</h3><h3>Date</h3><ul><li>The transaction date.</li></ul><h3>Tax Collected</h3><ul><li>Total tax collected on that specific day.</li></ul><h3>Taxable Amount</h3><ul><li>Total sales value <strong>before tax</strong> for that day.</li></ul><h3>Transactions</h3><ul><li>Number of transactions recorded on that date.</li></ul><h3>Avg Tax / Transaction</h3><ul><li>Average tax collected per transaction for that day.</li><li>Helps identify:<ul><li>High-value order days</li><li>Low-spend periods</li><li>Sales pattern anomalies</li></ul></li></ul><p></p>",
+      "image_url": "/uploads/1771918066986-551567848.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771918066986-551567848.png"
+      ]
+    },
+    {
+      "id": 387,
+      "question_id": 118,
+      "step_order": 15,
+      "step_title": "7. Date Range & Outlet Filter",
+      "content": "<p>QPOS allows flexible filtering:</p><h3>Date Range</h3><ul><li>Presets: Today, Yesterday, This Week, Last 30 Days, etc.</li><li>Custom Start Date &amp; End Date selection</li></ul><h3>Outlet Filter</h3><ul><li>View tax data for:<ul><li>All Outlets</li><li>Specific outlet (if multi-outlet enabled)</li></ul></li></ul>",
+      "image_url": "/uploads/1771918022239-917637496.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771918022239-917637496.png"
+      ]
+    },
+    {
+      "id": 388,
+      "question_id": 118,
+      "step_order": 16,
+      "step_title": "8. Export CSV",
+      "content": "<p>The <strong>Export CSV</strong> button allows you to download the tax report for:</p><ul><li>Accounting &amp; audit purposes</li><li>SST/GST submission</li><li>External reporting</li><li>Sharing with finance teams</li></ul>",
+      "image_url": "/uploads/1771918012175-71689384.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771918012175-71689384.png"
+      ]
     }
   ]
 }

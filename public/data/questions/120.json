@@ -6,7 +6,7 @@
   "description": "From section: Sales Reports",
   "status": "published",
   "created_at": "2026-02-06 00:25:41",
-  "updated_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-03-31 03:33:49",
   "category_name": "Reports",
   "category_status": "active",
   "steps": [
@@ -15,7 +15,143 @@
       "question_id": 120,
       "step_order": 1,
       "step_title": "Overview",
-      "content": "<p>This article covers: <strong>How to Understand Your QPOS Sales Reports</strong></p><p>Section: Sales Reports</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "content": "<p><span style=\"color: rgb(26, 26, 26); background-color: rgb(255, 255, 255);\">This guide introduces you to QPOS sales reports, explaining what they are and how they can help you make smart business decisions. You&#39;ll learn about the different types of reports available in your BackOffice.</span></p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 397,
+      "question_id": 120,
+      "step_order": 2,
+      "step_title": "Before You Begin",
+      "content": "<ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Access to your QPOS BackOffice.</span></li></ul><p></p><ul><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">A computer or tablet with internet access.</span></li></ul>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 398,
+      "question_id": 120,
+      "step_order": 3,
+      "step_title": "What Are Sales Reports and Why Are They Important?",
+      "content": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Sales reports are powerful tools that show you how your business is performing.</span></p><p></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">They break down your sales data in different ways, helping you understand:</span></p><ul><li><strong style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">What sells best:</strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\"> Identify your most popular products or categories.</span></li><li><strong style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">When you&#39;re busiest:</strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\"> See your sales trends by hour, day, or month.</span></li><li><strong style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">How customers pay:</strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\"> Understand popular payment methods.</span></li><li><strong style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Employee performance:</strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\"> Track sales made by your team.</span></li><li><strong style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\">Overall business health:</strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(26, 26, 26);\"> Get a clear picture of your revenue, discounts, and costs.</span></li></ul>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 399,
+      "question_id": 120,
+      "step_order": 4,
+      "step_title": "Accessing Your Sales Reports in BackOffice",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 400,
+      "question_id": 120,
+      "step_order": 5,
+      "step_title": "All your sales reports can be found in the QPOS BackOffice.",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 401,
+      "question_id": 120,
+      "step_order": 6,
+      "step_title": "1. Log in to your QPOS BackOffice.",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 402,
+      "question_id": 120,
+      "step_order": 7,
+      "step_title": "2. On the left-hand menu, click on 'Reports'.",
+      "content": null,
+      "image_url": "/uploads/1771918607869-527335922.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771918607869-527335922.png"
+      ]
+    },
+    {
+      "id": 403,
+      "question_id": 120,
+      "step_order": 8,
+      "step_title": "3. From here, you will see a list of different report types. Select the report you wish to view.",
+      "content": null,
+      "image_url": "/uploads/1771918647948-541018265.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771918647948-541018265.png"
+      ]
+    },
+    {
+      "id": 404,
+      "question_id": 120,
+      "step_order": 9,
+      "step_title": "FAQs",
+      "content": null,
+      "image_url": null,
+      "video_url": null,
+      "block_type": "section_title",
+      "images": []
+    },
+    {
+      "id": 405,
+      "question_id": 120,
+      "step_order": 10,
+      "step_title": "1. Can I view sales from 'Online' and 'Offline' channels together?",
+      "content": "<p><em style=\"background-color: rgba(254, 237, 175, 0.5); color: rgb(26, 26, 26);\">Yes. The &#39;Sales Over Time&#39; report combines all your sales data (POS, Beep Delivery, QR Order &amp; Pay) into one view by default.</em></p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 406,
+      "question_id": 120,
+      "step_order": 11,
+      "step_title": "2. Can I see the profit margin for my sales?",
+      "content": "<p><em style=\"background-color: rgba(254, 237, 175, 0.5); color: rgb(26, 26, 26);\">Yes. In the &#39;Sales Over Time&#39; report, you can view your Gross Profit (GP%). You can switch the chart view to show &#39;GP%&#39; or look at the data table below the chart.</em></p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 407,
+      "question_id": 120,
+      "step_order": 12,
+      "step_title": "3. Can I filter these reports by specific stores?",
+      "content": "<p><em style=\"background-color: rgba(254, 237, 175, 0.5); color: rgb(26, 26, 26);\">Yes. Almost all reports have a &#39;Filters&#39; button that allows you to view data for a specific store branch if you have multiple locations.</em></p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 408,
+      "question_id": 120,
+      "step_order": 13,
+      "step_title": "Need Help?",
+      "content": "<p><em style=\"color: rgb(26, 26, 26); background-color: rgb(255, 255, 255);\">Contact QPOS Support via live chat in your QPOS app or email </em><em style=\"color: rgb(217, 122, 13); background-color: rgb(255, 255, 255);\"><u><a href=\"mailto:support@storehub.com\" rel=\"noopener noreferrer\" target=\"_blank\">support@QPOS.com</a></u></em><em style=\"color: rgb(26, 26, 26); background-color: rgb(255, 255, 255);\">.</em></p><p></p>",
       "image_url": null,
       "video_url": null,
       "block_type": "step",

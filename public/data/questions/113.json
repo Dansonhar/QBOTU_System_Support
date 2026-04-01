@@ -1,12 +1,12 @@
 {
   "id": 113,
   "category_id": 6,
-  "title": "Webstore: Payment Methods",
+  "title": "Webstore: Managing Webstore Banners",
   "slug": "webstore-payment-methods",
   "description": "From section: Online Orders: Webstore",
   "status": "published",
   "created_at": "2026-02-06 00:25:41",
-  "updated_at": "2026-02-06 00:25:41",
+  "updated_at": "2026-02-24 08:27:13",
   "category_name": "Online Orders",
   "category_status": "active",
   "steps": [
@@ -15,7 +15,44 @@
       "question_id": 113,
       "step_order": 1,
       "step_title": "Overview",
-      "content": "<p>This article covers: <strong>Webstore: Payment Methods</strong></p><p>Section: Online Orders: Webstore</p><p>Add detailed content and images here via the Admin Panel.</p>",
+      "content": "<p>Webstore Banners allow you to showcase promotions, announcements, or seasonal campaigns on your webstore homepage.</p>",
+      "image_url": null,
+      "video_url": null,
+      "block_type": "step",
+      "images": []
+    },
+    {
+      "id": 438,
+      "question_id": 113,
+      "step_order": 2,
+      "step_title": "How to Manage Banners",
+      "content": "<ol><li>Go to <strong>Webstore Catalog</strong></li><li>Click <strong>Banners</strong></li><li>Select <strong>Add Banner</strong> to upload a new banner</li></ol>",
+      "image_url": "/uploads/1771921610437-760828736.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771921610437-760828736.png"
+      ]
+    },
+    {
+      "id": 439,
+      "question_id": 113,
+      "step_order": 3,
+      "step_title": "Banner Rules",
+      "content": "<ul><li>You can add <strong>up to 5 banners</strong></li><li>Each banner can be toggled <strong>Active / Inactive</strong></li><li>Only <strong>Active</strong> banners are shown on the webstore</li></ul>",
+      "image_url": "/uploads/1771921602420-397448996.png",
+      "video_url": null,
+      "block_type": "step",
+      "images": [
+        "/uploads/1771921602420-397448996.png"
+      ]
+    },
+    {
+      "id": 440,
+      "question_id": 113,
+      "step_order": 4,
+      "step_title": "Banner Actions",
+      "content": "<p>For each banner, you can:</p><ul><li>Enable or disable visibility</li><li>Edit banner content</li><li>Delete banner</li></ul><p>💡 Tip: Keep banners updated to avoid showing expired promotions.</p>",
       "image_url": null,
       "video_url": null,
       "block_type": "step",
