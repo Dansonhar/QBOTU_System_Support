@@ -104,7 +104,7 @@ const Contact = () => {
                     </div>
                     <h3>{t('contact.email_title')}</h3>
                     <p>{t('contact.email_desc')}</p>
-                    <a href="mailto:support@superpos.com" className="contact-card-btn">
+                    <a href="mailto:info@qbot.now" className="contact-card-btn">
                         {t('contact.email_btn')}
                     </a>
                 </div>

@@ -74,7 +74,7 @@ const PrivacyPolicy = () => {
                             <h2>{t('privacy.s5_title')}</h2>
                             <p>{t('privacy.s5_desc')}</p>
                             <p style={{ marginTop: '1rem' }}>
-                                <strong>Email:</strong> support@superpos.com<br />
+                                <strong>Email:</strong> info@qbot.now<br />
                                 <strong>Phone:</strong> +60 3-1234 5678
                             </p>
                         </div>
