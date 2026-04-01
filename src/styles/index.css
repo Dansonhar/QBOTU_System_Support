@@ -548,9 +548,9 @@ a:hover {
 }
 
 .article-list-item:hover {
-  color: var(--color-primary);
-  background: #f5f5f5;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  color: #ffffff;
+  background: #1a1a1a;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .article-list-title {
@@ -563,7 +563,7 @@ a:hover {
 }
 
 .article-list-item:hover .article-list-arrow {
-  color: var(--color-primary);
+  color: #ffffff;
   transform: translateX(4px);
 }
 
