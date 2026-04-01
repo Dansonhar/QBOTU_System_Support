@@ -242,9 +242,11 @@ const Article = () => {
                                                         const directSrc = getDirectVideoSrc(step.video_url);
                                                         if (directSrc) {
                                                             return (
-                                                                <video controls className="video-embed-direct">
-                                                                    <source src={directSrc} />
-                                                                </video>
+                                                                <div className="video-embed-wrapper">
+                                                                    <video controls className="video-embed-direct">
+                                                                        <source src={directSrc} />
+                                                                    </video>
+                                                                </div>
                                                             );
                                                         }
                                                         return (

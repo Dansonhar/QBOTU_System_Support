@@ -1430,7 +1430,8 @@ html {
   background: #000;
 }
 
-.video-embed-wrapper iframe {
+.video-embed-wrapper iframe,
+.video-embed-wrapper .video-embed-direct {
   position: absolute;
   top: 0;
   left: 0;
@@ -1439,10 +1440,9 @@ html {
   border-radius: 12px;
 }
 
-.video-embed-direct {
-  display: block;
-  width: 100%;
-  border-radius: 12px;
+.video-embed-wrapper .video-embed-direct {
+  object-fit: contain;
+  background: #000;
 }
 
 /* ===== RICH TEXT EDITOR (Quill) ===== */
