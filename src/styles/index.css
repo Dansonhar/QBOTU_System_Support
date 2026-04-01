@@ -1401,7 +1401,8 @@ html {
 }
 
 .step-video {
-  margin: var(--spacing-md) 0;
+  margin: 2rem auto;
+  max-width: 600px;
 }
 
 .step-video a {
@@ -1425,8 +1426,7 @@ html {
   padding-bottom: 56.25%; /* 16:9 */
   height: 0;
   overflow: hidden;
-  border-radius: 8px;
-  margin-top: 1rem;
+  border-radius: 12px;
   background: #000;
 }
 
@@ -1436,13 +1436,13 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 .video-embed-direct {
+  display: block;
   width: 100%;
-  border-radius: 8px;
-  margin-top: 1rem;
+  border-radius: 12px;
 }
 
 /* ===== RICH TEXT EDITOR (Quill) ===== */
