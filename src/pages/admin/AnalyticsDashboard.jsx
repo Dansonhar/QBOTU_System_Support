@@ -125,7 +125,7 @@ export default function AnalyticsDashboard() {
                 {/* Summary Cards */}
                 <div className="admin-stats-grid">
                     <div className="admin-stat-card">
-                        <div className="admin-stat-icon" style={{ background: '#fff3e0', color: '#F7941D' }}>
+                        <div className="admin-stat-icon" style={{ background: '#f0f0f0', color: '#111' }}>
                             <MousePointerClick size={24} />
                         </div>
                         <div className="admin-stat-content">
@@ -134,7 +134,7 @@ export default function AnalyticsDashboard() {
                         </div>
                     </div>
                     <div className="admin-stat-card">
-                        <div className="admin-stat-icon" style={{ background: '#e3f2fd', color: '#1976d2' }}>
+                        <div className="admin-stat-icon" style={{ background: '#e8e8e8', color: '#333' }}>
                             <Search size={24} />
                         </div>
                         <div className="admin-stat-content">
@@ -143,7 +143,7 @@ export default function AnalyticsDashboard() {
                         </div>
                     </div>
                     <div className="admin-stat-card">
-                        <div className="admin-stat-icon" style={{ background: '#e8f5e9', color: '#2e7d32' }}>
+                        <div className="admin-stat-icon" style={{ background: '#e0e0e0', color: '#222' }}>
                             <HelpCircle size={24} />
                         </div>
                         <div className="admin-stat-content">
@@ -152,7 +152,7 @@ export default function AnalyticsDashboard() {
                         </div>
                     </div>
                     <div className="admin-stat-card">
-                        <div className="admin-stat-icon" style={{ background: '#fce4ec', color: '#c62828' }}>
+                        <div className="admin-stat-icon" style={{ background: '#d8d8d8', color: '#111' }}>
                             <TrendingUp size={24} />
                         </div>
                         <div className="admin-stat-content">
@@ -174,9 +174,9 @@ export default function AnalyticsDashboard() {
                                     style={{
                                         padding: '5px 14px',
                                         borderRadius: '20px',
-                                        border: trendGroup === g ? '2px solid #F7941D' : '1px solid #ddd',
-                                        background: trendGroup === g ? '#FFF3E0' : '#fff',
-                                        color: trendGroup === g ? '#F7941D' : '#666',
+                                        border: trendGroup === g ? '2px solid #000' : '1px solid #ddd',
+                                        background: trendGroup === g ? '#000' : '#fff',
+                                        color: trendGroup === g ? '#fff' : '#666',
                                         fontWeight: trendGroup === g ? '700' : '400',
                                         cursor: 'pointer',
                                         fontSize: '13px',
@@ -196,11 +196,11 @@ export default function AnalyticsDashboard() {
                             {/* Legend */}
                             <div style={{ display: 'flex', gap: '20px', marginBottom: '14px', fontSize: '13px' }}>
                                 <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                    <span style={{ width: 12, height: 12, borderRadius: 3, background: '#F7941D', display: 'inline-block' }}></span>
+                                    <span style={{ width: 12, height: 12, borderRadius: 3, background: '#111', display: 'inline-block' }}></span>
                                     Clicks
                                 </span>
                                 <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                    <span style={{ width: 12, height: 12, borderRadius: 3, background: '#1976d2', display: 'inline-block' }}></span>
+                                    <span style={{ width: 12, height: 12, borderRadius: 3, background: '#888', display: 'inline-block' }}></span>
                                     Searches
                                 </span>
                             </div>
@@ -231,7 +231,7 @@ export default function AnalyticsDashboard() {
                                                     style={{
                                                         width: barWidth / 2,
                                                         height: Math.max(clickH, d.clicks > 0 ? 4 : 0),
-                                                        background: 'linear-gradient(180deg, #F7941D, #e67e00)',
+                                                        background: 'linear-gradient(180deg, #222, #000)',
                                                         borderRadius: '3px 3px 0 0',
                                                         transition: 'height 0.4s ease'
                                                     }}
@@ -241,7 +241,7 @@ export default function AnalyticsDashboard() {
                                                     style={{
                                                         width: barWidth / 2,
                                                         height: Math.max(searchH, d.searches > 0 ? 4 : 0),
-                                                        background: 'linear-gradient(180deg, #42a5f5, #1976d2)',
+                                                        background: 'linear-gradient(180deg, #aaa, #777)',
                                                         borderRadius: '3px 3px 0 0',
                                                         transition: 'height 0.4s ease'
                                                     }}

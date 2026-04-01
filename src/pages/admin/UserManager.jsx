@@ -176,7 +176,7 @@ const UserManager = () => {
                                         <td>
                                             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                                 {user.role === 'admin' ? (
-                                                    <Shield size={16} style={{ color: '#F7941D' }} />
+                                                    <Shield size={16} style={{ color: '#111' }} />
                                                 ) : (
                                                     <User size={16} style={{ color: '#666' }} />
                                                 )}

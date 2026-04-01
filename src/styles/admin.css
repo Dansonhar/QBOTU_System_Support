@@ -9,7 +9,7 @@
 
 .admin-sidebar {
     width: 260px;
-    background: #1a1f36;
+    background: #000;
     color: white;
     display: flex;
     flex-direction: column;
@@ -20,19 +20,19 @@
 
 .admin-sidebar-header {
     padding: 24px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .admin-sidebar-header h2 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #F7941D;
+    color: #fff;
     margin: 0;
 }
 
 .admin-sidebar-header span {
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.55);
 }
 
 .admin-nav {
@@ -45,7 +45,7 @@
     align-items: center;
     gap: 12px;
     padding: 12px 20px;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     transition: all 0.2s;
     border: none;
@@ -56,19 +56,19 @@
 }
 
 .admin-nav-item:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.08);
     color: white;
 }
 
 .admin-nav-item.active {
-    background: rgba(247, 148, 29, 0.2);
-    color: #F7941D;
-    border-left: 3px solid #F7941D;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    border-left: 3px solid #fff;
 }
 
 .admin-sidebar-footer {
     padding: 16px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .admin-logout-btn {
@@ -76,7 +76,7 @@
 }
 
 .admin-logout-btn:hover {
-    color: #e74c3c;
+    color: #fff;
 }
 
 /* Admin Main */
@@ -96,7 +96,7 @@
 .admin-header h1 {
     font-size: 1.75rem;
     font-weight: 700;
-    color: #1a1f36;
+    color: #111;
     margin: 0;
 }
 
@@ -120,7 +120,7 @@
 }
 
 .admin-back-btn:hover {
-    color: #F7941D;
+    color: #000;
 }
 
 .admin-header-actions {
@@ -144,22 +144,22 @@
 }
 
 .admin-btn-primary {
-    background: #F7941D;
+    background: #000;
     color: white;
 }
 
 .admin-btn-primary:hover {
-    background: #e5821a;
+    background: #222;
 }
 
 .admin-btn-primary:disabled {
-    background: #ccc;
+    background: #bbb;
     cursor: not-allowed;
 }
 
 .admin-btn-secondary {
     background: white;
-    color: #1a1f36;
+    color: #111;
     border: 1px solid #ddd;
 }
 
@@ -202,7 +202,7 @@
 .admin-stat-value {
     font-size: 1.75rem;
     font-weight: 700;
-    color: #1a1f36;
+    color: #111;
 }
 
 .admin-stat-label {
@@ -214,7 +214,7 @@
 .admin-quick-actions h2 {
     font-size: 1.25rem;
     margin-bottom: 16px;
-    color: #1a1f36;
+    color: #111;
 }
 
 .admin-actions-grid {
@@ -232,18 +232,24 @@
     align-items: center;
     gap: 12px;
     text-decoration: none;
-    color: #1a1f36;
+    color: #111;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     transition: all 0.2s;
 }
 
 .admin-action-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    background: #000;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
     transform: translateY(-2px);
 }
 
+.admin-action-card:hover svg {
+    color: #fff;
+}
+
 .admin-action-card svg {
-    color: #F7941D;
+    color: #111;
 }
 
 /* Admin Table */
@@ -300,13 +306,13 @@
 }
 
 .badge-success {
-    background: #e8f5e9;
-    color: #2e7d32;
+    background: #e8e8e8;
+    color: #111;
 }
 
 .badge-warning {
-    background: #fff3e0;
-    color: #f57c00;
+    background: #f0f0f0;
+    color: #444;
 }
 
 .badge-secondary {
@@ -335,12 +341,12 @@
 }
 
 .admin-action-btn:hover {
-    background: #F7941D;
+    background: #000;
     color: white;
 }
 
 .admin-action-btn.danger:hover {
-    background: #e74c3c;
+    background: #111;
     color: white;
 }
 
@@ -487,7 +493,7 @@
 .admin-form-group select:focus,
 .admin-form-group textarea:focus {
     outline: none;
-    border-color: #F7941D;
+    border-color: #000;
 }
 
 /* Admin Card */
@@ -502,7 +508,7 @@
 .admin-card h3 {
     font-size: 1.1rem;
     margin: 0 0 16px 0;
-    color: #1a1f36;
+    color: #111;
 }
 
 .admin-card-header {
@@ -579,7 +585,7 @@
 
 .admin-step-number {
     font-weight: 600;
-    color: #F7941D;
+    color: #333;
     flex: 1;
 }
 
@@ -690,7 +696,7 @@
 }
 
 .admin-section-title-input:focus {
-    border-bottom-color: #F7941D !important;
+    border-bottom-color: #000 !important;
 }
 
 /* Admin Login Page */
@@ -699,7 +705,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #1a1f36 0%, #2d3555 100%);
+    background: #000;
 }
 
 .admin-login-container {
@@ -719,7 +725,7 @@
 .admin-login-icon {
     width: 64px;
     height: 64px;
-    background: linear-gradient(135deg, #F7941D 0%, #f5851e 100%);
+    background: #111;
     border-radius: 16px;
     display: flex;
     align-items: center;
@@ -731,7 +737,7 @@
 .admin-login-header h1 {
     margin: 0 0 8px 0;
     font-size: 1.5rem;
-    color: #1a1f36;
+    color: #111;
 }
 
 .admin-login-header p {
@@ -768,7 +774,7 @@
 }
 
 .admin-input-wrapper:focus-within {
-    border-color: #F7941D;
+    border-color: #000;
 }
 
 .admin-input-icon {
@@ -803,7 +809,7 @@
 }
 
 .admin-login-footer strong {
-    color: #F7941D;
+    color: #000;
 }
 
 /* Admin Loading Page */
@@ -890,7 +896,7 @@
 
 .analytics-rank {
     font-weight: 700;
-    color: #F7941D;
+    color: #111;
     min-width: 32px;
     font-size: 0.85rem;
 }
@@ -914,7 +920,7 @@
 
 .analytics-count {
     font-weight: 600;
-    color: #1a1f36;
+    color: #111;
     background: #f0f0f0;
     padding: 4px 10px;
     border-radius: 20px;
@@ -1011,7 +1017,7 @@
 
 .admin-multi-image-item:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-color: #F7941D;
+    border-color: #000;
     z-index: 2;
 }
 
@@ -1119,9 +1125,9 @@
     transition: border-color 0.2s, background 0.2s;
 }
 .admin-video-dropzone:hover {
-    border-color: #F7941D;
-    background: #fff9f5;
-    color: #F7941D;
+    border-color: #000;
+    background: #f5f5f5;
+    color: #000;
 }
 .admin-video-dropzone small {
     font-size: 11px;
@@ -1142,9 +1148,9 @@
     left: 0;
     top: 0;
     height: 100%;
-    background: #F7941D;
+    background: #000;
     transition: width 0.2s;
-    opacity: 0.25;
+    opacity: 0.15;
 }
 .admin-video-upload-label {
     position: relative;

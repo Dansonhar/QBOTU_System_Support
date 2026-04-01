@@ -80,7 +80,7 @@ export default function AdminSidebar() {
                         zIndex: 9999,
                         background: '#fff',
                         border: '1px solid #e0e0e0',
-                        borderLeft: '4px solid #F7941D',
+                        borderLeft: '4px solid #000',
                         borderRadius: '10px',
                         padding: '14px 20px',
                         boxShadow: '0 8px 30px rgba(0,0,0,0.12)',
@@ -93,10 +93,10 @@ export default function AdminSidebar() {
                     }}
                 >
                     <div style={{
-                        background: '#FFF3E0', borderRadius: '50%', width: 40, height: 40,
+                        background: '#f0f0f0', borderRadius: '50%', width: 40, height: 40,
                         display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0
                     }}>
-                        <Bell size={20} color="#F7941D" />
+                        <Bell size={20} color="#000" />
                     </div>
                     <div>
                         <div style={{ fontWeight: 700, fontSize: '14px', color: '#333' }}>🔔 New Ticket!</div>

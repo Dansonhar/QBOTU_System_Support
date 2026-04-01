@@ -10,19 +10,19 @@ import AdminSidebar from '../../components/admin/AdminSidebar';
 const STATUSES = ['Pending', 'Open', 'In Progress', 'Waiting for Customer', 'Solved', 'Closed'];
 
 const STATUS_CONFIG = {
-    'Pending': { bg: '#f5f5f5', color: '#666', border: '#ddd', icon: Clock },
-    'Open': { bg: '#e0f2fe', color: '#0369a1', border: '#bae6fd', icon: AlertCircle },
-    'In Progress': { bg: '#fef3c7', color: '#b45309', border: '#fde68a', icon: Loader },
-    'Waiting for Customer': { bg: '#f3e8ff', color: '#7e22ce', border: '#e9d5ff', icon: Clock },
-    'Solved': { bg: '#dcfce7', color: '#15803d', border: '#bbf7d0', icon: CheckCircle },
-    'Closed': { bg: '#f1f5f9', color: '#475569', border: '#cbd5e1', icon: CheckCircle },
+    'Pending': { bg: '#f0f0f0', color: '#555', border: '#ddd', icon: Clock },
+    'Open': { bg: '#e8e8e8', color: '#222', border: '#ccc', icon: AlertCircle },
+    'In Progress': { bg: '#ddd', color: '#111', border: '#bbb', icon: Loader },
+    'Waiting for Customer': { bg: '#ebebeb', color: '#444', border: '#ccc', icon: Clock },
+    'Solved': { bg: '#222', color: '#fff', border: '#333', icon: CheckCircle },
+    'Closed': { bg: '#f5f5f5', color: '#888', border: '#e0e0e0', icon: CheckCircle },
 };
 
 const PRIORITY_CONFIG = {
-    'Low': { bg: '#f1f5f9', color: '#475569' },
-    'Normal': { bg: '#f1f5f9', color: '#475569' },
-    'High': { bg: '#ffedd5', color: '#9a3412' },
-    'Urgent': { bg: '#fee2e2', color: '#991b1b' },
+    'Low': { bg: '#f5f5f5', color: '#777' },
+    'Normal': { bg: '#ebebeb', color: '#444' },
+    'High': { bg: '#d0d0d0', color: '#111' },
+    'Urgent': { bg: '#111', color: '#fff' },
 };
 
 export default function TicketManager() {
@@ -162,9 +162,9 @@ export default function TicketManager() {
                         onClick={() => setStatusFilter('')}
                         style={{
                             padding: '8px 18px', borderRadius: '20px', cursor: 'pointer',
-                            border: statusFilter === '' ? '2px solid #F7941D' : '1px solid #ddd',
-                            background: statusFilter === '' ? '#FFF3E0' : '#fff',
-                            color: statusFilter === '' ? '#F7941D' : '#666',
+                            border: statusFilter === '' ? '2px solid #000' : '1px solid #ddd',
+                            background: statusFilter === '' ? '#000' : '#fff',
+                            color: statusFilter === '' ? '#fff' : '#666',
                             fontWeight: statusFilter === '' ? '700' : '400',
                             fontSize: '13px', transition: 'all .2s',
                             display: 'flex', alignItems: 'center', gap: '6px'
@@ -172,8 +172,8 @@ export default function TicketManager() {
                     >
                         All
                         <span style={{
-                            background: statusFilter === '' ? '#F7941D' : '#ddd',
-                            color: statusFilter === '' ? '#fff' : '#555',
+                            background: statusFilter === '' ? '#fff' : '#ddd',
+                            color: statusFilter === '' ? '#000' : '#555',
                             borderRadius: '10px', padding: '1px 7px', fontSize: '11px', fontWeight: 700
                         }}>{tabCounts.total}</span>
                     </button>
@@ -181,9 +181,9 @@ export default function TicketManager() {
                         onClick={() => setStatusFilter('Unread')}
                         style={{
                             padding: '8px 16px', borderRadius: '20px', cursor: 'pointer',
-                            border: statusFilter === 'Unread' ? `2px solid #ef5350` : `1px solid #ffcdd2`,
-                            background: statusFilter === 'Unread' ? '#ffebee' : '#fff',
-                            color: statusFilter === 'Unread' ? '#ef5350' : '#d32f2f',
+                            border: statusFilter === 'Unread' ? `2px solid #000` : `1px solid #ddd`,
+                            background: statusFilter === 'Unread' ? '#000' : '#fff',
+                            color: statusFilter === 'Unread' ? '#fff' : '#555',
                             fontWeight: statusFilter === 'Unread' ? '700' : '500',
                             fontSize: '13px', transition: 'all .2s',
                             display: 'flex', alignItems: 'center', gap: '6px'
@@ -192,7 +192,7 @@ export default function TicketManager() {
                         Unread NEW
                         {tabCounts.unread > 0 && (
                             <span style={{
-                                background: '#ef5350', color: '#fff',
+                                background: statusFilter === 'Unread' ? '#fff' : '#111', color: statusFilter === 'Unread' ? '#000' : '#fff',
                                 borderRadius: '10px', padding: '1px 7px', fontSize: '11px', fontWeight: 700
                             }}>{tabCounts.unread}</span>
                         )}
@@ -276,7 +276,7 @@ export default function TicketManager() {
                                                 {ticket.is_unread === 1 && (
                                                     <span style={{
                                                         padding: '2px 8px', borderRadius: '12px', fontSize: '10px', fontWeight: 800,
-                                                        background: '#ef5350', color: '#fff', letterSpacing: '0.5px'
+                                                        background: '#111', color: '#fff', letterSpacing: '0.5px'
                                                     }}>
                                                         NEW
                                                     </span>
@@ -373,7 +373,7 @@ export default function TicketManager() {
                                                 color: '#555', fontSize: '13px', fontWeight: 500,
                                                 cursor: 'pointer', transition: 'all .15s'
                                             }}
-                                            onMouseEnter={e => { e.currentTarget.style.background = '#F7941D'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = '#F7941D'; }}
+                                            onMouseEnter={e => { e.currentTarget.style.background = '#000'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = '#000'; }}
                                             onMouseLeave={e => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.color = '#555'; e.currentTarget.style.borderColor = '#ddd'; }}
                                         >
                                             <Eye size={14} /> View
