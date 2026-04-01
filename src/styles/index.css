@@ -534,7 +534,9 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--spacing-md) 0;
+  padding: var(--spacing-md) var(--spacing-md);
+  border-radius: 8px;
+  margin: 0 calc(-1 * var(--spacing-md));
   border-bottom: 1px solid var(--color-card-border);
   color: var(--color-text-dark);
   text-decoration: none;
@@ -547,6 +549,8 @@ a:hover {
 
 .article-list-item:hover {
   color: var(--color-primary);
+  background: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
 
 .article-list-title {
