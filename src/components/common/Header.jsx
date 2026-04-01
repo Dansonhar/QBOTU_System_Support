@@ -105,7 +105,7 @@ const Header = () => {
       <div className="container header-inner">
         <div className="header-left">
           <Link to="/" className="logo">
-            <img src={logo} alt="SUPERPOS" className="logo-img" />
+            <span className="logo-text">QPOS</span>
           </Link>
         </div>
 
