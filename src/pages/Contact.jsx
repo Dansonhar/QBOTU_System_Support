@@ -131,7 +131,7 @@ const Contact = () => {
                 <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #e2e8f0', marginBottom: '0.75rem' }}>
                     <iframe
                         title="QPOS Headquarters"
-                        src="https://maps.google.com/maps?q=B3-6-13+SOLARIS+DUTAMAS+JALAN+DUTAMAS+1+50480+KUALA+LUMPUR&output=embed"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=101.6638%2C3.1588%2C101.6788%2C3.1688&layer=mapnik&marker=3.1638%2C101.6688"
                         width="100%"
                         height="300"
                         style={{ border: 'none', display: 'block' }}
