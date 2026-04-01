@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams, Link } from 'react-router-dom';
-import { ChevronRight, ThumbsUp, ThumbsDown, MessageCircle, Clock, BookOpen } from 'lucide-react';
+import { ChevronRight, ThumbsUp, ThumbsDown, MessageCircle, BookOpen } from 'lucide-react';
 import { API_BASE_URL, IMAGE_BASE_URL, DATA_MODE } from '../config';
 import ImageLightbox from '../components/common/ImageLightbox';
 
@@ -77,12 +77,6 @@ const Article = () => {
 
 
 
-    // Helper for localized date
-    const formatDate = (dateStr) => {
-        const date = new Date(dateStr);
-        return date.toLocaleDateString();
-    };
-
     // Convert video URL to embeddable URL (YouTube / Vimeo)
     const getEmbedUrl = (url) => {
         if (!url) return null;
@@ -154,12 +148,8 @@ const Article = () => {
                             <h1 className="article-title">{article.title}</h1>
                             <div className="article-meta">
                                 <span className="article-meta-item">
-                                    <Clock size={14} />
-                                    {t('article.steps_count', { count: article.steps?.length || 0 })}
-                                </span>
-                                <span className="article-meta-item">
                                     <BookOpen size={14} />
-                                    {t('article.updated', { date: formatDate(article.updated_at || article.created_at) })}
+                                    {t('article.updated', { date: new Date(article.updated_at || article.created_at).toLocaleDateString() })}
                                 </span>
                             </div>
                         </header>
