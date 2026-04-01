@@ -122,6 +122,34 @@ const Contact = () => {
                 </div>
             </div>
 
+            {/* Headquarters */}
+            <div style={{ margin: '2.5rem 0' }}>
+                <h2 className="contact-section-title" style={{ marginBottom: '1rem' }}>Our Headquarters</h2>
+                <p style={{ color: '#475569', marginBottom: '1rem', fontSize: '0.95rem' }}>
+                    B3-6-13, Solaris Dutamas, Jalan Dutamas 1, 50480 Kuala Lumpur.
+                </p>
+                <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #e2e8f0', marginBottom: '0.75rem' }}>
+                    <iframe
+                        title="QPOS Headquarters"
+                        src="https://maps.google.com/maps?q=B3-6-13+SOLARIS+DUTAMAS+JALAN+DUTAMAS+1+50480+KUALA+LUMPUR&output=embed"
+                        width="100%"
+                        height="300"
+                        style={{ border: 'none', display: 'block' }}
+                        allowFullScreen
+                        loading="lazy"
+                    />
+                </div>
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=B3-6-13+SOLARIS+DUTAMAS+JALAN+DUTAMAS+1+50480+KUALA+LUMPUR"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact-card-btn"
+                    style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                >
+                    Open in Google Maps
+                </a>
+            </div>
+
             {/* Contact Form */}
             <div className="contact-form-container">
                 <h2 className="contact-section-title">{t('contact.form_title')}</h2>
