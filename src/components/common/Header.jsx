@@ -13,7 +13,7 @@ function WaterCanvas() {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    let time = 0;
+    let t = 0;
 
     const resize = () => {
       canvas.width = canvas.offsetWidth;
@@ -22,35 +22,36 @@ function WaterCanvas() {
     resize();
     window.addEventListener('resize', resize);
 
-    const COLS = 28;   // vertical lines
-    const ROWS = 22;   // horizontal lines
-    const GRID_W = 2400;
-    const GRID_D = 1800;
+    const NUM_ROWS = 32;   // horizontal wave lines spread across full height
+    const NUM_COLS = 22;   // vertical connector lines
 
-    function waveY(x, z, t) {
-      return (
-        Math.sin(x * 0.0035 + t * 1.1) * 28 +
-        Math.sin(x * 0.007 - z * 0.004 + t * 1.7) * 14 +
-        Math.sin(z * 0.005 + t * 0.8) * 20 +
-        Math.sin(x * 0.0015 + z * 0.006 - t * 1.3) * 10 +
-        Math.sin(x * 0.012 + z * 0.003 + t * 2.2) * 6
-      );
-    }
-
-    function project(wx, wy, wz, W, H) {
-      const fov = 420;
-      const camY = 280;
-      const horizon = H * 0.52;
-      const dx = wx - GRID_W / 2;
-      const dy = wy - camY;
-      const dz = wz + 10;
-      const scale = fov / dz;
+    // Pre-compute per-row properties
+    const rows = Array.from({ length: NUM_ROWS }, (_, i) => {
+      const d = i / (NUM_ROWS - 1); // 0 = top, 1 = bottom
       return {
-        x: W / 2 + dx * scale,
-        y: horizon + dy * scale,
-        scale,
-        depth: wz / GRID_D,
+        baseY: d,                                     // fraction of height
+        amp:   0.012 + d * 0.045,                    // bigger waves toward bottom
+        freq:  0.009 - d * 0.004,                    // longer waves toward bottom
+        speed: 0.25 + d * 0.6,                       // faster toward bottom
+        phase: i * 0.55,
+        freq2: 0.018 - d * 0.006,
+        speed2: -(0.18 + d * 0.35),
+        alpha: 0.04 + d * 0.42,                      // brighter toward bottom
+        lw:    0.4 + d * 2.2,                        // thicker toward bottom
+        glow:  d > 0.55,
       };
+    });
+
+    // Sample X positions for vertical connectors
+    const colXFrac = Array.from({ length: NUM_COLS + 1 }, (_, i) => i / NUM_COLS);
+
+    function rowY(row, xFrac, t) {
+      const x = xFrac * 1000; // scale for frequency math
+      return (
+        row.baseY +
+        Math.sin(x * row.freq  + t * row.speed  + row.phase) * row.amp +
+        Math.sin(x * row.freq2 + t * row.speed2 + row.phase * 0.7) * row.amp * 0.4
+      );
     }
 
     function draw() {
@@ -58,64 +59,52 @@ function WaterCanvas() {
       const H = canvas.height;
       ctx.clearRect(0, 0, W, H);
 
-      // Build vertex grid
-      const verts = [];
-      for (let r = 0; r <= ROWS; r++) {
-        const row = [];
-        for (let c = 0; c <= COLS; c++) {
-          const wx = (c / COLS) * GRID_W;
-          const wz = (r / ROWS) * GRID_D + 80;
-          const wy = waveY(wx, wz, time);
-          row.push(project(wx, wy, wz, W, H));
-        }
-        verts.push(row);
+      // Cache row points for vertical lines
+      const pts = rows.map(row =>
+        colXFrac.map(xf => ({
+          x: xf * W,
+          y: rowY(row, xf, t) * H,
+        }))
+      );
+
+      // Draw vertical connector lines (grid mesh)
+      for (let c = 0; c <= NUM_COLS; c++) {
+        ctx.beginPath();
+        pts.forEach((rowPts, ri) => {
+          ri === 0 ? ctx.moveTo(rowPts[c].x, rowPts[c].y) : ctx.lineTo(rowPts[c].x, rowPts[c].y);
+        });
+        ctx.strokeStyle = 'rgba(100,210,255,0.07)';
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
       }
 
-      // Draw horizontal lines (rows going into depth)
-      for (let r = 0; r <= ROWS; r++) {
-        const d = verts[r][0].depth;
-        const alpha = 0.06 + d * 0.55;
-        const lw = 0.3 + d * 1.6;
+      // Draw horizontal wave lines
+      rows.forEach((row, ri) => {
         ctx.beginPath();
-        for (let c = 0; c <= COLS; c++) {
-          const { x, y } = verts[r][c];
-          c === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        for (let x = 0; x <= W; x += 3) {
+          const y = rowY(row, x / W, t) * H;
+          x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
         }
-        ctx.strokeStyle = `rgba(160,230,255,${alpha.toFixed(2)})`;
-        ctx.lineWidth = lw;
-        ctx.shadowBlur = d > 0.6 ? 8 : 0;
-        ctx.shadowColor = 'rgba(100,200,255,0.4)';
+        if (row.glow) {
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = 'rgba(80,200,255,0.5)';
+        }
+        ctx.strokeStyle = `rgba(140,220,255,${row.alpha.toFixed(3)})`;
+        ctx.lineWidth = row.lw;
         ctx.stroke();
         ctx.shadowBlur = 0;
-      }
+      });
 
-      // Draw vertical lines (columns running toward horizon)
-      for (let c = 0; c <= COLS; c++) {
-        ctx.beginPath();
-        for (let r = 0; r <= ROWS; r++) {
-          const { x, y } = verts[r][c];
-          r === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-        }
-        ctx.strokeStyle = 'rgba(100,200,255,0.08)';
-        ctx.lineWidth = 0.4;
-        ctx.stroke();
-      }
+      // Subtle left/right edge fade
+      ['left', 'right'].forEach(side => {
+        const g = ctx.createLinearGradient(side === 'left' ? 0 : W, 0, side === 'left' ? W * 0.08 : W * 0.92, 0);
+        g.addColorStop(0, 'rgba(0,0,0,0.6)');
+        g.addColorStop(1, 'rgba(0,0,0,0)');
+        ctx.fillStyle = g;
+        ctx.fillRect(side === 'left' ? 0 : W * 0.92, 0, W * 0.08, H);
+      });
 
-      // Top fade mask
-      const topGrad = ctx.createLinearGradient(0, 0, 0, H * 0.35);
-      topGrad.addColorStop(0, 'rgba(0,0,0,1)');
-      topGrad.addColorStop(1, 'rgba(0,0,0,0)');
-      ctx.fillStyle = topGrad;
-      ctx.fillRect(0, 0, W, H * 0.35);
-
-      // Bottom fade mask
-      const botGrad = ctx.createLinearGradient(0, H * 0.72, 0, H);
-      botGrad.addColorStop(0, 'rgba(0,0,0,0)');
-      botGrad.addColorStop(1, 'rgba(0,0,0,1)');
-      ctx.fillStyle = botGrad;
-      ctx.fillRect(0, H * 0.72, W, H * 0.28);
-
-      time += 0.012;
+      t += 0.011;
       animRef.current = requestAnimationFrame(draw);
     }
 
