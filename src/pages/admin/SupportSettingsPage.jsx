@@ -85,12 +85,16 @@ export default function SupportSettingsPage() {
                 body: JSON.stringify({ ...settings, home_slides: homeSlides })
             });
             if (res.ok) {
+                // Re-fetch to confirm what was saved
+                await fetchSettings();
                 setSaved(true);
                 setTimeout(() => setSaved(false), 3000);
+            } else {
+                const err = await res.json().catch(() => ({}));
+                alert('Failed to save: ' + (err.error || res.status));
             }
         } catch (error) {
-            console.error('Error saving settings:', error);
-            alert('Failed to save settings');
+            alert('Failed to save settings. Is the server running?');
         } finally {
             setSaving(false);
         }

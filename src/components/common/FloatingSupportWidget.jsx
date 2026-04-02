@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { X, Send, CheckCircle, ArrowLeft, User, Bot, Headphones } from 'lucide-react';
-import { API_BASE_URL, DATA_MODE } from '../../config';
+import { API_BASE_URL, DATA_MODE, IMAGE_BASE_URL } from '../../config';
 
 export const StorehubIcon = ({ size = 28, color = 'white', bgColor = '#F7941D' }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -375,7 +375,7 @@ export default function FloatingSupportWidget() {
                                     <>
                                         <div style={{ position: 'relative', borderRadius: 12, overflow: 'hidden', marginBottom: 12 }}>
                                             <img
-                                                src={`${homeSlides[slideIndex].src.startsWith('/uploads/') ? (window.location.hostname === 'localhost' ? 'http://localhost:3001' : '') : ''}${homeSlides[slideIndex].src}`}
+                                                src={`${IMAGE_BASE_URL}${homeSlides[slideIndex].src}`}
                                                 alt={homeSlides[slideIndex].caption}
                                                 style={{ width: '100%', height: 180, objectFit: 'cover', display: 'block' }}
                                             />
@@ -397,7 +397,7 @@ export default function FloatingSupportWidget() {
                                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
                                             {homeSlides.map((slide, i) => (
                                                 <div key={i} onClick={() => setSlideIndex(i)} style={{ borderRadius: 10, overflow: 'hidden', cursor: 'pointer', border: i === slideIndex ? '2px solid #000' : '2px solid transparent', transition: 'border 0.2s' }}>
-                                                    <img src={`${slide.src.startsWith('/uploads/') ? (window.location.hostname === 'localhost' ? 'http://localhost:3001' : '') : ''}${slide.src}`} alt={slide.caption} style={{ width: '100%', height: 70, objectFit: 'cover', display: 'block' }} />
+                                                    <img src={`${IMAGE_BASE_URL}${slide.src}`} alt={slide.caption} style={{ width: '100%', height: 70, objectFit: 'cover', display: 'block' }} />
                                                 </div>
                                             ))}
                                         </div>
