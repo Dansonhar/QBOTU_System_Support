@@ -92,7 +92,7 @@ const Contact = () => {
                     </div>
                     <h3>{t('contact.chat_title')}</h3>
                     <p>{t('contact.chat_desc')}</p>
-                    <button className="contact-card-btn" onClick={() => alert('Live chat!')}>
+                    <button className="contact-card-btn" onClick={() => window.dispatchEvent(new CustomEvent('openSupportWidget'))}>
                         {t('contact.start_chat')}
                     </button>
                 </div>
@@ -104,7 +104,7 @@ const Contact = () => {
                     </div>
                     <h3>{t('contact.email_title')}</h3>
                     <p>{t('contact.email_desc')}</p>
-                    <a href="mailto:info@qbot.now" className="contact-card-btn">
+                    <a href="mailto:info@qbot.  now" className="contact-card-btn">
                         {t('contact.email_btn')}
                     </a>
                 </div>

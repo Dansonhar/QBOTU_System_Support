@@ -55,6 +55,13 @@ export default function FloatingSupportWidget() {
         }
     }, []);
 
+    // Listen for external open trigger (e.g. from Contact page "Start Chat")
+    useEffect(() => {
+        const handler = () => { setIsOpen(true); setActiveTab('Messages'); };
+        window.addEventListener('openSupportWidget', handler);
+        return () => window.removeEventListener('openSupportWidget', handler);
+    }, []);
+
     // Polling for new messages
     useEffect(() => {
         if (chatSession && chatView === 'chat' && isOpen) {
