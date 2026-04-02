@@ -19,13 +19,7 @@ export default function FloatingSupportWidget() {
     const [activeTab, setActiveTab] = useState('Messages');
     const [searchQuery, setSearchQuery] = useState('');
     const [slideIndex, setSlideIndex] = useState(0);
-
-    const homeSlides = [
-        { src: '/QBOTU_System_Support_Web/home-slides/slide1.jpg', caption: 'QPOS Loyalty App' },
-        { src: '/QBOTU_System_Support_Web/home-slides/slide2.jpg', caption: 'Mobile Ordering' },
-        { src: '/QBOTU_System_Support_Web/home-slides/slide3.jpg', caption: 'QPOS POS System' },
-        { src: '/QBOTU_System_Support_Web/home-slides/slide4.jpg', caption: 'BackOffice Dashboard' },
-    ];
+    const [homeSlides, setHomeSlides] = useState([]);
 
     // Chat state
     const [chatSession, setChatSession] = useState(null); // { ticket_number, email, name }
@@ -43,7 +37,7 @@ export default function FloatingSupportWidget() {
         const settingsUrl = DATA_MODE === 'static' ? `${API_BASE_URL}/support-settings.json` : `${API_BASE_URL}/support-settings`;
         fetch(settingsUrl)
             .then(r => { if (!r.ok) throw new Error(); return r.json(); })
-            .then(d => { if (!d || d.error) throw new Error(); setSettings(d); setLoaded(true); })
+            .then(d => { if (!d || d.error) throw new Error(); setSettings(d); try { setHomeSlides(JSON.parse(d.home_slides || '[]')); } catch(_) {} setLoaded(true); })
             .catch(() => { setSettings(null); setLoaded(true); });
 
         const catUrl = DATA_MODE === 'static' ? `${API_BASE_URL}/categories.json` : `${API_BASE_URL}/categories?status=active`;
@@ -375,37 +369,40 @@ export default function FloatingSupportWidget() {
                         )}
                         {activeTab === 'Home' && (
                             <div style={{ padding: '16px 12px' }}>
-                                {/* Image Slideshow */}
-                                <div style={{ position: 'relative', borderRadius: 12, overflow: 'hidden', marginBottom: 12 }}>
-                                    <img
-                                        src={homeSlides[slideIndex].src}
-                                        alt={homeSlides[slideIndex].caption}
-                                        style={{ width: '100%', height: 180, objectFit: 'cover', display: 'block' }}
-                                    />
-                                    {/* Prev/Next */}
-                                    <button onClick={() => setSlideIndex(i => (i - 1 + homeSlides.length) % homeSlides.length)}
-                                        style={{ position: 'absolute', left: 8, top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.45)', border: 'none', borderRadius: '50%', width: 28, height: 28, color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14 }}>‹</button>
-                                    <button onClick={() => setSlideIndex(i => (i + 1) % homeSlides.length)}
-                                        style={{ position: 'absolute', right: 8, top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.45)', border: 'none', borderRadius: '50%', width: 28, height: 28, color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14 }}>›</button>
-                                    {/* Caption */}
-                                    <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(transparent, rgba(0,0,0,0.6))', color: '#fff', padding: '16px 10px 8px', fontSize: 12, fontWeight: 600 }}>
-                                        {homeSlides[slideIndex].caption}
-                                    </div>
-                                    {/* Dots */}
-                                    <div style={{ position: 'absolute', bottom: 6, right: 10, display: 'flex', gap: 4 }}>
-                                        {homeSlides.map((_, i) => (
-                                            <div key={i} onClick={() => setSlideIndex(i)} style={{ width: 6, height: 6, borderRadius: '50%', background: i === slideIndex ? '#fff' : 'rgba(255,255,255,0.45)', cursor: 'pointer' }} />
-                                        ))}
-                                    </div>
-                                </div>
-                                {/* Thumbnail Grid */}
-                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-                                    {homeSlides.map((slide, i) => (
-                                        <div key={i} onClick={() => setSlideIndex(i)} style={{ borderRadius: 10, overflow: 'hidden', cursor: 'pointer', border: i === slideIndex ? '2px solid #000' : '2px solid transparent', transition: 'border 0.2s' }}>
-                                            <img src={slide.src} alt={slide.caption} style={{ width: '100%', height: 70, objectFit: 'cover', display: 'block' }} />
+                                {homeSlides.length === 0 ? (
+                                    <div style={{ padding: 40, textAlign: 'center', color: '#999' }}>No images added yet.</div>
+                                ) : (
+                                    <>
+                                        <div style={{ position: 'relative', borderRadius: 12, overflow: 'hidden', marginBottom: 12 }}>
+                                            <img
+                                                src={`${homeSlides[slideIndex].src.startsWith('/uploads/') ? (window.location.hostname === 'localhost' ? 'http://localhost:3001' : '') : ''}${homeSlides[slideIndex].src}`}
+                                                alt={homeSlides[slideIndex].caption}
+                                                style={{ width: '100%', height: 180, objectFit: 'cover', display: 'block' }}
+                                            />
+                                            <button onClick={() => setSlideIndex(i => (i - 1 + homeSlides.length) % homeSlides.length)}
+                                                style={{ position: 'absolute', left: 8, top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.45)', border: 'none', borderRadius: '50%', width: 28, height: 28, color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14 }}>‹</button>
+                                            <button onClick={() => setSlideIndex(i => (i + 1) % homeSlides.length)}
+                                                style={{ position: 'absolute', right: 8, top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.45)', border: 'none', borderRadius: '50%', width: 28, height: 28, color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14 }}>›</button>
+                                            {homeSlides[slideIndex].caption && (
+                                                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(transparent, rgba(0,0,0,0.6))', color: '#fff', padding: '16px 10px 8px', fontSize: 12, fontWeight: 600 }}>
+                                                    {homeSlides[slideIndex].caption}
+                                                </div>
+                                            )}
+                                            <div style={{ position: 'absolute', bottom: 8, right: 10, display: 'flex', gap: 4 }}>
+                                                {homeSlides.map((_, i) => (
+                                                    <div key={i} onClick={() => setSlideIndex(i)} style={{ width: 6, height: 6, borderRadius: '50%', background: i === slideIndex ? '#fff' : 'rgba(255,255,255,0.45)', cursor: 'pointer' }} />
+                                                ))}
+                                            </div>
                                         </div>
-                                    ))}
-                                </div>
+                                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+                                            {homeSlides.map((slide, i) => (
+                                                <div key={i} onClick={() => setSlideIndex(i)} style={{ borderRadius: 10, overflow: 'hidden', cursor: 'pointer', border: i === slideIndex ? '2px solid #000' : '2px solid transparent', transition: 'border 0.2s' }}>
+                                                    <img src={`${slide.src.startsWith('/uploads/') ? (window.location.hostname === 'localhost' ? 'http://localhost:3001' : '') : ''}${slide.src}`} alt={slide.caption} style={{ width: '100%', height: 70, objectFit: 'cover', display: 'block' }} />
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         )}
                     </div>

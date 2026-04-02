@@ -25,14 +25,14 @@ router.get('/', (req, res) => {
 // PUT /api/support-settings - Update support settings (protected)
 router.put('/', authenticateToken, (req, res) => {
     try {
-        const { greeting_text, button_color, whatsapp_number, email, messenger_url, is_enabled } = req.body;
+        const { greeting_text, button_color, whatsapp_number, email, messenger_url, is_enabled, home_slides } = req.body;
 
         const existing = db.prepare('SELECT * FROM support_settings LIMIT 1').get();
 
         if (existing) {
             db.prepare(`
-                UPDATE support_settings 
-                SET greeting_text = ?, button_color = ?, whatsapp_number = ?, email = ?, messenger_url = ?, is_enabled = ?, updated_at = CURRENT_TIMESTAMP
+                UPDATE support_settings
+                SET greeting_text = ?, button_color = ?, whatsapp_number = ?, email = ?, messenger_url = ?, is_enabled = ?, home_slides = ?, updated_at = CURRENT_TIMESTAMP
                 WHERE id = ?
             `).run(
                 greeting_text !== undefined ? greeting_text : existing.greeting_text,
@@ -41,19 +41,21 @@ router.put('/', authenticateToken, (req, res) => {
                 email !== undefined ? email : existing.email,
                 messenger_url !== undefined ? messenger_url : existing.messenger_url,
                 is_enabled !== undefined ? is_enabled : existing.is_enabled,
+                home_slides !== undefined ? JSON.stringify(home_slides) : (existing.home_slides || '[]'),
                 existing.id
             );
         } else {
             db.prepare(`
-                INSERT INTO support_settings (greeting_text, button_color, whatsapp_number, email, messenger_url, is_enabled)
-                VALUES (?, ?, ?, ?, ?, ?)
+                INSERT INTO support_settings (greeting_text, button_color, whatsapp_number, email, messenger_url, is_enabled, home_slides)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
             `).run(
                 greeting_text || 'How can we help?',
                 button_color || '#F7941D',
                 whatsapp_number || '',
                 email || '',
                 messenger_url || '',
-                is_enabled !== undefined ? is_enabled : 1
+                is_enabled !== undefined ? is_enabled : 1,
+                JSON.stringify(home_slides || [])
             );
         }
 
