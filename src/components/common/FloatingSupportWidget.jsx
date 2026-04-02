@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { X, Send, CheckCircle, ArrowLeft, User, Bot, Headphones } from 'lucide-react';
-import { API_BASE_URL, DATA_MODE, IMAGE_BASE_URL } from '../../config';
+import { API_BASE_URL, DATA_MODE } from '../../config';
 
 export const StorehubIcon = ({ size = 28, color = 'white', bgColor = '#F7941D' }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -18,8 +18,6 @@ export default function FloatingSupportWidget() {
     const [loaded, setLoaded] = useState(false);
     const [activeTab, setActiveTab] = useState('Messages');
     const [searchQuery, setSearchQuery] = useState('');
-    const [slideIndex, setSlideIndex] = useState(0);
-    const [homeSlides, setHomeSlides] = useState([]);
 
     // Chat state
     const [chatSession, setChatSession] = useState(null); // { ticket_number, email, name }
@@ -37,7 +35,7 @@ export default function FloatingSupportWidget() {
         const settingsUrl = DATA_MODE === 'static' ? `${API_BASE_URL}/support-settings.json` : `${API_BASE_URL}/support-settings`;
         fetch(settingsUrl)
             .then(r => { if (!r.ok) throw new Error(); return r.json(); })
-            .then(d => { if (!d || d.error) throw new Error(); setSettings(d); try { setHomeSlides(JSON.parse(d.home_slides || '[]')); } catch(_) {} setLoaded(true); })
+            .then(d => { if (!d || d.error) throw new Error(); setSettings(d); setLoaded(true); })
             .catch(() => { setSettings(null); setLoaded(true); });
 
         const catUrl = DATA_MODE === 'static' ? `${API_BASE_URL}/categories.json` : `${API_BASE_URL}/categories?status=active`;
@@ -364,59 +362,16 @@ export default function FloatingSupportWidget() {
                     <div className="floating-support-popup-body" style={{ padding: activeTab === 'Messages' ? 0 : undefined }}>
                         {activeTab === 'Messages' && renderMessagesTab()}
                         {activeTab === 'Help' && renderHelpTab()}
-                        {activeTab === 'News' && (
-                            <div style={{ padding: 40, textAlign: 'center', color: '#999' }}>News coming soon.</div>
-                        )}
-                        {activeTab === 'Home' && (
-                            <div style={{ padding: '16px 12px' }}>
-                                {homeSlides.length === 0 ? (
-                                    <div style={{ padding: 40, textAlign: 'center', color: '#999' }}>No images added yet.</div>
-                                ) : (
-                                    <>
-                                        <div style={{ position: 'relative', borderRadius: 12, overflow: 'hidden', marginBottom: 12 }}>
-                                            <img
-                                                src={`${IMAGE_BASE_URL}${homeSlides[slideIndex].src}`}
-                                                alt={homeSlides[slideIndex].caption}
-                                                style={{ width: '100%', height: 180, objectFit: 'cover', display: 'block' }}
-                                            />
-                                            <button onClick={() => setSlideIndex(i => (i - 1 + homeSlides.length) % homeSlides.length)}
-                                                style={{ position: 'absolute', left: 8, top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.45)', border: 'none', borderRadius: '50%', width: 28, height: 28, color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14 }}>‹</button>
-                                            <button onClick={() => setSlideIndex(i => (i + 1) % homeSlides.length)}
-                                                style={{ position: 'absolute', right: 8, top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.45)', border: 'none', borderRadius: '50%', width: 28, height: 28, color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14 }}>›</button>
-                                            {homeSlides[slideIndex].caption && (
-                                                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(transparent, rgba(0,0,0,0.6))', color: '#fff', padding: '16px 10px 8px', fontSize: 12, fontWeight: 600 }}>
-                                                    {homeSlides[slideIndex].caption}
-                                                </div>
-                                            )}
-                                            <div style={{ position: 'absolute', bottom: 8, right: 10, display: 'flex', gap: 4 }}>
-                                                {homeSlides.map((_, i) => (
-                                                    <div key={i} onClick={() => setSlideIndex(i)} style={{ width: 6, height: 6, borderRadius: '50%', background: i === slideIndex ? '#fff' : 'rgba(255,255,255,0.45)', cursor: 'pointer' }} />
-                                                ))}
-                                            </div>
-                                        </div>
-                                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-                                            {homeSlides.map((slide, i) => (
-                                                <div key={i} onClick={() => setSlideIndex(i)} style={{ borderRadius: 10, overflow: 'hidden', cursor: 'pointer', border: i === slideIndex ? '2px solid #000' : '2px solid transparent', transition: 'border 0.2s' }}>
-                                                    <img src={`${IMAGE_BASE_URL}${slide.src}`} alt={slide.caption} style={{ width: '100%', height: 70, objectFit: 'cover', display: 'block' }} />
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </>
-                                )}
-                            </div>
-                        )}
                     </div>
 
                     {!(activeTab === 'Messages' && chatView === 'chat') && (
                         <div className="floating-support-popup-footer">
-                            {['Home', 'News', 'Messages', 'Help'].map(tab => (
+                            {['Messages', 'Help'].map(tab => (
                                 <button key={tab}
                                     className={`floating-support-tab ${activeTab === tab ? 'active' : ''}`}
                                     onClick={() => setActiveTab(tab)}
                                     style={{ color: activeTab === tab ? accent : undefined }}
                                 >
-                                    {tab === 'Home' && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>}
-                                    {tab === 'News' && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg>}
                                     {tab === 'Messages' && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>}
                                     {tab === 'Help' && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>}
                                     {tab}
