@@ -5,124 +5,6 @@ import { useTranslation } from 'react-i18next';
 import { API_BASE_URL, DATA_MODE } from '../../config';
 import logo from '../../assets/qpos-logo.png';
 
-function WaterCanvas() {
-  const canvasRef = useRef(null);
-  const animRef = useRef(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    let t = 0;
-
-    const resize = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    };
-    resize();
-    window.addEventListener('resize', resize);
-
-    const NUM_ROWS = 32;   // horizontal wave lines spread across full height
-    const NUM_COLS = 22;   // vertical connector lines
-
-    // Pre-compute per-row properties
-    const rows = Array.from({ length: NUM_ROWS }, (_, i) => {
-      const d = i / (NUM_ROWS - 1); // 0 = top, 1 = bottom
-      return {
-        baseY: d,                                     // fraction of height
-        amp:   0.012 + d * 0.045,                    // bigger waves toward bottom
-        freq:  0.009 - d * 0.004,                    // longer waves toward bottom
-        speed: 0.25 + d * 0.6,                       // faster toward bottom
-        phase: i * 0.55,
-        freq2: 0.018 - d * 0.006,
-        speed2: -(0.18 + d * 0.35),
-        alpha: 0.04 + d * 0.42,                      // brighter toward bottom
-        lw:    0.4 + d * 2.2,                        // thicker toward bottom
-        glow:  d > 0.55,
-      };
-    });
-
-    // Sample X positions for vertical connectors
-    const colXFrac = Array.from({ length: NUM_COLS + 1 }, (_, i) => i / NUM_COLS);
-
-    function rowY(row, xFrac, t) {
-      const x = xFrac * 1000; // scale for frequency math
-      return (
-        row.baseY +
-        Math.sin(x * row.freq  + t * row.speed  + row.phase) * row.amp +
-        Math.sin(x * row.freq2 + t * row.speed2 + row.phase * 0.7) * row.amp * 0.4
-      );
-    }
-
-    function draw() {
-      const W = canvas.width;
-      const H = canvas.height;
-      ctx.clearRect(0, 0, W, H);
-
-      // Cache row points for vertical lines
-      const pts = rows.map(row =>
-        colXFrac.map(xf => ({
-          x: xf * W,
-          y: rowY(row, xf, t) * H,
-        }))
-      );
-
-      // Draw vertical connector lines (grid mesh)
-      for (let c = 0; c <= NUM_COLS; c++) {
-        ctx.beginPath();
-        pts.forEach((rowPts, ri) => {
-          ri === 0 ? ctx.moveTo(rowPts[c].x, rowPts[c].y) : ctx.lineTo(rowPts[c].x, rowPts[c].y);
-        });
-        ctx.strokeStyle = 'rgba(100,210,255,0.07)';
-        ctx.lineWidth = 0.5;
-        ctx.stroke();
-      }
-
-      // Draw horizontal wave lines
-      rows.forEach((row, ri) => {
-        ctx.beginPath();
-        for (let x = 0; x <= W; x += 3) {
-          const y = rowY(row, x / W, t) * H;
-          x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-        }
-        if (row.glow) {
-          ctx.shadowBlur = 10;
-          ctx.shadowColor = 'rgba(80,200,255,0.5)';
-        }
-        ctx.strokeStyle = `rgba(140,220,255,${row.alpha.toFixed(3)})`;
-        ctx.lineWidth = row.lw;
-        ctx.stroke();
-        ctx.shadowBlur = 0;
-      });
-
-      // Subtle left/right edge fade
-      ['left', 'right'].forEach(side => {
-        const g = ctx.createLinearGradient(side === 'left' ? 0 : W, 0, side === 'left' ? W * 0.08 : W * 0.92, 0);
-        g.addColorStop(0, 'rgba(0,0,0,0.6)');
-        g.addColorStop(1, 'rgba(0,0,0,0)');
-        ctx.fillStyle = g;
-        ctx.fillRect(side === 'left' ? 0 : W * 0.92, 0, W * 0.08, H);
-      });
-
-      t += 0.011;
-      animRef.current = requestAnimationFrame(draw);
-    }
-
-    draw();
-    return () => {
-      cancelAnimationFrame(animRef.current);
-      window.removeEventListener('resize', resize);
-    };
-  }, []);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 0 }}
-    />
-  );
-}
-
 const Header = () => {
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
@@ -217,10 +99,9 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="header" style={{ position: 'relative', overflow: 'hidden' }}>
-      <WaterCanvas />
+    <header className="header">
 
-      <div className="container header-inner" style={{ position: 'relative', zIndex: 1 }}>
+      <div className="container header-inner">
         <div className="header-left">
           <Link to="/" className="logo">
             <img src={logo} alt="QPOS" className="logo-img" />
