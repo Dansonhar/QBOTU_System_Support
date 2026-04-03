@@ -185,20 +185,10 @@ export default function FloatingSupportWidget() {
                 <p>{activeSettings.greeting_text || 'How can we help you today?'}</p>
             </div>
             <div className="chat-welcome-actions">
-                <button className="chat-welcome-btn chat-welcome-btn-primary" style={{ background: accent }}
-                    onClick={() => setChatView('startForm')}>
-                    <Send size={18} /> Start a Conversation
-                </button>
-
                 {activeSettings.whatsapp_number && (
                     <a href={`https://wa.me/${activeSettings.whatsapp_number.replace(/[^0-9]/g, '')}`}
                         target="_blank" rel="noopener noreferrer" className="chat-welcome-btn chat-welcome-btn-secondary">
                         💬 Chat on WhatsApp
-                    </a>
-                )}
-                {activeSettings.email && (
-                    <a href={`mailto:${activeSettings.email}`} className="chat-welcome-btn chat-welcome-btn-secondary">
-                        📧 Send Email
                     </a>
                 )}
             </div>
