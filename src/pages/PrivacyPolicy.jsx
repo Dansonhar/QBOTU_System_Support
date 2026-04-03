@@ -74,8 +74,8 @@ const PrivacyPolicy = () => {
                             <h2>{t('privacy.s5_title')}</h2>
                             <p>{t('privacy.s5_desc')}</p>
                             <p style={{ marginTop: '1rem' }}>
-                                <strong>Email:</strong> info@qbot.now<br />
-                                <strong>Phone:</strong> +60 12-408 4135
+                                <strong>Phone:</strong> +60 12-408 4135<br />
+                                <strong>Submit Ticket:</strong> <a href="https://hub.qbot.now" target="_blank" rel="noopener noreferrer" style={{ color: '#1a73e8' }}>hub.qbot.now</a>
                             </p>
                         </div>
                     </div>
