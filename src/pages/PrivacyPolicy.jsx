@@ -74,7 +74,7 @@ const PrivacyPolicy = () => {
                             <h2>{t('privacy.s5_title')}</h2>
                             <p>{t('privacy.s5_desc')}</p>
                             <p style={{ marginTop: '1rem' }}>
-                                <strong>Phone:</strong> +60 12-408 4135<br />
+                                <strong>WhatsApp:</strong> <a href="https://wa.me/60124084135" target="_blank" rel="noopener noreferrer" style={{ color: '#1a73e8' }}>+60 12-408 4135</a><br />
                                 <strong>Submit Ticket:</strong> <a href="https://hub.qbot.now" target="_blank" rel="noopener noreferrer" style={{ color: '#1a73e8' }}>hub.qbot.now</a>
                             </p>
                         </div>
